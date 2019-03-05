@@ -2,3 +2,7 @@
 
 Prova2
 
+```puml
+class Hello
+
+```
