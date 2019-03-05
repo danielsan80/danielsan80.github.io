@@ -6,5 +6,6 @@ Prova2
 @startuml
 class Hello
 class World
+class Wow
 @enduml
 ```
