@@ -1,10 +1,5 @@
 ---
-layout: default
-title:  "Fixture Handler"
+name: Fixture Handler
+url: https://packagist.org/packages/dansan/fixture-handler
+description: A module to handle your fixtures in your tests.
 ---
-
-# Fixture Handler
-
-A module to handle your fixtures in your tests.
-
-[https://packagist.org/packages/dansan/fixture-handler](https://packagist.org/packages/dansan/fixture-handler)

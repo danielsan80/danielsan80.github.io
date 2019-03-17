@@ -1,5 +1,9 @@
 title: Danielsan's Blog
 theme: jekyll-theme-cayman
 
+collections:
+  - packages
+
+
 plugins:
   - jekyll-plantuml

@@ -1,11 +1,5 @@
 ---
-layout: default
-title:  "PHP Backport"
----
-
-# PHP Backport
-
-A module to backport your source php code to 7.0 version.
-
-
-[https://packagist.org/packages/dansan/fixture-handler](https://packagist.org/packages/dansan/fixture-handler) 
+name: PHP Backport
+url: https://packagist.org/packages/dansan/fixture-handler
+description: A module to backport your source php code to 7.0 version.
+--- 
