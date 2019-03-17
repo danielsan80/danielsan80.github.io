@@ -4,7 +4,7 @@
 ### My Packagist packages
 
 {% for package in site.packages %}
-- **[{{ package.name }}]({{ package.packagist_url }})**: {{package.description}}
+- **[{{ package.name }}]({{ package.packagist_url }}){:target="_blank"}**: {{package.description}}
 
   
 {% endfor %}
