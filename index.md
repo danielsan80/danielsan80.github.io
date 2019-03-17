@@ -4,6 +4,8 @@
 ### My Packagist packages
 
 {% for package in site.packages %}
-    #### [{{ package.name }}]({{ package.url }})
-    {{package.name}}    
+#### [{{ package.name }}]({{ package.url }})
+{{package.name}}
+
+  
 {% endfor %}
