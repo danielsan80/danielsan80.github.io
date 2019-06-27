@@ -1,6 +1,9 @@
 ---
-layout: post
+layout: default
 title:  "Just a post"
+categories: [test]
+tags: [test, jekyll]
+
 ---
 
 # Just a post
