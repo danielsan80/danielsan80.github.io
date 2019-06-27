@@ -11,12 +11,15 @@
 ### Posts
 
 {% for post in site.posts %}
-    - **[{{ post.title }}]({{ post.url }})**  
+- **[{{ post.title }}]({{ post.url }})**  
 {% endfor %}
 
 {% for category in site.categories %}
-    #### {{ category[0] }}
-    {% for post in category[1] %}
-        - **[{{ post.title }}]({{ post.url }})** 
-    {% endfor %}
+
+#### {{ category[0] }}
+
+{% for post in category[1] %}
+- **[{{ post.title }}]({{ post.url }})** 
+{% endfor %}
+
 {% endfor %}
