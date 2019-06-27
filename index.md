@@ -13,12 +13,22 @@
 
 ### Posts
 
+#### By categories
 {% for category in site.categories %}
-
-#### {{ category[0] }}
+##### {{ category[0] }}
 
 {% for post in category[1] %}
-- **[{{ post.title }}]({{ post.url }})** 
+- {{ post.date | date_to_string }} - **[{{ post.title }}]({{ post.url }})** 
+{% endfor %}
+
+{% endfor %}
+
+#### By tags
+{% for tag in site.tags %}
+##### {{ tag[0] }}
+
+{% for post in tag[1] %}
+- {{ post.date | date_to_string }} - **[{{ post.title }}]({{ post.url }})** 
 {% endfor %}
 
 {% endfor %}
