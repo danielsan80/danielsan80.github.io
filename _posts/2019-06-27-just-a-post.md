@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Just a post"
 categories: [test]
 tags: [test, jekyll]
