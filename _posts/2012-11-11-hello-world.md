@@ -5,7 +5,7 @@ categories: [Idee]
 tags: [helloworld, idea]
 
 ---
-![Hello World](images/hello-world.jpg)
+![Hello World](/_posts/images/hello-world.jpg)
 
 *Ma guarda questo!!! Non ha neanche cambiato il titolo del post d’esempio di WordPress…*
 
