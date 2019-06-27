@@ -7,6 +7,8 @@ tags: [helloworld, idea]
 ---
 ![Hello World](/images/posts/hello-world.jpg)
 
+**Pubblicato originarimente su [WordPress](http://blog.danilosanchi.net/2012/11/11/ciao-mondo/){:target="_blank"}**
+
 *Ma guarda questo!!! Non ha neanche cambiato il titolo del post d’esempio di WordPress…*
 
 
