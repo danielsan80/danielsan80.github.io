@@ -22,5 +22,4 @@
 {% end if %}
 {% endfor %}
 
-[more](/blog/index.md)
 
