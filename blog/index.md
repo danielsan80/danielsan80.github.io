@@ -11,7 +11,7 @@ title:  "Blog"
 {% for tag in site.tags %}
 {% for postByTag in tag[1] %}
 [{{ tag[0] }}]
-{% end for %}
-{% end for %}
-{% end for %}
-{% end for %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
