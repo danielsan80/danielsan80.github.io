@@ -2,7 +2,7 @@
 layout: post
 title:  "Just a post"
 categories: [Test]
-tags: [test, jekyll]
+tags: [test, jekyll, highlight]
 
 ---
 
