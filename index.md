@@ -15,6 +15,8 @@
 ### Blog
 
 {% for tag in site.tags %}
+{% if tag[0] = "highlight" %}
+{% endif %}
 {% endfor %}
 
 [more](/blog/index.md)
