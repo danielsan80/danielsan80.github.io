@@ -19,7 +19,7 @@
 {% for post in tag[1] %}
 - {{ post.date | date_to_string }} - **[{{ post.title }}]({{ post.url }})** 
 {% endfor %}
-{% end if %}
+{% endif %}
 {% endfor %}
 
 [more](/blog/index.md)
