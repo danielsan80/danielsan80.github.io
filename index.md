@@ -12,24 +12,14 @@
 
 ---
 
-### Posts
+### Blog
 
-#### By categories
-{% for category in site.categories %}
-##### {{ category[0] }}
-
-{% for post in category[1] %}
-- {{ post.date | date_to_string }} - **[{{ post.title }}]({{ post.url }})** 
-{% endfor %}
-
-{% endfor %}
-
-#### By tags
 {% for tag in site.tags %}
-##### {{ tag[0] }}
-
+{% if tag[0] == 'highlight' %}
 {% for post in tag[1] %}
 - {{ post.date | date_to_string }} - **[{{ post.title }}]({{ post.url }})** 
 {% endfor %}
-
 {% endfor %}
+
+[more](/blog/index.md)
+
