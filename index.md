@@ -21,5 +21,5 @@
 {% endfor %}
 {% endif %}
 {% endfor %}
-- [...](/blog/index.md)
+- *[...more](/blog/index.md)*
 
