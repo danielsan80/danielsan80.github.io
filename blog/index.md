@@ -13,3 +13,7 @@ title:  "Blog"
 {% if post.title = postByTag.title %}
 [{{ tag[0] }}]
 {% end if %}
+{% end for %}
+{% end for %}
+{% end for %}
+{% end for %}
