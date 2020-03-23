@@ -1,6 +1,6 @@
 title: Danielsan's Reference
 description: Just a reference for my stuff
-theme: jekyll-theme-architect
+theme: jekyll-theme-minimal
 
 collections:
   - packages
