@@ -21,6 +21,5 @@
 {% endfor %}
 {% endif %}
 {% endfor %}
-
-[more](/blog/index.md)
+- [...](/blog/index.md)
 
