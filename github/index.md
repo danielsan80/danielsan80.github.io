@@ -4,9 +4,9 @@ title:  "GitHub repositories"
 
 ## GitHub repositories
 
-{% for repo in site.github_repos %}
-**{{repo.name}}**
-{{repo}}
+{% for section in site.github_repo_sections %}
+**{{section.name}}**
+{{section}}
 
 {% endfor %}
 

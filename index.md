@@ -6,9 +6,9 @@
 
 ### GitHub repositories
 
-{% for repo in site.github_repos %}
-{% if repo.home %}
-{{repo}}
+{% for section in site.github_repo_sections %}
+{% if section.home %}
+{{section}}
 {% endif %}
 {% endfor %}
 

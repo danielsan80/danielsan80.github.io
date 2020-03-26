@@ -6,7 +6,7 @@ author: me
 
 collections:
   packages:
-  github_repos:
+  github_repo_sections:
 
 plugins:
   - jekyll-plantuml
