@@ -5,7 +5,8 @@ theme: jekyll-theme-minimal
 author: me
 
 collections:
-  - packages
+  packages:
+  github_repos:
 
 plugins:
   - jekyll-plantuml

@@ -2,7 +2,8 @@
 layout: post
 title:  "Just a post"
 categories: [Test]
-tags: [test, jekyll, highlight]
+tags: [test, jekyll]
+home: true
 
 ---
 

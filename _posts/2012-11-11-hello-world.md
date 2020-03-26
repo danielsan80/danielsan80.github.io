@@ -3,7 +3,6 @@ layout: post
 title:  "Hello World"
 categories: [Idee]
 tags: [helloworld, idea]
-
 ---
 ![Hello World](/images/posts/hello-world.jpg)
 
