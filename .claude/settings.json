@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run check)",
+      "Bash(npx prettier *)",
+      "Bash(npx vitest *)"
+    ],
+    "deny": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(git rebase *)",
+      "Bash(git clean *)",
+      "Bash(npm publish *)",
+      "Bash(rm -rf /*)",
+      "Bash(sudo *)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | bash)",
+      "Bash(chmod *)"
+    ],
+    "ask": [
+      "Bash(git add *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(git merge *)",
+      "Bash(git cherry-pick *)",
+      "Bash(git revert *)",
+      "Bash(git tag *)",
+      "Bash(rm -rf *)",
+      "Bash(rm -r *)",
+      "Bash(kill *)",
+      "Bash(pkill *)",
+      "Bash(mv *)"
+    ]
+  }
+}
