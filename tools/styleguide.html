@@ -94,6 +94,18 @@
   --font-mono: "Commit Mono", ui-monospace, monospace;
 }
 
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -235,6 +247,13 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .pair-public { --font-sans: "Public Sans", sans-serif; --font-mono: "Commit Mono", monospace; }
 .scale-row { display: flex; align-items: baseline; gap: 1rem; padding: 0.2rem 0; }
 .scale-row code { flex: none; width: 4rem; color: var(--text-muted); }
+
+/* Spacing */
+.space-row { display: flex; align-items: center; gap: 1rem; padding: 0.2rem 0; }
+.space-row code { flex: none; }
+.space-row code:first-child { width: 5rem; }
+.space-row code.quiet { width: 3.5rem; }
+.space-bar { height: 1rem; background: var(--accent-quiet); border-radius: 2px; }
 
 @media print {
   :root { color-scheme: light; }
@@ -713,6 +732,65 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
   </li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section>
+  <h2>Spaziature</h2>
+  <p>Griglia base 4px, valori in <code>rem</code> così scalano con il root e in stampa. Passi 1–4 lineari per il ritmo del testo denso, poi salti ~1.5× per le sezioni. La riga di testo a 1rem/1.5 = 24px = <code>space-5</code>: il ritmo verticale cade sulla griglia senza un baseline grid rigido.</p>
+  <div class="space-row">
+    <code>space-1</code>
+    <code class="quiet">0.25rem</code>
+    <code class="quiet">4px</code>
+    <span class="space-bar" style="width:0.25rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-2</code>
+    <code class="quiet">0.5rem</code>
+    <code class="quiet">8px</code>
+    <span class="space-bar" style="width:0.5rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-3</code>
+    <code class="quiet">0.75rem</code>
+    <code class="quiet">12px</code>
+    <span class="space-bar" style="width:0.75rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-4</code>
+    <code class="quiet">1rem</code>
+    <code class="quiet">16px</code>
+    <span class="space-bar" style="width:1rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-5</code>
+    <code class="quiet">1.5rem</code>
+    <code class="quiet">24px</code>
+    <span class="space-bar" style="width:1.5rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-6</code>
+    <code class="quiet">2rem</code>
+    <code class="quiet">32px</code>
+    <span class="space-bar" style="width:2rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-7</code>
+    <code class="quiet">3rem</code>
+    <code class="quiet">48px</code>
+    <span class="space-bar" style="width:3rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-8</code>
+    <code class="quiet">4rem</code>
+    <code class="quiet">64px</code>
+    <span class="space-bar" style="width:4rem"></span>
+  </div>
+<div class="space-row">
+    <code>space-9</code>
+    <code class="quiet">6rem</code>
+    <code class="quiet">96px</code>
+    <span class="space-bar" style="width:6rem"></span>
   </div>
 </section>
 

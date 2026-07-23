@@ -35,6 +35,15 @@ sovrapposte*, e su una card progetto quel significato non c'è. Decisione rimand
 recente) per i metadati misurabili — date, durate, repo, linguaggi, versioni.
 Self-hostati via `@fontsource`, non Google Fonts.
 
+**Spaziature: griglia base 4px, valori in `rem`.** Passi 1–4 lineari (4/8/12/16px) per
+il ritmo del testo denso, poi salti ~1.5× (24/32/48/64/96px) per le sezioni. Ogni
+valore cade sulla griglia di 4px. In `rem` così scala col root font-size e in stampa.
+Base 4 e non 8: il CV è a densità alta, 8px come unità minima è troppo grosso.
+**Niente baseline grid rigido** — si rompe con contenuto misto sans/mono e heading di
+altezza variabile, più costo che valore; bastano i token + una line-height. Aggancio
+gratuito: `1rem / 1.5 = 24px = space-5`, quindi il ritmo dei paragrafi cade già sulla
+griglia. I token `--space-*` sono definiti; applicarli ai componenti verrà col sito.
+
 ## Vincolo scoperto: servono due verdi
 
 Il verde acceso `#0fbd59` ha **2.48:1 su bianco** — sotto il 4.5:1 richiesto per il
@@ -139,5 +148,5 @@ l'accessibilità non si rompe di nascosto.
 
 ## Aperto
 
-- **Scala di spaziature** e griglia di base.
+- Se mostrare o meno il livello "low" nelle skill.
 - Se e quando estendere la timeline oltre il CV.
