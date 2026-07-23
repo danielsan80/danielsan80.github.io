@@ -244,7 +244,7 @@ const engagements = timeline(ENGAGEMENTS);
 const bars = skillBars();
 
 const html = `<!doctype html>
-<html lang="it" data-theme="light" data-fonts="plex">
+<html lang="it" data-theme="light" data-fonts="public">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -417,8 +417,8 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
     </div>
     <div class="control">
       <span>font</span>
-      <button data-set-fonts="plex" aria-pressed="true">IBM Plex</button>
-      <button data-set-fonts="public" aria-pressed="false">Public + Commit</button>
+      <button data-set-fonts="public" aria-pressed="true">Public + Commit</button>
+      <button data-set-fonts="plex" aria-pressed="false">IBM Plex</button>
     </div>
   </div>
 </header>

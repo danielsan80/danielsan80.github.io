@@ -30,6 +30,11 @@ token semantici; in stampa si forza sempre il tema chiaro.
 Non va forzata su elementi per cui non è stata concepita: rappresenta *durate
 sovrapposte*, e su una card progetto quel significato non c'è. Decisione rimandata.
 
+**Tipografia: Public Sans + Commit Mono.** Scelta dal vivo sulla styleguide. Public Sans
+(neutro, molto leggibile, nasce per la PA USA) per il testo; Commit Mono (stretto,
+recente) per i metadati misurabili — date, durate, repo, linguaggi, versioni.
+Self-hostati via `@fontsource`, non Google Fonts.
+
 ## Vincolo scoperto: servono due verdi
 
 Il verde acceso `#0fbd59` ha **2.48:1 su bianco** — sotto il 4.5:1 richiesto per il
@@ -134,9 +139,5 @@ l'accessibilità non si rompe di nascosto.
 
 ## Aperto
 
-- **Tipografia.** Proposta: coppia sans + mono, dove il mono porta i metadati
-  misurabili (date, durate, repo, linguaggi, versioni). Candidati: IBM Plex Sans +
-  Plex Mono, oppure Public Sans + Commit Mono. Self-hostati, non Google Fonts.
-  **Da provare dal vivo prima di scegliere.**
 - **Scala di spaziature** e griglia di base.
 - Se e quando estendere la timeline oltre il CV.
