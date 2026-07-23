@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "palette": "node tools/palette.mjs"
+    "palette": "node tools/palette.mjs",
+    "styleguide": "node tools/build-styleguide.mjs"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@fontsource/commit-mono": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/public-sans": "^5.3.0"
+  }
 }

@@ -1,8 +1,11 @@
-// Generates the site colour palette from OKLCH definitions and audits its
-// contrast. The palette is derived data, not hardcoded hex: change a number here
-// and regenerate. Output is documented in doc/STILE.md (card SITE-16).
+// Single source of truth for the site colour palette: OKLCH definitions in,
+// sRGB hex and contrast ratios out. The palette is derived data, not hardcoded
+// hex — change a number here and regenerate. Documented in doc/STILE.md (SITE-16).
 //
-// Run: npm run palette
+// Run directly (npm run palette) for the report and the contrast audit, or
+// import the exports to build something from the same values.
+
+import { pathToFileURL } from "node:url";
 
 const gamma = (value) =>
   value <= 0.0031308 ? 12.92 * value : 1.055 * Math.pow(value, 1 / 2.4) - 0.055;
@@ -170,13 +173,30 @@ function auditSemantic() {
   return failures;
 }
 
-reportScale();
+export { palette, semantic, MINIMUM_CONTRAST, contrast, auditSemantic };
 
-const failures = auditSemantic();
-console.log("");
-if (failures.length > 0) {
-  console.error("Contrast audit failed:");
-  for (const failure of failures) console.error(`  ${failure}`);
-  process.exit(1);
+// Resolves a semantic role to its hex for one theme.
+export const resolve = (role, theme) => palette.get(semantic[role][theme]).hex;
+
+// Contrast of a semantic role against the surface of the same theme.
+export const contrastOnSurface = (role, theme) =>
+  contrast(
+    palette.get(semantic[role][theme]).linear,
+    palette.get(semantic.surface[theme]).linear,
+  );
+
+const runAsScript =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (runAsScript) {
+  reportScale();
+
+  const failures = auditSemantic();
+  console.log("");
+  if (failures.length > 0) {
+    console.error("Contrast audit failed:");
+    for (const failure of failures) console.error(`  ${failure}`);
+    process.exit(1);
+  }
+  console.log("Contrast audit passed.");
 }
-console.log("Contrast audit passed.");
