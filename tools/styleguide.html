@@ -225,17 +225,32 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .swatch .sample { height: 3.5rem; border-radius: 4px; border: 1px solid var(--border); }
 .swatch figcaption { display: flex; flex-direction: column; gap: 0.05rem; padding-top: 0.35rem; font-size: 0.75rem; }
 
-/* Skills */
-.skills { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.45rem; }
-.skill { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; }
-.skill .bar {
-  flex: none; width: 3px; height: 14px; border-radius: 1px;
+/* Skills — compact marker before each keyword; inline and dense, as in the CV. */
+.skills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+.skill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
+/* 3×3 grid — the chosen marker: fills the square cell by cell, bottom-left up. */
+.grid3 { display: grid; grid-template-columns: repeat(3, 3px); grid-auto-rows: 3px; gap: 1px; }
+.grid3 i { background: var(--border); border-radius: 0.5px; }
+.grid3 i.on { background: var(--accent-mark); }
+/* Discarded — segmented meter: lit count = level, ascending height. */
+.meter { display: inline-flex; align-items: flex-end; gap: 1px; height: 13px; }
+.meter i { width: 3px; background: var(--border); border-radius: 1px; }
+.meter i:nth-child(1) { height: 46%; }
+.meter i:nth-child(2) { height: 73%; }
+.meter i:nth-child(3) { height: 100%; }
+.meter i.on { background: var(--accent-mark); }
+/* Discarded — continuous vertical fill: length only, no count. */
+.mbar {
+  width: 3px; height: 14px; border-radius: 1px;
   background: linear-gradient(to top, var(--accent-mark) var(--length), var(--border) var(--length));
 }
-.skill.legacy .bar { height: 12px; }
-.skill.legacy.full .bar { background: #539956; }
-.skill.legacy.medium .bar { height: 10.5px; background: #a2d446; }
-.skill.legacy.low .bar { height: 9px; background: #ffc164; }
+/* Legacy (ohmycv): single vertical tick, three colours. */
+.skill.legacy .bar { flex: none; width: 3px; height: 12px; border-radius: 1px; }
+.skill.legacy.expert .bar { background: #539956; }
+.skill.legacy.advanced .bar { height: 10.5px; background: #a2d446; }
+.skill.legacy.proficient .bar { height: 9px; background: #ffc164; }
+.discarded { opacity: 0.7; }
+.why { color: var(--text-muted); font-size: 0.8rem; margin: 0.4rem 0 0; }
 
 .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem; }
 
@@ -694,66 +709,59 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 </section>
 
 <section>
-  <h2>Barre skill</h2>
-  <p>A sinistra la proposta: una sola tinta, tre lunghezze reali. A destra la resa attuale del CV: tre colori, differenza di altezza di 3px su 12.</p>
+  <h2>Marcatore skill</h2>
+  <p>Un marcatore compatto prefissa ogni keyword, inline e denso come nel CV: una sola tinta, il livello (proficient / advanced / expert) è nella quantità di riempimento. Scelta la griglia 3×3, riempita 5/7/9 celle dal basso. A fianco la resa attuale del CV (ohmycv): tre colori, differenza d'altezza di 3px su 12.</p>
+  <h3>scelto</h3>
   <div class="columns">
     <div>
-      <h3>proposta</h3>
+      <h3>griglia 3×3</h3>
       <ul class="skills">
-<li class="skill">
-    <span class="bar" style="--length:100%"></span>
-    <span>PHP</span>
-  </li>
-<li class="skill">
-    <span class="bar" style="--length:100%"></span>
-    <span>Symfony</span>
-  </li>
-<li class="skill">
-    <span class="bar" style="--length:100%"></span>
-    <span>TDD</span>
-  </li>
-<li class="skill">
-    <span class="bar" style="--length:65%"></span>
-    <span>JavaScript</span>
-  </li>
-<li class="skill">
-    <span class="bar" style="--length:65%"></span>
-    <span>React</span>
-  </li>
-<li class="skill">
-    <span class="bar" style="--length:35%"></span>
-    <span>Kubernetes</span>
-  </li>
-      </ul>
+<li class="skill"><span class="grid3" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>PHP</span></li>
+<li class="skill"><span class="grid3" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>Symfony</span></li>
+<li class="skill"><span class="grid3" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>TDD</span></li>
+<li class="skill"><span class="grid3" title="advanced"><i class="on"></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>JavaScript</span></li>
+<li class="skill"><span class="grid3" title="advanced"><i class="on"></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>React</span></li>
+<li class="skill"><span class="grid3" title="proficient"><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span>Kubernetes</span></li>
+</ul>
     </div>
     <div>
       <h3>attuale (ohmycv)</h3>
       <ul class="skills">
-<li class="skill legacy full">
-    <span class="bar"></span>
-    <span>PHP</span>
-  </li>
-<li class="skill legacy full">
-    <span class="bar"></span>
-    <span>Symfony</span>
-  </li>
-<li class="skill legacy full">
-    <span class="bar"></span>
-    <span>TDD</span>
-  </li>
-<li class="skill legacy medium">
-    <span class="bar"></span>
-    <span>JavaScript</span>
-  </li>
-<li class="skill legacy medium">
-    <span class="bar"></span>
-    <span>React</span>
-  </li>
-<li class="skill legacy low">
-    <span class="bar"></span>
-    <span>Kubernetes</span>
-  </li>
-      </ul>
+<li class="skill legacy expert"><span class="bar"></span><span>PHP</span></li>
+<li class="skill legacy expert"><span class="bar"></span><span>Symfony</span></li>
+<li class="skill legacy expert"><span class="bar"></span><span>TDD</span></li>
+<li class="skill legacy advanced"><span class="bar"></span><span>JavaScript</span></li>
+<li class="skill legacy advanced"><span class="bar"></span><span>React</span></li>
+<li class="skill legacy proficient"><span class="bar"></span><span>Kubernetes</span></li>
+</ul>
+    </div>
+  </div>
+  <h3>scartate</h3>
+  <p class="quiet">Provate e messe da parte, tenute qui come registro.</p>
+  <div class="columns discarded">
+    <div>
+      <h3>segmenti crescenti</h3>
+      <ul class="skills">
+<li class="skill"><span class="meter" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>PHP</span></li>
+<li class="skill"><span class="meter" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>Symfony</span></li>
+<li class="skill"><span class="meter" title="expert"><i class="on"></i><i class="on"></i><i class="on"></i></span><span>TDD</span></li>
+<li class="skill"><span class="meter" title="advanced"><i class="on"></i><i class="on"></i><i></i></span><span>JavaScript</span></li>
+<li class="skill"><span class="meter" title="advanced"><i class="on"></i><i class="on"></i><i></i></span><span>React</span></li>
+<li class="skill"><span class="meter" title="proficient"><i class="on"></i><i></i><i></i></span><span>Kubernetes</span></li>
+</ul>
+      <p class="why">altezza continua: a pochi pixel i tre livelli staccano troppo poco.</p>
+    </div>
+    <div>
+      <h3>barra continua</h3>
+      <ul class="skills">
+<li class="skill"><span class="mbar" style="--length:100%" title="expert"></span><span>PHP</span></li>
+<li class="skill"><span class="mbar" style="--length:100%" title="expert"></span><span>Symfony</span></li>
+<li class="skill"><span class="mbar" style="--length:100%" title="expert"></span><span>TDD</span></li>
+<li class="skill"><span class="mbar" style="--length:65%" title="advanced"></span><span>JavaScript</span></li>
+<li class="skill"><span class="mbar" style="--length:65%" title="advanced"></span><span>React</span></li>
+<li class="skill"><span class="mbar" style="--length:35%" title="proficient"></span><span>Kubernetes</span></li>
+</ul>
+      <p class="why">solo lunghezza (35/65/100 su 14px): non si distingue — era il difetto da evitare.</p>
     </div>
   </div>
 </section>

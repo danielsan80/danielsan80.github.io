@@ -43,15 +43,24 @@ const ENGAGEMENTS = [
 ];
 
 const SKILLS = [
-  { name: "PHP", level: "full" },
-  { name: "Symfony", level: "full" },
-  { name: "TDD", level: "full" },
-  { name: "JavaScript", level: "medium" },
-  { name: "React", level: "medium" },
-  { name: "Kubernetes", level: "low" },
+  { name: "PHP", level: "expert" },
+  { name: "Symfony", level: "expert" },
+  { name: "TDD", level: "expert" },
+  { name: "JavaScript", level: "advanced" },
+  { name: "React", level: "advanced" },
+  { name: "Kubernetes", level: "proficient" },
 ];
 
-const LEVEL_LENGTH = { full: 100, medium: 65, low: 35 };
+// Every listed skill is at least professional working level, so the scale runs
+// from "proficient" up, never "beginner": the level reflects depth, not ability.
+// Two encodings, compared in the styleguide: a discrete step (count, 1/2/3) and a
+// continuous length (%). The count stays legible at a tiny size where height cannot.
+const LEVEL_STEP = { proficient: 1, advanced: 2, expert: 3 };
+const LEVEL_LENGTH = { proficient: 35, advanced: 65, expert: 100 };
+// Cells lit in the 3×3 grid: floor at 5 (past half) so proficient reads as solid.
+const LEVEL_CELLS = { proficient: 5, advanced: 7, expert: 9 };
+// Fill order for the 3×3 grid: bottom row up, left to right within each row.
+const GRID_FILL_ORDER = [7, 8, 9, 4, 5, 6, 1, 2, 3];
 
 // Spacing scale: 4px base grid, rem-based so it scales with the root and print.
 // Steps 1–4 are linear (fine control for dense CV text); above that ~1.5x jumps
@@ -254,26 +263,81 @@ function cvPreview(entries) {
   return blocks;
 }
 
-function skillBars() {
-  const proposed = SKILLS.map(
-    (skill) => `<li class="skill">
-    <span class="bar" style="--length:${LEVEL_LENGTH[skill.level]}%"></span>
-    <span>${skill.name}</span>
-  </li>`,
-  ).join("\n");
+// Three cells whose lit count encodes the level; dim cells keep the footprint
+// constant so keywords stay aligned. `shape` picks the cell style.
+function countMarker(level, shape) {
+  const lit = LEVEL_STEP[level];
+  const cells = [1, 2, 3]
+    .map((step) => `<i${step <= lit ? ' class="on"' : ""}></i>`)
+    .join("");
+  return `<span class="${shape}" title="${level}">${cells}</span>`;
+}
 
-  const current = SKILLS.map(
-    (skill) => `<li class="skill legacy ${skill.level}">
-    <span class="bar"></span>
-    <span>${skill.name}</span>
-  </li>`,
-  ).join("\n");
+// A 3×3 grid square, filled cell by cell from the bottom-left.
+function gridMarker(level) {
+  const onSet = new Set(GRID_FILL_ORDER.slice(0, LEVEL_CELLS[level]));
+  const cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    .map((index) => `<i${onSet.has(index) ? ' class="on"' : ""}></i>`)
+    .join("");
+  return `<span class="grid3" title="${level}">${cells}</span>`;
+}
 
-  return { proposed, current };
+// The chosen marker for the CV skills.
+const CHOSEN_MARKER = { label: "griglia 3×3", render: gridMarker };
+
+// Kept in the styleguide as a record of what was tried and set aside, with why.
+const DISCARDED_MARKERS = [
+  {
+    label: "segmenti crescenti",
+    why: "altezza continua: a pochi pixel i tre livelli staccano troppo poco.",
+    render: (level) => countMarker(level, "meter"),
+  },
+  {
+    label: "barra continua",
+    why: "solo lunghezza (35/65/100 su 14px): non si distingue — era il difetto da evitare.",
+    render: (level) =>
+      `<span class="mbar" style="--length:${LEVEL_LENGTH[level]}%" title="${level}"></span>`,
+  },
+];
+
+function skillList(renderMarker) {
+  const items = SKILLS.map(
+    (skill) =>
+      `<li class="skill">${renderMarker(skill.level)}<span>${skill.name}</span></li>`,
+  ).join("\n");
+  return `<ul class="skills">\n${items}\n</ul>`;
+}
+
+function legacyList() {
+  const items = SKILLS.map(
+    (skill) =>
+      `<li class="skill legacy ${skill.level}"><span class="bar"></span><span>${skill.name}</span></li>`,
+  ).join("\n");
+  return `<ul class="skills">\n${items}\n</ul>`;
+}
+
+function skillChosen() {
+  return `    <div>
+      <h3>${CHOSEN_MARKER.label}</h3>
+      ${skillList(CHOSEN_MARKER.render)}
+    </div>
+    <div>
+      <h3>attuale (ohmycv)</h3>
+      ${legacyList()}
+    </div>`;
+}
+
+function skillDiscarded() {
+  return DISCARDED_MARKERS.map(
+    (variant) => `    <div>
+      <h3>${variant.label}</h3>
+      ${skillList(variant.render)}
+      <p class="why">${variant.why}</p>
+    </div>`,
+  ).join("\n");
 }
 
 const engagements = timeline(ENGAGEMENTS);
-const bars = skillBars();
 
 const html = `<!doctype html>
 <html lang="it" data-theme="light" data-fonts="public">
@@ -409,17 +473,32 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .swatch .sample { height: 3.5rem; border-radius: 4px; border: 1px solid var(--border); }
 .swatch figcaption { display: flex; flex-direction: column; gap: 0.05rem; padding-top: 0.35rem; font-size: 0.75rem; }
 
-/* Skills */
-.skills { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.45rem; }
-.skill { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; }
-.skill .bar {
-  flex: none; width: 3px; height: 14px; border-radius: 1px;
+/* Skills — compact marker before each keyword; inline and dense, as in the CV. */
+.skills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+.skill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
+/* 3×3 grid — the chosen marker: fills the square cell by cell, bottom-left up. */
+.grid3 { display: grid; grid-template-columns: repeat(3, 3px); grid-auto-rows: 3px; gap: 1px; }
+.grid3 i { background: var(--border); border-radius: 0.5px; }
+.grid3 i.on { background: var(--accent-mark); }
+/* Discarded — segmented meter: lit count = level, ascending height. */
+.meter { display: inline-flex; align-items: flex-end; gap: 1px; height: 13px; }
+.meter i { width: 3px; background: var(--border); border-radius: 1px; }
+.meter i:nth-child(1) { height: 46%; }
+.meter i:nth-child(2) { height: 73%; }
+.meter i:nth-child(3) { height: 100%; }
+.meter i.on { background: var(--accent-mark); }
+/* Discarded — continuous vertical fill: length only, no count. */
+.mbar {
+  width: 3px; height: 14px; border-radius: 1px;
   background: linear-gradient(to top, var(--accent-mark) var(--length), var(--border) var(--length));
 }
-.skill.legacy .bar { height: 12px; }
-.skill.legacy.full .bar { background: #539956; }
-.skill.legacy.medium .bar { height: 10.5px; background: #a2d446; }
-.skill.legacy.low .bar { height: 9px; background: #ffc164; }
+/* Legacy (ohmycv): single vertical tick, three colours. */
+.skill.legacy .bar { flex: none; width: 3px; height: 12px; border-radius: 1px; }
+.skill.legacy.expert .bar { background: #539956; }
+.skill.legacy.advanced .bar { height: 10.5px; background: #a2d446; }
+.skill.legacy.proficient .bar { height: 9px; background: #ffc164; }
+.discarded { opacity: 0.7; }
+.why { color: var(--text-muted); font-size: 0.8rem; margin: 0.4rem 0 0; }
 
 .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem; }
 
@@ -493,21 +572,16 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 </section>
 
 <section>
-  <h2>Barre skill</h2>
-  <p>A sinistra la proposta: una sola tinta, tre lunghezze reali. A destra la resa attuale del CV: tre colori, differenza di altezza di 3px su 12.</p>
+  <h2>Marcatore skill</h2>
+  <p>Un marcatore compatto prefissa ogni keyword, inline e denso come nel CV: una sola tinta, il livello (proficient / advanced / expert) è nella quantità di riempimento. Scelta la griglia 3×3, riempita 5/7/9 celle dal basso. A fianco la resa attuale del CV (ohmycv): tre colori, differenza d'altezza di 3px su 12.</p>
+  <h3>scelto</h3>
   <div class="columns">
-    <div>
-      <h3>proposta</h3>
-      <ul class="skills">
-${bars.proposed}
-      </ul>
-    </div>
-    <div>
-      <h3>attuale (ohmycv)</h3>
-      <ul class="skills">
-${bars.current}
-      </ul>
-    </div>
+${skillChosen()}
+  </div>
+  <h3>scartate</h3>
+  <p class="quiet">Provate e messe da parte, tenute qui come registro.</p>
+  <div class="columns discarded">
+${skillDiscarded()}
   </div>
 </section>
 

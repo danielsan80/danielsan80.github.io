@@ -130,10 +130,22 @@ spazio per una superficie più profonda.
 
 ## Conseguenze
 
-**Barre skill.** Con un accento solo, la scala `verde / lime / arancione` sparisce da
-sé: stessa tinta, tre lunghezze reali (100% / 65% / 35%). Il livello lo porta la
-misura, non la temperatura del colore — nessuna competenza sembra più un warning.
-Da valutare se un livello "low" vada mostrato affatto.
+**Marcatore skill.** Con un accento solo, la scala `verde / lime / arancione` di ohmycv
+sparisce da sé: una sola tinta, il livello è nella quantità di riempimento, non nella
+temperatura del colore — nessuna competenza sembra più un warning.
+
+Il marcatore è una **griglia 3×3**: un quadratino di 9 celle che prefissa la keyword,
+inline e denso come nel CV. Si riempie cella per cella dal basso-sinistra, **5 / 7 / 9
+celle** per `proficient / advanced / expert`. Il pavimento a 5 (oltre metà) è una scelta:
+su un CV la sola presenza di una skill implica già competenza professionale, quindi la
+resa più bassa deve leggere "ci lavoro professionalmente", non un'ammissione di
+debolezza. Il livello non compare mai come parola: `proficient / advanced / expert` sono
+i valori nel dato skill, la griglia li rende.
+
+Perché la griglia e non una barra: in pochi pixel un'altezza continua non stacca (era il
+difetto di ohmycv, 3px su 12). Contare/riempire celle discrete resta leggibile. Le
+alternative provate e scartate — segmenti verticali, barra continua — restano nella
+styleguide come registro.
 
 **Stampa.** Forza sempre i token del tema chiaro.
 
@@ -151,5 +163,4 @@ l'accessibilità non si rompe di nascosto.
 
 ## Aperto
 
-- Se mostrare o meno il livello "low" nelle skill.
 - Se e quando estendere la timeline oltre il CV.
