@@ -26,9 +26,12 @@ benissimo — la timeline — vale più di dieci effetti.
 **Dark mode: sì.** Prevista dal primo giorno, non retrofittata. I colori nascono come
 token semantici; in stampa si forza sempre il tema chiaro.
 
-**Timeline: nessuna estensione, per ora.** Resta separatore tra le esperienze del CV.
-Non va forzata su elementi per cui non è stata concepita: rappresenta *durate
-sovrapposte*, e su una card progetto quel significato non c'è. Decisione rimandata.
+**Elemento timeline: distribuzione di una sola attività.** Non impagina range
+sovrapposti su un asse condiviso: ogni voce del CV ha la *sua* mini-timeline, che
+evidenzia dove — nell'arco temporale complessivo — cade quella singola attività, quella
+posta sotto di essa (un range, due punti). Le sovrapposizioni tra esperienze restano
+reali nei dati (il modello non assume sequenzialità) e si leggono scorrendo le voci, non
+da un grafico combinato. Nessuna estensione oltre il CV per ora: rimandata.
 
 **Tipografia: Public Sans + Commit Mono.** Scelta dal vivo sulla styleguide. Public Sans
 (neutro, molto leggibile, nasce per la PA USA) per il testo; Commit Mono (stretto,

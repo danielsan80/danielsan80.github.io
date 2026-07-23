@@ -210,39 +210,38 @@ function swatches() {
     .join("\n");
 }
 
-function timelineMarkup(entries, { withLabels }) {
-  const marks = entries
-    .map(
-      (entry) => `    <div class="range" style="left:${entry.left.toFixed(2)}%;width:${entry.width.toFixed(2)}%"
-      title="${escapeHtml(entry.org)}: ${entry.startLabel} – ${entry.endLabel}"></div>
-    <div class="dot" style="left:${entry.left.toFixed(2)}%" data-label="${entry.startLabel}"></div>
-    <div class="dot" style="left:${(entry.left + entry.width).toFixed(2)}%" data-label="${entry.endLabel}"></div>`,
-    )
-    .join("\n");
-
-  const rows = withLabels
-    ? entries
-        .map(
-          (entry) =>
-            `  <div class="legend-row"><span>${escapeHtml(entry.org)}</span><code class="quiet">${entry.startLabel} – ${entry.endLabel}</code></div>`,
-        )
-        .join("\n")
-    : "";
-
+// One lane: a single activity's span within the shared global domain. This is the
+// primitive — inline above a CV entry, or stacked with others to read overlaps.
+function singleTimeline(entry) {
   return `<div class="timeline">
     <div class="axis"></div>
-${marks}
-  </div>
-${rows}`;
+    <div class="range" style="left:${entry.left.toFixed(2)}%;width:${entry.width.toFixed(2)}%"
+      title="${escapeHtml(entry.org)}: ${entry.startLabel} – ${entry.endLabel}"></div>
+    <div class="dot" style="left:${entry.left.toFixed(2)}%" data-label="${entry.startLabel}"></div>
+    <div class="dot" style="left:${(entry.left + entry.width).toFixed(2)}%" data-label="${entry.endLabel}"></div>
+  </div>`;
+}
+
+// Overview: one lane per experience, stacked on the same axis. Overlaps read
+// vertically (Idrolab ∥ Soisy ∥ Ehoreca), never crammed onto one line.
+function lanes(entries) {
+  const rows = entries
+    .map(
+      (entry) => `  <div class="lane">
+    <span class="lane-label">${escapeHtml(entry.org)}</span>
+    ${singleTimeline(entry)}
+  </div>`,
+    )
+    .join("\n");
+  return `<div class="lanes">\n${rows}\n</div>`;
 }
 
 function cvPreview(entries) {
   const blocks = entries
     .slice(0, 3)
     .map((entry) => {
-      const single = timeline([entry]);
       return `<article class="entry">
-  ${timelineMarkup(single, { withLabels: false })}
+  ${singleTimeline(entry)}
   <h4>${escapeHtml(entry.role)}</h4>
   <p class="meta"><span>${escapeHtml(entry.org)}</span> <code>${entry.startLabel} – ${entry.endLabel}</code></p>
   <ul>
@@ -374,10 +373,12 @@ h3 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spac
   opacity: 0; transition: opacity 0.15s; pointer-events: none;
 }
 .dot:hover::after { opacity: 1; }
-.legend-row {
-  display: flex; justify-content: space-between; gap: 1rem;
-  padding: 0.15rem 0; font-size: 0.85rem;
-}
+
+/* Overview: stacked lanes sharing one axis. */
+.lanes { display: grid; gap: 0.35rem; }
+.lane { display: grid; grid-template-columns: 7rem 1fr; align-items: center; gap: 1rem; }
+.lane-label { font-size: 0.85rem; }
+.lane .timeline { height: 22px; margin: 0; }
 
 .entry { margin: 2rem 0; }
 .entry h4 { margin: 0.5rem 0 0.15rem; font-size: 1rem; }
@@ -474,9 +475,9 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 </section>
 
 <section>
-  <h2>Timeline con sovrapposizioni</h2>
-  <p>Tutte le collaborazioni su un asse unico, posizioni calcolate dalle date. Le sovrapposizioni sono volute: Idrolab corre in parallelo a Ehoreca e Soisy. Passa il mouse sui punti per le date.</p>
-  ${timelineMarkup(engagements, { withLabels: true })}
+  <h2>Timeline: corsie parallele</h2>
+  <p>Una corsia per esperienza, tutte sullo stesso asse temporale globale. Le sovrapposizioni si leggono in verticale — Idrolab corre in parallelo a Soisy ed Ehoreca — senza accavallarsi su una riga sola. È lo stesso primitivo che sta sopra ogni voce del CV. Passa il mouse sui punti per le date.</p>
+  ${lanes(engagements)}
 </section>
 
 <section>
