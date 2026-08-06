@@ -1,0 +1,10 @@
+# Prose is written by hand, not normalised by a formatter.
+*.md
+
+# Imported as-is for reference, not our code.
+doc/ohmycv/
+
+# Generated or vendored.
+dist/
+package-lock.json
+tools/styleguide.html
