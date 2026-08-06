@@ -36,10 +36,30 @@ const WEIGHTS = [400, 600];
 // closed in Mar 2026, QMates ran Apr-Jul 2026. Overlaps are intentional.
 const ENGAGEMENTS = [
   { org: "QMates", role: "Consulente", start: [2026, 4], end: [2026, 7] },
-  { org: "Facile.it", role: "Full Stack Developer", start: [2025, 8], end: [2026, 3] },
-  { org: "Soisy", role: "Full Stack Developer", start: [2020, 2], end: [2025, 6] },
-  { org: "Idrolab", role: "Lead Full Stack Developer", start: [2015, 3], end: [2025, 2] },
-  { org: "Ehoreca", role: "Solo Full Stack Developer", start: [2018, 11], end: [2019, 2] },
+  {
+    org: "Facile.it",
+    role: "Full Stack Developer",
+    start: [2025, 8],
+    end: [2026, 3],
+  },
+  {
+    org: "Soisy",
+    role: "Full Stack Developer",
+    start: [2020, 2],
+    end: [2025, 6],
+  },
+  {
+    org: "Idrolab",
+    role: "Lead Full Stack Developer",
+    start: [2015, 3],
+    end: [2025, 2],
+  },
+  {
+    org: "Ehoreca",
+    role: "Solo Full Stack Developer",
+    start: [2018, 11],
+    end: [2019, 2],
+  },
 ];
 
 const SKILLS = [
@@ -77,7 +97,20 @@ const SPACE = [
   ["space-9", "6rem", 96],
 ];
 
-const MONTHS = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
+const MONTHS = [
+  "Gen",
+  "Feb",
+  "Mar",
+  "Apr",
+  "Mag",
+  "Giu",
+  "Lug",
+  "Ago",
+  "Set",
+  "Ott",
+  "Nov",
+  "Dic",
+];
 
 const asFraction = ([year, month]) => year + (month - 1) / 12;
 const formatDate = ([year, month]) => `${MONTHS[month - 1]} ${year}`;
@@ -148,9 +181,9 @@ function fontVariables() {
 }
 
 function spaceVariables() {
-  const declarations = SPACE.map(([name, value]) => `  --${name}: ${value};`).join(
-    "\n",
-  );
+  const declarations = SPACE.map(
+    ([name, value]) => `  --${name}: ${value};`,
+  ).join("\n");
   return `:root {\n${declarations}\n}`;
 }
 
@@ -644,6 +677,9 @@ for (const button of document.querySelectorAll("[data-set-theme], [data-set-font
 </html>
 `;
 
-const outputPath = join(dirname(fileURLToPath(import.meta.url)), "styleguide.html");
+const outputPath = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "styleguide.html",
+);
 writeFileSync(outputPath, html);
 console.log(`Styleguide written to ${outputPath}`);
