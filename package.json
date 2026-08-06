@@ -13,8 +13,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run palette",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run palette && npm run tokens -- --check",
     "palette": "node tools/palette.mjs",
+    "tokens": "node tools/build-tokens.mjs",
     "styleguide": "node tools/build-styleguide.mjs"
   },
   "devDependencies": {

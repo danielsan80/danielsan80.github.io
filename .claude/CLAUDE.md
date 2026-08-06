@@ -55,6 +55,7 @@ Due unificazioni che evitano duplicazione:
 ### Scelte tecniche
 
 - **Vite + React**, output statico. Il pre-rendering è un requisito, non un optional: il CV deve essere HTML già renderizzato per crawler, indicizzazione e stampa in PDF. Va risolto esplicitamente.
+- **Pagine HTML separate, niente router** (`SITE-5`). Ogni pagina è un entry di Vite con la sua app React: `/` e `/cv` sono file distinti, non rotte di una SPA. Gli URL esistono davvero — linkabili, stampabili, pre-renderizzabili con uno script `renderToString` invece che con un framework. Lo stato che deve sopravvivere alla navigazione (tema, lingua) sta in `localStorage`, non in memoria. Le due direzioni non costano uguale: da qui si può passare a un router, il contrario è un rifacimento.
 - **Contenuti in file versionati** nel repo: yaml/json/md con frontmatter. Nessun CMS, si editano da qui.
 - **Struttura aperta a nuovi tipi di contenuto** (blog, talk, note): aggiungerne uno deve costare un file di dati più un template, non un refactoring. Senza però costruire astrazioni per contenuti che non esistono ancora.
 - **Hosting**: oggi GitHub Pages, da confermare.

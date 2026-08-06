@@ -12,8 +12,7 @@ import {
   MINIMUM_CONTRAST,
   contrastOnSurface,
 } from "./palette.mjs";
-
-const THEMES = ["light", "dark"];
+import { FONTS, SPACE, THEMES } from "./tokens.mjs";
 
 const FONT_PAIRS = {
   plex: {
@@ -22,10 +21,11 @@ const FONT_PAIRS = {
     mono: { family: "IBM Plex Mono", package: "ibm-plex-mono" },
     note: "Disegnati insieme, brief “uomo e macchina”. Il mono è largo e squadrato.",
   },
+  // The chosen pair comes from the tokens, so the preview shows what ships.
   public: {
-    label: "Public Sans + Commit Mono",
-    sans: { family: "Public Sans", package: "public-sans" },
-    mono: { family: "Commit Mono", package: "commit-mono" },
+    label: `${FONTS.sans.family} + ${FONTS.mono.family}`,
+    sans: FONTS.sans,
+    mono: FONTS.mono,
     note: "Public Sans nasce per la pubblica amministrazione USA: neutro, molto leggibile. Commit Mono è stretto e recente.",
   },
 };
@@ -81,21 +81,6 @@ const LEVEL_LENGTH = { proficient: 35, advanced: 65, expert: 100 };
 const LEVEL_CELLS = { proficient: 5, advanced: 7, expert: 9 };
 // Fill order for the 3×3 grid: bottom row up, left to right within each row.
 const GRID_FILL_ORDER = [7, 8, 9, 4, 5, 6, 1, 2, 3];
-
-// Spacing scale: 4px base grid, rem-based so it scales with the root and print.
-// Steps 1–4 are linear (fine control for dense CV text); above that ~1.5x jumps
-// for section rhythm. Every value lands on the 4px grid.
-const SPACE = [
-  ["space-1", "0.25rem", 4],
-  ["space-2", "0.5rem", 8],
-  ["space-3", "0.75rem", 12],
-  ["space-4", "1rem", 16],
-  ["space-5", "1.5rem", 24],
-  ["space-6", "2rem", 32],
-  ["space-7", "3rem", 48],
-  ["space-8", "4rem", 64],
-  ["space-9", "6rem", 96],
-];
 
 const MONTHS = [
   "Gen",
@@ -189,10 +174,10 @@ function spaceVariables() {
 
 function spacingScale() {
   return SPACE.map(
-    ([name, value, px]) => `<div class="space-row">
+    ([name, value]) => `<div class="space-row">
     <code>${name}</code>
     <code class="quiet">${value}</code>
-    <code class="quiet">${px}px</code>
+    <code class="quiet">${parseFloat(value) * 16}px</code>
     <span class="space-bar" style="width:${value}"></span>
   </div>`,
   ).join("\n");

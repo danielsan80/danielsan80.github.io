@@ -8,3 +8,4 @@ doc/ohmycv/
 dist/
 package-lock.json
 tools/styleguide.html
+src/styles/tokens.css
