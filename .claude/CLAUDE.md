@@ -11,6 +11,8 @@ Regole sintetiche: scrivi il minimo necessario per essere compresi.
   - OK: test di creazione che verificano le proprietà dell'oggetto costruito
   - NO: `toHaveLength(n)` seguito da asserzioni sui singoli elementi → usa `toEqual([...])`
   - NO: asserzioni separate su parti di un risultato → mappa e asserisci sull'array intero
+- Git: non committare né pushare di tua iniziativa, solo su mia richiesta esplicita. Quando dico "committa", scegli tu il messaggio e committa subito — non propormi di committare né chiedermi di revisionare prima (la diff la guardo da solo; se il messaggio non mi piace lo riscrivo io). Messaggi in inglese, con prefisso in stile conventional commit (`feat:`, `fix:`, `docs:`, `test:`, `build:`, `chore:`, `refactor:`… — la lista non è chiusa, scegli quello che descrive il commit). Niente trailer `Co-Authored-By`.
+  - Niente azioni distruttive: `git reset` e `git commit --amend` sono bloccati dai permessi. Per riscrivere la storia costruisci il risultato su un branch parallelo, senza toccare quello originale. I comandi finali — quelli che spostano un branch o sovrascrivono lavoro esistente — li eseguo io dopo aver revisionato.
 - Piccoli passi: implementa una cosa alla volta.
 - Librerie esterne: diffuse, ben supportate, componibili, stilizzabili. No monoliti.
 - Quando ti parlo in inglese e ti scrivo "eng?", dammi un breve feedback sulle frasi che ho scritto, non ancora revisionate da te, correggendo i miei errori.
