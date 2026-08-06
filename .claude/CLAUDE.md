@@ -84,7 +84,7 @@ Altri progetti dell'utente, da consultare per confronti su convenzioni e soluzio
 
 Board di progetto su Jira: sito `danilosanchi.atlassian.net`, progetto `danilosanchi.net`, key `SITE`, cloudId `b922ac38-2f7a-4785-bf54-caf2eb9045e4`. Usa i tool MCP `mcp__atlassian__*`.
 
-La skill `/kanban` (board a file in `.claude/skills/kanban/`) è temporaneamente disabilitata: si sta provando Jira. Se la prova non convince, si migra tutto sui file.
+La skill `/kanban` (regole in `.claude/skills/kanban/`, board a file in `doc/kanban/`) è temporaneamente disabilitata: si sta provando Jira. Se la prova non convince, si migra tutto sui file.
 
 Attriti noti dell'integrazione MCP, da valutare nella prova:
 
