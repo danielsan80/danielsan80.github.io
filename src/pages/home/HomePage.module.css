@@ -93,6 +93,39 @@
   }
 }
 
+.footer {
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-5);
+}
+
+.profiles {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: 0.9375rem;
+
+  & a {
+    color: var(--accent-text);
+  }
+
+  & span {
+    color: var(--text-muted);
+  }
+}
+
+.contact {
+  margin: var(--space-5) 0 0;
+  font-size: 0.9375rem;
+
+  & a {
+    color: var(--accent-text);
+  }
+}
+
 /* Mono is for measurable metadata: handles, dates, repos, versions. */
 .mono {
   font-family: var(--font-mono);

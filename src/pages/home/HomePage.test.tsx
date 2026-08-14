@@ -1,5 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { contact } from "../../content/contact";
+import { profiles } from "../../content/profiles";
 import { featuredProjects } from "../../content/projects";
 import { HomePage } from "./HomePage";
 
@@ -59,6 +61,29 @@ describe("HomePage", () => {
       featuredProjects.flatMap((project) =>
         project.links.map(({ url }) => url),
       ),
+    );
+  });
+
+  it("gathers every profile and the way to write, in the footer", () => {
+    render(<HomePage />);
+
+    const links = within(screen.getByRole("contentinfo")).getAllByRole("link");
+
+    expect(links.map((link) => link.getAttribute("href"))).toEqual([
+      ...profiles.map((profile) => profile.url),
+      `mailto:${contact.email}`,
+    ]);
+  });
+
+  it("shows the handle next to each profile, so the same person is recognisable", () => {
+    render(<HomePage />);
+
+    const entries = within(screen.getByRole("contentinfo")).getAllByRole(
+      "listitem",
+    );
+
+    expect(entries.map((entry) => entry.textContent)).toEqual(
+      profiles.map((profile) => `${profile.name} ${profile.handle}`),
     );
   });
 });
