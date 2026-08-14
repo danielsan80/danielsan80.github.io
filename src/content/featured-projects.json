@@ -1,0 +1,40 @@
+[
+  {
+    "name": "JobBoy",
+    "summary": "A jobs manager for PHP. Open source, MIT, on Packagist.",
+    "links": [
+      {
+        "label": "Documentation",
+        "url": "https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md"
+      }
+    ]
+  },
+  {
+    "name": "FixtureHandler",
+    "summary": "A test utility for PHP fixtures. Open source, MIT, on Packagist.",
+    "links": [
+      {
+        "label": "Repository",
+        "url": "https://github.com/danielsan80/fixture-handler"
+      }
+    ]
+  },
+  {
+    "name": "Mini Race Challenge",
+    "summary": "A timing system for small RC cars, with 3D printed parts.",
+    "links": [
+      {
+        "label": "miniracechallenge.com",
+        "url": "https://miniracechallenge.com/"
+      },
+      {
+        "label": "Thingiverse",
+        "url": "https://www.thingiverse.com/thing:5364319"
+      },
+      {
+        "label": "Repository",
+        "url": "https://github.com/danielsan80/minirace-gate"
+      }
+    ]
+  }
+]

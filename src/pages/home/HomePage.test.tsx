@@ -1,5 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import { featuredProjects } from "../../content/projects";
 import { HomePage } from "./HomePage";
 
 describe("HomePage", () => {
@@ -32,6 +33,32 @@ describe("HomePage", () => {
 
     expect(screen.getByRole("main")).toHaveTextContent(
       /freelance.*open to new collaborations/i,
+    );
+  });
+
+  it("shows every featured project, the RC cars next to the libraries", () => {
+    render(<HomePage />);
+
+    const projects = within(
+      screen.getByRole("region", { name: "Projects" }),
+    ).getAllByRole("heading", { level: 3 });
+
+    expect(projects.map((heading) => heading.textContent)).toEqual(
+      featuredProjects.map((project) => project.name),
+    );
+  });
+
+  it("links every project to all the places it lives", () => {
+    render(<HomePage />);
+
+    const links = within(
+      screen.getByRole("region", { name: "Projects" }),
+    ).getAllByRole("link");
+
+    expect(links.map((link) => link.getAttribute("href"))).toEqual(
+      featuredProjects.flatMap((project) =>
+        project.links.map(({ url }) => url),
+      ),
     );
   });
 });

@@ -42,6 +42,57 @@
   }
 }
 
+.projects {
+  margin-top: var(--space-7);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.projectList,
+.projectLinks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projectList {
+  margin-top: var(--space-5);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.projectName {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.projectSummary {
+  margin: var(--space-2) 0 0;
+  line-height: 1.5;
+}
+
+/* The links wrap on narrow screens rather than scrolling: Minirace already
+   carries three of them. */
+.projectLinks {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+
+  & a {
+    color: var(--accent-text);
+  }
+}
+
 /* Mono is for measurable metadata: handles, dates, repos, versions. */
 .mono {
   font-family: var(--font-mono);
