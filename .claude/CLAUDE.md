@@ -72,14 +72,6 @@ I separatori-timeline del CV sono un **elemento identitario da mantenere**: sono
 
 Da definire: oggi è il tema `orderedlist` di GitHub Pages, un default non una scelta. Vincolo guida: **una sola identità visiva** deve reggere sia il registro professionale sia quello nerd/maker. Se servissero due stili, l'impostazione del sito sarebbe sbagliata.
 
-## Progetti fratelli
-
-Altri progetti dell'utente, da consultare per confronti su convenzioni e soluzioni già adottate. Non vanno modificati: si guardano e basta.
-
-- `~/www/projects/toshl-man` — React + Vite + TS. Origine delle regole git e dei permessi di questo progetto.
-- `~/www/projects/qriddle` — React + Vite + TS, SPA a schermata singola: le "pagine" sono passi di un wizard scelti da uno stato in context, senza router e senza URL propri.
-- `~/www/jobs/resolvi/coffeebreak` — progetto di lavoro. Origine della regola sui messaggi di commit (prefissi, niente trailer `Co-Authored-By`).
-
 ## Kanban
 
 Board di progetto su Jira: sito `danilosanchi.atlassian.net`, progetto `danilosanchi.net`, key `SITE`, cloudId `b922ac38-2f7a-4785-bf54-caf2eb9045e4`. Usa i tool MCP `mcp__atlassian__*`.
