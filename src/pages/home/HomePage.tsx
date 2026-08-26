@@ -1,4 +1,5 @@
 import { contact } from "../../content/contact";
+import { identity } from "../../content/identity";
 import { profiles } from "../../content/profiles";
 import { featuredProjects } from "../../content/projects";
 import styles from "./HomePage.module.css";
@@ -8,7 +9,7 @@ export function HomePage() {
     <div className={styles.page}>
       <main>
         <header className={styles.intro}>
-          <h1 className={styles.name}>Danilo Sanchi</h1>
+          <h1 className={styles.name}>{identity.name}</h1>
           <p className={styles.tagline}>
             Software engineer. I have been building things with care since 2007,
             at the office and in the garage.
