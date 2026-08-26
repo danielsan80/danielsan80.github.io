@@ -1,0 +1,161 @@
+[
+  {
+    "category": "Linguaggi di programmazione",
+    "items": [
+      {
+        "name": "PHP",
+        "level": "expert"
+      },
+      {
+        "name": "JavaScript",
+        "level": "advanced"
+      },
+      {
+        "name": "TypeScript",
+        "level": "proficient"
+      },
+      {
+        "name": "Python",
+        "level": "proficient"
+      }
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "items": [
+      {
+        "name": "Symfony",
+        "level": "expert"
+      },
+      {
+        "name": "Laravel",
+        "level": "proficient"
+      },
+      {
+        "name": "AngularJS",
+        "level": "proficient"
+      },
+      {
+        "name": "ReactJS",
+        "level": "proficient"
+      }
+    ]
+  },
+  {
+    "category": "Practices",
+    "items": [
+      {
+        "name": "Agile",
+        "level": "expert"
+      },
+      {
+        "name": "Scrum",
+        "level": "expert"
+      },
+      {
+        "name": "Kanban",
+        "level": "expert"
+      },
+      {
+        "name": "Clean Code",
+        "level": "expert"
+      },
+      {
+        "name": "TDD",
+        "level": "expert"
+      }
+    ]
+  },
+  {
+    "category": "Architecture",
+    "items": [
+      {
+        "name": "OOP",
+        "level": "expert"
+      },
+      {
+        "name": "CQRS/ES",
+        "level": "expert"
+      },
+      {
+        "name": "DDD",
+        "level": "expert"
+      },
+      {
+        "name": "Hexagonal Architecture",
+        "level": "expert"
+      }
+    ]
+  },
+  {
+    "category": "Infrastructure",
+    "items": [
+      {
+        "name": "Linux",
+        "level": "expert"
+      },
+      {
+        "name": "Nginx",
+        "level": "expert"
+      },
+      {
+        "name": "Mysql/Mariadb",
+        "level": "expert"
+      },
+      {
+        "name": "Elasticsearch",
+        "level": "proficient"
+      },
+      {
+        "name": "MongoDB",
+        "level": "expert"
+      },
+      {
+        "name": "CouchDB",
+        "level": "expert"
+      },
+      {
+        "name": "RabbitMQ",
+        "level": "advanced"
+      }
+    ]
+  },
+  {
+    "category": "Tools",
+    "items": [
+      {
+        "name": "Git",
+        "level": "expert"
+      },
+      {
+        "name": "Docker",
+        "level": "expert"
+      },
+      {
+        "name": "GitHub",
+        "level": "expert"
+      },
+      {
+        "name": "BitBucket",
+        "level": "expert"
+      },
+      {
+        "name": "Trello",
+        "level": "expert"
+      }
+    ]
+  },
+  {
+    "category": "Lingue",
+    "items": [
+      {
+        "name": "Italiano (nativo)",
+        "level": "expert"
+      },
+      {
+        "name": "Inglese (base-intermedio)",
+        "level": "proficient"
+      }
+    ]
+  }
+]

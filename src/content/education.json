@@ -1,0 +1,20 @@
+[
+  {
+    "institution": "Università di Bologna, sede di Cesena",
+    "location": "Cesena, FC",
+    "title": "Laurea magistrale in Scienze dell’Informazione - vecchio ordinamento",
+    "period": {
+      "start": "1999-09",
+      "end": "2006-10"
+    }
+  },
+  {
+    "institution": "Istituto Tecnico Commerciale \"P. Gobetti\" - corso sperimentale Mercurio",
+    "location": "Morciano di Romagna",
+    "title": "Diploma di Ragioniere, Programmatore e Perito commerciale",
+    "period": {
+      "start": "1994-09",
+      "end": "1999-07"
+    }
+  }
+]
