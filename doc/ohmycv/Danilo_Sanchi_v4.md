@@ -42,30 +42,30 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 [~#]: **QRiddle** - Progetto didattico, testato e revisionato in ReactJS realizzato utilizzando ClaudeCode
 
-    [danilosanchi.net/qriddle](https://danilosanchi.net.qriddle)
+    [danilosanchi.net/qriddle](https://danilosanchi.net/qriddle)
 
 
 ## Experience
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 98.78%; width: 1.22%;" ></div>
-  <div class="timeline-dot" style="left: 98.78%;" data-label="Ago 2025"></div>
+  <div class="timeline-highlight" style="left: 98.74%; width: 1.26%;"></div>
+  <div class="timeline-dot" style="left: 98.74%;" data-label="Ago 2026"></div>
 </div>
 
 **Consulente e Full Stack Developer**
 ~ Resolvi Srl, Riccione - _remote_
 ~ Ago 2026 - ora
 
-- Onboarding al fine di svilupare occasionalmente nuove funzionalità
+- Onboarding al fine di sviluppare occasionalmente nuove funzionalità
 - Ripristino e aggiornamento della test suite degradata e abbandonata
 - Riattivazione dei test in CI pre deploy
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 98.78%; width: 1.22%;" ></div>
-  <div class="timeline-dot" style="left: 98.78%;" data-label="Ago 2025"></div>
-
+  <div class="timeline-highlight" style="left: 97.78%; width: 0.95%;"></div>
+  <div class="timeline-dot" style="left: 97.78%;" data-label="Apr 2026"></div>
+  <div class="timeline-dot" style="left: 98.73%;" data-label="Lug 2026"></div>
 </div>
 
 **Consulente e Full Stack Developer**
@@ -78,9 +78,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 98.78%; width: 1.22%;" ></div>
-  <div class="timeline-dot" style="left: 98.78%;" data-label="Ago 2025"></div>
-
+  <div class="timeline-highlight" style="left: 95.79%; width: 1.92%;"></div>
+  <div class="timeline-dot" style="left: 95.79%;" data-label="Ago 2025"></div>
+  <div class="timeline-dot" style="left: 97.72%;" data-label="Mar 2026"></div>
 </div>
 
 **Full Stack Developer**
@@ -93,9 +93,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 81.52%; width: 16.91%;" ></div>
-  <div class="timeline-dot" style="left: 81.52%;" data-label="Feb 2020"></div>
-  <div class="timeline-dot" style="left: 98.43%;" data-label="Giu 2025"></div>
+  <div class="timeline-highlight" style="left: 79.05%; width: 16.40%;"></div>
+  <div class="timeline-dot" style="left: 79.05%;" data-label="Feb 2020"></div>
+  <div class="timeline-dot" style="left: 95.44%;" data-label="Giu 2025"></div>
 </div>
 
 **Full Stack Developer**
@@ -108,9 +108,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 66.13%; width: 31.25%;" ></div>
-  <div class="timeline-dot" style="left: 66.13%;" data-label="Mar 2015"></div>
-  <div class="timeline-dot" style="left: 97.38%;" data-label="Feb 2025"></div>
+  <div class="timeline-highlight" style="left: 64.13%; width: 30.30%;"></div>
+  <div class="timeline-dot" style="left: 64.13%;" data-label="Mar 2015"></div>
+  <div class="timeline-dot" style="left: 94.43%;" data-label="Feb 2025"></div>
 </div>
 
 **Lead Full Stack Developer**
@@ -124,9 +124,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 77.61%; width: 1.02%;" ></div>
-  <div class="timeline-dot" style="left: 77.61%;" data-label="Nov 2018"></div>
-  <div class="timeline-dot" style="left: 78.63%;" data-label="Feb 2019"></div>
+  <div class="timeline-highlight" style="left: 75.26%; width: 0.99%;"></div>
+  <div class="timeline-dot" style="left: 75.26%;" data-label="Nov 2018"></div>
+  <div class="timeline-dot" style="left: 76.24%;" data-label="Feb 2019"></div>
 </div>
 
 **Solo Full Stack Developer**
@@ -138,9 +138,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 62.77%; width: 1.02%;" ></div>
-  <div class="timeline-dot" style="left: 62.77%;" data-label="Feb 2014"></div>
-  <div class="timeline-dot" style="left: 63.79%;" data-label="Mag 2014"></div>
+  <div class="timeline-highlight" style="left: 60.87%; width: 0.99%;"></div>
+  <div class="timeline-dot" style="left: 60.87%;" data-label="Feb 2014"></div>
+  <div class="timeline-dot" style="left: 61.86%;" data-label="Mag 2014"></div>
 </div>
 
 **Full Stack Developer**
@@ -152,9 +152,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 62.77%; width: 1.81%;" ></div>
-  <div class="timeline-dot" style="left: 62.77%;" data-label="Feb 2014"></div>
-  <div class="timeline-dot" style="left: 64.58%;" data-label="Ago 2014"></div>
+  <div class="timeline-highlight" style="left: 60.87%; width: 1.75%;"></div>
+  <div class="timeline-dot" style="left: 60.87%;" data-label="Feb 2014"></div>
+  <div class="timeline-dot" style="left: 62.62%;" data-label="Ago 2014"></div>
 </div>
 
 **Full Stack Developer**
@@ -167,9 +167,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 61.98%; width: 3.90%;" ></div>
-  <div class="timeline-dot" style="left: 61.98%;" data-label="Nov 2013"></div>
-  <div class="timeline-dot" style="left: 65.89%;" data-label="Gen 2015"></div>
+  <div class="timeline-highlight" style="left: 60.11%; width: 3.78%;"></div>
+  <div class="timeline-dot" style="left: 60.11%;" data-label="Nov 2013"></div>
+  <div class="timeline-dot" style="left: 63.89%;" data-label="Gen 2015"></div>
 </div>
 
 **Lead Full Stack Developer**
@@ -182,9 +182,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 59.89%; width: 2.61%;" ></div>
-  <div class="timeline-dot" style="left: 59.89%;" data-label="Mar 2013"></div>
-  <div class="timeline-dot" style="left: 62.50%;" data-label="Dic 2013"></div>
+  <div class="timeline-highlight" style="left: 58.07%; width: 2.53%;"></div>
+  <div class="timeline-dot" style="left: 58.07%;" data-label="Mar 2013"></div>
+  <div class="timeline-dot" style="left: 60.60%;" data-label="Dic 2013"></div>
 </div>
 
 **Full Stack Developer**
@@ -196,9 +196,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 58.07%; width: 0.51%;" ></div>
-  <div class="timeline-dot" style="left: 58.07%;" data-label="Ago 2012"></div>
-  <div class="timeline-dot" style="left: 58.59%;" data-label="Set 2012"></div>
+  <div class="timeline-highlight" style="left: 56.31%; width: 0.50%;"></div>
+  <div class="timeline-dot" style="left: 56.31%;" data-label="Ago 2012"></div>
+  <div class="timeline-dot" style="left: 56.81%;" data-label="Set 2012"></div>
 </div>
 
 **Full Stack Developer**
@@ -209,9 +209,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 56.25%; width: 3.12%;" ></div>
-  <div class="timeline-dot" style="left: 56.25%;" data-label="Gen 2012"></div>
-  <div class="timeline-dot" style="left: 59.37%;" data-label="Dic 2012"></div>
+  <div class="timeline-highlight" style="left: 54.55%; width: 3.03%;"></div>
+  <div class="timeline-dot" style="left: 54.55%;" data-label="Gen 2012"></div>
+  <div class="timeline-dot" style="left: 57.58%;" data-label="Dic 2012"></div>
 </div>
 
 **Lead Developer, Co-founder**
@@ -224,9 +224,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 46.88%; width: 9.36%;" ></div>
-  <div class="timeline-dot" style="left: 46.88%;" data-label="Gen 2009"></div>
-  <div class="timeline-dot" style="left: 56.24%;" data-label="Dic 2011"></div>
+  <div class="timeline-highlight" style="left: 45.46%; width: 9.08%;"></div>
+  <div class="timeline-dot" style="left: 45.46%;" data-label="Gen 2009"></div>
+  <div class="timeline-dot" style="left: 54.54%;" data-label="Dic 2011"></div>
 </div>
 
 **Web Developer**
@@ -238,9 +238,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 41.92%; width: 4.95%;" ></div>
-  <div class="timeline-dot" style="left: 41.92%;" data-label="Giu 2007"></div>
-  <div class="timeline-dot" style="left: 46.87%;" data-label="Dic 2008"></div>
+  <div class="timeline-highlight" style="left: 40.65%; width: 4.80%;"></div>
+  <div class="timeline-dot" style="left: 40.65%;" data-label="Giu 2007"></div>
+  <div class="timeline-dot" style="left: 45.45%;" data-label="Dic 2008"></div>
 </div>
 
 **Web Developer**
@@ -255,9 +255,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 17.70%; width: 22.39%;" ></div>
-  <div class="timeline-dot" style="left: 17.70%;" data-label="Set 1999"></div>
-  <div class="timeline-dot" style="left: 40.10%;" data-label="Ott 2006"></div>
+  <div class="timeline-highlight" style="left: 17.17%; width: 21.71%;"></div>
+  <div class="timeline-dot" style="left: 17.17%;" data-label="Set 1999"></div>
+  <div class="timeline-dot" style="left: 38.88%;" data-label="Ott 2006"></div>
 </div>
 
 **Università di Bologna, sede di Cesena**
@@ -268,9 +268,9 @@ Laurea magistrale in Scienze dell’Informazione - vecchio ordinamento
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 2.08%; width: 15.35%;" ></div>
-  <div class="timeline-dot" style="left: 2.08%;" data-label="Set 1994"></div>
-  <div class="timeline-dot" style="left: 17.35%;" data-label="Lug 1999"></div>
+  <div class="timeline-highlight" style="left: 2.02%; width: 14.89%;"></div>
+  <div class="timeline-dot" style="left: 2.02%;" data-label="Set 1994"></div>
+  <div class="timeline-dot" style="left: 16.90%;" data-label="Lug 1999"></div>
 </div>
 
 **Istituto Tecnico Commerciale "P. Gobetti" - corso sperimentale Mercurio**
@@ -283,7 +283,7 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-dot" style="left: 72.22%;" data-label="9-10 Feb 2017"></div>
+  <div class="timeline-dot" style="left: 70.03%;" data-label="9-10 Feb 2017"></div>
 </div>
 
 **Sviluppare Applicazioni enterprise con Node.js**
@@ -292,7 +292,7 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-dot" style="left: 70.22%;" data-label="21 Giu 2016"></div>
+  <div class="timeline-dot" style="left: 68.10%;" data-label="21 Giu 2016"></div>
 </div>
 
 **Agile Contracts - Esercizi sulla negoziazione nel contesto dei contratti**
@@ -301,8 +301,8 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
-  <div class="timeline-highlight" style="left: 47.91%; width: 52.09%;" ></div>
-  <div class="timeline-dot" style="left: 47.91%;" data-label="Mag 2009"></div>
+  <div class="timeline-highlight" style="left: 46.46%; width: 53.54%;"></div>
+  <div class="timeline-dot" style="left: 46.46%;" data-label="Mag 2009"></div>
 </div>
 
 **PhpDay, JsDay, SymfonyDay, AgileDay, BetterSoftware, DevOpsDay** - conferenze italiane
@@ -368,4 +368,3 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 <!--
 <span class="iconify" data-icon="vscode-icons:file-type-php"></span> PHP, <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript / <span class="iconify" data-icon="vscode-icons:file-type-typescript-official"></span> TypeScript, <span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python
 -->
-
