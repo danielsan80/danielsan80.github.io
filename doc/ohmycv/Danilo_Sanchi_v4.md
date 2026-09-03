@@ -10,7 +10,6 @@ header:
   - text: <span class="iconify" data-icon="tabler:brand-github"></span> danielsan80
     link: https://github.com/danielsan80
   - text: <span class="iconify" data-icon="tabler:map-pin"></span> Cesena (FC)
-    link: https://github.com/danielsan80
 ---
 
   <!--
@@ -20,7 +19,7 @@ header:
 
 ## Summary
 Mi piace scrivere codice pulito che risolva problemi in modo elegante ed efficace. Punto a generare il massimo valore con il minimo costo, ma senza trascurare la qualità. Credo che far bene significhi testare, modellare con cura, confrontarsi con i colleghi, automatizzare il controllo delle scelte fatte.
-Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'ambiente sia informale e contino le persone e le idee, più che le etichette.
+Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'ambiente sia informale e contino le persone e le idee, più che le etichette.
 
 
 ## Projects
@@ -33,16 +32,16 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
     [github.com/danielsan80/fixture-handler](https://github.com/danielsan80/fixture-handler)
 
-[~#]: **Mini Race Challange** - Timing system for small RC cars (3D print parts)
+[~#]: **Mini Race Challenge** - Timing system for small RC cars (3D print parts)
 
     [miniracechallenge.com](https://miniracechallenge.com/) ::
     [www.thingiverse.com/thing:5364319](https://www.thingiverse.com/thing:5364319) ::
     [github.com/danielsan80/minirace-gate](https://github.com/danielsan80/minirace-gate)
 
 
-[~#]: **QRiddle** - Progetto didattico, testato e revisionato in ReactJS realizzato utilizzando ClaudeCode
+[~#]: **QRiddle** - Web app didattica in ReactJS sviluppata con Claude Code: vibe coding, ma testato e revisionato
 
-    [danilosanchi.net/qriddle](https://danilosanchi.net/qriddle)
+    [danilosanchi.net/qriddle](https://danilosanchi.net/qriddle/)
 
 
 ## Experience
@@ -55,11 +54,11 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 
 **Consulente e Full Stack Developer**
 ~ Resolvi Srl, Riccione - _remote_
-~ Ago 2026 - ora
+~ Ago 2026 - oggi
 
-- Onboarding al fine di sviluppare occasionalmente nuove funzionalità
-- Ripristino e aggiornamento della test suite degradata e abbandonata
-- Riattivazione dei test in CI pre deploy
+- Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.
+- Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.
+- Supporto occasionale allo sviluppo di nuove funzionalità.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -72,9 +71,9 @@ Sono aperto a collaborazioni sia come freelance che come dipedente, purché l'am
 ~ QMates Srl, Milano - _remote_
 ~ Apr 2026 - Lug 2026
 
-- Sviluppo, refactoring e consulenza organizzativa presso l'azienda cliente
-- Promozione pratiche di design e di refactoring attraverso peer programming e  workshop interni
-- Ricerca, proposta e attuazione di soluzioni atte a snellire i processi aziendali
+- Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.
+- Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.
+- Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -324,8 +323,6 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 <span class="skill medium">Spring Boot</span>
 <span class="skill medium">API Platform</span>
 <span class="skill low">AngularJS</span>
-<span class="skill medium">API Platform</span>
-
 
 **Practices:**
 <span class="skill full">Agile</span>
@@ -355,7 +352,7 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 <span class="skill full">Git</span>
 <span class="skill full">Docker</span>
 <span class="skill full">GitHub</span>
-<span class="skill full">ClaudCode</span>
+<span class="skill full">Claude Code</span>
 <span class="skill medium">GitLab</span>
 <span class="skill medium">Jira</span>
 <span class="skill full">BitBucket</span>
