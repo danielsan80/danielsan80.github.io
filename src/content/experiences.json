@@ -1,5 +1,34 @@
 [
   {
+    "role": "Consulente e Full Stack Developer",
+    "company": "Resolvi Srl",
+    "location": "Riccione",
+    "remote": true,
+    "period": {
+      "start": "2026-08"
+    },
+    "bullets": [
+      "Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.",
+      "Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.",
+      "Supporto occasionale allo sviluppo di nuove funzionalità."
+    ]
+  },
+  {
+    "role": "Consulente e Full Stack Developer",
+    "company": "QMates Srl",
+    "location": "Milano",
+    "remote": true,
+    "period": {
+      "start": "2026-04",
+      "end": "2026-07"
+    },
+    "bullets": [
+      "Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.",
+      "Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.",
+      "Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico."
+    ]
+  },
+  {
     "role": "Full Stack Developer",
     "company": "Facile.it SpA",
     "location": "Milano",

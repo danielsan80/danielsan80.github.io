@@ -36,5 +36,15 @@
         "url": "https://github.com/danielsan80/minirace-gate"
       }
     ]
+  },
+  {
+    "name": "QRiddle",
+    "summary": "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch.",
+    "links": [
+      {
+        "label": "danilosanchi.net/qriddle",
+        "url": "https://danilosanchi.net/qriddle/"
+      }
+    ]
   }
 ]

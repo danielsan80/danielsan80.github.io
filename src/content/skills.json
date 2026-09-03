@@ -12,11 +12,15 @@
       },
       {
         "name": "TypeScript",
-        "level": "proficient"
+        "level": "advanced"
       },
       {
         "name": "Python",
-        "level": "proficient"
+        "level": "advanced"
+      },
+      {
+        "name": "Java",
+        "level": "advanced"
       }
     ]
   },
@@ -28,15 +32,19 @@
         "level": "expert"
       },
       {
-        "name": "Laravel",
-        "level": "proficient"
+        "name": "ReactJS",
+        "level": "advanced"
+      },
+      {
+        "name": "Spring Boot",
+        "level": "advanced"
+      },
+      {
+        "name": "API Platform",
+        "level": "advanced"
       },
       {
         "name": "AngularJS",
-        "level": "proficient"
-      },
-      {
-        "name": "ReactJS",
         "level": "proficient"
       }
     ]
@@ -62,6 +70,10 @@
       },
       {
         "name": "TDD",
+        "level": "expert"
+      },
+      {
+        "name": "Tecniche di Refactoring",
         "level": "expert"
       }
     ]
@@ -117,6 +129,10 @@
       {
         "name": "RabbitMQ",
         "level": "advanced"
+      },
+      {
+        "name": "Kafka",
+        "level": "proficient"
       }
     ]
   },
@@ -134,6 +150,18 @@
       {
         "name": "GitHub",
         "level": "expert"
+      },
+      {
+        "name": "Claude Code",
+        "level": "expert"
+      },
+      {
+        "name": "GitLab",
+        "level": "advanced"
+      },
+      {
+        "name": "Jira",
+        "level": "advanced"
       },
       {
         "name": "BitBucket",
