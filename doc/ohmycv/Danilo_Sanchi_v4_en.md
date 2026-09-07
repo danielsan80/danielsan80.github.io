@@ -70,13 +70,13 @@ I am open to both freelance and employed positions, as long as the environment i
   <div class="timeline-dot" style="left: 98.73%;" data-label="Jul 2026"></div>
 </div>
 
-**Consultant & Full Stack Developer**
+**Consultant & Senior Software Engineer**
 ~ QMates Srl, Milan - _remote_
 ~ Apr 2026 - Jul 2026
 
-- Organization Design consulting at a client company (Java/MongoDB/Kafka stack): weekly analyses and proposals to the CTO to streamline internal processes.
-- New features and refactoring in pair programming with the client's developers, to spot problems in the field and validate the proposed solutions.
-- In-house workshops on code hot spots and refactoring techniques, to gradually reduce technical debt.
+- Organization Design consulting at a client company, paired with another consultant: weekly analyses and proposals to the CTO.
+- Worked alongside the client's team in pair programming on features and refactoring.
+- Mentoring and workshops on eXtreme Programming practices and on refactoring techniques, to gradually reduce technical debt.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -159,7 +159,7 @@ I am open to both freelance and employed positions, as long as the environment i
   <div class="timeline-dot" style="left: 61.86%;" data-label="May 2014"></div>
 </div>
 
-**Full Stack Developer**
+**Consultant & Full Stack Developer**
 ~ Grindaland Ltd, San Gwann, Malta - _remote_
 ~ Feb 2014 - May 2014
 
@@ -201,7 +201,7 @@ I am open to both freelance and employed positions, as long as the environment i
   <div class="timeline-dot" style="left: 60.60%;" data-label="Dec 2013"></div>
 </div>
 
-**Full Stack Developer**
+**Consultant & Full Stack Developer**
 ~ Iabadabadu Srl, Fano - _remote_
 ~ Mar 2013 - Dec 2013
 

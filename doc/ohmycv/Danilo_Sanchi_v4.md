@@ -2,7 +2,7 @@
 name: Danilo Sanchi
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">Software Engineer (Web/PHP/Symfony specialist)</span>
+      <span style="font-size: 1.2em; font-weight: bold;">Senior Software Engineer (Web/PHP/Symfony specialist)</span>
   - text: <span class="iconify" data-icon="tabler:phone"></span> (+39) 377 17 14 053
     newLine: true
   - text: <span class="iconify" data-icon="tabler:mail"></span> danilo.sanchi@gmail.com
@@ -67,13 +67,13 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
   <div class="timeline-dot" style="left: 98.73%;" data-label="Lug 2026"></div>
 </div>
 
-**Consulente e Full Stack Developer**
+**Consulente e Senior Software Engineer**
 ~ QMates Srl, Milano - _remote_
 ~ Apr 2026 - Lug 2026
 
-- Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.
-- Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.
-- Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico.
+- Consulenza sul design organizzativo di un'azienda cliente, in coppia con un altro consulente: analisi e proposte settimanali al CTO.
+- Affiancamento al team del cliente in pair programming su sviluppo e refactoring.
+- Mentoring e workshop su pratiche di eXtreme Programming e su tecniche di refactoring, per ridurre gradualmente il debito tecnico.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -156,7 +156,7 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
   <div class="timeline-dot" style="left: 61.86%;" data-label="Mag 2014"></div>
 </div>
 
-**Full Stack Developer**
+**Consulente e Full Stack Developer**
 ~ Grindaland Ltd, San Gwann, Malta - _remote_
 ~ Feb 2014 - Mag 2014
 
@@ -198,7 +198,7 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
   <div class="timeline-dot" style="left: 60.60%;" data-label="Dic 2013"></div>
 </div>
 
-**Full Stack Developer**
+**Consulente e Full Stack Developer**
 ~ Iabadabadu Srl, Fano - _remote_
 ~ Mar 2013 - Dic 2013
 
@@ -333,43 +333,43 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 **Frameworks:**
 <span class="skill full">Symfony</span>
 <span class="skill full">Doctrine ORM</span>
+<span class="skill medium">API Platform</span>
 <span class="skill medium">ReactJS</span>
 <span class="skill medium">Spring Boot</span>
-<span class="skill medium">API Platform</span>
 <span class="skill low">AngularJS</span>
 
 **Practices:**
+<span class="skill full">TDD</span>
+<span class="skill full">Clean Code</span>
+<span class="skill full">Tecniche di Refactoring</span>
 <span class="skill full">Agile</span>
 <span class="skill full">Scrum</span>
 <span class="skill full">Kanban</span>
-<span class="skill full">Clean Code</span>
-<span class="skill full">TDD</span>
-<span class="skill full">Tecniche di Refactoring</span>
 
 **Architecture:**
-<span class="skill full">OOP</span>
-<span class="skill full">CQRS/ES</span>
 <span class="skill full">DDD</span>
 <span class="skill full">Hexagonal Architecture</span>
+<span class="skill full">CQRS/ES</span>
+<span class="skill full">OOP</span>
 
 **Infrastructure:**
 <span class="skill full">Linux</span>
 <span class="skill full">Nginx</span>
-<span class="skill full">Mysql/Mariadb</span>
-<span class="skill low">Elasticsearch</span>
+<span class="skill full">MySQL/MariaDB</span>
 <span class="skill full">MongoDB</span>
 <span class="skill full">CouchDB</span>
 <span class="skill medium">RabbitMQ</span>
+<span class="skill low">Elasticsearch</span>
 <span class="skill low">Kafka</span>
 
 **Tools:**
 <span class="skill full">Git</span>
 <span class="skill full">Docker</span>
-<span class="skill full">GitHub</span>
-<span class="skill full">Claude Code</span>
 <span class="skill medium">GitLab</span>
-<span class="skill medium">Jira</span>
+<span class="skill full">GitHub</span>
 <span class="skill full">BitBucket</span>
+<span class="skill full">Claude Code</span>
+<span class="skill medium">Jira</span>
 <span class="skill full">Trello</span>
 
 **Lingue:**

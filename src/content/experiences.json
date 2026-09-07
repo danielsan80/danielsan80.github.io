@@ -25,8 +25,8 @@
   },
   {
     "role": {
-      "it": "Consulente e Full Stack Developer",
-      "en": "Consultant & Full Stack Developer"
+      "it": "Consulente e Senior Software Engineer",
+      "en": "Consultant & Senior Software Engineer"
     },
     "company": "QMates Srl",
     "location": {
@@ -40,14 +40,14 @@
     },
     "bullets": {
       "it": [
-        "Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.",
-        "Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.",
-        "Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico."
+        "Consulenza sul design organizzativo di un'azienda cliente, in coppia con un altro consulente: analisi e proposte settimanali al CTO.",
+        "Affiancamento al team del cliente in pair programming su sviluppo e refactoring.",
+        "Mentoring e workshop su pratiche di eXtreme Programming e su tecniche di refactoring, per ridurre gradualmente il debito tecnico."
       ],
       "en": [
-        "Organization Design consulting at a client company (Java/MongoDB/Kafka stack): weekly analyses and proposals to the CTO to streamline internal processes.",
-        "New features and refactoring in pair programming with the client's developers, to spot problems in the field and validate the proposed solutions.",
-        "In-house workshops on code hot spots and refactoring techniques, to gradually reduce technical debt."
+        "Organization Design consulting at a client company, paired with another consultant: weekly analyses and proposals to the CTO.",
+        "Worked alongside the client's team in pair programming on features and refactoring.",
+        "Mentoring and workshops on eXtreme Programming practices and on refactoring techniques, to gradually reduce technical debt."
       ]
     }
   },
@@ -201,8 +201,8 @@
   },
   {
     "role": {
-      "it": "Full Stack Developer",
-      "en": "Full Stack Developer"
+      "it": "Consulente e Full Stack Developer",
+      "en": "Consultant & Full Stack Developer"
     },
     "company": "Grindaland Ltd",
     "location": "San Gwann, Malta",
@@ -279,8 +279,8 @@
   },
   {
     "role": {
-      "it": "Full Stack Developer",
-      "en": "Full Stack Developer"
+      "it": "Consulente e Full Stack Developer",
+      "en": "Consultant & Full Stack Developer"
     },
     "company": "Iabadabadu Srl",
     "location": "Fano",
