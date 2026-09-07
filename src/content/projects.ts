@@ -1,4 +1,5 @@
 import featured from "./featured-projects.json";
+import type { Localized } from "./localized";
 
 export type ProjectLink = {
   label: string;
@@ -7,7 +8,7 @@ export type ProjectLink = {
 
 export type Project = {
   name: string;
-  summary: string;
+  summary: Localized<string>;
   links: ProjectLink[];
 };
 

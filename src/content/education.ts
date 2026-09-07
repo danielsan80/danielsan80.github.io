@@ -1,10 +1,11 @@
 import data from "./education.json";
+import type { Localized, Translatable } from "./localized";
 import type { Period } from "./period";
 
 export type Education = {
-  institution: string;
-  location: string;
-  title: string;
+  institution: Translatable<string>;
+  location: Translatable<string>;
+  title: Localized<string>;
   period: Period;
 };
 

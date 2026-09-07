@@ -1,7 +1,10 @@
 [
   {
     "name": "JobBoy",
-    "summary": "A jobs manager for PHP. Open source, MIT, on Packagist.",
+    "summary": {
+      "it": "Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuto.",
+      "en": "A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer maintained."
+    },
     "links": [
       {
         "label": "Documentation",
@@ -11,7 +14,10 @@
   },
   {
     "name": "FixtureHandler",
-    "summary": "A test utility for PHP fixtures. Open source, MIT, on Packagist.",
+    "summary": {
+      "it": "Una test utility per le fixture in PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuta.",
+      "en": "A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no longer maintained."
+    },
     "links": [
       {
         "label": "Repository",
@@ -21,7 +27,10 @@
   },
   {
     "name": "Mini Race Challenge",
-    "summary": "A timing system for small RC cars, with 3D printed parts.",
+    "summary": {
+      "it": "Un sistema di cronometraggio per piccole auto RC, con parti stampate in 3D.",
+      "en": "A timing system for small RC cars, with 3D printed parts."
+    },
     "links": [
       {
         "label": "miniracechallenge.com",
@@ -39,7 +48,10 @@
   },
   {
     "name": "QRiddle",
-    "summary": "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch.",
+    "summary": {
+      "it": "Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di vibe coding, ma testato e revisionato, seguito per intero dalla prima commit alla CI/CD fino alla promozione.",
+      "en": "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch."
+    },
     "links": [
       {
         "label": "danilosanchi.net/qriddle",

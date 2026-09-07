@@ -1,17 +1,32 @@
 [
   {
-    "institution": "Università di Bologna, sede di Cesena",
-    "location": "Cesena, FC",
-    "title": "Laurea magistrale in Scienze dell’Informazione - vecchio ordinamento",
+    "institution": {
+      "it": "Università di Bologna, sede di Cesena",
+      "en": "University of Bologna, Cesena campus"
+    },
+    "location": {
+      "it": "Cesena, FC",
+      "en": "Cesena, Italy"
+    },
+    "title": {
+      "it": "Laurea magistrale in Scienze dell’Informazione - vecchio ordinamento",
+      "en": "Master's degree in Computer Science (Scienze dell'Informazione, five-year program)"
+    },
     "period": {
       "start": "1999-09",
       "end": "2006-10"
     }
   },
   {
-    "institution": "Istituto Tecnico Commerciale \"P. Gobetti\" - corso sperimentale Mercurio",
+    "institution": {
+      "it": "Istituto Tecnico Commerciale \"P. Gobetti\" - corso sperimentale Mercurio",
+      "en": "\"P. Gobetti\" Technical Institute for Business - experimental \"Mercurio\" program"
+    },
     "location": "Morciano di Romagna",
-    "title": "Diploma di Ragioniere, Programmatore e Perito commerciale",
+    "title": {
+      "it": "Diploma di Ragioniere, Programmatore e Perito commerciale",
+      "en": "High school diploma in Accounting and Programming"
+    },
     "period": {
       "start": "1994-09",
       "end": "1999-07"

@@ -1,6 +1,9 @@
 [
   {
-    "category": "Linguaggi di programmazione",
+    "category": {
+      "it": "Linguaggi di programmazione",
+      "en": "Programming languages"
+    },
     "items": [
       {
         "name": "PHP",
@@ -25,7 +28,10 @@
     ]
   },
   {
-    "category": "Frameworks",
+    "category": {
+      "it": "Frameworks",
+      "en": "Frameworks"
+    },
     "items": [
       {
         "name": "Symfony",
@@ -50,7 +56,10 @@
     ]
   },
   {
-    "category": "Practices",
+    "category": {
+      "it": "Practices",
+      "en": "Practices"
+    },
     "items": [
       {
         "name": "Agile",
@@ -73,13 +82,19 @@
         "level": "expert"
       },
       {
-        "name": "Tecniche di Refactoring",
+        "name": {
+          "it": "Tecniche di Refactoring",
+          "en": "Refactoring techniques"
+        },
         "level": "expert"
       }
     ]
   },
   {
-    "category": "Architecture",
+    "category": {
+      "it": "Architecture",
+      "en": "Architecture"
+    },
     "items": [
       {
         "name": "OOP",
@@ -100,7 +115,10 @@
     ]
   },
   {
-    "category": "Infrastructure",
+    "category": {
+      "it": "Infrastructure",
+      "en": "Infrastructure"
+    },
     "items": [
       {
         "name": "Linux",
@@ -111,7 +129,7 @@
         "level": "expert"
       },
       {
-        "name": "Mysql/Mariadb",
+        "name": "MySQL/MariaDB",
         "level": "expert"
       },
       {
@@ -137,7 +155,10 @@
     ]
   },
   {
-    "category": "Tools",
+    "category": {
+      "it": "Tools",
+      "en": "Tools"
+    },
     "items": [
       {
         "name": "Git",
@@ -174,14 +195,23 @@
     ]
   },
   {
-    "category": "Lingue",
+    "category": {
+      "it": "Lingue",
+      "en": "Languages"
+    },
     "items": [
       {
-        "name": "Italiano (nativo)",
+        "name": {
+          "it": "Italiano (nativo)",
+          "en": "Italian (native)"
+        },
         "level": "expert"
       },
       {
-        "name": "Inglese (base-intermedio)",
+        "name": {
+          "it": "Inglese (base-intermedio)",
+          "en": "English (intermediate: reading and writing; spoken in progress)"
+        },
         "level": "proficient"
       }
     ]

@@ -1,65 +1,117 @@
 [
   {
-    "role": "Consulente e Full Stack Developer",
+    "role": {
+      "it": "Consulente e Full Stack Developer",
+      "en": "Consultant & Full Stack Developer"
+    },
     "company": "Resolvi Srl",
     "location": "Riccione",
     "remote": true,
     "period": {
       "start": "2026-08"
     },
-    "bullets": [
-      "Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.",
-      "Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.",
-      "Supporto occasionale allo sviluppo di nuove funzionalità."
-    ]
+    "bullets": {
+      "it": [
+        "Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.",
+        "Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.",
+        "Supporto occasionale allo sviluppo di nuove funzionalità."
+      ],
+      "en": [
+        "Restored the test suite, abandoned after a stack upgrade, with the help of Claude Code.",
+        "Brought the tests back into the CI pipeline as a prerequisite for deployment.",
+        "Occasional support on new feature development."
+      ]
+    }
   },
   {
-    "role": "Consulente e Full Stack Developer",
+    "role": {
+      "it": "Consulente e Full Stack Developer",
+      "en": "Consultant & Full Stack Developer"
+    },
     "company": "QMates Srl",
-    "location": "Milano",
+    "location": {
+      "it": "Milano",
+      "en": "Milan"
+    },
     "remote": true,
     "period": {
       "start": "2026-04",
       "end": "2026-07"
     },
-    "bullets": [
-      "Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.",
-      "Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.",
-      "Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico."
-    ]
+    "bullets": {
+      "it": [
+        "Consulenza di Organization Design presso un'azienda cliente (stack Java/MongoDB/Kafka): analisi settimanali e proposte al CTO per snellire i processi interni.",
+        "Sviluppo di nuove funzionalità e refactoring in pair programming con gli sviluppatori del cliente, per rilevare i problemi sul campo e validare le soluzioni proposte.",
+        "Workshop interni su criticità del codice e tecniche di refactoring, per ridurre gradualmente il debito tecnico."
+      ],
+      "en": [
+        "Organization Design consulting at a client company (Java/MongoDB/Kafka stack): weekly analyses and proposals to the CTO to streamline internal processes.",
+        "New features and refactoring in pair programming with the client's developers, to spot problems in the field and validate the proposed solutions.",
+        "In-house workshops on code hot spots and refactoring techniques, to gradually reduce technical debt."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Facile.it SpA",
-    "location": "Milano",
+    "location": {
+      "it": "Milano",
+      "en": "Milan"
+    },
     "remote": true,
     "period": {
       "start": "2025-08",
       "end": "2026-03"
     },
-    "bullets": [
-      "Sviluppo nuove funzionalità del CRM interno.",
-      "Integrazione del CRM con servizi interni all'azienda",
-      "Supporto al team per la riorganizzazione del codice in ottica DDD"
-    ]
+    "bullets": {
+      "it": [
+        "Sviluppo nuove funzionalità del CRM interno.",
+        "Integrazione del CRM con servizi interni all'azienda",
+        "Supporto al team per la riorganizzazione del codice in ottica DDD"
+      ],
+      "en": [
+        "Development of new features for the internal CRM.",
+        "Integration of the CRM with in-house services.",
+        "Supported the team in reorganizing the codebase along DDD lines."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Soisy SpA",
-    "location": "Milano",
+    "location": {
+      "it": "Milano",
+      "en": "Milan"
+    },
     "remote": true,
     "period": {
       "start": "2020-02",
       "end": "2025-06"
     },
-    "bullets": [
-      "Sviluppo e ottimizzazione del Backoffice, automazione processi aziendali e integrazione con servizi esterni.",
-      "Interventi sulla webapp, in particolare sul funnel di onboarding.",
-      "Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass."
-    ]
+    "bullets": {
+      "it": [
+        "Sviluppo e ottimizzazione del Backoffice di una piattaforma BNPL (nata come marketplace di prestiti tra privati), automazione processi aziendali e integrazione con servizi esterni.",
+        "Interventi sulla webapp, in particolare sul funnel di onboarding.",
+        "Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass."
+      ],
+      "en": [
+        "Development and optimization of the back office of a BNPL platform (born as a peer-to-peer lending marketplace), business process automation and integration with third-party services.",
+        "Work on the web app, in particular the onboarding funnel.",
+        "Technical activities for the run-off of the platform after the acquisition by Compass."
+      ]
+    }
   },
   {
-    "role": "Lead Full Stack Developer",
+    "role": {
+      "it": "Lead Full Stack Developer",
+      "en": "Lead Full Stack Developer"
+    },
     "company": "Idrolab Srl",
     "location": "Rimini/Cesena",
     "remote": true,
@@ -67,29 +119,52 @@
       "start": "2015-03",
       "end": "2025-02"
     },
-    "bullets": [
-      "Formazione iniziale al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.",
-      "Analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.",
-      "Coordinamento e mentorship di un team di 3-5 sviluppatori, problem solving, assistenza al recruiting.",
-      "Manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati."
-    ]
+    "bullets": {
+      "it": [
+        "Formazione iniziale al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.",
+        "Analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.",
+        "Coordinamento e mentorship di un team di 3-5 sviluppatori, problem solving, assistenza al recruiting.",
+        "Manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati."
+      ],
+      "en": [
+        "Initial training of the in-house team (3 developers) on Symfony 2 and object-oriented programming.",
+        "Analysis, design, kick-off, development and engineering of Symfony applications.",
+        "Coordination and mentoring of a team of 3-5 developers, problem solving, support to recruiting.",
+        "Maintenance, refactoring and new features on the applications delivered."
+      ]
+    }
   },
   {
-    "role": "Solo Full Stack Developer",
+    "role": {
+      "it": "Solo Full Stack Developer",
+      "en": "Solo Full Stack Developer"
+    },
     "company": "Ehoreca Srl",
-    "location": "Milano",
+    "location": {
+      "it": "Milano",
+      "en": "Milan"
+    },
     "remote": true,
     "period": {
       "start": "2018-11",
       "end": "2019-02"
     },
-    "bullets": [
-      "Incaricato del ripristino della piattaforma Ehoreca a scopo demo, dopo 3 anni di inattività.",
-      "Aggiornamento dell’ambiente di sviluppo, delle dipendenze e delle configurazioni."
-    ]
+    "bullets": {
+      "it": [
+        "Incaricato del ripristino della piattaforma Ehoreca a scopo demo, dopo 3 anni di inattività.",
+        "Aggiornamento dell’ambiente di sviluppo, delle dipendenze e delle configurazioni."
+      ],
+      "en": [
+        "In charge of restoring the Ehoreca platform for demo purposes, after 3 years of inactivity.",
+        "Upgrade of the development environment, dependencies and configuration."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Grindaland Ltd",
     "location": "San Gwann, Malta",
     "remote": true,
@@ -97,13 +172,22 @@
       "start": "2014-02",
       "end": "2014-05"
     },
-    "bullets": [
-      "Consulenza su problema di integrazione con siti partner tramite web scraping.",
-      "Analisi e implementazione della soluzione tecnica proposta."
-    ]
+    "bullets": {
+      "it": [
+        "Consulenza su problema di integrazione con siti partner tramite web scraping.",
+        "Analisi e implementazione della soluzione tecnica proposta."
+      ],
+      "en": [
+        "Consulting on an integration problem with partner sites via web scraping.",
+        "Analysis and implementation of the proposed technical solution."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Oboxo Srl",
     "location": "Varese",
     "remote": true,
@@ -111,26 +195,46 @@
       "start": "2014-02",
       "end": "2014-08"
     },
-    "bullets": [
-      "Implementazione funzionalità sulla piattaforma social dell'azienda.",
-      "Startup liquidata dopo pochi mesi per ritiro degli investitori."
-    ]
+    "bullets": {
+      "it": [
+        "Implementazione funzionalità sulla piattaforma social dell'azienda.",
+        "Startup liquidata dopo pochi mesi per ritiro degli investitori."
+      ],
+      "en": [
+        "Feature development on the company's social platform.",
+        "Startup wound up after a few months when the investors pulled out."
+      ]
+    }
   },
   {
-    "role": "Lead Full Stack Developer",
+    "role": {
+      "it": "Lead Full Stack Developer",
+      "en": "Lead Full Stack Developer"
+    },
     "company": "App&Map Srl",
-    "location": "Milano",
+    "location": {
+      "it": "Milano",
+      "en": "Milan"
+    },
     "remote": true,
     "period": {
       "start": "2013-11",
       "end": "2015-01"
     },
-    "bullets": [
-      "Sviluppo api e back office per app mobile con contenuti georeferenziati per enti locali e aziende."
-    ]
+    "bullets": {
+      "it": [
+        "Sviluppo api e back office per app mobile con contenuti georeferenziati per enti locali e aziende."
+      ],
+      "en": [
+        "API and back office development for a mobile app with geo-referenced content for local authorities and companies."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Iabadabadu Srl",
     "location": "Fano",
     "remote": true,
@@ -138,13 +242,22 @@
       "start": "2013-03",
       "end": "2013-12"
     },
-    "bullets": [
-      "Refactoring e integrazione di Symfony 2.1 di un sito legacy per un cliente, al fine di sviluppare nuove funzionalità.",
-      "Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate."
-    ]
+    "bullets": {
+      "it": [
+        "Refactoring e integrazione di Symfony 2.1 di un sito legacy per un cliente, al fine di sviluppare nuove funzionalità.",
+        "Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate."
+      ],
+      "en": [
+        "Refactoring of a client's legacy site and integration of Symfony 2.1, in order to develop new features.",
+        "Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced."
+      ]
+    }
   },
   {
-    "role": "Full Stack Developer",
+    "role": {
+      "it": "Full Stack Developer",
+      "en": "Full Stack Developer"
+    },
     "company": "Ideato Srl",
     "location": "Cesena",
     "remote": true,
@@ -152,12 +265,20 @@
       "start": "2012-08",
       "end": "2012-09"
     },
-    "bullets": [
-      "Analisi e sviluppo di un'applicazione web per la consultazione di promozioni da file XML per IdroLAB."
-    ]
+    "bullets": {
+      "it": [
+        "Analisi e sviluppo di un'applicazione web per la consultazione di promozioni da file XML per IdroLAB."
+      ],
+      "en": [
+        "Analysis and development of a web application to browse promotions from XML files, for IdroLAB."
+      ]
+    }
   },
   {
-    "role": "Lead Developer, Co-founder",
+    "role": {
+      "it": "Lead Developer, Co-founder",
+      "en": "Lead Developer, Co-founder"
+    },
     "company": "Abmundi",
     "location": "Riccione",
     "remote": false,
@@ -165,14 +286,24 @@
       "start": "2012-01",
       "end": "2012-12"
     },
-    "bullets": [
-      "Sviluppo piattaforma social per la gestione degli obiettivi personali in 4 mesi e follow up.",
-      "Prima sperimentazione e applicazione completa delle metodologie agili.",
-      "Primo progetto con Symfony 2.0."
-    ]
+    "bullets": {
+      "it": [
+        "Sviluppo piattaforma social per la gestione degli obiettivi personali in 4 mesi e follow up.",
+        "Prima sperimentazione e applicazione completa delle metodologie agili.",
+        "Primo progetto con Symfony 2.0."
+      ],
+      "en": [
+        "Built a social platform for personal goal management in 4 months, then followed up on it.",
+        "First full-scale experiment with agile methodologies.",
+        "First project on Symfony 2.0."
+      ]
+    }
   },
   {
-    "role": "Web Developer",
+    "role": {
+      "it": "Web Developer",
+      "en": "Web Developer"
+    },
     "company": "Retina Snc",
     "location": "Cattolica",
     "remote": false,
@@ -180,13 +311,22 @@
       "start": "2009-01",
       "end": "2011-12"
     },
-    "bullets": [
-      "Sviluppo e manutenzione del CMS aziendale: refactoring, nuove funzionalità e bugfix.",
-      "Avvio e gestione tecnica di siti e progetti web per i clienti dell’agenzia."
-    ]
+    "bullets": {
+      "it": [
+        "Sviluppo e manutenzione del CMS aziendale: refactoring, nuove funzionalità e bugfix.",
+        "Avvio e gestione tecnica di siti e progetti web per i clienti dell’agenzia."
+      ],
+      "en": [
+        "Development and maintenance of the in-house CMS: refactoring, new features and bug fixes.",
+        "Kick-off and technical management of websites and web projects for the agency's clients."
+      ]
+    }
   },
   {
-    "role": "Web Developer",
+    "role": {
+      "it": "Web Developer",
+      "en": "Web Developer"
+    },
     "company": "Celera",
     "location": "Riccione",
     "remote": false,
@@ -194,9 +334,15 @@
       "start": "2007-06",
       "end": "2008-12"
     },
-    "bullets": [
-      "Prima esperienza professionale: analisi, progettazione, sviluppo e gestione di siti e applicazioni web.",
-      "Realizzazione completa di un applicativo per l’invio di newsletter, rimasto in uso per anni."
-    ]
+    "bullets": {
+      "it": [
+        "Prima esperienza professionale: analisi, progettazione, sviluppo e gestione di siti e applicazioni web.",
+        "Realizzazione completa di un applicativo per l’invio di newsletter, rimasto in uso per anni."
+      ],
+      "en": [
+        "First professional experience: analysis, design, development and management of websites and web applications.",
+        "Built from scratch a newsletter application that stayed in use for years."
+      ]
+    }
   }
 ]

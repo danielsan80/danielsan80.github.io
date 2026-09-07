@@ -1,6 +1,7 @@
 import { contact } from "../../content/contact";
 import { identity } from "../../content/identity";
 import { profiles } from "../../content/profiles";
+import { pick } from "../../content/localized";
 import { featuredProjects } from "../../content/projects";
 import styles from "./HomePage.module.css";
 
@@ -37,7 +38,9 @@ export function HomePage() {
             {featuredProjects.map((project) => (
               <li key={project.name}>
                 <h3 className={styles.projectName}>{project.name}</h3>
-                <p className={styles.projectSummary}>{project.summary}</p>
+                <p className={styles.projectSummary}>
+                  {pick(project.summary, "en")}
+                </p>
                 <ul className={styles.projectLinks}>
                   {project.links.map((link) => (
                     <li key={link.url}>
