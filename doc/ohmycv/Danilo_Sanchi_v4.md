@@ -18,7 +18,7 @@ header:
   -->
 
 ## Summary
-Mi piace scrivere codice pulito che risolva problemi in modo elegante ed efficace. Punto a generare il massimo valore con il minimo costo, ma senza trascurare la qualità. Credo che far bene significhi testare, modellare con cura, confrontarsi con i colleghi, automatizzare il controllo delle scelte fatte.
+Sviluppo applicazioni web dal 2007, come freelance dal 2013. Mi piace scrivere codice pulito che risolva problemi in modo elegante ed efficace. Punto a generare il massimo valore con il minimo costo, ma senza trascurare la qualità. Credo che far bene significhi testare, modellare con cura, confrontarsi con i colleghi, automatizzare il controllo delle scelte fatte.
 Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'ambiente sia informale e contino le persone e le idee, più che le etichette.
 
 

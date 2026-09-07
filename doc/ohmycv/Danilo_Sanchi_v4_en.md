@@ -21,7 +21,7 @@ header:
 
 ## Summary
 I like writing clean code that solves problems in an elegant and effective way. I aim to deliver the most value at the least cost, without giving up on quality. To me, doing things well means testing, modeling with care, discussing with colleagues and automating the checks on the decisions we make.
-I have been building web applications since 2007, most of them on Symfony and Doctrine with a domain-driven approach, and I have led and mentored small teams along the way.
+I have been building web applications since 2007, as a freelancer since 2013, most of them on Symfony and Doctrine with a domain-driven approach, and I have led and mentored small teams along the way.
 I am open to both freelance and employed positions, as long as the environment is informal and people and ideas matter more than labels.
 
 
