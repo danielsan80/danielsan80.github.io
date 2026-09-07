@@ -105,6 +105,10 @@
         "Work on the web app, in particular the onboarding funnel.",
         "Technical activities for the run-off of the platform after the acquisition by Compass."
       ]
+    },
+    "description": {
+      "it": "In Soisy principalmente ho lavorato al Backoffice, sviluppando funzionalità per automatizzare processi aziendali eseguiti manualmente, migliorando le sue performance, integrando servizi esterni.\nMi sono occupato della webapp modificando il funnel di onboarding e l'area riservata dell'utente.\nDopo l'acquisizione da parte di Compass, ho sviluppato alcune soluzioni utili alla dismissione della piattaforma.",
+      "en": "At Soisy I worked mainly on the back office, building features to automate business processes that were run by hand, improving its performance and integrating third-party services.\nI worked on the web app, changing the onboarding funnel and the logged-in user area.\nAfter the acquisition by Compass, I built solutions to support the decommissioning of the platform."
     }
   },
   {
@@ -132,6 +136,10 @@
         "Coordination and mentoring of a team of 3-5 developers, problem solving, support to recruiting.",
         "Maintenance, refactoring and new features on the applications delivered."
       ]
+    },
+    "description": {
+      "it": "In Idrolab ho fatto inizialmente formazione al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.\nMi sono poi occupato di analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.\nHo svolto un ruolo di coordinamento e mentorship di un team di 3-5 sviluppatori, ho fatto problem solving e assistenza al recruiting.\nNegli ultimi anni ho fatto soprattutto manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati.",
+      "en": "At Idrolab I started by training the in-house team (3 developers) on Symfony 2 and object-oriented programming.\nI then took care of analysis, design, kick-off, development and engineering of Symfony applications.\nI coordinated and mentored a team of 3-5 developers, did problem solving and supported recruiting.\nIn the last years I mostly did maintenance, refactoring and new feature development on the projects delivered."
     }
   },
   {
@@ -158,6 +166,10 @@
         "In charge of restoring the Ehoreca platform for demo purposes, after 3 years of inactivity.",
         "Upgrade of the development environment, dependencies and configuration."
       ]
+    },
+    "description": {
+      "it": "Sono stato incaricato di ripristinare la piattaforma Ehoreca dopo circa 3 anni dalla sua chiusura per liquidazione dell'attività. Si trattava di un job marketplace per il settore HoReCa. Il ripristino era finalizzato alla realizzazione di una demo che avrebbe permesso al fondatore di vendere il codice ad una terza parte interessata.\nÈ stato necessario adattare l'ambiente di sviluppo, aggiornare le dipendenze, ripristinare i servizi di terze parti (es. il reverse geocoding di Google) poiché dopo 3 anni di mancata manutenzione il progetto non si avviava più.",
+      "en": "I was hired to restore the Ehoreca platform about 3 years after it had been shut down and the company wound up. It was a job marketplace for the HoReCa industry. The goal was a working demo that would let the founder sell the code to an interested third party.\nI had to adapt the development environment, upgrade the dependencies and restore third-party services (Google reverse geocoding, for one), because after 3 years without maintenance the project would no longer start."
     }
   },
   {
@@ -181,6 +193,10 @@
         "Consulting on an integration problem with partner sites via web scraping.",
         "Analysis and implementation of the proposed technical solution."
       ]
+    },
+    "description": {
+      "it": "Sono stato contattato da questa azienda per aiutarli a risolvere un problema di integrazione con i siti dei loro partner. Era necessario raccogliere giornalmente alcuni dati tramite web scraping. Ho proposto ed implementato una soluzione che ha risolto il problema.",
+      "en": "They reached out to me to help solve an integration problem with their partners' sites. Some data had to be collected daily via web scraping. I proposed and implemented a solution that fixed the problem."
     }
   },
   {
@@ -204,6 +220,10 @@
         "Feature development on the company's social platform.",
         "Startup wound up after a few months when the investors pulled out."
       ]
+    },
+    "description": {
+      "it": "Oboxo era un social network basato sull'idea di condividere le proprie collezioni di prodotti.\nLa piattaforma era stata realizzata da Ideato Srl che mi aveva proposto come aiuto freelance al team di sviluppo per realizzare nuove funzionalità.\nPurtroppo dopo pochi mesi l'attività è cessata ed è stata liquidata.",
+      "en": "Oboxo was a social network built around sharing your own product collections.\nThe platform had been built by Ideato Srl, who put me forward as freelance support to the development team for new features.\nThe company ceased trading after a few months and was wound up."
     }
   },
   {
@@ -251,6 +271,10 @@
         "Refactoring of a client's legacy site and integration of Symfony 2.1, in order to develop new features.",
         "Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced."
       ]
+    },
+    "description": {
+      "it": "Mi sono occupato di isolare e rifattorizzare il codice legacy dell'e-commerce B2B di un cliente per poi integrarlo con Symfony 2.1, al fine di permettere lo sviluppo di nuove funzionalità.\nPoi presentai questa sfida tecnica come caso di studio in un talk al SymfonyDay 2013.",
+      "en": "I isolated and refactored the legacy code of a client's B2B e-commerce, then integrated it with Symfony 2.1 so that new features could be developed.\nI later presented the technical challenge as a case study in a talk at SymfonyDay 2013."
     }
   },
   {
@@ -272,6 +296,10 @@
       "en": [
         "Analysis and development of a web application to browse promotions from XML files, for IdroLAB."
       ]
+    },
+    "description": {
+      "it": "Analisi e sviluppo di una piccola applicazione web per la consultazione di promozioni lette da un file XML per IdroLAB, successivamente divenuto mio cliente.\nIdeato è stata spesso correlata direttamente o indirettamente al mio lavoro.",
+      "en": "Analysis and development of a small web application to browse promotions read from an XML file, for IdroLAB, who later became my own client.\nIdeato has often been connected, directly or indirectly, to my work."
     }
   },
   {
@@ -297,6 +325,10 @@
         "First full-scale experiment with agile methodologies.",
         "First project on Symfony 2.0."
       ]
+    },
+    "description": {
+      "it": "Abmundi era una piattaforma social per la definizione, misurazione e realizzazione degli obiettivi personali.\nRealizzammo in 4 mesi la prima versione del progetto sperimentando le metodologie agili. Raggiungemmo circa un migliaio di utenti.\nFu il mio primo progetto Symfony (v. 2.0).",
+      "en": "Abmundi was a social platform to define, measure and achieve personal goals.\nWe built the first version in 4 months while experimenting with agile methodologies. We reached about a thousand users.\nIt was my first Symfony project (v. 2.0)."
     }
   },
   {
@@ -320,6 +352,10 @@
         "Development and maintenance of the in-house CMS: refactoring, new features and bug fixes.",
         "Kick-off and technical management of websites and web projects for the agency's clients."
       ]
+    },
+    "description": {
+      "it": "Retina era una web agency. Come sviluppatore web (PHP, Javascript, HTML, Sass) mi occupavo di refactoring, sviluppo di funzionalità, bugfix del CMS aziendale, avvio e gestione dei progetti web.",
+      "en": "Retina was a web agency. As a web developer (PHP, JavaScript, HTML, Sass) I did refactoring, feature development and bug fixing on the in-house CMS, plus kick-off and management of web projects."
     }
   },
   {
@@ -343,6 +379,10 @@
         "First professional experience: analysis, design, development and management of websites and web applications.",
         "Built from scratch a newsletter application that stayed in use for years."
       ]
+    },
+    "description": {
+      "it": "Celera era una piccola web agency. È stata la mia prima esperienza professionale come sviluppatore web. Mi occupavo di analisi, progettazione, sviluppo e gestione di applicazioni e siti web. In particolare sviluppai interamente un applicativo per l'invio di newsletter ancora in uso fino a qualche anno fa, quando il mio vecchio datore me ne parlò.",
+      "en": "Celera was a small web agency. It was my first professional experience as a web developer. I did analysis, design, development and management of web applications and websites. In particular I built an entire newsletter application, still in use until a few years ago, as my former employer told me."
     }
   }
 ]
