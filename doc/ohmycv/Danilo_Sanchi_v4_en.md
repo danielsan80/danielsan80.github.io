@@ -27,11 +27,11 @@ I am open to both freelance and employed positions, as long as the environment i
 
 ## Projects
 
-[~#]: **JobBoy** - jobs manager - open source PHP library (MIT, on Packagist)
+[~#]: **JobBoy** - jobs manager - open source PHP library (MIT, on Packagist), PHP 7, no longer maintained
 
     [github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md](https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md)
 
-[~#]: **FixtureHandler** - test utility - open source PHP library (MIT, on Packagist)
+[~#]: **FixtureHandler** - test utility - open source PHP library (MIT, on Packagist), PHP 7, no longer maintained
 
     [github.com/danielsan80/fixture-handler](https://github.com/danielsan80/fixture-handler)
 

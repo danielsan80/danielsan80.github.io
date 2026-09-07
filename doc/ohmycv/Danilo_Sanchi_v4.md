@@ -24,11 +24,11 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 
 ## Projects
 
-[~#]: **JobBoy** - jobs manager - libreria PHP open source (MIT, su Packagist)
+[~#]: **JobBoy** - jobs manager - libreria PHP open source (MIT, su Packagist), PHP 7, non più mantenuta
 
     [github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md](https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md)
 
-[~#]: **FixtureHandler** - test utility - libreria PHP open source (MIT, su Packagist)
+[~#]: **FixtureHandler** - test utility - libreria PHP open source (MIT, su Packagist), PHP 7, non più mantenuta
 
     [github.com/danielsan80/fixture-handler](https://github.com/danielsan80/fixture-handler)
 
