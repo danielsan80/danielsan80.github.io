@@ -56,9 +56,9 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Resolvi Srl, Riccione - _remote_
 ~ Ago 2026 - oggi
 
-- Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.
-- Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.
-- Supporto occasionale allo sviluppo di nuove funzionalità.
+- Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.
+- Impostazione di CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.
+- Supporto allo sviluppo di nuove funzionalità.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -86,9 +86,9 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Facile.it SpA, Milano - _remote_
 ~ Ago 2025 - Mar 2026
 
-- Sviluppo nuove funzionalità del CRM interno.
-- Integrazione del CRM con servizi interni all'azienda
-- Supporto al team per la riorganizzazione del codice in ottica DDD
+- Sviluppo di nuove funzionalità del CRM interno per la gestione dell'operatività degli store fisici.
+- Integrazione con gli altri applicativi interni all'azienda, via Google Pub/Sub.
+- Sviluppo in team con Scrum, portando l'esperienza su architettura esagonale e DDD.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -189,7 +189,8 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ App&Map Srl, Milano  - _remote_
 ~ Nov 2013 - Gen 2015
 
-- Sviluppo api e back office per app mobile con contenuti georeferenziati per enti locali e aziende.
+- Sviluppo delle api e del back office Symfony per app mobile con contenuti georeferenziati.
+- Piattaforma multi-istanza: un solo backend a servire le app personalizzate di locali, associazioni ed enti locali.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>

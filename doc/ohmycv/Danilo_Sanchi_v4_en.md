@@ -59,9 +59,9 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Resolvi Srl, Riccione - _remote_
 ~ Aug 2026 - present
 
-- Restored the test suite, abandoned after a stack upgrade, with the help of Claude Code.
-- Brought the tests back into the CI pipeline as a prerequisite for deployment.
-- Occasional support on new feature development.
+- Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.
+- Set up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.
+- Support on new feature development.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -89,9 +89,9 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Facile.it SpA, Milan - _remote_
 ~ Aug 2025 - Mar 2026
 
-- Development of new features for the internal CRM.
-- Integration of the CRM with in-house services.
-- Supported the team in reorganizing the codebase along DDD lines.
+- Development of new features for the internal CRM managing the operations of the physical stores.
+- Integration with the company's other in-house applications, over Google Pub/Sub.
+- Development in a Scrum team, bringing my experience with hexagonal architecture and DDD.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
@@ -192,7 +192,8 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ App&Map Srl, Milan  - _remote_
 ~ Nov 2013 - Jan 2015
 
-- API and back office development for a mobile app with geo-referenced content for local authorities and companies.
+- Development of the APIs and the Symfony back office for mobile apps with geo-referenced content.
+- Multi-tenant platform: a single backend serving the branded apps of venues, associations and local authorities.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>

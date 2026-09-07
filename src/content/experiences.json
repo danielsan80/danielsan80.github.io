@@ -12,15 +12,19 @@
     },
     "bullets": {
       "it": [
-        "Ripristino della suite di test, abbandonata dopo un aggiornamento dello stack, con l'ausilio di Claude Code.",
-        "Reintroduzione dei test nella pipeline di CI come prerequisito al deploy.",
-        "Supporto occasionale allo sviluppo di nuove funzionalità."
+        "Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.",
+        "Impostazione di CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.",
+        "Supporto allo sviluppo di nuove funzionalità."
       ],
       "en": [
-        "Restored the test suite, abandoned after a stack upgrade, with the help of Claude Code.",
-        "Brought the tests back into the CI pipeline as a prerequisite for deployment.",
-        "Occasional support on new feature development."
+        "Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.",
+        "Set up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.",
+        "Support on new feature development."
       ]
+    },
+    "description": {
+      "it": "Sono entrato in Resolvi per dare supporto allo sviluppo di nuove funzionalità. Durante l'onboarding ho usato Claude Code per analizzare il progetto e mi sono reso conto che c'era più valore da portare prima, propedeutico alle funzionalità stesse: rivedere e migrare la suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, ripristinarne il lancio in CI, e impostare CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.\nTutto questo in pochi giorni di lavoro.",
+      "en": "I joined Resolvi to support new feature development. During onboarding I used Claude Code to analyse the project and realised there was more value to bring first, and that it was a prerequisite for the features themselves: reviewing and migrating the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, restoring its run in CI, and setting up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.\nAll of it in a few days of work."
     }
   },
   {
@@ -49,6 +53,10 @@
         "Worked alongside the client's team in pair programming on features and refactoring.",
         "Mentoring and workshops on eXtreme Programming practices and on refactoring techniques, to gradually reduce technical debt."
       ]
+    },
+    "description": {
+      "it": "Insieme a un altro consulente di QMates ho affiancato il team di sviluppo di un'azienda cliente, con un incarico sul design organizzativo: analisi e proposte settimanali al CTO.\nPer capire cosa si poteva migliorare abbiamo sviluppato nuove funzionalità e rifattorizzato il codice in pair programming con i loro sviluppatori.\nIn parallelo abbiamo tenuto workshop interni su pratiche di eXtreme Programming e tecniche di refactoring, per ridurre gradualmente il debito tecnico.",
+      "en": "Together with another QMates consultant I worked alongside the development team of a client company, on an Organization Design engagement: weekly analyses and proposals to the CTO.\nTo understand what was not working we developed new features and refactored code in pair programming with their developers.\nIn parallel we ran in-house workshops on eXtreme Programming practices and refactoring techniques, to gradually reduce technical debt."
     }
   },
   {
@@ -68,15 +76,19 @@
     },
     "bullets": {
       "it": [
-        "Sviluppo nuove funzionalità del CRM interno.",
-        "Integrazione del CRM con servizi interni all'azienda",
-        "Supporto al team per la riorganizzazione del codice in ottica DDD"
+        "Sviluppo di nuove funzionalità del CRM interno per la gestione dell'operatività degli store fisici.",
+        "Integrazione con gli altri applicativi interni all'azienda, via Google Pub/Sub.",
+        "Sviluppo in team con Scrum, portando l'esperienza su architettura esagonale e DDD."
       ],
       "en": [
-        "Development of new features for the internal CRM.",
-        "Integration of the CRM with in-house services.",
-        "Supported the team in reorganizing the codebase along DDD lines."
+        "Development of new features for the internal CRM managing the operations of the physical stores.",
+        "Integration with the company's other in-house applications, over Google Pub/Sub.",
+        "Development in a Scrum team, bringing my experience with hexagonal architecture and DDD."
       ]
+    },
+    "description": {
+      "it": "Sono stato ingaggiato per contribuire allo sviluppo di nuove funzionalità del CRM interno di Facile.it, un'applicazione Symfony 7 su PHP 8 che gestiva l'operatività degli store fisici: anagrafiche, lead, appuntamenti, prodotti, permessi. Lavoravo nel team seguendo i rituali Scrum.\nIl team era misto tra dipendenti e freelance, con due product owner e un coordinamento tra più team: il CRM si integrava con altri applicativi interni per la generazione di PDF, l'invio di email con accesso autenticato e lo scambio via Google Pub/Sub degli eventi CRUD che interessavano noi o gli altri applicativi.\nOltre alle funzionalità ho portato il mio punto di vista su architettura esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice e contribuendo alla migrazione verso un modello a domini. Ho imparato molto anche dai colleghi.",
+      "en": "I was brought in to contribute to new feature development on Facile.it's internal CRM, a Symfony 7 application on PHP 8 that ran the operations of the physical stores: master data, leads, appointments, products, permissions. I worked within the team following its Scrum rituals.\nThe team mixed employees and freelancers, with two product owners and coordination across several teams: the CRM integrated with other in-house applications for PDF generation, authenticated email delivery and the exchange over Google Pub/Sub of the CRUD events that mattered to us or to the other applications.\nBeyond the features I brought my own perspective on hexagonal architecture and Domain-Driven Design, showing how I would organize the code and contributing to the migration towards a domain model. I also learned a lot from my colleagues."
     }
   },
   {
@@ -270,11 +282,17 @@
     },
     "bullets": {
       "it": [
-        "Sviluppo api e back office per app mobile con contenuti georeferenziati per enti locali e aziende."
+        "Sviluppo delle api e del back office Symfony per app mobile con contenuti georeferenziati.",
+        "Piattaforma multi-istanza: un solo backend a servire le app personalizzate di locali, associazioni ed enti locali."
       ],
       "en": [
-        "API and back office development for a mobile app with geo-referenced content for local authorities and companies."
+        "Development of the APIs and the Symfony back office for mobile apps with geo-referenced content.",
+        "Multi-tenant platform: a single backend serving the branded apps of venues, associations and local authorities."
       ]
+    },
+    "description": {
+      "it": "App&Map era una startup di tre persone: il fondatore, che curava grafica, vendita e ruolo di product owner, uno sviluppatore mobile e io sul backend.\nIl prodotto era una piattaforma multi-istanza: il fondatore vendeva istanze a locali, associazioni ed enti locali, che pubblicavano mappe di punti di interesse mostrate in un'app personalizzata. Molte app, un solo backend.\nHo sviluppato il back office, un'applicazione Symfony, e le api in lettura che alimentavano le app.",
+      "en": "App&Map was a three-person startup: the founder, who covered design, sales and the product owner role, a mobile developer and myself on the backend.\nThe product was a multi-tenant platform: the founder sold instances to venues, associations and local authorities, who published maps of points of interest shown in a branded app. Many apps, one backend.\nI built the back office, a Symfony application, and the read APIs that fed the apps."
     }
   },
   {
