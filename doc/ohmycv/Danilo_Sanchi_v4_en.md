@@ -140,6 +140,20 @@ I am open to both freelance and employed positions, as long as the environment i
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
+  <div class="timeline-highlight" style="left: 63.13%; width: 1.26%;"></div>
+  <div class="timeline-dot" style="left: 63.13%;" data-label="Nov 2014"></div>
+  <div class="timeline-dot" style="left: 64.39%;" data-label="Mar 2015"></div>
+</div>
+
+**WordPress Technical Support**
+~ AFA Arredamenti, Cattolica
+~ Nov 2014 - Mar 2015
+
+- Built two websites for the company together with a former colleague, a web designer.
+- WordPress installation and configuration.
+
+<div class="timeline-wrapper">
+  <div class="timeline-bar"></div>
   <div class="timeline-highlight" style="left: 60.87%; width: 0.99%;"></div>
   <div class="timeline-dot" style="left: 60.87%;" data-label="Feb 2014"></div>
   <div class="timeline-dot" style="left: 61.86%;" data-label="May 2014"></div>

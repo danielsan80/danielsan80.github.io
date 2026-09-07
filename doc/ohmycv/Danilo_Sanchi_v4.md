@@ -137,6 +137,20 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
+  <div class="timeline-highlight" style="left: 63.13%; width: 1.26%;"></div>
+  <div class="timeline-dot" style="left: 63.13%;" data-label="Nov 2014"></div>
+  <div class="timeline-dot" style="left: 64.39%;" data-label="Mar 2015"></div>
+</div>
+
+**Supporto tecnico su WordPress**
+~ AFA Arredamenti, Cattolica
+~ Nov 2014 - Mar 2015
+
+- Realizzazione di due siti per l'azienda in collaborazione con un ex collega web designer.
+- Installazione e configurazione di WordPress.
+
+<div class="timeline-wrapper">
+  <div class="timeline-bar"></div>
   <div class="timeline-highlight" style="left: 60.87%; width: 0.99%;"></div>
   <div class="timeline-dot" style="left: 60.87%;" data-label="Feb 2014"></div>
   <div class="timeline-dot" style="left: 61.86%;" data-label="Mag 2014"></div>

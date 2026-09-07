@@ -174,6 +174,33 @@
   },
   {
     "role": {
+      "it": "Supporto tecnico su WordPress",
+      "en": "WordPress Technical Support"
+    },
+    "company": "AFA Arredamenti",
+    "location": "Cattolica",
+    "remote": false,
+    "period": {
+      "start": "2014-11",
+      "end": "2015-03"
+    },
+    "bullets": {
+      "it": [
+        "Realizzazione di due siti per l'azienda in collaborazione con un ex collega web designer.",
+        "Installazione e configurazione di WordPress."
+      ],
+      "en": [
+        "Built two websites for the company together with a former colleague, a web designer.",
+        "WordPress installation and configuration."
+      ]
+    },
+    "description": {
+      "it": "Ho collaborato con un ex collega web designer alla realizzazione di due siti per quest'azienda. Mi sono occupato dell'installazione e della configurazione di WordPress.",
+      "en": "I worked with a former colleague, a web designer, on two websites for this company. I took care of the WordPress installation and configuration."
+    }
+  },
+  {
+    "role": {
       "it": "Full Stack Developer",
       "en": "Full Stack Developer"
     },
