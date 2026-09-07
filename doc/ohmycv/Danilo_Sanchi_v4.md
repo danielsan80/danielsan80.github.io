@@ -177,8 +177,6 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 
 - Sviluppo api e back office per app mobile con contenuti georeferenziati per enti locali e aziende.
 
-<br><br>
-
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
   <div class="timeline-highlight" style="left: 58.07%; width: 2.53%;"></div>
@@ -304,9 +302,10 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
   <div class="timeline-dot" style="left: 46.46%;" data-label="Mag 2009"></div>
 </div>
 
-**PhpDay, JsDay, SymfonyDay, AgileDay, BetterSoftware, DevOpsDay** - conferenze italiane
+**PhpDay, JsDay, SymfonyDay e altre** - conferenze italiane
 ~ Dal 2009
-- Ho partecipato soprattutto a PhpDay, JsDay e Agile, a volte come volontario e una volta come speaker.
+- Ho partecipato soprattutto a PhpDay, JsDay e SymfonyDay, a volte come volontario e una volta come speaker.
+- Anche AgileDay, BetterSoftware, DevOpsDay e, più di recente, Working Software e SoCraTes Italy (settembre 2026).
 
 ## Skills
 

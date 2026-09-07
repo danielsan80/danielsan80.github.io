@@ -180,8 +180,6 @@ I am open to both freelance and employed positions, as long as the environment i
 
 - API and back office development for a mobile app with geo-referenced content for local authorities and companies.
 
-<br><br>
-
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
   <div class="timeline-highlight" style="left: 58.07%; width: 2.53%;"></div>
@@ -307,9 +305,10 @@ High school diploma in Accounting and Programming
   <div class="timeline-dot" style="left: 46.46%;" data-label="May 2009"></div>
 </div>
 
-**PhpDay, JsDay, SymfonyDay, AgileDay, BetterSoftware, DevOpsDay** - Italian conferences
+**PhpDay, JsDay, SymfonyDay and others** - Italian conferences
 ~ Since 2009
-- Attended mostly PhpDay, JsDay and AgileDay, sometimes as a volunteer and once as a speaker.
+- Attended mostly PhpDay, JsDay and SymfonyDay, sometimes as a volunteer and once as a speaker.
+- Also AgileDay, BetterSoftware, DevOpsDay and, more recently, Working Software and SoCraTes Italy (September 2026).
 
 ## Skills
 
