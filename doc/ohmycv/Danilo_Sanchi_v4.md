@@ -332,6 +332,7 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 
 **Frameworks:**
 <span class="skill full">Symfony</span>
+<span class="skill full">Doctrine ORM</span>
 <span class="skill medium">ReactJS</span>
 <span class="skill medium">Spring Boot</span>
 <span class="skill medium">API Platform</span>
@@ -373,7 +374,7 @@ Diploma di Ragioniere, Programmatore e Perito commerciale
 
 **Lingue:**
 <span class="skill full">Italiano (nativo)</span>
-<span class="skill low">Inglese (base-intermedio)</span>
+<span class="skill low">Inglese (intermedio: lettura e scrittura; parlato in corso)</span>
 
 <!--
 <span class="iconify" data-icon="vscode-icons:file-type-php"></span> PHP, <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript / <span class="iconify" data-icon="vscode-icons:file-type-typescript-official"></span> TypeScript, <span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python

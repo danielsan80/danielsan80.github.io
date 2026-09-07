@@ -38,6 +38,10 @@
         "level": "expert"
       },
       {
+        "name": "Doctrine ORM",
+        "level": "expert"
+      },
+      {
         "name": "ReactJS",
         "level": "advanced"
       },
@@ -209,7 +213,7 @@
       },
       {
         "name": {
-          "it": "Inglese (base-intermedio)",
+          "it": "Inglese (intermedio: lettura e scrittura; parlato in corso)",
           "en": "English (intermediate: reading and writing; spoken in progress)"
         },
         "level": "proficient"
