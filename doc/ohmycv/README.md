@@ -20,10 +20,10 @@ Non stanno nel markdown né nel CSS: vivono nello stato dell'app.
 | Paper size          | A4                              |
 | Theme color         | `#43912B`                       |
 | Font family         | Minion Pro                      |
-| Font size           | ~16px (da confermare)           |
+| Font size           | 15px                            |
 | Margins top/bottom  | 50px (padding reso: 50px sopra, 40px sotto) |
 | Margins left/right  | 45px                            |
 | Paragraph spacing   | 29px, alzato per evitare timeline orfane a fondo pagina |
-| Line spacing        | ~1.4 (da confermare)            |
+| Line spacing        | 1.3                             |
 
 Il verde del tema è lo stesso di `.timeline-highlight` e `.timeline-dot` nel CSS custom.
