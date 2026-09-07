@@ -59,9 +59,10 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Resolvi Srl, Riccione - _remote_
 ~ Aug 2026 - present
 
+- Isolated the development environment, decoupled from its online dependencies (back office, Firebase, CouchDB) and therefore runnable locally.
+- End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.
 - Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.
-- Set up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.
-- Support on new feature development.
+- Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>

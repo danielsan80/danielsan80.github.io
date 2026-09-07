@@ -12,19 +12,21 @@
     },
     "bullets": {
       "it": [
+        "Isolamento dell'ambiente di sviluppo, svincolato dalle dipendenze online (backoffice, Firebase, CouchDB) e quindi eseguibile in locale.",
+        "Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 alle successive.",
         "Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.",
-        "Impostazione di CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.",
-        "Supporto allo sviluppo di nuove funzionalità."
+        "Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team."
       ],
       "en": [
+        "Isolated the development environment, decoupled from its online dependencies (back office, Firebase, CouchDB) and therefore runnable locally.",
+        "End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.",
         "Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.",
-        "Set up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.",
-        "Support on new feature development."
+        "Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer."
       ]
     },
     "description": {
-      "it": "Sono entrato in Resolvi per dare supporto allo sviluppo di nuove funzionalità. Durante l'onboarding ho usato Claude Code per analizzare il progetto e mi sono reso conto che c'era più valore da portare prima, propedeutico alle funzionalità stesse: rivedere e migrare la suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, ripristinarne il lancio in CI, e impostare CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.\nTutto questo in pochi giorni di lavoro.",
-      "en": "I joined Resolvi to support new feature development. During onboarding I used Claude Code to analyse the project and realised there was more value to bring first, and that it was a prerequisite for the features themselves: reviewing and migrating the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, restoring its run in CI, and setting up CLAUDE.md, permissions and skills for a more advanced use of Claude Code in the development process.\nAll of it in a few days of work."
+      "it": "Sono entrato in Resolvi per dare supporto allo sviluppo di nuove funzionalità. Durante l'onboarding ho usato Claude Code per analizzare il progetto e mi sono reso conto che c'era del lavoro propedeutico più urgente.\nHo isolato l'ambiente di sviluppo: l'applicativo non partiva senza rete, perché si appoggiava al backoffice, a Firebase e a un CouchDB online. Su quella base abbiamo scritto con Claude i test end-to-end in Playwright sui flussi principali, come rete di sicurezza per la migrazione da Angular 18 a 20, e ho rivisto e migrato la suite di test da Karma/Jasmine a Vitest e da Cypress a Playwright, ripristinandone il lancio in CI.\nIn parallelo ho impostato CLAUDE.md, permessi e skill per un uso avanzato di Claude Code nel processo di sviluppo, trasferendo le pratiche allo sviluppatore del team.\nTutto questo in pochi giorni di lavoro. Lo sviluppo di nuove funzionalità è il passo successivo.",
+      "en": "I joined Resolvi to support new feature development. During onboarding I used Claude Code to analyse the project and realised there was more urgent groundwork to do first.\nI isolated the development environment: the application would not start without a network connection, because it relied on the back office, on Firebase and on an online CouchDB. On that basis we wrote, with Claude, the end-to-end Playwright tests covering the main flows, as a safety net for the Angular 18 to 20 migration, and I reviewed and migrated the test suite from Karma/Jasmine to Vitest and from Cypress to Playwright, restoring its run in CI.\nIn parallel I set up CLAUDE.md, permissions and skills for an advanced use of Claude Code in the development process, passing the practices on to the team's developer.\nAll of it in a few days of work. New feature development is the next step."
     }
   },
   {

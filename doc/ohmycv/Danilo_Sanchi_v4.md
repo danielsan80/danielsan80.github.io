@@ -56,9 +56,10 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Resolvi Srl, Riccione - _remote_
 ~ Ago 2026 - oggi
 
+- Isolamento dell'ambiente di sviluppo, svincolato dalle dipendenze online (backoffice, Firebase, CouchDB) e quindi eseguibile in locale.
+- Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 a 20.
 - Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.
-- Impostazione di CLAUDE.md, permessi e skill per un uso più avanzato di Claude Code nel processo di sviluppo.
-- Supporto allo sviluppo di nuove funzionalità.
+- Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team.
 
 <div class="timeline-wrapper">
   <div class="timeline-bar"></div>
