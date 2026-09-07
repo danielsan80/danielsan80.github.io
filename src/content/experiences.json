@@ -12,15 +12,15 @@
     },
     "bullets": {
       "it": [
-        "Isolamento dell'ambiente di sviluppo, svincolato dalle dipendenze online (backoffice, Firebase, CouchDB) e quindi eseguibile in locale.",
-        "Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 alle successive.",
-        "Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.",
+        "Isolamento dell'ambiente di sviluppo: applicativo eseguibile in locale senza rete, svincolato da backoffice, Firebase e CouchDB.",
+        "Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 a 20.",
+        "Ripristino della suite di test in CI come prerequisito al deploy, con migrazione da Karma/Jasmine a Vitest e da Cypress a Playwright.",
         "Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team."
       ],
       "en": [
-        "Isolated the development environment, decoupled from its online dependencies (back office, Firebase, CouchDB) and therefore runnable locally.",
+        "Isolated the development environment: the app runs locally with no network, decoupled from back office, Firebase and CouchDB.",
         "End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.",
-        "Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.",
+        "Restored the test suite in CI as a prerequisite for deployment, migrating it from Karma/Jasmine to Vitest and from Cypress to Playwright.",
         "Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer."
       ]
     },
@@ -110,19 +110,19 @@
     },
     "bullets": {
       "it": [
-        "Sviluppo e ottimizzazione del Backoffice di una piattaforma BNPL (nata come marketplace di prestiti tra privati), automazione processi aziendali e integrazione con servizi esterni.",
+        "Sviluppo e ottimizzazione del backoffice di una piattaforma BNPL: automazione dei processi aziendali e integrazione con servizi esterni.",
         "Interventi sulla webapp, in particolare sul funnel di onboarding.",
         "Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass."
       ],
       "en": [
-        "Development and optimization of the back office of a BNPL platform (born as a peer-to-peer lending marketplace), business process automation and integration with third-party services.",
+        "Development and optimization of the back office of a BNPL platform: business process automation and integration with third-party services.",
         "Work on the web app, in particular the onboarding funnel.",
         "Technical activities for the run-off of the platform after the acquisition by Compass."
       ]
     },
     "description": {
-      "it": "In Soisy principalmente ho lavorato al Backoffice, sviluppando funzionalità per automatizzare processi aziendali eseguiti manualmente, migliorando le sue performance, integrando servizi esterni.\nMi sono occupato della webapp modificando il funnel di onboarding e l'area riservata dell'utente.\nDopo l'acquisizione da parte di Compass, ho sviluppato alcune soluzioni utili alla dismissione della piattaforma.",
-      "en": "At Soisy I worked mainly on the back office, building features to automate business processes that were run by hand, improving its performance and integrating third-party services.\nI worked on the web app, changing the onboarding funnel and the logged-in user area.\nAfter the acquisition by Compass, I built solutions to support the decommissioning of the platform."
+      "it": "Soisy era una piattaforma BNPL, nata come marketplace di prestiti tra privati.\nIn Soisy principalmente ho lavorato al Backoffice, sviluppando funzionalità per automatizzare processi aziendali eseguiti manualmente, migliorando le sue performance, integrando servizi esterni.\nMi sono occupato della webapp modificando il funnel di onboarding e l'area riservata dell'utente.\nDopo l'acquisizione da parte di Compass, ho sviluppato alcune soluzioni utili alla dismissione della piattaforma.",
+      "en": "Soisy was a BNPL platform, born as a peer-to-peer lending marketplace.\nAt Soisy I worked mainly on the back office, building features to automate business processes that were run by hand, improving its performance and integrating third-party services.\nI worked on the web app, changing the onboarding funnel and the logged-in user area.\nAfter the acquisition by Compass, I built solutions to support the decommissioning of the platform."
     }
   },
   {
@@ -311,11 +311,11 @@
     },
     "bullets": {
       "it": [
-        "Refactoring e integrazione di Symfony 2.1 di un sito legacy per un cliente, al fine di sviluppare nuove funzionalità.",
+        "Refactoring del codice legacy di un cliente e integrazione con Symfony 2.1, per rendere possibili nuove funzionalità.",
         "Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate."
       ],
       "en": [
-        "Refactoring of a client's legacy site and integration of Symfony 2.1, in order to develop new features.",
+        "Refactored a client's legacy code and integrated it with Symfony 2.1, to make new features possible.",
         "Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced."
       ]
     },

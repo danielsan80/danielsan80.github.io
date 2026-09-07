@@ -56,9 +56,9 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Resolvi Srl, Riccione - _remote_
 ~ Ago 2026 - oggi
 
-- Isolamento dell'ambiente di sviluppo, svincolato dalle dipendenze online (backoffice, Firebase, CouchDB) e quindi eseguibile in locale.
+- Isolamento dell'ambiente di sviluppo: applicativo eseguibile in locale senza rete, svincolato da backoffice, Firebase e CouchDB.
 - Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 a 20.
-- Revisione e migrazione della suite di test, da Karma/Jasmine a Vitest e da Cypress a Playwright, con ripristino del lancio in CI come prerequisito al deploy.
+- Ripristino della suite di test in CI come prerequisito al deploy, con migrazione da Karma/Jasmine a Vitest e da Cypress a Playwright.
 - Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team.
 
 <div class="timeline-wrapper">
@@ -102,7 +102,7 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Soisy SpA, Milano - _remote_
 ~ Feb 2020 - Giu 2025
 
-- Sviluppo e ottimizzazione del Backoffice, automazione processi aziendali e integrazione con servizi esterni.
+- Sviluppo e ottimizzazione del backoffice di una piattaforma BNPL: automazione dei processi aziendali e integrazione con servizi esterni.
 - Interventi sulla webapp, in particolare sul funnel di onboarding.
 - Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass.
 
@@ -204,7 +204,7 @@ Sono aperto a collaborazioni sia come freelance che come dipendente, purché l'a
 ~ Iabadabadu Srl, Fano - _remote_
 ~ Mar 2013 - Dic 2013
 
-- Refactoring e integrazione di Symfony 2.1 di un sito legacy per un cliente, al fine di sviluppare nuove funzionalità.
+- Refactoring del codice legacy di un cliente e integrazione con Symfony 2.1, per rendere possibili nuove funzionalità.
 - Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate.
 
 <div class="timeline-wrapper">

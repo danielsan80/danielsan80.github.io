@@ -59,9 +59,9 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Resolvi Srl, Riccione - _remote_
 ~ Aug 2026 - present
 
-- Isolated the development environment, decoupled from its online dependencies (back office, Firebase, CouchDB) and therefore runnable locally.
+- Isolated the development environment: the app runs locally with no network, decoupled from back office, Firebase and CouchDB.
 - End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.
-- Review and migration of the test suite, from Karma/Jasmine to Vitest and from Cypress to Playwright, with its run restored in CI as a prerequisite for deployment.
+- Restored the test suite in CI as a prerequisite for deployment, migrating it from Karma/Jasmine to Vitest and from Cypress to Playwright.
 - Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer.
 
 <div class="timeline-wrapper">
@@ -105,7 +105,7 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Soisy SpA, Milan - _remote_
 ~ Feb 2020 - Jun 2025
 
-- Development and optimization of the back office of a BNPL platform (born as a peer-to-peer lending marketplace), business process automation and integration with third-party services.
+- Development and optimization of the back office of a BNPL platform: business process automation and integration with third-party services.
 - Work on the web app, in particular the onboarding funnel.
 - Technical activities for the run-off of the platform after the acquisition by Compass.
 
@@ -207,7 +207,7 @@ I am open to both freelance and employed positions, as long as the environment i
 ~ Iabadabadu Srl, Fano - _remote_
 ~ Mar 2013 - Dec 2013
 
-- Refactoring of a client's legacy site and integration of Symfony 2.1, in order to develop new features.
+- Refactored a client's legacy code and integrated it with Symfony 2.1, to make new features possible.
 - Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced.
 
 <div class="timeline-wrapper">
