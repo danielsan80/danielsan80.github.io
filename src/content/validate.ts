@@ -7,13 +7,22 @@ import { featuredProjects } from "./projects";
 import { skills, type SkillLevel } from "./skills";
 import { training } from "./training";
 
+export type Violation = {
+  path: string;
+  message: string;
+};
+
 const LEVELS: string[] = [
   "proficient",
   "advanced",
   "expert",
 ] satisfies SkillLevel[];
 
-export function localizedViolations(value: unknown, path: string): string[] {
+export function formatViolation({ path, message }: Violation): string {
+  return `${path}: ${message}`;
+}
+
+export function localizedViolations(value: unknown, path: string): Violation[] {
   if (Array.isArray(value)) {
     return value.flatMap((item, index) =>
       localizedViolations(item, `${path}[${index}]`),
@@ -32,7 +41,10 @@ export function localizedViolations(value: unknown, path: string): string[] {
     return complete
       ? []
       : [
-          `${path}: speaks ${keys.join(", ")}, must speak ${languages.join(", ")}`,
+          {
+            path,
+            message: `speaks ${keys.join(", ")}, must speak ${languages.join(", ")}`,
+          },
         ];
   }
 
@@ -45,13 +57,13 @@ export function dateViolations(
   entries: { period: Period }[],
   path: string,
   today: number,
-): string[] {
+): Violation[] {
   return entries.flatMap((entry, index) => {
     try {
       periodBounds(entry.period, today);
       return [];
     } catch (error) {
-      return [`${path}[${index}]: ${(error as Error).message}`];
+      return [{ path: `${path}[${index}]`, message: (error as Error).message }];
     }
   });
 }
@@ -59,19 +71,22 @@ export function dateViolations(
 export function levelViolations(
   groups: { items: { level: string }[] }[],
   path: string,
-): string[] {
+): Violation[] {
   return groups.flatMap((group, groupIndex) =>
     group.items.flatMap((item, index) =>
       LEVELS.includes(item.level)
         ? []
         : [
-            `${path}[${groupIndex}].items[${index}]: unknown level ${JSON.stringify(item.level)}`,
+            {
+              path: `${path}[${groupIndex}].items[${index}]`,
+              message: `unknown level ${JSON.stringify(item.level)}`,
+            },
           ],
     ),
   );
 }
 
-export function contentViolations(today: number): string[] {
+export function contentViolations(today: number): Violation[] {
   const collections: [string, unknown][] = [
     ["identity", identity],
     ["experiences", experiences],

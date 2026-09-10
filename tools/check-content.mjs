@@ -12,19 +12,19 @@ const server = await createServer({
   appType: "custom",
 });
 
-let violations;
+let lines;
 try {
-  const { contentViolations } = await server.ssrLoadModule(
+  const { contentViolations, formatViolation } = await server.ssrLoadModule(
     "/src/content/validate.ts",
   );
-  violations = contentViolations(Date.now());
+  lines = contentViolations(Date.now()).map(formatViolation);
 } finally {
   await server.close();
 }
 
-if (violations.length > 0) {
+if (lines.length > 0) {
   console.error(
-    `The content is not publishable:\n${violations.map((violation) => `  ${violation}`).join("\n")}`,
+    `The content is not publishable:\n${lines.map((line) => `  ${line}`).join("\n")}`,
   );
   process.exit(1);
 }

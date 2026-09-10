@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   contentViolations,
-  localizedViolations,
   dateViolations,
+  formatViolation,
   levelViolations,
+  localizedViolations,
 } from "./validate";
 
 const TODAY = Date.UTC(2026, 7, 26);
@@ -20,8 +21,8 @@ describe("localizedViolations", () => {
         "entries",
       ),
     ).toEqual([
-      "entries[1].role: speaks it, must speak it, en",
-      "entries[2].note: speaks en, fr, must speak it, en",
+      { path: "entries[1].role", message: "speaks it, must speak it, en" },
+      { path: "entries[2].note", message: "speaks en, fr, must speak it, en" },
     ]);
   });
 
@@ -49,8 +50,11 @@ describe("dateViolations", () => {
         TODAY,
       ),
     ).toEqual([
-      'experiences[2]: Invalid date: "nope"',
-      'experiences[3]: Period ends before it starts: "2020" to "2010"',
+      { path: "experiences[2]", message: 'Invalid date: "nope"' },
+      {
+        path: "experiences[3]",
+        message: 'Period ends before it starts: "2020" to "2010"',
+      },
     ]);
   });
 });
@@ -65,12 +69,25 @@ describe("levelViolations", () => {
         ],
         "skills",
       ),
-    ).toEqual(['skills[0].items[1]: unknown level "guru"']);
+    ).toEqual([
+      { path: "skills[0].items[1]", message: 'unknown level "guru"' },
+    ]);
   });
 });
 
 describe("contentViolations", () => {
   it("finds nothing to report in the content the site ships", () => {
     expect(contentViolations(TODAY)).toEqual([]);
+  });
+});
+
+describe("formatViolation", () => {
+  it("reads as the path followed by what is wrong at it", () => {
+    expect(
+      formatViolation({
+        path: "skills[0].items[1]",
+        message: 'unknown level "guru"',
+      }),
+    ).toBe('skills[0].items[1]: unknown level "guru"');
   });
 });
