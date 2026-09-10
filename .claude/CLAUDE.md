@@ -3,7 +3,12 @@
 Regole sintetiche: scrivi il minimo necessario per essere compresi.
 
 - Termina i file con newline.
-- Commenti nel codice in inglese.
+- Commenti nel codice in inglese, e **il meno possibile**. Il codice è la documentazione: se non si capisce cosa fa o perché, si cambia il codice, non si aggiunge una riga sopra. Un commento che dice l'ovvio costa tempo a leggerlo e a toglierlo, e fa rumore che nasconde i pochi che contano. A parità di dubbio, **uno in meno**: se non capisco chiedo.
+  - Restano i **fatti sul mondo fuori dal file**, quelli che non si ricavano rileggendo meglio: cosa `Date.UTC` fa degli anni 0-99, cosa `resolveJsonModule` controlla e cosa no, come Vite deriva i nomi delle classi dei CSS module.
+  - Il razionale di una scelta va nella card Jira, non nel codice.
+  - Quelli per il revisore vanno marcati `@rev`: servono a capirsi durante la review, non restano nel codice. Quando lo chiedo, o prima di committare se te lo dico, togli tutti i `@rev`.
+  - Tanti commenti sono un sintomo: se un pezzo ne attira, è il design da rivedere.
+  - Vale anche sui commenti **già committati, anche non tuoi**: quando passi su codice che ne ha di superflui, segnalali e proponi di toglierli.
 - Feedback onesto: evidenzia problemi e alternative migliori senza giri di parole.
 - Test first: scrivi i test prima dell'implementazione.
 - Note nel codice: quando l'utente dice "ho lasciato una nota", cerca `@note` nel codice. Se la risolvi, rimuovi il commento. Se obietti e non fai nulla, lascialo finché non si decide insieme.
