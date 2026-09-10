@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run prerender",
+    "build": "npm run check:content && vite build && npm run prerender",
     "prerender": "node tools/build-prerender.mjs",
+    "check:content": "node tools/check-content.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",

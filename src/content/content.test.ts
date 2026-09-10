@@ -1,86 +1,76 @@
 import { describe, expect, it } from "vitest";
-import { education } from "./education";
-import { experiences } from "./experiences";
-import { identity } from "./identity";
-import { LANGS } from "./localized";
-import { periodBounds } from "./period";
-import { featuredProjects } from "./projects";
-import { skills, type SkillLevel } from "./skills";
-import { training } from "./training";
+import {
+  contentViolations,
+  localizedViolations,
+  dateViolations,
+  levelViolations,
+} from "./validate";
 
 const TODAY = Date.UTC(2026, 7, 26);
 
-const LEVELS: string[] = [
-  "proficient",
-  "advanced",
-  "expert",
-] satisfies SkillLevel[];
-
-// Any object that speaks one language must speak them all. The walk is
-// generic on purpose: a new collection gets checked without registering here.
-function incompleteLocalized(value: unknown, path: string): string[] {
-  if (Array.isArray(value)) {
-    return value.flatMap((item, index) =>
-      incompleteLocalized(item, `${path}[${index}]`),
-    );
-  }
-  if (typeof value !== "object" || value === null) {
-    return [];
-  }
-
-  const keys = Object.keys(value);
-  const languages: string[] = LANGS;
-  if (keys.some((key) => languages.includes(key))) {
-    const complete =
-      keys.length === languages.length &&
-      languages.every((lang) => keys.includes(lang));
-    return complete ? [] : [path];
-  }
-
-  return Object.entries(value).flatMap(([key, child]) =>
-    incompleteLocalized(child, `${path}.${key}`),
-  );
-}
-
-// The compiler stops at the shape of the JSON. These tests cover the rules it
-// cannot see: that the dates are real, the levels are in range and every
-// localized value speaks both languages.
-describe("content files", () => {
-  it("gives every localized value both languages", () => {
-    const collections: [string, unknown][] = [
-      ["identity", identity],
-      ["experiences", experiences],
-      ["education", education],
-      ["training", training],
-      ["skills", skills],
-      ["featuredProjects", featuredProjects],
-    ];
-
+describe("localizedViolations", () => {
+  it("names every localized value that does not speak both languages", () => {
     expect(
-      collections.flatMap(([name, data]) => incompleteLocalized(data, name)),
+      localizedViolations(
+        [
+          { role: { it: "Sviluppatore", en: "Developer" } },
+          { role: { it: "Consulente" } },
+          { note: { en: "Attended twice", fr: "Deux fois" } },
+        ],
+        "entries",
+      ),
+    ).toEqual([
+      "entries[1].role: speaks it, must speak it, en",
+      "entries[2].note: speaks en, fr, must speak it, en",
+    ]);
+  });
+
+  it("leaves plain values alone: a word that reads the same in every language is not localized", () => {
+    expect(
+      localizedViolations(
+        { company: "Resolvi Srl", skills: ["PHP", "TypeScript"] },
+        "record",
+      ),
     ).toEqual([]);
   });
+});
 
-  it("dates every entry with a range that can be placed on a timeline", () => {
-    const dated = [...experiences, ...education, ...training];
-
-    const undatable = dated.filter((entry) => {
-      try {
-        periodBounds(entry.period, TODAY);
-        return false;
-      } catch {
-        return true;
-      }
-    });
-
-    expect(undatable).toEqual([]);
+describe("dateViolations", () => {
+  it("names every entry whose period cannot be placed on a timeline", () => {
+    expect(
+      dateViolations(
+        [
+          { period: { start: "2015-09", end: "2025-06" } },
+          { period: { start: "2026-08" } },
+          { period: { start: "nope" } },
+          { period: { start: "2020", end: "2010" } },
+        ],
+        "experiences",
+        TODAY,
+      ),
+    ).toEqual([
+      'experiences[2]: Invalid date: "nope"',
+      'experiences[3]: Period ends before it starts: "2020" to "2010"',
+    ]);
   });
+});
 
-  it("grades every skill with a level the marker knows how to draw", () => {
-    const levels: string[] = skills.flatMap((group) =>
-      group.items.map((item) => item.level),
-    );
+describe("levelViolations", () => {
+  it("names every skill graded with a level the marker cannot draw", () => {
+    expect(
+      levelViolations(
+        [
+          { items: [{ level: "expert" }, { level: "guru" }] },
+          { items: [{ level: "advanced" }] },
+        ],
+        "skills",
+      ),
+    ).toEqual(['skills[0].items[1]: unknown level "guru"']);
+  });
+});
 
-    expect(levels.filter((level) => !LEVELS.includes(level))).toEqual([]);
+describe("contentViolations", () => {
+  it("finds nothing to report in the content the site ships", () => {
+    expect(contentViolations(TODAY)).toEqual([]);
   });
 });
