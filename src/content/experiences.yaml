@@ -24,26 +24,27 @@
 
     Tutto questo in pochi giorni di lavoro. Lo sviluppo di nuove funzionalità è
     il passo successivo.
-  cv:
-    it:
-      - "Isolamento dell'ambiente di sviluppo: applicativo eseguibile in locale senza rete, svincolato da backoffice, Firebase e CouchDB."
-      - Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 a 20.
-      - Ripristino della suite di test in CI come prerequisito al deploy, con migrazione da Karma/Jasmine a Vitest e da Cypress a Playwright.
-      - Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team.
-    en:
-      - "Isolated the development environment: the app runs locally with no network, decoupled from back office, Firebase and CouchDB."
-      - End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.
-      - Restored the test suite in CI as a prerequisite for deployment, migrating it from Karma/Jasmine to Vitest and from Cypress to Playwright.
-      - Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer.
-  linkedin:
-    it: |-
-      Sono entrato per dare supporto allo sviluppo, ma dall'onboarding è emerso del lavoro propedeutico più urgente.
-      Ho isolato l'ambiente di sviluppo, che senza rete non partiva, rendendolo eseguibile in locale. Su quella base ho scritto con Claude i test end-to-end in Playwright sui flussi principali, come rete di sicurezza per la migrazione da Angular 18 a 20, e ho rivisto e migrato la suite di test da Karma/Jasmine a Vitest e da Cypress a Playwright, rimettendola in CI come prerequisito al deploy.
-      In parallelo ho impostato CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, trasferendo le pratiche allo sviluppatore del team. Tutto in pochi giorni di lavoro, e le nuove funzionalità sono il passo successivo.
-    en: |-
-      I joined to support development, but onboarding surfaced more urgent groundwork.
-      I isolated the development environment, which would not start without a network, and made it runnable locally. On that basis I wrote, with Claude, the end-to-end Playwright tests covering the main flows, as a safety net for the Angular 18 to 20 migration, and I reviewed and migrated the test suite from Karma/Jasmine to Vitest and from Cypress to Playwright, putting it back in CI as a prerequisite for deployment.
-      In parallel I set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer. All in a few days of work, and new features are the next step.
+  channels:
+    cv:
+      it:
+        - "Isolamento dell'ambiente di sviluppo: applicativo eseguibile in locale senza rete, svincolato da backoffice, Firebase e CouchDB."
+        - Test end-to-end in Playwright sui flussi principali dell'app, scritti come rete di sicurezza per la migrazione da Angular 18 a 20.
+        - Ripristino della suite di test in CI come prerequisito al deploy, con migrazione da Karma/Jasmine a Vitest e da Cypress a Playwright.
+        - Impostazione di CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, con trasferimento delle pratiche allo sviluppatore del team.
+      en:
+        - "Isolated the development environment: the app runs locally with no network, decoupled from back office, Firebase and CouchDB."
+        - End-to-end tests in Playwright covering the app's main flows, written as a safety net for the Angular 18 to 20 migration.
+        - Restored the test suite in CI as a prerequisite for deployment, migrating it from Karma/Jasmine to Vitest and from Cypress to Playwright.
+        - Set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer.
+    linkedin:
+      it: |-
+        Sono entrato per dare supporto allo sviluppo, ma dall'onboarding è emerso del lavoro propedeutico più urgente.
+        Ho isolato l'ambiente di sviluppo, che senza rete non partiva, rendendolo eseguibile in locale. Su quella base ho scritto con Claude i test end-to-end in Playwright sui flussi principali, come rete di sicurezza per la migrazione da Angular 18 a 20, e ho rivisto e migrato la suite di test da Karma/Jasmine a Vitest e da Cypress a Playwright, rimettendola in CI come prerequisito al deploy.
+        In parallelo ho impostato CLAUDE.md, permessi e skill per un uso avanzato di Claude Code, trasferendo le pratiche allo sviluppatore del team. Tutto in pochi giorni di lavoro, e le nuove funzionalità sono il passo successivo.
+      en: |-
+        I joined to support development, but onboarding surfaced more urgent groundwork.
+        I isolated the development environment, which would not start without a network, and made it runnable locally. On that basis I wrote, with Claude, the end-to-end Playwright tests covering the main flows, as a safety net for the Angular 18 to 20 migration, and I reviewed and migrated the test suite from Karma/Jasmine to Vitest and from Cypress to Playwright, putting it back in CI as a prerequisite for deployment.
+        In parallel I set up CLAUDE.md, permissions and skills for an advanced use of Claude Code, passing the practices on to the team's developer. All in a few days of work, and new features are the next step.
 - role:
     it: Consulente e Senior Software Engineer
     en: Consultant & Senior Software Engineer
@@ -66,22 +67,23 @@
     In parallelo abbiamo tenuto workshop interni su pratiche di eXtreme
     Programming e tecniche di refactoring, per ridurre gradualmente il debito
     tecnico.
-  cv:
-    it:
-      - "Consulenza sul design organizzativo di un'azienda cliente, in coppia con un altro consulente: analisi e proposte settimanali al CTO."
-      - Affiancamento al team del cliente in pair programming su sviluppo e refactoring.
-      - Mentoring e workshop su pratiche di eXtreme Programming e su tecniche di refactoring, per ridurre gradualmente il debito tecnico.
-    en:
-      - "Organization Design consulting at a client company, paired with another consultant: weekly analyses and proposals to the CTO."
-      - Worked alongside the client's team in pair programming on features and refactoring.
-      - Mentoring and workshops on eXtreme Programming practices and on refactoring techniques, to gradually reduce technical debt.
-  linkedin:
-    it: |-
-      Insieme a un altro consulente ho affiancato il team di sviluppo di un'azienda cliente, con un incarico sul design organizzativo, portando analisi e proposte settimanali al CTO.
-      Per capire il contesto dall'interno ho sviluppato nuove funzionalità e rifattorizzato il codice in pair programming con i loro sviluppatori, e ho tenuto workshop interni su pratiche di eXtreme Programming e tecniche di refactoring.
-    en: |-
-      Together with another consultant I worked alongside a client company's development team, on an Organization Design engagement, bringing weekly analyses and proposals to the CTO.
-      To understand the context from the inside I developed new features and refactored code in pair programming with their developers, and I ran in-house workshops on eXtreme Programming practices and refactoring techniques.
+  channels:
+    cv:
+      it:
+        - "Consulenza sul design organizzativo di un'azienda cliente, in coppia con un altro consulente: analisi e proposte settimanali al CTO."
+        - Affiancamento al team del cliente in pair programming su sviluppo e refactoring.
+        - Mentoring e workshop su pratiche di eXtreme Programming e su tecniche di refactoring, per ridurre gradualmente il debito tecnico.
+      en:
+        - "Organization Design consulting at a client company, paired with another consultant: weekly analyses and proposals to the CTO."
+        - Worked alongside the client's team in pair programming on features and refactoring.
+        - Mentoring and workshops on eXtreme Programming practices and on refactoring techniques, to gradually reduce technical debt.
+    linkedin:
+      it: |-
+        Insieme a un altro consulente ho affiancato il team di sviluppo di un'azienda cliente, con un incarico sul design organizzativo, portando analisi e proposte settimanali al CTO.
+        Per capire il contesto dall'interno ho sviluppato nuove funzionalità e rifattorizzato il codice in pair programming con i loro sviluppatori, e ho tenuto workshop interni su pratiche di eXtreme Programming e tecniche di refactoring.
+      en: |-
+        Together with another consultant I worked alongside a client company's development team, on an Organization Design engagement, bringing weekly analyses and proposals to the CTO.
+        To understand the context from the inside I developed new features and refactored code in pair programming with their developers, and I ran in-house workshops on eXtreme Programming practices and refactoring techniques.
 - role:
     it: Full Stack Developer
     en: Full Stack Developer
@@ -109,22 +111,23 @@
     esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice
     e contribuendo alla migrazione verso un modello a domini. Ho imparato molto
     anche dai colleghi.
-  cv:
-    it:
-      - Sviluppo di nuove funzionalità del CRM interno per la gestione dell'operatività degli store fisici.
-      - Integrazione con gli altri applicativi interni all'azienda, via Google Pub/Sub.
-      - Sviluppo in team con Scrum, portando l'esperienza su architettura esagonale e DDD.
-    en:
-      - Development of new features for the internal CRM managing the operations of the physical stores.
-      - Integration with the company's other in-house applications, over Google Pub/Sub.
-      - Development in a Scrum team, bringing my experience with hexagonal architecture and DDD.
-  linkedin:
-    it: |-
-      Ho sviluppato nuove funzionalità del CRM interno lavorando nel team con i rituali Scrum, e ne ho curato l'integrazione con gli altri applicativi aziendali, scambiando eventi CRUD via Google Pub/Sub.
-      Oltre alle funzionalità ho portato il mio punto di vista su architettura esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice e contribuendo alla migrazione verso un modello a domini. Ho imparato molto anche dai colleghi.
-    en: |-
-      I developed new features for the internal CRM working within the team's Scrum rituals, and I handled its integration with the other in-house applications, exchanging CRUD events over Google Pub/Sub.
-      Beyond the features I brought my own perspective on hexagonal architecture and Domain-Driven Design, showing how I would organize the code and contributing to the migration towards a domain model. I also learned a lot from my colleagues.
+  channels:
+    cv:
+      it:
+        - Sviluppo di nuove funzionalità del CRM interno per la gestione dell'operatività degli store fisici.
+        - Integrazione con gli altri applicativi interni all'azienda, via Google Pub/Sub.
+        - Sviluppo in team con Scrum, portando l'esperienza su architettura esagonale e DDD.
+      en:
+        - Development of new features for the internal CRM managing the operations of the physical stores.
+        - Integration with the company's other in-house applications, over Google Pub/Sub.
+        - Development in a Scrum team, bringing my experience with hexagonal architecture and DDD.
+    linkedin:
+      it: |-
+        Ho sviluppato nuove funzionalità del CRM interno lavorando nel team con i rituali Scrum, e ne ho curato l'integrazione con gli altri applicativi aziendali, scambiando eventi CRUD via Google Pub/Sub.
+        Oltre alle funzionalità ho portato il mio punto di vista su architettura esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice e contribuendo alla migrazione verso un modello a domini. Ho imparato molto anche dai colleghi.
+      en: |-
+        I developed new features for the internal CRM working within the team's Scrum rituals, and I handled its integration with the other in-house applications, exchanging CRUD events over Google Pub/Sub.
+        Beyond the features I brought my own perspective on hexagonal architecture and Domain-Driven Design, showing how I would organize the code and contributing to the migration towards a domain model. I also learned a lot from my colleagues.
 - role:
     it: Full Stack Developer
     en: Full Stack Developer
@@ -136,26 +139,27 @@
   period:
     start: "2020-02"
     end: "2025-06"
-  cv:
-    it:
-      - "Sviluppo e ottimizzazione del backoffice di una piattaforma BNPL: automazione dei processi aziendali e integrazione con servizi esterni."
-      - Interventi sulla webapp, in particolare sul funnel di onboarding.
-      - Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass.
-    en:
-      - "Development and optimization of the back office of a BNPL platform: business process automation and integration with third-party services."
-      - Work on the web app, in particular the onboarding funnel.
-      - Technical activities for the run-off of the platform after the acquisition by Compass.
-  linkedin:
-    it: |-
-      Soisy era una piattaforma BNPL, nata come marketplace di prestiti tra privati.
-      In Soisy principalmente ho lavorato al Backoffice, sviluppando funzionalità per automatizzare processi aziendali eseguiti manualmente, migliorando le sue performance, integrando servizi esterni.
-      Mi sono occupato della webapp modificando il funnel di onboarding e l'area riservata dell'utente.
-      Dopo l'acquisizione da parte di Compass, ho sviluppato alcune soluzioni utili alla dismissione della piattaforma.
-    en: |-
-      Soisy was a BNPL platform, born as a peer-to-peer lending marketplace.
-      At Soisy I worked mainly on the back office, building features to automate business processes that were run by hand, improving its performance and integrating third-party services.
-      I worked on the web app, changing the onboarding funnel and the logged-in user area.
-      After the acquisition by Compass, I built solutions to support the decommissioning of the platform.
+  channels:
+    cv:
+      it:
+        - "Sviluppo e ottimizzazione del backoffice di una piattaforma BNPL: automazione dei processi aziendali e integrazione con servizi esterni."
+        - Interventi sulla webapp, in particolare sul funnel di onboarding.
+        - Gestione delle attività tecniche legate al runoff della piattaforma dopo l'acquisizione da parte di Compass.
+      en:
+        - "Development and optimization of the back office of a BNPL platform: business process automation and integration with third-party services."
+        - Work on the web app, in particular the onboarding funnel.
+        - Technical activities for the run-off of the platform after the acquisition by Compass.
+    linkedin:
+      it: |-
+        Soisy era una piattaforma BNPL, nata come marketplace di prestiti tra privati.
+        In Soisy principalmente ho lavorato al Backoffice, sviluppando funzionalità per automatizzare processi aziendali eseguiti manualmente, migliorando le sue performance, integrando servizi esterni.
+        Mi sono occupato della webapp modificando il funnel di onboarding e l'area riservata dell'utente.
+        Dopo l'acquisizione da parte di Compass, ho sviluppato alcune soluzioni utili alla dismissione della piattaforma.
+      en: |-
+        Soisy was a BNPL platform, born as a peer-to-peer lending marketplace.
+        At Soisy I worked mainly on the back office, building features to automate business processes that were run by hand, improving its performance and integrating third-party services.
+        I worked on the web app, changing the onboarding funnel and the logged-in user area.
+        After the acquisition by Compass, I built solutions to support the decommissioning of the platform.
 - role:
     it: Lead Full Stack Developer
     en: Lead Full Stack Developer
@@ -165,28 +169,29 @@
   period:
     start: "2015-03"
     end: "2025-02"
-  cv:
-    it:
-      - Formazione iniziale al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.
-      - Analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.
-      - Coordinamento e mentorship di un team di 3-5 sviluppatori, problem solving, assistenza al recruiting.
-      - Manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati.
-    en:
-      - Initial training of the in-house team (3 developers) on Symfony 2 and object-oriented programming.
-      - Analysis, design, kick-off, development and engineering of Symfony applications.
-      - Coordination and mentoring of a team of 3-5 developers, problem solving, support to recruiting.
-      - Maintenance, refactoring and new features on the applications delivered.
-  linkedin:
-    it: |-
-      In Idrolab ho fatto inizialmente formazione al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.
-      Mi sono poi occupato di analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.
-      Ho svolto un ruolo di coordinamento e mentorship di un team di 3-5 sviluppatori, ho fatto problem solving e assistenza al recruiting.
-      Negli ultimi anni ho fatto soprattutto manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati.
-    en: |-
-      At Idrolab I started by training the in-house team (3 developers) on Symfony 2 and object-oriented programming.
-      I then took care of analysis, design, kick-off, development and engineering of Symfony applications.
-      I coordinated and mentored a team of 3-5 developers, did problem solving and supported recruiting.
-      In the last years I mostly did maintenance, refactoring and new feature development on the projects delivered.
+  channels:
+    cv:
+      it:
+        - Formazione iniziale al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.
+        - Analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.
+        - Coordinamento e mentorship di un team di 3-5 sviluppatori, problem solving, assistenza al recruiting.
+        - Manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati.
+      en:
+        - Initial training of the in-house team (3 developers) on Symfony 2 and object-oriented programming.
+        - Analysis, design, kick-off, development and engineering of Symfony applications.
+        - Coordination and mentoring of a team of 3-5 developers, problem solving, support to recruiting.
+        - Maintenance, refactoring and new features on the applications delivered.
+    linkedin:
+      it: |-
+        In Idrolab ho fatto inizialmente formazione al team interno (3 sviluppatrici) su Symfony 2 e su programmazione ad oggetti.
+        Mi sono poi occupato di analisi, progettazione, avvio, sviluppo, ingegnerizzazione di applicazioni Symfony.
+        Ho svolto un ruolo di coordinamento e mentorship di un team di 3-5 sviluppatori, ho fatto problem solving e assistenza al recruiting.
+        Negli ultimi anni ho fatto soprattutto manutenzione, refactoring e sviluppo di nuove funzionalità sui progetti realizzati.
+      en: |-
+        At Idrolab I started by training the in-house team (3 developers) on Symfony 2 and object-oriented programming.
+        I then took care of analysis, design, kick-off, development and engineering of Symfony applications.
+        I coordinated and mentored a team of 3-5 developers, did problem solving and supported recruiting.
+        In the last years I mostly did maintenance, refactoring and new feature development on the projects delivered.
 - role:
     it: Solo Full Stack Developer
     en: Solo Full Stack Developer
@@ -198,20 +203,21 @@
   period:
     start: "2018-11"
     end: "2019-02"
-  cv:
-    it:
-      - Incaricato del ripristino della piattaforma Ehoreca a scopo demo, dopo 3 anni di inattività.
-      - Aggiornamento dell’ambiente di sviluppo, delle dipendenze e delle configurazioni.
-    en:
-      - In charge of restoring the Ehoreca platform for demo purposes, after 3 years of inactivity.
-      - Upgrade of the development environment, dependencies and configuration.
-  linkedin:
-    it: |-
-      Sono stato incaricato di ripristinare la piattaforma Ehoreca dopo circa 3 anni dalla sua chiusura per liquidazione dell'attività. Si trattava di un job marketplace per il settore HoReCa. Il ripristino era finalizzato alla realizzazione di una demo che avrebbe permesso al fondatore di vendere il codice ad una terza parte interessata.
-      È stato necessario adattare l'ambiente di sviluppo, aggiornare le dipendenze, ripristinare i servizi di terze parti (es. il reverse geocoding di Google) poiché dopo 3 anni di mancata manutenzione il progetto non si avviava più.
-    en: |-
-      I was hired to restore the Ehoreca platform about 3 years after it had been shut down and the company wound up. It was a job marketplace for the HoReCa industry. The goal was a working demo that would let the founder sell the code to an interested third party.
-      I had to adapt the development environment, upgrade the dependencies and restore third-party services (Google reverse geocoding, for one), because after 3 years without maintenance the project would no longer start.
+  channels:
+    cv:
+      it:
+        - Incaricato del ripristino della piattaforma Ehoreca a scopo demo, dopo 3 anni di inattività.
+        - Aggiornamento dell’ambiente di sviluppo, delle dipendenze e delle configurazioni.
+      en:
+        - In charge of restoring the Ehoreca platform for demo purposes, after 3 years of inactivity.
+        - Upgrade of the development environment, dependencies and configuration.
+    linkedin:
+      it: |-
+        Sono stato incaricato di ripristinare la piattaforma Ehoreca dopo circa 3 anni dalla sua chiusura per liquidazione dell'attività. Si trattava di un job marketplace per il settore HoReCa. Il ripristino era finalizzato alla realizzazione di una demo che avrebbe permesso al fondatore di vendere il codice ad una terza parte interessata.
+        È stato necessario adattare l'ambiente di sviluppo, aggiornare le dipendenze, ripristinare i servizi di terze parti (es. il reverse geocoding di Google) poiché dopo 3 anni di mancata manutenzione il progetto non si avviava più.
+      en: |-
+        I was hired to restore the Ehoreca platform about 3 years after it had been shut down and the company wound up. It was a job marketplace for the HoReCa industry. The goal was a working demo that would let the founder sell the code to an interested third party.
+        I had to adapt the development environment, upgrade the dependencies and restore third-party services (Google reverse geocoding, for one), because after 3 years without maintenance the project would no longer start.
 - role:
     it: Supporto tecnico su WordPress
     en: WordPress Technical Support
@@ -221,16 +227,17 @@
   period:
     start: "2014-11"
     end: "2015-03"
-  cv:
-    it:
-      - Realizzazione di due siti per l'azienda in collaborazione con un ex collega web designer.
-      - Installazione e configurazione di WordPress.
-    en:
-      - Built two websites for the company together with a former colleague, a web designer.
-      - WordPress installation and configuration.
-  linkedin:
-    it: Ho collaborato con un ex collega web designer alla realizzazione di due siti per quest'azienda. Mi sono occupato dell'installazione e della configurazione di WordPress.
-    en: I worked with a former colleague, a web designer, on two websites for this company. I took care of the WordPress installation and configuration.
+  channels:
+    cv:
+      it:
+        - Realizzazione di due siti per l'azienda in collaborazione con un ex collega web designer.
+        - Installazione e configurazione di WordPress.
+      en:
+        - Built two websites for the company together with a former colleague, a web designer.
+        - WordPress installation and configuration.
+    linkedin:
+      it: Ho collaborato con un ex collega web designer alla realizzazione di due siti per quest'azienda. Mi sono occupato dell'installazione e della configurazione di WordPress.
+      en: I worked with a former colleague, a web designer, on two websites for this company. I took care of the WordPress installation and configuration.
 - role:
     it: Consulente e Full Stack Developer
     en: Consultant & Full Stack Developer
@@ -240,16 +247,17 @@
   period:
     start: "2014-02"
     end: "2014-05"
-  cv:
-    it:
-      - Consulenza su problema di integrazione con siti partner tramite web scraping.
-      - Analisi e implementazione della soluzione tecnica proposta.
-    en:
-      - Consulting on an integration problem with partner sites via web scraping.
-      - Analysis and implementation of the proposed technical solution.
-  linkedin:
-    it: Sono stato contattato da questa azienda per aiutarli a risolvere un problema di integrazione con i siti dei loro partner. Era necessario raccogliere giornalmente alcuni dati tramite web scraping. Ho proposto ed implementato una soluzione che ha risolto il problema.
-    en: They reached out to me to help solve an integration problem with their partners' sites. Some data had to be collected daily via web scraping. I proposed and implemented a solution that fixed the problem.
+  channels:
+    cv:
+      it:
+        - Consulenza su problema di integrazione con siti partner tramite web scraping.
+        - Analisi e implementazione della soluzione tecnica proposta.
+      en:
+        - Consulting on an integration problem with partner sites via web scraping.
+        - Analysis and implementation of the proposed technical solution.
+    linkedin:
+      it: Sono stato contattato da questa azienda per aiutarli a risolvere un problema di integrazione con i siti dei loro partner. Era necessario raccogliere giornalmente alcuni dati tramite web scraping. Ho proposto ed implementato una soluzione che ha risolto il problema.
+      en: They reached out to me to help solve an integration problem with their partners' sites. Some data had to be collected daily via web scraping. I proposed and implemented a solution that fixed the problem.
 - role:
     it: Full Stack Developer
     en: Full Stack Developer
@@ -259,22 +267,23 @@
   period:
     start: "2014-02"
     end: "2014-08"
-  cv:
-    it:
-      - Implementazione funzionalità sulla piattaforma social dell'azienda.
-      - Startup liquidata dopo pochi mesi per ritiro degli investitori.
-    en:
-      - Feature development on the company's social platform.
-      - Startup wound up after a few months when the investors pulled out.
-  linkedin:
-    it: |-
-      Oboxo era un social network basato sull'idea di condividere le proprie collezioni di prodotti.
-      La piattaforma era stata realizzata da Ideato Srl che mi aveva proposto come aiuto freelance al team di sviluppo per realizzare nuove funzionalità.
-      Purtroppo dopo pochi mesi l'attività è cessata ed è stata liquidata.
-    en: |-
-      Oboxo was a social network built around sharing your own product collections.
-      The platform had been built by Ideato Srl, who put me forward as freelance support to the development team for new features.
-      The company ceased trading after a few months and was wound up.
+  channels:
+    cv:
+      it:
+        - Implementazione funzionalità sulla piattaforma social dell'azienda.
+        - Startup liquidata dopo pochi mesi per ritiro degli investitori.
+      en:
+        - Feature development on the company's social platform.
+        - Startup wound up after a few months when the investors pulled out.
+    linkedin:
+      it: |-
+        Oboxo era un social network basato sull'idea di condividere le proprie collezioni di prodotti.
+        La piattaforma era stata realizzata da Ideato Srl che mi aveva proposto come aiuto freelance al team di sviluppo per realizzare nuove funzionalità.
+        Purtroppo dopo pochi mesi l'attività è cessata ed è stata liquidata.
+      en: |-
+        Oboxo was a social network built around sharing your own product collections.
+        The platform had been built by Ideato Srl, who put me forward as freelance support to the development team for new features.
+        The company ceased trading after a few months and was wound up.
 - role:
     it: Lead Full Stack Developer
     en: Lead Full Stack Developer
@@ -296,20 +305,21 @@
 
     Ho sviluppato il back office, un'applicazione Symfony, e le api in lettura
     che alimentavano le app.
-  cv:
-    it:
-      - Sviluppo delle api e del back office Symfony per app mobile con contenuti georeferenziati.
-      - "Piattaforma multi-istanza: un solo backend a servire le app personalizzate di locali, associazioni ed enti locali."
-    en:
-      - Development of the APIs and the Symfony back office for mobile apps with geo-referenced content.
-      - "Multi-tenant platform: a single backend serving the branded apps of venues, associations and local authorities."
-  linkedin:
-    it: |-
-      Ero il backend di un team di tre, con il fondatore che faceva anche da product owner e uno sviluppatore mobile.
-      Ho sviluppato il back office in Symfony e le api in lettura che alimentavano le app mobili: un solo backend serviva le app personalizzate di tutti i clienti.
-    en: |-
-      I was the backend of a team of three, with the founder also acting as product owner and a mobile developer.
-      I built the Symfony back office and the read APIs that fed the mobile apps: a single backend served every client's branded app.
+  channels:
+    cv:
+      it:
+        - Sviluppo delle api e del back office Symfony per app mobile con contenuti georeferenziati.
+        - "Piattaforma multi-istanza: un solo backend a servire le app personalizzate di locali, associazioni ed enti locali."
+      en:
+        - Development of the APIs and the Symfony back office for mobile apps with geo-referenced content.
+        - "Multi-tenant platform: a single backend serving the branded apps of venues, associations and local authorities."
+    linkedin:
+      it: |-
+        Ero il backend di un team di tre, con il fondatore che faceva anche da product owner e uno sviluppatore mobile.
+        Ho sviluppato il back office in Symfony e le api in lettura che alimentavano le app mobili: un solo backend serviva le app personalizzate di tutti i clienti.
+      en: |-
+        I was the backend of a team of three, with the founder also acting as product owner and a mobile developer.
+        I built the Symfony back office and the read APIs that fed the mobile apps: a single backend served every client's branded app.
 - role:
     it: Consulente e Full Stack Developer
     en: Consultant & Full Stack Developer
@@ -319,20 +329,21 @@
   period:
     start: "2013-03"
     end: "2013-12"
-  cv:
-    it:
-      - Refactoring del codice legacy di un cliente e integrazione con Symfony 2.1, per rendere possibili nuove funzionalità.
-      - Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate.
-    en:
-      - Refactored a client's legacy code and integrated it with Symfony 2.1, to make new features possible.
-      - Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced.
-  linkedin:
-    it: |-
-      Mi sono occupato di isolare e rifattorizzare il codice legacy dell'e-commerce B2B di un cliente per poi integrarlo con Symfony 2.1, al fine di permettere lo sviluppo di nuove funzionalità.
-      Poi presentai questa sfida tecnica come caso di studio in un talk al SymfonyDay 2013.
-    en: |-
-      I isolated and refactored the legacy code of a client's B2B e-commerce, then integrated it with Symfony 2.1 so that new features could be developed.
-      I later presented the technical challenge as a case study in a talk at SymfonyDay 2013.
+  channels:
+    cv:
+      it:
+        - Refactoring del codice legacy di un cliente e integrazione con Symfony 2.1, per rendere possibili nuove funzionalità.
+        - Presentazione del progetto come case study al SymfonyDay 2013, illustrando le sfide tecniche affrontate.
+      en:
+        - Refactored a client's legacy code and integrated it with Symfony 2.1, to make new features possible.
+        - Presented the project as a case study at SymfonyDay 2013, covering the technical challenges faced.
+    linkedin:
+      it: |-
+        Mi sono occupato di isolare e rifattorizzare il codice legacy dell'e-commerce B2B di un cliente per poi integrarlo con Symfony 2.1, al fine di permettere lo sviluppo di nuove funzionalità.
+        Poi presentai questa sfida tecnica come caso di studio in un talk al SymfonyDay 2013.
+      en: |-
+        I isolated and refactored the legacy code of a client's B2B e-commerce, then integrated it with Symfony 2.1 so that new features could be developed.
+        I later presented the technical challenge as a case study in a talk at SymfonyDay 2013.
 - role:
     it: Full Stack Developer
     en: Full Stack Developer
@@ -342,18 +353,19 @@
   period:
     start: "2012-08"
     end: "2012-09"
-  cv:
-    it:
-      - Analisi e sviluppo di un'applicazione web per la consultazione di promozioni da file XML per IdroLAB.
-    en:
-      - Analysis and development of a web application to browse promotions from XML files, for IdroLAB.
-  linkedin:
-    it: |-
-      Analisi e sviluppo di una piccola applicazione web per la consultazione di promozioni lette da un file XML per IdroLAB, successivamente divenuto mio cliente.
-      Ideato è stata spesso correlata direttamente o indirettamente al mio lavoro.
-    en: |-
-      Analysis and development of a small web application to browse promotions read from an XML file, for IdroLAB, who later became my own client.
-      Ideato has often been connected, directly or indirectly, to my work.
+  channels:
+    cv:
+      it:
+        - Analisi e sviluppo di un'applicazione web per la consultazione di promozioni da file XML per IdroLAB.
+      en:
+        - Analysis and development of a web application to browse promotions from XML files, for IdroLAB.
+    linkedin:
+      it: |-
+        Analisi e sviluppo di una piccola applicazione web per la consultazione di promozioni lette da un file XML per IdroLAB, successivamente divenuto mio cliente.
+        Ideato è stata spesso correlata direttamente o indirettamente al mio lavoro.
+      en: |-
+        Analysis and development of a small web application to browse promotions read from an XML file, for IdroLAB, who later became my own client.
+        Ideato has often been connected, directly or indirectly, to my work.
 - role:
     it: Lead Developer, Co-founder
     en: Lead Developer, Co-founder
@@ -363,24 +375,25 @@
   period:
     start: "2012-01"
     end: "2012-12"
-  cv:
-    it:
-      - Sviluppo piattaforma social per la gestione degli obiettivi personali in 4 mesi e follow up.
-      - Prima sperimentazione e applicazione completa delle metodologie agili.
-      - Primo progetto con Symfony 2.0.
-    en:
-      - Built a social platform for personal goal management in 4 months, then followed up on it.
-      - First full-scale experiment with agile methodologies.
-      - First project on Symfony 2.0.
-  linkedin:
-    it: |-
-      Abmundi era una piattaforma social per la definizione, misurazione e realizzazione degli obiettivi personali.
-      Realizzammo in 4 mesi la prima versione del progetto sperimentando le metodologie agili. Raggiungemmo circa un migliaio di utenti.
-      Fu il mio primo progetto Symfony (v. 2.0).
-    en: |-
-      Abmundi was a social platform to define, measure and achieve personal goals.
-      We built the first version in 4 months while experimenting with agile methodologies. We reached about a thousand users.
-      It was my first Symfony project (v. 2.0).
+  channels:
+    cv:
+      it:
+        - Sviluppo piattaforma social per la gestione degli obiettivi personali in 4 mesi e follow up.
+        - Prima sperimentazione e applicazione completa delle metodologie agili.
+        - Primo progetto con Symfony 2.0.
+      en:
+        - Built a social platform for personal goal management in 4 months, then followed up on it.
+        - First full-scale experiment with agile methodologies.
+        - First project on Symfony 2.0.
+    linkedin:
+      it: |-
+        Abmundi era una piattaforma social per la definizione, misurazione e realizzazione degli obiettivi personali.
+        Realizzammo in 4 mesi la prima versione del progetto sperimentando le metodologie agili. Raggiungemmo circa un migliaio di utenti.
+        Fu il mio primo progetto Symfony (v. 2.0).
+      en: |-
+        Abmundi was a social platform to define, measure and achieve personal goals.
+        We built the first version in 4 months while experimenting with agile methodologies. We reached about a thousand users.
+        It was my first Symfony project (v. 2.0).
 - role:
     it: Web Developer
     en: Web Developer
@@ -390,16 +403,17 @@
   period:
     start: "2009-01"
     end: "2011-12"
-  cv:
-    it:
-      - "Sviluppo e manutenzione del CMS aziendale: refactoring, nuove funzionalità e bugfix."
-      - Avvio e gestione tecnica di siti e progetti web per i clienti dell’agenzia.
-    en:
-      - "Development and maintenance of the in-house CMS: refactoring, new features and bug fixes."
-      - Kick-off and technical management of websites and web projects for the agency's clients.
-  linkedin:
-    it: Retina era una web agency. Come sviluppatore web (PHP, Javascript, HTML, Sass) mi occupavo di refactoring, sviluppo di funzionalità, bugfix del CMS aziendale, avvio e gestione dei progetti web.
-    en: Retina was a web agency. As a web developer (PHP, JavaScript, HTML, Sass) I did refactoring, feature development and bug fixing on the in-house CMS, plus kick-off and management of web projects.
+  channels:
+    cv:
+      it:
+        - "Sviluppo e manutenzione del CMS aziendale: refactoring, nuove funzionalità e bugfix."
+        - Avvio e gestione tecnica di siti e progetti web per i clienti dell’agenzia.
+      en:
+        - "Development and maintenance of the in-house CMS: refactoring, new features and bug fixes."
+        - Kick-off and technical management of websites and web projects for the agency's clients.
+    linkedin:
+      it: Retina era una web agency. Come sviluppatore web (PHP, Javascript, HTML, Sass) mi occupavo di refactoring, sviluppo di funzionalità, bugfix del CMS aziendale, avvio e gestione dei progetti web.
+      en: Retina was a web agency. As a web developer (PHP, JavaScript, HTML, Sass) I did refactoring, feature development and bug fixing on the in-house CMS, plus kick-off and management of web projects.
 - role:
     it: Web Developer
     en: Web Developer
@@ -409,13 +423,14 @@
   period:
     start: "2007-06"
     end: "2008-12"
-  cv:
-    it:
-      - "Prima esperienza professionale: analisi, progettazione, sviluppo e gestione di siti e applicazioni web."
-      - Realizzazione completa di un applicativo per l’invio di newsletter, rimasto in uso per anni.
-    en:
-      - "First professional experience: analysis, design, development and management of websites and web applications."
-      - Built from scratch a newsletter application that stayed in use for years.
-  linkedin:
-    it: Celera era una piccola web agency. È stata la mia prima esperienza professionale come sviluppatore web. Mi occupavo di analisi, progettazione, sviluppo e gestione di applicazioni e siti web. In particolare sviluppai interamente un applicativo per l'invio di newsletter ancora in uso fino a qualche anno fa, quando il mio vecchio datore me ne parlò.
-    en: Celera was a small web agency. It was my first professional experience as a web developer. I did analysis, design, development and management of web applications and websites. In particular I built an entire newsletter application, still in use until a few years ago, as my former employer told me.
+  channels:
+    cv:
+      it:
+        - "Prima esperienza professionale: analisi, progettazione, sviluppo e gestione di siti e applicazioni web."
+        - Realizzazione completa di un applicativo per l’invio di newsletter, rimasto in uso per anni.
+      en:
+        - "First professional experience: analysis, design, development and management of websites and web applications."
+        - Built from scratch a newsletter application that stayed in use for years.
+    linkedin:
+      it: Celera era una piccola web agency. È stata la mia prima esperienza professionale come sviluppatore web. Mi occupavo di analisi, progettazione, sviluppo e gestione di applicazioni e siti web. In particolare sviluppai interamente un applicativo per l'invio di newsletter ancora in uso fino a qualche anno fa, quando il mio vecchio datore me ne parlò.
+      en: Celera was a small web agency. It was my first professional experience as a web developer. I did analysis, design, development and management of web applications and websites. In particular I built an entire newsletter application, still in use until a few years ago, as my former employer told me.

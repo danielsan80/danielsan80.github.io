@@ -34,8 +34,10 @@ export const experienceSchema = z.strictObject({
   remote: z.boolean(),
   period: periodSchema,
   notes: z.string().optional(),
-  cv: localized(z.array(z.string())),
-  linkedin: localized(z.string()).optional(),
+  channels: z.strictObject({
+    cv: localized(z.array(z.string())),
+    linkedin: localized(z.string()).optional(),
+  }),
 });
 
 export const educationSchema = z.strictObject({
