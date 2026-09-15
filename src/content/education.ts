@@ -1,12 +1,7 @@
+import type { z } from "zod";
 import data from "./education.json";
-import type { Localized, Translatable } from "./localized";
-import type { Period } from "./period";
+import type { educationSchema } from "./schema";
 
-export type Education = {
-  institution: Translatable<string>;
-  location: Translatable<string>;
-  title: Localized<string>;
-  period: Period;
-};
+export type Education = z.infer<typeof educationSchema>;
 
 export const education: Education[] = data;

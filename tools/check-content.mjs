@@ -29,4 +29,4 @@ if (lines.length > 0) {
   process.exit(1);
 }
 
-console.log("Content checked: dates, levels and both languages.");
+console.log("Content checked: schema and dates.");

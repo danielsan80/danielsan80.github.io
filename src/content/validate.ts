@@ -1,10 +1,22 @@
+import { z } from "zod";
+import { contact } from "./contact";
 import { education } from "./education";
 import { experiences } from "./experiences";
 import { identity } from "./identity";
-import { LANGS } from "./localized";
 import { periodBounds, type Period } from "./period";
+import { profiles } from "./profiles";
 import { featuredProjects } from "./projects";
-import { skills, type SkillLevel } from "./skills";
+import {
+  contactSchema,
+  educationSchema,
+  experienceSchema,
+  identitySchema,
+  profileSchema,
+  projectSchema,
+  skillGroupSchema,
+  trainingSchema,
+} from "./schema";
+import { skills } from "./skills";
 import { training } from "./training";
 
 export type Violation = {
@@ -12,45 +24,32 @@ export type Violation = {
   message: string;
 };
 
-const LEVELS: string[] = [
-  "proficient",
-  "advanced",
-  "expert",
-] satisfies SkillLevel[];
-
 export function formatViolation({ path, message }: Violation): string {
   return `${path}: ${message}`;
 }
 
-export function localizedViolations(value: unknown, path: string): Violation[] {
-  if (Array.isArray(value)) {
-    return value.flatMap((item, index) =>
-      localizedViolations(item, `${path}[${index}]`),
-    );
-  }
-  if (typeof value !== "object" || value === null) {
-    return [];
-  }
-
-  const keys = Object.keys(value);
-  const languages: string[] = LANGS;
-  if (keys.some((key) => languages.includes(key))) {
-    const complete =
-      keys.length === languages.length &&
-      languages.every((lang) => keys.includes(lang));
-    return complete
-      ? []
-      : [
-          {
-            path,
-            message: `speaks ${keys.join(", ")}, must speak ${languages.join(", ")}`,
-          },
-        ];
-  }
-
-  return Object.entries(value).flatMap(([key, child]) =>
-    localizedViolations(child, `${path}.${key}`),
+function pathOf(root: string, segments: PropertyKey[]): string {
+  return segments.reduce<string>(
+    (path, segment) =>
+      typeof segment === "number"
+        ? `${path}[${segment}]`
+        : `${path}.${String(segment)}`,
+    root,
   );
+}
+
+export function schemaViolations(
+  schema: z.ZodType,
+  data: unknown,
+  path: string,
+): Violation[] {
+  const result = schema.safeParse(data);
+  return result.success
+    ? []
+    : result.error.issues.map((issue) => ({
+        path: pathOf(path, issue.path),
+        message: issue.message,
+      }));
 }
 
 export function dateViolations(
@@ -68,39 +67,28 @@ export function dateViolations(
   });
 }
 
-export function levelViolations(
-  groups: { items: { level: string }[] }[],
-  path: string,
-): Violation[] {
-  return groups.flatMap((group, groupIndex) =>
-    group.items.flatMap((item, index) =>
-      LEVELS.includes(item.level)
-        ? []
-        : [
-            {
-              path: `${path}[${groupIndex}].items[${index}]`,
-              message: `unknown level ${JSON.stringify(item.level)}`,
-            },
-          ],
-    ),
-  );
-}
-
 export function contentViolations(today: number): Violation[] {
-  const collections: [string, unknown][] = [
-    ["identity", identity],
-    ["experiences", experiences],
-    ["education", education],
-    ["training", training],
-    ["skills", skills],
-    ["featuredProjects", featuredProjects],
+  const collections: [string, z.ZodType, unknown][] = [
+    ["identity", identitySchema, identity],
+    ["contact", contactSchema, contact],
+    ["profiles", z.array(profileSchema), profiles],
+    ["experiences", z.array(experienceSchema), experiences],
+    ["education", z.array(educationSchema), education],
+    ["training", z.array(trainingSchema), training],
+    ["skills", z.array(skillGroupSchema), skills],
+    ["featuredProjects", z.array(projectSchema), featuredProjects],
   ];
 
+  const shape = collections.flatMap(([name, schema, data]) =>
+    schemaViolations(schema, data, name),
+  );
+  if (shape.length > 0) {
+    return shape;
+  }
+
   return [
-    ...collections.flatMap(([name, data]) => localizedViolations(data, name)),
     ...dateViolations(experiences, "experiences", today),
     ...dateViolations(education, "education", today),
     ...dateViolations(training, "training", today),
-    ...levelViolations(skills, "skills"),
   ];
 }

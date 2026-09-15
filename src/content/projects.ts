@@ -1,16 +1,8 @@
+import type { z } from "zod";
 import featured from "./featured-projects.json";
-import type { Localized } from "./localized";
+import type { projectSchema } from "./schema";
 
-export type ProjectLink = {
-  label: string;
-  url: string;
-};
-
-export type Project = {
-  name: string;
-  summary: Localized<string>;
-  links: ProjectLink[];
-};
+export type Project = z.infer<typeof projectSchema>;
 
 // The projects the home page leads with. When the CV and the repo hub become
 // one collection this turns into a `featured` flag over it; until that

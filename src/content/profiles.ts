@@ -1,10 +1,8 @@
+import type { z } from "zod";
 import data from "./profiles.json";
+import type { profileSchema } from "./schema";
 
-export type Profile = {
-  name: string;
-  handle: string;
-  url: string;
-};
+export type Profile = z.infer<typeof profileSchema>;
 
 // One collection, three readers: the home footer, the repo hub and the CV
 // header. The handle travels with the URL because the point is to show that

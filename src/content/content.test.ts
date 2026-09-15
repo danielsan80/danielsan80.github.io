@@ -1,38 +1,118 @@
 import { describe, expect, it } from "vitest";
+import { z } from "zod";
+import { experienceSchema, skillGroupSchema } from "./schema";
 import {
   contentViolations,
   dateViolations,
   formatViolation,
-  levelViolations,
-  localizedViolations,
+  schemaViolations,
 } from "./validate";
 
 const TODAY = Date.UTC(2026, 7, 26);
 
-describe("localizedViolations", () => {
+const experiences = z.array(experienceSchema);
+
+const experience = {
+  role: { it: "Sviluppatore", en: "Developer" },
+  company: "Resolvi Srl",
+  location: "Remote",
+  remote: true,
+  period: { start: "2025-08" },
+  bullets: { it: ["Scritto codice"], en: ["Wrote code"] },
+};
+
+describe("schemaViolations", () => {
+  it("finds nothing in a record that matches its schema", () => {
+    expect(schemaViolations(experiences, [experience], "experiences")).toEqual(
+      [],
+    );
+  });
+
   it("names every localized value that does not speak both languages", () => {
     expect(
-      localizedViolations(
+      schemaViolations(
+        experiences,
         [
-          { role: { it: "Sviluppatore", en: "Developer" } },
-          { role: { it: "Consulente" } },
-          { note: { en: "Attended twice", fr: "Deux fois" } },
+          { ...experience, role: { it: "Consulente" } },
+          { ...experience, bullets: { it: ["Uno"], en: ["One"], fr: ["Un"] } },
         ],
-        "entries",
+        "experiences",
       ),
     ).toEqual([
-      { path: "entries[1].role", message: "speaks it, must speak it, en" },
-      { path: "entries[2].note", message: "speaks en, fr, must speak it, en" },
+      {
+        path: "experiences[0].role.en",
+        message: "Invalid input: expected string, received undefined",
+      },
+      {
+        path: "experiences[1].bullets",
+        message: 'Unrecognized key: "fr"',
+      },
     ]);
   });
 
   it("leaves plain values alone: a word that reads the same in every language is not localized", () => {
     expect(
-      localizedViolations(
-        { company: "Resolvi Srl", skills: ["PHP", "TypeScript"] },
-        "record",
+      schemaViolations(
+        experiences,
+        [
+          { ...experience, location: "Milano" },
+          { ...experience, location: { it: "Milano", en: "Milan" } },
+        ],
+        "experiences",
       ),
     ).toEqual([]);
+  });
+
+  it("names a field that is missing, mistyped or misspelled", () => {
+    const { bullets, ...withoutBullets } = experience;
+
+    expect(
+      schemaViolations(
+        experiences,
+        [
+          { ...experience, remote: "yes" },
+          { ...withoutBullets, bulets: bullets },
+        ],
+        "experiences",
+      ),
+    ).toEqual([
+      {
+        path: "experiences[0].remote",
+        message: "Invalid input: expected boolean, received string",
+      },
+      {
+        path: "experiences[1].bullets",
+        message: "Invalid input: expected object, received undefined",
+      },
+      {
+        path: "experiences[1]",
+        message: 'Unrecognized key: "bulets"',
+      },
+    ]);
+  });
+
+  it("names every skill graded with a level the marker cannot draw", () => {
+    expect(
+      schemaViolations(
+        z.array(skillGroupSchema),
+        [
+          {
+            category: { it: "Linguaggi", en: "Languages" },
+            items: [
+              { name: "PHP", level: "expert" },
+              { name: "Go", level: "guru" },
+            ],
+          },
+        ],
+        "skills",
+      ),
+    ).toEqual([
+      {
+        path: "skills[0].items[1].level",
+        message:
+          'Invalid option: expected one of "proficient"|"advanced"|"expert"',
+      },
+    ]);
   });
 });
 
@@ -55,22 +135,6 @@ describe("dateViolations", () => {
         path: "experiences[3]",
         message: 'Period ends before it starts: "2020" to "2010"',
       },
-    ]);
-  });
-});
-
-describe("levelViolations", () => {
-  it("names every skill graded with a level the marker cannot draw", () => {
-    expect(
-      levelViolations(
-        [
-          { items: [{ level: "expert" }, { level: "guru" }] },
-          { items: [{ level: "advanced" }] },
-        ],
-        "skills",
-      ),
-    ).toEqual([
-      { path: "skills[0].items[1]", message: 'unknown level "guru"' },
     ]);
   });
 });

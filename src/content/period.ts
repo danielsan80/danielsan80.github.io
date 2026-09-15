@@ -1,3 +1,6 @@
+import type { z } from "zod";
+import type { periodSchema } from "./schema";
+
 // A date is as precise as it needs to be: "2009", "2025-08", "2016-06-21".
 // The CV mixes all three — a decade of freelancing, a start month, a two-day
 // course — so precision is part of the value, not a separate field.
@@ -5,10 +8,7 @@ export type PartialDate = string;
 
 // An absent `end` means the period is still open: a role in progress, or the
 // conferences attended "since 2009".
-export type Period = {
-  start: PartialDate;
-  end?: PartialDate;
-};
+export type Period = z.infer<typeof periodSchema>;
 
 // Half-open: `to` is the first instant outside the period.
 export type Bounds = {
