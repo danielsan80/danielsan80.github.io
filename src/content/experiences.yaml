@@ -7,10 +7,23 @@
   period:
     start: "2026-08"
   notes: |-
-    Sono entrato in Resolvi per dare supporto allo sviluppo di nuove funzionalità. Durante l'onboarding ho usato Claude Code per analizzare il progetto e mi sono reso conto che c'era del lavoro propedeutico più urgente.
-    Ho isolato l'ambiente di sviluppo: l'applicativo non partiva senza rete, perché si appoggiava al backoffice, a Firebase e a un CouchDB online. Su quella base abbiamo scritto con Claude i test end-to-end in Playwright sui flussi principali, come rete di sicurezza per la migrazione da Angular 18 a 20, e ho rivisto e migrato la suite di test da Karma/Jasmine a Vitest e da Cypress a Playwright, ripristinandone il lancio in CI.
-    In parallelo ho impostato CLAUDE.md, permessi e skill per un uso avanzato di Claude Code nel processo di sviluppo, trasferendo le pratiche allo sviluppatore del team.
-    Tutto questo in pochi giorni di lavoro. Lo sviluppo di nuove funzionalità è il passo successivo.
+    Sono entrato in Resolvi per dare supporto allo sviluppo di nuove
+    funzionalità. Durante l'onboarding ho usato Claude Code per analizzare il
+    progetto e mi sono reso conto che c'era del lavoro propedeutico più urgente.
+
+    Ho isolato l'ambiente di sviluppo: l'applicativo non partiva senza rete,
+    perché si appoggiava al backoffice, a Firebase e a un CouchDB online. Su
+    quella base abbiamo scritto con Claude i test end-to-end in Playwright sui
+    flussi principali, come rete di sicurezza per la migrazione da Angular 18 a
+    20, e ho rivisto e migrato la suite di test da Karma/Jasmine a Vitest e da
+    Cypress a Playwright, ripristinandone il lancio in CI.
+
+    In parallelo ho impostato CLAUDE.md, permessi e skill per un uso avanzato di
+    Claude Code nel processo di sviluppo, trasferendo le pratiche allo
+    sviluppatore del team.
+
+    Tutto questo in pochi giorni di lavoro. Lo sviluppo di nuove funzionalità è
+    il passo successivo.
   cv:
     it:
       - "Isolamento dell'ambiente di sviluppo: applicativo eseguibile in locale senza rete, svincolato da backoffice, Firebase e CouchDB."
@@ -43,9 +56,16 @@
     start: "2026-04"
     end: "2026-07"
   notes: |-
-    Insieme a un altro consulente di QMates ho affiancato il team di sviluppo di un'azienda cliente, con un incarico sul design organizzativo: analisi e proposte settimanali al CTO.
-    Per capire cosa si poteva migliorare abbiamo sviluppato nuove funzionalità e rifattorizzato il codice in pair programming con i loro sviluppatori.
-    In parallelo abbiamo tenuto workshop interni su pratiche di eXtreme Programming e tecniche di refactoring, per ridurre gradualmente il debito tecnico.
+    Insieme a un altro consulente di QMates ho affiancato il team di sviluppo di
+    un'azienda cliente, con un incarico sul design organizzativo: analisi e
+    proposte settimanali al CTO.
+
+    Per capire cosa si poteva migliorare abbiamo sviluppato nuove funzionalità e
+    rifattorizzato il codice in pair programming con i loro sviluppatori.
+
+    In parallelo abbiamo tenuto workshop interni su pratiche di eXtreme
+    Programming e tecniche di refactoring, per ridurre gradualmente il debito
+    tecnico.
   cv:
     it:
       - "Consulenza sul design organizzativo di un'azienda cliente, in coppia con un altro consulente: analisi e proposte settimanali al CTO."
@@ -74,9 +94,21 @@
     start: "2025-08"
     end: "2026-03"
   notes: |-
-    Sono stato ingaggiato per contribuire allo sviluppo di nuove funzionalità del CRM interno di Facile.it, un'applicazione Symfony 7 su PHP 8 che gestiva l'operatività degli store fisici: anagrafiche, lead, appuntamenti, prodotti, permessi. Lavoravo nel team seguendo i rituali Scrum.
-    Il team era misto tra dipendenti e freelance, con due product owner e un coordinamento tra più team: il CRM si integrava con altri applicativi interni per la generazione di PDF, l'invio di email con accesso autenticato e lo scambio via Google Pub/Sub degli eventi CRUD che interessavano noi o gli altri applicativi.
-    Oltre alle funzionalità ho portato il mio punto di vista su architettura esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice e contribuendo alla migrazione verso un modello a domini. Ho imparato molto anche dai colleghi.
+    Sono stato ingaggiato per contribuire allo sviluppo di nuove funzionalità
+    del CRM interno di Facile.it, un'applicazione Symfony 7 su PHP 8 che gestiva
+    l'operatività degli store fisici: anagrafiche, lead, appuntamenti, prodotti,
+    permessi. Lavoravo nel team seguendo i rituali Scrum.
+
+    Il team era misto tra dipendenti e freelance, con due product owner e un
+    coordinamento tra più team: il CRM si integrava con altri applicativi
+    interni per la generazione di PDF, l'invio di email con accesso autenticato
+    e lo scambio via Google Pub/Sub degli eventi CRUD che interessavano noi o
+    gli altri applicativi.
+
+    Oltre alle funzionalità ho portato il mio punto di vista su architettura
+    esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice
+    e contribuendo alla migrazione verso un modello a domini. Ho imparato molto
+    anche dai colleghi.
   cv:
     it:
       - Sviluppo di nuove funzionalità del CRM interno per la gestione dell'operatività degli store fisici.
@@ -255,9 +287,15 @@
     start: "2013-11"
     end: "2015-01"
   notes: |-
-    App&Map era una startup di tre persone: il fondatore, che curava grafica, vendita e ruolo di product owner, uno sviluppatore mobile e io sul backend.
-    Il prodotto era una piattaforma multi-istanza: il fondatore vendeva istanze a locali, associazioni ed enti locali, che pubblicavano mappe di punti di interesse mostrate in un'app personalizzata. Molte app, un solo backend.
-    Ho sviluppato il back office, un'applicazione Symfony, e le api in lettura che alimentavano le app.
+    App&Map era una startup di tre persone: il fondatore, che curava grafica,
+    vendita e ruolo di product owner, uno sviluppatore mobile e io sul backend.
+
+    Il prodotto era una piattaforma multi-istanza: il fondatore vendeva istanze
+    a locali, associazioni ed enti locali, che pubblicavano mappe di punti di
+    interesse mostrate in un'app personalizzata. Molte app, un solo backend.
+
+    Ho sviluppato il back office, un'applicazione Symfony, e le api in lettura
+    che alimentavano le app.
   cv:
     it:
       - Sviluppo delle api e del back office Symfony per app mobile con contenuti georeferenziati.
