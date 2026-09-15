@@ -33,8 +33,8 @@ export const experienceSchema = z.strictObject({
   location: translatable(z.string()),
   remote: z.boolean(),
   period: periodSchema,
-  bullets: localized(z.array(z.string())),
-  description: localized(z.string()).optional(),
+  cv: localized(z.array(z.string())),
+  linkedin: localized(z.string()).optional(),
 });
 
 export const educationSchema = z.strictObject({
