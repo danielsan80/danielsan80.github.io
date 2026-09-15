@@ -3,7 +3,7 @@
 //   npm run check:content    run it on its own (npm run build does this first)
 //
 // Vite loads the rules for us: src/content/validate.ts is TypeScript, and it
-// imports JSON.
+// imports YAML through the plugin in vite.config.ts.
 
 import { createServer } from "vite";
 

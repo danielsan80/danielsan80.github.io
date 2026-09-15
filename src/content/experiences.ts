@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import data from "./experiences.json";
+import data from "./experiences.yaml";
 import type { experienceSchema } from "./schema";
 
 // One entity for employment, freelance and everything in between: the CV never
@@ -12,4 +12,4 @@ export type Experience = z.infer<typeof experienceSchema>;
 
 // File order is display order. The entries are not sorted by any single date:
 // the overlapping freelance years make every sort key a lie somewhere.
-export const experiences: Experience[] = data;
+export const experiences = data as Experience[];

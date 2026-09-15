@@ -91,6 +91,28 @@ describe("schemaViolations", () => {
     ]);
   });
 
+  it("names a date that YAML read as a number or a timestamp because it was left unquoted", () => {
+    expect(
+      schemaViolations(
+        experiences,
+        [
+          { ...experience, period: { start: 2009 } },
+          { ...experience, period: { start: new Date("2016-06-21") } },
+        ],
+        "experiences",
+      ),
+    ).toEqual([
+      {
+        path: "experiences[0].period.start",
+        message: "Invalid input: expected string, received number",
+      },
+      {
+        path: "experiences[1].period.start",
+        message: "Invalid input: expected string, received Date",
+      },
+    ]);
+  });
+
   it("names every skill graded with a level the marker cannot draw", () => {
     expect(
       schemaViolations(
