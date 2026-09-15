@@ -18,7 +18,7 @@ const experience = {
   location: "Remote",
   remote: true,
   period: { start: "2025-08" },
-  cv: { it: ["Scritto codice"], en: ["Wrote code"] },
+  channels: { cv: { it: ["Scritto codice"], en: ["Wrote code"] } },
 };
 
 describe("schemaViolations", () => {
@@ -34,7 +34,10 @@ describe("schemaViolations", () => {
         experiences,
         [
           { ...experience, role: { it: "Consulente" } },
-          { ...experience, cv: { it: ["Uno"], en: ["One"], fr: ["Un"] } },
+          {
+            ...experience,
+            channels: { cv: { it: ["Uno"], en: ["One"], fr: ["Un"] } },
+          },
         ],
         "experiences",
       ),
@@ -44,7 +47,7 @@ describe("schemaViolations", () => {
         message: "Invalid input: expected string, received undefined",
       },
       {
-        path: "experiences[1].cv",
+        path: "experiences[1].channels.cv",
         message: 'Unrecognized key: "fr"',
       },
     ]);
@@ -85,14 +88,14 @@ describe("schemaViolations", () => {
   });
 
   it("names a field that is missing, mistyped or misspelled", () => {
-    const { cv, ...withoutCv } = experience;
+    const { cv } = experience.channels;
 
     expect(
       schemaViolations(
         experiences,
         [
           { ...experience, remote: "yes" },
-          { ...withoutCv, CV: cv },
+          { ...experience, channels: { CV: cv } },
         ],
         "experiences",
       ),
@@ -102,11 +105,11 @@ describe("schemaViolations", () => {
         message: "Invalid input: expected boolean, received string",
       },
       {
-        path: "experiences[1].cv",
+        path: "experiences[1].channels.cv",
         message: "Invalid input: expected object, received undefined",
       },
       {
-        path: "experiences[1]",
+        path: "experiences[1].channels",
         message: 'Unrecognized key: "CV"',
       },
     ]);
