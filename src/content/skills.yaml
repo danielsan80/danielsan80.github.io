@@ -1,0 +1,112 @@
+- category:
+    it: Linguaggi di programmazione
+    en: Programming languages
+  items:
+    - name: PHP
+      level: expert
+    - name: JavaScript
+      level: advanced
+    - name: TypeScript
+      level: advanced
+    - name: Python
+      level: advanced
+    - name: Java
+      level: advanced
+- category:
+    it: Frameworks
+    en: Frameworks
+  items:
+    - name: Symfony
+      level: expert
+    - name: Doctrine ORM
+      level: expert
+    - name: API Platform
+      level: advanced
+    - name: ReactJS
+      level: advanced
+    - name: Spring Boot
+      level: advanced
+    - name: AngularJS
+      level: proficient
+- category:
+    it: Practices
+    en: Practices
+  items:
+    - name: TDD
+      level: expert
+    - name: Clean Code
+      level: expert
+    - name:
+        it: Tecniche di Refactoring
+        en: Refactoring techniques
+      level: expert
+    - name: Agile
+      level: expert
+    - name: Scrum
+      level: expert
+    - name: Kanban
+      level: expert
+- category:
+    it: Architecture
+    en: Architecture
+  items:
+    - name: DDD
+      level: expert
+    - name: Hexagonal Architecture
+      level: expert
+    - name: CQRS/ES
+      level: expert
+    - name: OOP
+      level: expert
+- category:
+    it: Infrastructure
+    en: Infrastructure
+  items:
+    - name: Linux
+      level: expert
+    - name: Nginx
+      level: expert
+    - name: MySQL/MariaDB
+      level: expert
+    - name: MongoDB
+      level: expert
+    - name: CouchDB
+      level: expert
+    - name: RabbitMQ
+      level: advanced
+    - name: Elasticsearch
+      level: proficient
+    - name: Kafka
+      level: proficient
+- category:
+    it: Tools
+    en: Tools
+  items:
+    - name: Git
+      level: expert
+    - name: Docker
+      level: expert
+    - name: GitLab
+      level: advanced
+    - name: GitHub
+      level: expert
+    - name: BitBucket
+      level: expert
+    - name: Claude Code
+      level: expert
+    - name: Jira
+      level: advanced
+    - name: Trello
+      level: expert
+- category:
+    it: Lingue
+    en: Languages
+  items:
+    - name:
+        it: Italiano (nativo)
+        en: Italian (native)
+      level: expert
+    - name:
+        it: "Inglese (intermedio: lettura e scrittura; parlato in corso)"
+        en: "English (intermediate: reading and writing; spoken in progress)"
+      level: proficient

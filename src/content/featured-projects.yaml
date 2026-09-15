@@ -1,0 +1,32 @@
+- name: JobBoy
+  summary:
+    it: Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuto.
+    en: A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+  links:
+    - label: Documentation
+      url: https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md
+- name: FixtureHandler
+  summary:
+    it: Una test utility per le fixture in PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuta.
+    en: A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+  links:
+    - label: Repository
+      url: https://github.com/danielsan80/fixture-handler
+- name: Mini Race Challenge
+  summary:
+    it: Un sistema di cronometraggio per piccole auto RC, con parti stampate in 3D.
+    en: A timing system for small RC cars, with 3D printed parts.
+  links:
+    - label: miniracechallenge.com
+      url: https://miniracechallenge.com/
+    - label: Thingiverse
+      url: https://www.thingiverse.com/thing:5364319
+    - label: Repository
+      url: https://github.com/danielsan80/minirace-gate
+- name: QRiddle
+  summary:
+    it: "Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di vibe coding, ma testato e revisionato, seguito per intero dalla prima commit alla CI/CD fino alla promozione."
+    en: "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch."
+  links:
+    - label: danilosanchi.net/qriddle
+      url: https://danilosanchi.net/qriddle/
