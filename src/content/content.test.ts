@@ -63,6 +63,27 @@ describe("schemaViolations", () => {
     ).toEqual([]);
   });
 
+  it("keeps notes in a single language: they are never published, so nothing to translate", () => {
+    expect(
+      schemaViolations(
+        experiences,
+        [
+          { ...experience, notes: "Tutto quello che ricordo." },
+          {
+            ...experience,
+            notes: { it: "Tutto quello che ricordo.", en: "All I remember." },
+          },
+        ],
+        "experiences",
+      ),
+    ).toEqual([
+      {
+        path: "experiences[1].notes",
+        message: "Invalid input: expected string, received object",
+      },
+    ]);
+  });
+
   it("names a field that is missing, mistyped or misspelled", () => {
     const { cv, ...withoutCv } = experience;
 
