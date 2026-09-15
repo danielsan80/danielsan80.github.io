@@ -18,7 +18,7 @@ const experience = {
   location: "Remote",
   remote: true,
   period: { start: "2025-08" },
-  bullets: { it: ["Scritto codice"], en: ["Wrote code"] },
+  cv: { it: ["Scritto codice"], en: ["Wrote code"] },
 };
 
 describe("schemaViolations", () => {
@@ -34,7 +34,7 @@ describe("schemaViolations", () => {
         experiences,
         [
           { ...experience, role: { it: "Consulente" } },
-          { ...experience, bullets: { it: ["Uno"], en: ["One"], fr: ["Un"] } },
+          { ...experience, cv: { it: ["Uno"], en: ["One"], fr: ["Un"] } },
         ],
         "experiences",
       ),
@@ -44,7 +44,7 @@ describe("schemaViolations", () => {
         message: "Invalid input: expected string, received undefined",
       },
       {
-        path: "experiences[1].bullets",
+        path: "experiences[1].cv",
         message: 'Unrecognized key: "fr"',
       },
     ]);
@@ -64,14 +64,14 @@ describe("schemaViolations", () => {
   });
 
   it("names a field that is missing, mistyped or misspelled", () => {
-    const { bullets, ...withoutBullets } = experience;
+    const { cv, ...withoutCv } = experience;
 
     expect(
       schemaViolations(
         experiences,
         [
           { ...experience, remote: "yes" },
-          { ...withoutBullets, bulets: bullets },
+          { ...withoutCv, CV: cv },
         ],
         "experiences",
       ),
@@ -81,12 +81,12 @@ describe("schemaViolations", () => {
         message: "Invalid input: expected boolean, received string",
       },
       {
-        path: "experiences[1].bullets",
+        path: "experiences[1].cv",
         message: "Invalid input: expected object, received undefined",
       },
       {
         path: "experiences[1]",
-        message: 'Unrecognized key: "bulets"',
+        message: 'Unrecognized key: "CV"',
       },
     ]);
   });
