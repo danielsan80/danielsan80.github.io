@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#f3f4f5"/>
+  <rect y="576" width="1280" height="64" fill="#f28d1a"/>
+  <text x="640" y="320" text-anchor="middle" font-family="Public Sans" font-weight="600" font-size="150" fill="#2d2d32">Packagist</text>
+  <text x="640" y="430" text-anchor="middle" font-family="Commit Mono" font-size="60" fill="#2d2d32">dansan</text>
+</svg>
