@@ -1,22 +1,82 @@
 - name: JobBoy
   role: author
   summary:
-    it: Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuto.
-    en: A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+    it: >-
+      Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
+      mantenuto.
+    en: >-
+      A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer
+      maintained.
   period:
     start: "2019-07"
     end: "2025-01"
+  channels:
+    linkedin:
+      it: >-
+        Libreria PHP open source (MIT, su Packagist), job manager
+
+        Permette di definire Long Time Jobs scomponendo il lavoro in piccole
+        parti, con soluzioni per gestire memoria, timeout e concorrenza.
+
+        Ispirata a un componente di Akeneo è stata ideata e sviluppata per
+        sopperire alle necessità di IdroLAB, ma è una soluzione generica e
+        contiene soluzioni e best practice riutilizzabili.
+
+        Supporta fino a PHP 7.4.
+      en: >-
+        Open source PHP library (MIT, on Packagist), job manager
+
+        It defines long running jobs by breaking the work into small parts, with
+        answers for memory, timeouts and concurrency.
+
+        Inspired by a component of Akeneo, it was conceived and built for
+        IdroLAB's needs, but it is a generic solution and carries reusable
+        practices.
+
+        Supports up to PHP 7.4.
   links:
     - label: Documentation
       url: https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md
 - name: FixtureHandler
   role: author
   summary:
-    it: Una test utility per le fixture in PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuta.
-    en: A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+    it: >-
+      Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
+      PHP 7, non più mantenuta.
+    en: >-
+      A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no
+      longer maintained.
   period:
     start: "2018-07"
     end: "2025-01"
+  channels:
+    linkedin:
+      it: >-
+        Libreria PHP open source (MIT, su Packagist), test utility
+
+        Facilitare la gestione delle fixture nei test.
+
+        Consente di definire dipendenze tra fixture in modo esplicito e
+        modulare, evitando accoppiamenti rigidi.
+
+        È stata ispirata dal DIC di Symfony e dal DoctrineFixturesBundle ma è
+        framework-agnostic.
+
+        Supporta fino a PHP 7.4, ma la aggiornerò a PHP 8 appena avrò necessità
+        di usarla in questa versione.
+      en: >-
+        Open source PHP library (MIT, on Packagist), test utility
+
+        Making fixtures easier to manage in tests.
+
+        It declares dependencies between fixtures explicitly and modularly,
+        avoiding rigid coupling.
+
+        It was inspired by Symfony's DIC and by DoctrineFixturesBundle, but it
+        is framework-agnostic.
+
+        Supports up to PHP 7.4, but I will move it to PHP 8 as soon as I need
+        that version.
   links:
     - label: Repository
       url: https://github.com/danielsan80/fixture-handler
@@ -37,29 +97,55 @@
     start: "2018-11"
   notes: |-
     Il progetto è di mio fratello: nato come un suo hobby, a cui mi ero
-    appassionato, poi diventato un prodotto artigianale e infine un business, che
-    ha richiesto l'apertura di una partita IVA. Io lo seguo e do una mano quando
-    serve. La data d'inizio è quella della prima foto trovata; il progetto è in
-    corso.
+    appassionato, poi diventato un prodotto artigianale e infine un business,
+    che ha richiesto l'apertura di una partita IVA. Io lo seguo e do una mano
+    quando serve. La data d'inizio è quella della prima foto trovata; il
+    progetto è in corso.
 
     Oggi MRC è un brand che produce diversi dispositivi, tutti con lo scopo di
     gestire gare tra auto RC di piccole dimensioni. Il dispositivo centrale è un
     lap counter NFC: un tag sotto ogni auto e, sotto la linea di partenza,
-    un'antenna lineare anziché le convenzionali antenne NFC puntuali. Comunica in
-    Bluetooth LE con la web app, traspilata anche per iOS e Android.
+    un'antenna lineare anziché le convenzionali antenne NFC puntuali. Comunica
+    in Bluetooth LE con la web app, traspilata anche per iOS e Android.
 
     Da gennaio 2026 il progetto è gestito da LimenLab, azienda aperta
     principalmente per MRC ma con l'intenzione di realizzare altri progetti
     pionieristici e "di confine".
 
-    I prodotti sono venduti in tutto il mondo tramite rivenditori sul territorio;
-    quelli storici: uno a Milano, uno in Messico, due in Germania, uno in Francia
-    e uno in Giappone.
+    I prodotti sono venduti in tutto il mondo tramite rivenditori sul
+    territorio; quelli storici: uno a Milano, uno in Messico, due in Germania,
+    uno in Francia e uno in Giappone.
 
-    Il mio contributo: idee e soluzioni, ma soprattutto i modelli 3D necessari ai
-    prodotti, modellati in OpenSCAD e inizialmente stampati in casa con una FDM,
-    oggi tramite servizi esterni. Ho realizzato il gantry e le start lights,
-    pubblicati open source su GitHub e Thingiverse con licenza Creative Commons.
+    Il mio contributo: idee e soluzioni, ma soprattutto i modelli 3D necessari
+    ai prodotti, modellati in OpenSCAD e inizialmente stampati in casa con una
+    FDM, oggi tramite servizi esterni. Ho realizzato il gantry e le start
+    lights, pubblicati open source su GitHub e Thingiverse con licenza Creative
+    Commons.
+  channels:
+    linkedin:
+      it: >-
+        È un progetto nato come hobby, poi diventato un piccolo business
+        internazionale: il cuore è un contagiri basato su tecnologia NFC,
+        altamente affidabile, che permette di fare gare e tornei con macchine RC
+        di piccole dimensioni.
+
+        Contribuisco a questo progetto occupandomi della componente 3D,
+        attraverso modellazione e stampa (utilizzando OpenSCAD).
+
+        In particolare, ho realizzato il gantry e le start lights, rendendoli
+        disponibili open source su GitHub e Thingiverse con licenza Creative
+        Commons.
+      en: >-
+        A project born as a hobby and now a small international business: at its
+        heart is a highly reliable NFC lap counter that makes races and
+        tournaments with small RC cars possible.
+
+        I contribute to it by taking care of the 3D side, through modelling and
+        printing (using OpenSCAD).
+
+        In particular I built the gantry and the start lights, and published
+        them open source on GitHub and Thingiverse under a Creative Commons
+        licence.
   links:
     - label: miniracechallenge.com
       url: https://miniracechallenge.com/
@@ -70,8 +156,14 @@
 - name: QRiddle
   role: author
   summary:
-    it: "Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di vibe coding, ma testato e revisionato, seguito per intero dalla prima commit alla CI/CD fino alla promozione."
-    en: "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch."
+    it: >-
+      Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di
+      vibe coding, ma testato e revisionato, seguito per intero dalla prima
+      commit alla CI/CD fino alla promozione.
+    en: >-
+      A ReactJS/TypeScript web app built with Claude Code: a vibe coding
+      experiment, tested and reviewed, followed end to end from the first commit
+      through CI/CD to its launch.
   period:
     start: "2025-12"
   links:

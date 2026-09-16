@@ -194,6 +194,30 @@ describe("schemaViolations", () => {
     ]);
   });
 
+  it("keeps the LinkedIn text of a project bilingual, like the one of an experience", () => {
+    expect(
+      schemaViolations(
+        z.array(projectSchema),
+        [
+          {
+            name: "JobBoy",
+            summary: { it: "Un jobs manager", en: "A jobs manager" },
+            period: { start: "2019-07" },
+            role: "author",
+            channels: { linkedin: { it: "Libreria PHP open source" } },
+            links: [],
+          },
+        ],
+        "featuredProjects",
+      ),
+    ).toEqual([
+      {
+        path: "featuredProjects[0].channels.linkedin.en",
+        message: "Invalid input: expected string, received undefined",
+      },
+    ]);
+  });
+
   it("names a project that does not say when it was worked on", () => {
     expect(
       schemaViolations(
