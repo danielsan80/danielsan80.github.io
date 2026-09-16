@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import type { periodSchema } from "./schema";
+import type { periodSchema } from "../schema";
 
 // As precise as it needs to be: "2009", "2025-08", "2016-06-21".
 export type PartialDate = string;
@@ -16,15 +16,40 @@ export type Bounds = {
 
 const DATE = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/;
 
-export function dateBounds(date: PartialDate): Bounds {
-  const bounds = boundsOf(date);
-  if (!bounds) {
+export type DateParts = {
+  year: number;
+  month?: number;
+  day?: number;
+};
+
+export function dateParts(date: PartialDate): DateParts {
+  const parts = partsOf(date);
+  if (!parts) {
     throw new Error(`Invalid date: ${JSON.stringify(date)}`);
   }
-  return bounds;
+  return parts;
 }
 
-function boundsOf(date: PartialDate): Bounds | null {
+export function dateBounds(date: PartialDate): Bounds {
+  const { year, month, day } = dateParts(date);
+
+  if (month === undefined) {
+    return { from: Date.UTC(year, 0, 1), to: Date.UTC(year + 1, 0, 1) };
+  }
+
+  if (day === undefined) {
+    // A 13th month rolls into January of the next year, which is exactly where
+    // December ends: the rollover is the answer, not a bug.
+    return { from: Date.UTC(year, month - 1, 1), to: Date.UTC(year, month, 1) };
+  }
+
+  return {
+    from: Date.UTC(year, month - 1, day),
+    to: Date.UTC(year, month - 1, day + 1),
+  };
+}
+
+function partsOf(date: PartialDate): DateParts | null {
   const parts = DATE.exec(date);
   if (!parts) {
     return null;
@@ -38,7 +63,7 @@ function boundsOf(date: PartialDate): Bounds | null {
   }
 
   if (parts[2] === undefined) {
-    return { from: Date.UTC(year, 0, 1), to: Date.UTC(year + 1, 0, 1) };
+    return { year };
   }
 
   const month = Number(parts[2]);
@@ -47,20 +72,17 @@ function boundsOf(date: PartialDate): Bounds | null {
   }
 
   if (parts[3] === undefined) {
-    // A 13th month rolls into January of the next year, which is exactly where
-    // December ends: the rollover is the answer, not a bug.
-    return { from: Date.UTC(year, month - 1, 1), to: Date.UTC(year, month, 1) };
+    return { year, month };
   }
 
   const day = Number(parts[3]);
-  const from = Date.UTC(year, month - 1, day);
   // 30 February rolls into March instead of being refused, so the day counts
   // only if it survives the round trip.
-  if (new Date(from).getUTCDate() !== day) {
+  if (new Date(Date.UTC(year, month - 1, day)).getUTCDate() !== day) {
     return null;
   }
 
-  return { from, to: Date.UTC(year, month - 1, day + 1) };
+  return { year, month, day };
 }
 
 export function periodBounds(period: Period, today: number): Bounds {

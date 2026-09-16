@@ -1,4 +1,4 @@
-import { dateBounds, type Period } from "../../content/period";
+import { dateBounds, type Period } from "../../content/time/period";
 
 const DAY = 24 * 60 * 60 * 1000;
 
