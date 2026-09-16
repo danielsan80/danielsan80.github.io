@@ -1,10 +1,4 @@
 // Renders each page to HTML at build time.
-//
-// The site has no router: every page is a Vite entry with its own HTML file and
-// its own React app. Pre-rendering is therefore not a framework, only this:
-// render the component to a string and drop it into the HTML file that already
-// exists. A crawler, a link preview or a print stylesheet gets the content
-// without running any JS; the browser hydrates the same markup afterwards.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

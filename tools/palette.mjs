@@ -59,7 +59,6 @@ const contrast = (first, second) => {
   return (lighter + 0.05) / (darker + 0.05);
 };
 
-// Neutrals carry a trace of the accent hue so greys belong to the same family.
 const NEUTRAL_HUE = 150;
 const NEUTRAL_CHROMA = 0.006;
 const GREEN_HUE = 150;
@@ -104,7 +103,6 @@ const palette = new Map(
   }),
 );
 
-// Semantic tokens are the only ones components may use; the raw scale stays here.
 const semantic = {
   surface: { light: "neutral-0", dark: "neutral-900" },
   "surface-alt": { light: "neutral-50", dark: "neutral-950" },
@@ -175,10 +173,8 @@ function auditSemantic() {
 
 export { palette, semantic, MINIMUM_CONTRAST, contrast, auditSemantic };
 
-// Resolves a semantic role to its hex for one theme.
 export const resolve = (role, theme) => palette.get(semantic[role][theme]).hex;
 
-// Contrast of a semantic role against the surface of the same theme.
 export const contrastOnSurface = (role, theme) =>
   contrast(
     palette.get(semantic[role][theme]).linear,

@@ -6,8 +6,6 @@
 
 import { palette, semantic } from "./palette.mjs";
 
-// 4px base grid: linear steps 1-4 for dense text, then ~1.5x jumps for
-// sections. Base 4 and not 8 because the CV runs at high density.
 export const SPACE = [
   ["space-1", "0.25rem"],
   ["space-2", "0.5rem"],
@@ -20,8 +18,6 @@ export const SPACE = [
   ["space-9", "6rem"],
 ];
 
-// Public Sans for text, Commit Mono for measurable metadata: dates, durations,
-// repos, languages, versions. Self-hosted through @fontsource.
 export const FONTS = {
   sans: { family: "Public Sans", package: "public-sans" },
   mono: { family: "Commit Mono", package: "commit-mono" },
@@ -29,7 +25,6 @@ export const FONTS = {
 
 export const THEMES = ["light", "dark"];
 
-// Every semantic role resolved to a hex for one theme.
 export const themeTokens = (theme) =>
   Object.fromEntries(
     Object.keys(semantic).map((role) => [

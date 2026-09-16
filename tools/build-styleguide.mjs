@@ -21,7 +21,6 @@ const FONT_PAIRS = {
     mono: { family: "IBM Plex Mono", package: "ibm-plex-mono" },
     note: "Disegnati insieme, brief “uomo e macchina”. Il mono è largo e squadrato.",
   },
-  // The chosen pair comes from the tokens, so the preview shows what ships.
   public: {
     label: `${FONTS.sans.family} + ${FONTS.mono.family}`,
     sans: FONTS.sans,
@@ -71,13 +70,8 @@ const SKILLS = [
   { name: "Kubernetes", level: "proficient" },
 ];
 
-// Every listed skill is at least professional working level, so the scale runs
-// from "proficient" up, never "beginner": the level reflects depth, not ability.
-// Two encodings, compared in the styleguide: a discrete step (count, 1/2/3) and a
-// continuous length (%). The count stays legible at a tiny size where height cannot.
 const LEVEL_STEP = { proficient: 1, advanced: 2, expert: 3 };
 const LEVEL_LENGTH = { proficient: 35, advanced: 65, expert: 100 };
-// Cells lit in the 3×3 grid: floor at 5 (past half) so proficient reads as solid.
 const LEVEL_CELLS = { proficient: 5, advanced: 7, expert: 9 };
 // Fill order for the 3×3 grid: bottom row up, left to right within each row.
 const GRID_FILL_ORDER = [7, 8, 9, 4, 5, 6, 1, 2, 3];
@@ -100,7 +94,6 @@ const MONTHS = [
 const asFraction = ([year, month]) => year + (month - 1) / 12;
 const formatDate = ([year, month]) => `${MONTHS[month - 1]} ${year}`;
 
-// Timeline positions are computed from the dates, never hardcoded (SITE-9).
 function timeline(engagements) {
   const now = new Date();
   const today = asFraction([now.getFullYear(), now.getMonth() + 1]);
@@ -237,8 +230,6 @@ function swatches() {
     .join("\n");
 }
 
-// One lane: a single activity's span within the shared global domain. This is the
-// primitive — inline above a CV entry, or stacked with others to read overlaps.
 function singleTimeline(entry) {
   return `<div class="timeline">
     <div class="axis"></div>
@@ -249,8 +240,6 @@ function singleTimeline(entry) {
   </div>`;
 }
 
-// Overview: one lane per experience, stacked on the same axis. Overlaps read
-// vertically (Idrolab ∥ Soisy ∥ Ehoreca), never crammed onto one line.
 function lanes(entries) {
   const rows = entries
     .map(
@@ -281,8 +270,6 @@ function cvPreview(entries) {
   return blocks;
 }
 
-// Three cells whose lit count encodes the level; dim cells keep the footprint
-// constant so keywords stay aligned. `shape` picks the cell style.
 function countMarker(level, shape) {
   const lit = LEVEL_STEP[level];
   const cells = [1, 2, 3]
@@ -291,7 +278,6 @@ function countMarker(level, shape) {
   return `<span class="${shape}" title="${level}">${cells}</span>`;
 }
 
-// A 3×3 grid square, filled cell by cell from the bottom-left.
 function gridMarker(level) {
   const onSet = new Set(GRID_FILL_ORDER.slice(0, LEVEL_CELLS[level]));
   const cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -300,10 +286,8 @@ function gridMarker(level) {
   return `<span class="grid3" title="${level}">${cells}</span>`;
 }
 
-// The chosen marker for the CV skills.
 const CHOSEN_MARKER = { label: "griglia 3×3", render: gridMarker };
 
-// Kept in the styleguide as a record of what was tried and set aside, with why.
 const DISCARDED_MARKERS = [
   {
     label: "segmenti crescenti",
