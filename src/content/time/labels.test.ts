@@ -47,7 +47,7 @@ describe("periodLabel", () => {
   it("runs a role still going up to today", () => {
     expect(bothLanguages({ start: "2026-08" })).toEqual([
       "Ago 2026 - oggi",
-      "Aug 2026 - present", // @note non "today"?
+      "Aug 2026 - present",
     ]);
   });
 
