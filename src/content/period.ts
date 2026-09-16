@@ -1,9 +1,7 @@
 import type { z } from "zod";
 import type { periodSchema } from "./schema";
 
-// A date is as precise as it needs to be: "2009", "2025-08", "2016-06-21".
-// The CV mixes all three — a decade of freelancing, a start month, a two-day
-// course — so precision is part of the value, not a separate field.
+// As precise as it needs to be: "2009", "2025-08", "2016-06-21".
 export type PartialDate = string;
 
 // An absent `end` means the period is still open: a role in progress, or the
@@ -26,9 +24,6 @@ export function dateBounds(date: PartialDate): Bounds {
   return bounds;
 }
 
-// One branch per precision, each guarded by what can go wrong at that
-// precision. Date.UTC never refuses a value, it rolls it over, so every branch
-// that could roll over says what it expects.
 function boundsOf(date: PartialDate): Bounds | null {
   const parts = DATE.exec(date);
   if (!parts) {
