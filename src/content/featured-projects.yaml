@@ -15,23 +15,29 @@
       it: >-
         Libreria PHP open source (MIT, su Packagist), job manager
 
+
         Permette di definire Long Time Jobs scomponendo il lavoro in piccole
         parti, con soluzioni per gestire memoria, timeout e concorrenza.
+
 
         Ispirata a un componente di Akeneo è stata ideata e sviluppata per
         sopperire alle necessità di IdroLAB, ma è una soluzione generica e
         contiene soluzioni e best practice riutilizzabili.
 
+
         Supporta fino a PHP 7.4.
       en: >-
         Open source PHP library (MIT, on Packagist), job manager
 
+
         It defines long running jobs by breaking the work into small parts, with
         answers for memory, timeouts and concurrency.
+
 
         Inspired by a component of Akeneo, it was conceived and built for
         IdroLAB's needs, but it is a generic solution and carries reusable
         practices.
+
 
         Supports up to PHP 7.4.
   links:
@@ -54,26 +60,34 @@
       it: >-
         Libreria PHP open source (MIT, su Packagist), test utility
 
+
         Facilitare la gestione delle fixture nei test.
+
 
         Consente di definire dipendenze tra fixture in modo esplicito e
         modulare, evitando accoppiamenti rigidi.
 
+
         È stata ispirata dal DIC di Symfony e dal DoctrineFixturesBundle ma è
         framework-agnostic.
+
 
         Supporta fino a PHP 7.4, ma la aggiornerò a PHP 8 appena avrò necessità
         di usarla in questa versione.
       en: >-
         Open source PHP library (MIT, on Packagist), test utility
 
+
         Making fixtures easier to manage in tests.
+
 
         It declares dependencies between fixtures explicitly and modularly,
         avoiding rigid coupling.
 
+
         It was inspired by Symfony's DIC and by DoctrineFixturesBundle, but it
         is framework-agnostic.
+
 
         Supports up to PHP 7.4, but I will move it to PHP 8 as soon as I need
         that version.
@@ -129,8 +143,10 @@
         altamente affidabile, che permette di fare gare e tornei con macchine RC
         di piccole dimensioni.
 
+
         Contribuisco a questo progetto occupandomi della componente 3D,
         attraverso modellazione e stampa (utilizzando OpenSCAD).
+
 
         In particolare, ho realizzato il gantry e le start lights, rendendoli
         disponibili open source su GitHub e Thingiverse con licenza Creative
@@ -140,8 +156,10 @@
         heart is a highly reliable NFC lap counter that makes races and
         tournaments with small RC cars possible.
 
+
         I contribute to it by taking care of the 3D side, through modelling and
         printing (using OpenSCAD).
+
 
         In particular I built the gantry and the start lights, and published
         them open source on GitHub and Thingiverse under a Creative Commons
@@ -194,25 +212,31 @@
       it: >-
         Il mio primo esperimento di sviluppo con Claude Code.
 
+
         È un wizard che permette di realizzare un biglietto d'auguri stampabile
         che nasconde in un puzzle un messaggio da scoprire.
+
 
         L'obiettivo era imparare React e TypeScript realizzando una piccola web
         app, e verificare se con il vibe coding, testato e revisionato, fosse
         possibile portare un progetto dalla prima commit alla CI/CD fino alla
         pubblicazione in breve tempo, senza lesinare sulla qualità.
 
+
         Esperimento riuscito.
       en: >-
         My first experiment in building with Claude Code.
 
+
         It is a wizard that builds a printable greeting card, one that hides a
         message to be found inside a puzzle.
+
 
         The goal was to learn React and TypeScript by building a small web app,
         and to find out whether vibe coding, tested and reviewed, could take a
         project from the first commit through CI/CD to its launch in a short
         time, without cutting corners on quality.
+
 
         The experiment worked.
   links:
