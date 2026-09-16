@@ -1,0 +1,35 @@
+/* The rule between two CV entries, doubling as the timeline: the whole career
+   is the line, the entry is the green stretch on it. */
+.lane {
+  position: relative;
+  height: 8px;
+  margin: var(--space-4) 0;
+}
+
+.axis {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  transform: translateY(-50%);
+}
+
+.range {
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: var(--accent-mark);
+  transform: translateY(-50%);
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-mark);
+  transform: translate(-50%, -50%);
+}
