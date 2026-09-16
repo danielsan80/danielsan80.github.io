@@ -73,5 +73,6 @@ export const projectSchema = z.strictObject({
   period: periodSchema,
   role: projectRoleSchema,
   notes: z.string().optional(),
+  channels: z.strictObject({ linkedin: localized(z.string()) }).optional(),
   links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
 });
