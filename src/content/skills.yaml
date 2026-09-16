@@ -46,6 +46,8 @@
       level: expert
     - name: Kanban
       level: expert
+    - name: CI/CD
+      level: advanced
 - category:
     it: Architecture
     en: Architecture
@@ -98,6 +100,8 @@
       level: advanced
     - name: Trello
       level: expert
+    - name: Vite
+      level: proficient
 - category:
     it: Lingue
     en: Languages
