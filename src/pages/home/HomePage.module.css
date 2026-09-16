@@ -22,8 +22,6 @@
   line-height: 1.5;
 }
 
-/* The availability line carries the accent mark: it is the one fact on the page
-   that has a shelf life, so it reads as current rather than as prose. */
 .status {
   margin: var(--space-5) 0 0;
   border-left: 2px solid var(--accent-mark);
@@ -79,8 +77,6 @@
   line-height: 1.5;
 }
 
-/* The links wrap on narrow screens rather than scrolling: Minirace already
-   carries three of them. */
 .projectLinks {
   margin-top: var(--space-3);
   display: flex;
@@ -126,7 +122,6 @@
   }
 }
 
-/* Mono is for measurable metadata: handles, dates, repos, versions. */
 .mono {
   font-family: var(--font-mono);
 }
