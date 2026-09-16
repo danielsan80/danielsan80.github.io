@@ -3,7 +3,7 @@ import { contact } from "./contact";
 import { education } from "./education";
 import { experiences } from "./experiences";
 import { identity } from "./identity";
-import { periodBounds, type Period } from "./period";
+import { periodBounds, type Period } from "./time/period";
 import { profiles } from "./profiles";
 import { featuredProjects } from "./projects";
 import {
