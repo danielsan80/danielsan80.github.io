@@ -27,8 +27,6 @@ export function HomePage() {
           </p>
         </header>
 
-        {/* One list, on purpose: the PHP libraries and the RC car timing system
-            are the same habit in two workshops, not two audiences to split. */}
         <section className={styles.projects} aria-labelledby="projects">
           <h2 className={styles.sectionTitle} id="projects">
             Projects
@@ -56,8 +54,6 @@ export function HomePage() {
         </section>
       </main>
 
-      {/* Contacts are a footer, not a page: nobody navigates to be able to
-          write to you. */}
       <footer className={styles.footer}>
         <h2 className={styles.sectionTitle}>Elsewhere</h2>
 
