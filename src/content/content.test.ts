@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
-import { experienceSchema, skillGroupSchema } from "./schema";
+import { experienceSchema, projectSchema, skillGroupSchema } from "./schema";
 import {
   contentViolations,
   dateViolations,
@@ -157,6 +157,61 @@ describe("schemaViolations", () => {
         path: "skills[0].items[1].level",
         message:
           'Invalid option: expected one of "proficient"|"advanced"|"expert"',
+      },
+    ]);
+  });
+
+  it("names a project that does not say whether it is mine or one I contribute to", () => {
+    expect(
+      schemaViolations(
+        z.array(projectSchema),
+        [
+          {
+            name: "Mini Race Challenge",
+            summary: { it: "Cronometraggio", en: "Timing" },
+            period: { start: "2018-11" },
+            links: [],
+          },
+          {
+            name: "JobBoy",
+            summary: { it: "Un jobs manager", en: "A jobs manager" },
+            period: { start: "2019-07" },
+            role: "owner",
+            links: [],
+          },
+        ],
+        "featuredProjects",
+      ),
+    ).toEqual([
+      {
+        path: "featuredProjects[0].role",
+        message: 'Invalid option: expected one of "author"|"contributor"',
+      },
+      {
+        path: "featuredProjects[1].role",
+        message: 'Invalid option: expected one of "author"|"contributor"',
+      },
+    ]);
+  });
+
+  it("names a project that does not say when it was worked on", () => {
+    expect(
+      schemaViolations(
+        z.array(projectSchema),
+        [
+          {
+            name: "JobBoy",
+            summary: { it: "Un jobs manager", en: "A jobs manager" },
+            role: "author",
+            links: [],
+          },
+        ],
+        "featuredProjects",
+      ),
+    ).toEqual([
+      {
+        path: "featuredProjects[0].period",
+        message: "Invalid input: expected object, received undefined",
       },
     ]);
   });

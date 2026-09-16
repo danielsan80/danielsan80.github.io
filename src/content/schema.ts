@@ -65,8 +65,13 @@ export const skillGroupSchema = z.strictObject({
   ),
 });
 
+export const projectRoleSchema = z.enum(["author", "contributor"]);
+
 export const projectSchema = z.strictObject({
   name: z.string(),
   summary: localized(z.string()),
+  period: periodSchema,
+  role: projectRoleSchema,
+  notes: z.string().optional(),
   links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
 });
