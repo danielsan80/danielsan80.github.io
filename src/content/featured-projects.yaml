@@ -166,6 +166,55 @@
       through CI/CD to its launch.
   period:
     start: "2025-12"
+  notes: |-
+    Nasce da un regalo. Dovevo andare in Kosovo con mia moglie e degli amici a
+    cavallo del suo compleanno, e le avevo preso un ciondolo artigianale, fatto
+    dalla sorella di un collega, che non volevo portare in aereo. Così l'ho
+    nascosto nella scatola di un gioco da tavolo della nostra libreria e ho
+    girato un video che mostrava dov'era: il link a quel video è finito in un QR
+    code, sul biglietto d'auguri che le avrei dato il giorno del compleanno. Il
+    QR code è il regalo, il biglietto è la strada per arrivarci.
+
+    Poi l'idea vera: non stampare il QR code in chiaro, ma farglielo ricavare
+    annerendo le caselle. Quattro puzzle, uno per ciascuno dei quattro settori
+    delimitati dalle pieghe del biglietto: crucipixel, parole crociate, un
+    settore da mettere in controluce annerendo in corrispondenza delle parole
+    scritte sull'altro lato, e paint by area.
+
+    Quel biglietto l'ho fatto a mano con Inkscape. A bocce ferme mi sono detto
+    che automatizzare la creazione del biglietto e dei puzzle sarebbe stato
+    bello: in particolare il paint by area, il più noioso da disegnare e il più
+    stimolante da generare. La domanda interessante era come creare le aree
+    labirintiche da annerire.
+
+    Da fare, idealmente: altri puzzle, per rendere la sfida più stimolante. Il
+    paint by area, come enigma, è piuttosto banale.
+  channels:
+    linkedin:
+      it: >-
+        Il mio primo esperimento di sviluppo con Claude Code.
+
+        È un wizard che permette di realizzare un biglietto d'auguri stampabile
+        che nasconde in un puzzle un messaggio da scoprire.
+
+        L'obiettivo era imparare React e TypeScript realizzando una piccola web
+        app, e verificare se con il vibe coding, testato e revisionato, fosse
+        possibile portare un progetto dalla prima commit alla CI/CD fino alla
+        pubblicazione in breve tempo, senza lesinare sulla qualità.
+
+        Esperimento riuscito.
+      en: >-
+        My first experiment in building with Claude Code.
+
+        It is a wizard that builds a printable greeting card, one that hides a
+        message to be found inside a puzzle.
+
+        The goal was to learn React and TypeScript by building a small web app,
+        and to find out whether vibe coding, tested and reviewed, could take a
+        project from the first commit through CI/CD to its launch in a short
+        time, without cutting corners on quality.
+
+        The experiment worked.
   links:
     - label: danilosanchi.net/qriddle
       url: https://danilosanchi.net/qriddle/
