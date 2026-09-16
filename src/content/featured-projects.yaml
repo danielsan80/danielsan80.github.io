@@ -1,21 +1,65 @@
 - name: JobBoy
+  role: author
   summary:
     it: Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuto.
     en: A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+  period:
+    start: "2019-07"
+    end: "2025-01"
   links:
     - label: Documentation
       url: https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md
 - name: FixtureHandler
+  role: author
   summary:
     it: Una test utility per le fixture in PHP. Open source, MIT, su Packagist. PHP 7, non più mantenuta.
     en: A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no longer maintained.
+  period:
+    start: "2018-07"
+    end: "2025-01"
   links:
     - label: Repository
       url: https://github.com/danielsan80/fixture-handler
 - name: Mini Race Challenge
+  role: contributor
   summary:
-    it: Un sistema di cronometraggio per piccole auto RC, con parti stampate in 3D.
-    en: A timing system for small RC cars, with 3D printed parts.
+    it: >-
+      Cronometraggio per auto RC di piccole dimensioni, nato come hobby e
+      diventato un piccolo business internazionale: il cuore è un contagiri
+      basato su NFC. Contribuisco con la parte 3D, modellata in OpenSCAD:
+      gantry e start lights sono open source su GitHub e Thingiverse.
+    en: >-
+      A timing system for small RC cars, born as a hobby and now a small
+      international business, built around an NFC lap counter. I contribute the
+      3D side, modelled in OpenSCAD: the gantry and the start lights are open
+      source on GitHub and Thingiverse.
+  period:
+    start: "2018-11"
+  notes: |-
+    Il progetto è di mio fratello: nato come un suo hobby, a cui mi ero
+    appassionato, poi diventato un prodotto artigianale e infine un business, che
+    ha richiesto l'apertura di una partita IVA. Io lo seguo e do una mano quando
+    serve. La data d'inizio è quella della prima foto trovata; il progetto è in
+    corso.
+
+    Oggi MRC è un brand che produce diversi dispositivi, tutti con lo scopo di
+    gestire gare tra auto RC di piccole dimensioni. Il dispositivo centrale è un
+    lap counter NFC: un tag sotto ogni auto e, sotto la linea di partenza,
+    un'antenna lineare anziché le convenzionali antenne NFC puntuali. Comunica in
+    Bluetooth LE con la web app, traspilata anche per iOS e Android.
+
+    Da gennaio 2026 il progetto è gestito da LimenLab, azienda aperta
+    principalmente per MRC ma con l'intenzione di realizzare altri progetti
+    pionieristici e "di confine".
+
+    I prodotti sono venduti in tutto il mondo tramite rivenditori sul territorio;
+    quelli storici: uno a Milano, uno in Messico, due in Germania, uno in Francia
+    e uno in Giappone.
+
+    Il mio contributo: idee e soluzioni, ma soprattutto i modelli 3D necessari ai
+    prodotti, modellati in OpenSCAD e inizialmente stampati in casa con una FDM,
+    oggi tramite servizi esterni. Ho realizzato il gantry e le start lights,
+    pubblicati open source su GitHub e Thingiverse con licenza Creative Commons.
   links:
     - label: miniracechallenge.com
       url: https://miniracechallenge.com/
@@ -24,9 +68,12 @@
     - label: Repository
       url: https://github.com/danielsan80/minirace-gate
 - name: QRiddle
+  role: author
   summary:
     it: "Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di vibe coding, ma testato e revisionato, seguito per intero dalla prima commit alla CI/CD fino alla promozione."
     en: "A ReactJS/TypeScript web app built with Claude Code: a vibe coding experiment, tested and reviewed, followed end to end from the first commit through CI/CD to its launch."
+  period:
+    start: "2025-12"
   links:
     - label: danilosanchi.net/qriddle
       url: https://danilosanchi.net/qriddle/

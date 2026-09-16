@@ -90,5 +90,6 @@ export function contentViolations(today: number): Violation[] {
     ...dateViolations(experiences, "experiences", today),
     ...dateViolations(education, "education", today),
     ...dateViolations(training, "training", today),
+    ...dateViolations(featuredProjects, "featuredProjects", today),
   ];
 }
