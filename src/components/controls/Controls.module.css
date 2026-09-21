@@ -1,0 +1,42 @@
+/* Screen furniture: on paper the page is already in one language and one
+   theme, and a reader cannot press anything. */
+@media print {
+  .controls {
+    display: none;
+  }
+}
+
+.controls {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.7rem;
+}
+
+/* Square and quiet, like the rest of the page: a pill would be the only round
+   thing on a sheet made of rules and small squares. */
+.group {
+  display: flex;
+  border: 1px solid var(--border);
+}
+
+.button {
+  padding: 0.15em 0.5em;
+  border: 0;
+  background: none;
+  color: var(--text-muted);
+  font: inherit;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.button + .button {
+  border-left: 1px solid var(--border);
+}
+
+.button[aria-pressed="true"] {
+  background: var(--accent-mark);
+  color: var(--surface);
+}
