@@ -7,7 +7,9 @@
 .lane {
   position: relative;
   height: 8px;
-  margin: var(--space-4) 0;
+  /* Three parts above, one below: the line belongs to the entry under it, and
+     equal space would leave it hanging between two. The total is what it was. */
+  margin: var(--space-5) 0 var(--space-2);
 }
 
 .axis {
