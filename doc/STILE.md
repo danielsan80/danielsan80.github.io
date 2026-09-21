@@ -185,10 +185,11 @@ ribatte, «Repository» no. Gli indirizzi dei progetti stanno un gradino sotto i
 (`0.9em`) perché i tre di Mini Race Challenge, a corpo pieno, chiedono 677px su 649
 disponibili.
 
-**Il mono qui vale solo per l'handle**, non per date e indirizzi, che pure sono
-metadati misurabili. Misurato: i tre indirizzi di Mini Race Challenge passano da 603 a
-713px su 649 disponibili, e «Ago 2026 - oggi» da 112 a 135px. Su una pagina che deve
-stare in quattro fogli, la regola generale cede alla larghezza.
+**Sulla pagina CV il mono non si usa**, nemmeno per date, indirizzi e handle, che pure
+sono metadati misurabili. Due motivi. La larghezza, misurata: i tre indirizzi di Mini
+Race Challenge passano da 603 a 713px su 649 disponibili, e «Ago 2026 - oggi» da 112 a
+135px — su una pagina che deve stare in quattro fogli la regola cede. E la testata, dove
+un solo elemento in mono fra quattro stona invece di distinguersi.
 
 **Elenchi**: `#` verde come punto dei progetti, cerchietti vuoti per i punti delle
 esperienze, rientri stretti. Le skill hanno la categoria su una riga sua e le parole

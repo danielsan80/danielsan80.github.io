@@ -70,9 +70,7 @@ export function CvPage() {
           </span>
           <span>
             <GitHubIcon />
-            <a className={styles.mono} href={github.url}>
-              {github.handle}
-            </a>
+            <a href={github.url}>{github.handle}</a>
           </span>
           <span>
             <LinkedInIcon />
