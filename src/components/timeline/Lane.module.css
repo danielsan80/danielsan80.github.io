@@ -1,5 +1,9 @@
 /* The rule between two CV entries, doubling as the timeline: the whole career
-   is the line, the entry is the green stretch on it. */
+   is the line, the entry is the green stretch on it.
+
+   Everything is drawn with borders, never with a background: browsers drop
+   background graphics when printing unless the reader opts in, and this page
+   exists to be printed. */
 .lane {
   position: relative;
   height: 8px;
@@ -11,25 +15,21 @@
   top: 50%;
   left: 0;
   right: 0;
-  height: 1px;
-  background: var(--border);
-  transform: translateY(-50%);
+  border-top: 1px solid var(--border);
 }
 
 .range {
   position: absolute;
   top: 50%;
-  height: 1px;
-  background: var(--accent-mark);
-  transform: translateY(-50%);
+  border-top: 1px solid var(--accent-mark);
 }
 
 .dot {
   position: absolute;
   top: 50%;
-  width: 6px;
-  height: 6px;
+  width: 0;
+  height: 0;
+  border: 3px solid var(--accent-mark);
   border-radius: 50%;
-  background: var(--accent-mark);
   transform: translate(-50%, -50%);
 }
