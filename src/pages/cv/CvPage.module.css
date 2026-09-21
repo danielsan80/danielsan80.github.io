@@ -1,5 +1,20 @@
 /* One page, two destinations: the screen and A4. Sizes stay in rem so the
    print stylesheet can shrink everything by moving the root font size. */
+/* The page box of the printed CV, from doc/ohmycv: A4 with 50px of top margin,
+   40px at the foot and 45px at the sides, here in the millimetres every print
+   engine agrees on. */
+@page {
+  size: A4;
+  margin: 13mm 12mm 11mm;
+}
+
+@media print {
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+}
+
 /* The proportions of the printed CV: ohMyCV sets 15px on A4 with 45px side
    margins, which is a column about 47 characters wide — see doc/ohmycv. Sizing
    the column in em keeps that ratio whatever the font size ends up being. */
