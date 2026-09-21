@@ -46,7 +46,10 @@
   transform: translateX(-50%);
   padding: 2px 6px;
   border-radius: 3px;
-  background: var(--text);
+  /* Green ground, with the page's own surface as the ink: white on the light
+     theme, near-black on the dark one. Against --accent-text rather than
+     --accent-mark because at this size the mark green only reaches 3.4:1. */
+  background: var(--accent-text);
   color: var(--surface);
   font-family: var(--font-mono);
   font-size: 0.75rem;
