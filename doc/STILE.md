@@ -161,6 +161,48 @@ Cambiare tinta o aggiungere un livello costa un numero e una rigenerazione, non 
 esadecimali riscritti a mano. Da agganciare alla CI quando esiste (`SITE-4`), così
 l'accessibilità non si rompe di nascosto.
 
+## La pagina CV
+
+Le proporzioni vengono dal CV di ohMyCV, non da un gusto: corpo **15px**, interlinea
+**1.3**, colonna larga **47em** — che è la misura che A4 con margini da 45px dà a 15px.
+Casella di pagina `@page { size: A4; margin: 13mm 12mm 11mm }`, gli stessi 50/45/40px
+del pannello di ohMyCV.
+
+**Le misure di questa pagina sono in `em`, non in `rem`.** È l'eccezione alla regola
+delle spaziature: corpo, colonna, titoli e rientri sono agganciati al testo, così
+cambiare la dimensione per la stampa ridimensiona il blocco intero invece di scollare
+la testata dal resto. Nome e headline usano i rapporti di ohMyCV: `2.13em` e `1.2em`.
+
+**La corsia della timeline è disegnata con i bordi**, mai con uno sfondo: i browser
+non stampano gli sfondi se il lettore non lo chiede, e questa pagina esiste per essere
+stampata. Sta **dentro** la voce, prima dell'intestazione, con `break-inside: avoid`
+sul blocco: linea e contenuto non si separano mai su due pagine. Spazio **3:1** sopra e
+sotto — equidistante sembrava appartenere a entrambe le voci, cioè a nessuna.
+
+**Link**: verdi e senza sottolineatura, sia in testata sia sotto i progetti. Su carta
+si stampa l'**indirizzo**, non l'etichetta: `github.com/danielsan80/fixture-handler` si
+ribatte, «Repository» no. Gli indirizzi dei progetti stanno un gradino sotto il corpo
+(`0.9em`) perché i tre di Mini Race Challenge, a corpo pieno, chiedono 677px su 649
+disponibili.
+
+**Il mono qui vale solo per l'handle**, non per date e indirizzi, che pure sono
+metadati misurabili. Misurato: i tre indirizzi di Mini Race Challenge passano da 603 a
+713px su 649 disponibili, e «Ago 2026 - oggi» da 112 a 135px. Su una pagina che deve
+stare in quattro fogli, la regola generale cede alla larghezza.
+
+**Elenchi**: `#` verde come punto dei progetti, cerchietti vuoti per i punti delle
+esperienze, rientri stretti. Le skill hanno la categoria su una riga sua e le parole
+chiave sotto, ciascuna preceduta dalla griglia 3×3.
+
+**Icone** inline in SVG, non un font di icone né immagini di sfondo: le prime vanno
+scaricate, le seconde in stampa spariscono. Marchi altrui (GitHub, LinkedIn) solo nella
+versione ufficiale e non ritoccati, e solo per puntare a loro.
+
+**In stampa** spariscono i selettori di lingua e tema, la pagina perde padding e
+`max-width`, e i token del tema chiaro vincono comunque — il blocco `@media print`
+seleziona anche `:root[data-theme]`, altrimenti chi stampa dal tema scuro si porta lo
+scuro sul foglio.
+
 ## Aperto
 
 - Se e quando estendere la timeline oltre il CV.
