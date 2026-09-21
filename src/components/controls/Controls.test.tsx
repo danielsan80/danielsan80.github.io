@@ -9,23 +9,23 @@ afterEach(() => {
 });
 
 describe("Controls", () => {
-  it("marks the language in use, and remembers the one chosen", async () => {
+  it("marks what is in use — Italian, and the light theme — and remembers a change", async () => {
     render(<Controls />);
 
     expect(
       screen
         .getAllByRole("button", { pressed: true })
         .map((b) => b.textContent),
-    ).toEqual(["EN"]);
+    ).toEqual(["IT", "Light"]);
 
-    await userEvent.click(screen.getByRole("button", { name: "Italiano" }));
+    await userEvent.click(screen.getByRole("button", { name: "English" }));
 
     expect({
       pressed: screen
         .getAllByRole("button", { pressed: true })
         .map((b) => b.textContent),
       stored: localStorage.getItem("lang"),
-    }).toEqual({ pressed: ["IT"], stored: "it" });
+    }).toEqual({ pressed: ["EN", "Light"], stored: "en" });
   });
 
   it("stamps the chosen theme on the document and remembers it", async () => {

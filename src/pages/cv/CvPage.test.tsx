@@ -24,7 +24,7 @@ describe("CvPage", () => {
       "Projects",
       "Experience",
       "Education",
-      "Training",
+      "Formazione",
       "Skills",
     ]);
   });
@@ -84,23 +84,20 @@ describe("CvPage", () => {
   it("switches the whole page to the other language", async () => {
     render(<CvPage />);
 
-    await userEvent.click(screen.getByRole("button", { name: "Italiano" }));
+    await userEvent.click(screen.getByRole("button", { name: "English" }));
 
-    expect(
-      screen
+    expect({
+      training: screen
         .getAllByRole("heading", { level: 2 })
-        .map((heading) => heading.textContent),
-    ).toEqual([
-      "Summary",
-      "Projects",
-      "Experience",
-      "Education",
-      "Training",
-      "Skills",
-    ]);
-    expect(
-      screen.getByRole("article", { name: "Resolvi Srl" }).textContent,
-    ).toContain("Consulente e Full Stack Developer");
+        .map((heading) => heading.textContent)
+        .at(-2),
+      role: within(
+        screen.getByRole("article", { name: "Resolvi Srl" }),
+      ).getByRole("heading", { level: 3 }).textContent,
+    }).toEqual({
+      training: "Training",
+      role: "Consultant & Full Stack Developer",
+    });
   });
 
   it("gives every dated entry its own timeline", () => {
@@ -121,10 +118,10 @@ describe("CvPage", () => {
       period: within(entry).getByText(/2026/).textContent,
       timeline: within(entry).getByRole("img").getAttribute("aria-label"),
     }).toEqual({
-      role: "Consultant & Full Stack Developer",
+      role: "Consulente e Full Stack Developer",
       company: "Resolvi Srl",
-      period: "Aug 2026 - present",
-      timeline: "Aug 2026 - present",
+      period: "Ago 2026 - oggi",
+      timeline: "Ago 2026 - oggi",
     });
   });
 
@@ -136,6 +133,6 @@ describe("CvPage", () => {
       within(entry)
         .getAllByRole("listitem")
         .map((item) => item.textContent),
-    ).toEqual(experiences[0].channels.cv.en);
+    ).toEqual(experiences[0].channels.cv.it);
   });
 });

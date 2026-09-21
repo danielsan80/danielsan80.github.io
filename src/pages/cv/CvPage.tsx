@@ -30,6 +30,9 @@ const profileNamed = (name: string) => {
   return profile;
 };
 
+// The Italian CV keeps the English section names, except this one.
+const TRAINING = { it: "Formazione", en: "Training" };
+
 const github = profileNamed("GitHub");
 const linkedin = profileNamed("LinkedIn");
 
@@ -178,7 +181,7 @@ export function CvPage() {
 
       <section aria-labelledby="training">
         <h2 className={styles.section} id="training">
-          Training
+          {pick(TRAINING, lang)}
         </h2>
         {training.map((course) => {
           const title = pick(course.title, lang);
