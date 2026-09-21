@@ -1,0 +1,24 @@
+.marker {
+  width: 0.75em;
+  height: 0.75em;
+  vertical-align: -0.05em;
+}
+
+.on {
+  fill: var(--accent-mark);
+}
+
+.off {
+  fill: var(--border);
+}
+
+/* The level is drawn, never written (doc/STILE.md): this is for screen readers,
+   which have no square to look at. */
+.level {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
