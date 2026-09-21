@@ -1,11 +1,3 @@
-/* Screen furniture: on paper the page is already in one language and one
-   theme, and a reader cannot press anything. */
-@media print {
-  .controls {
-    display: none;
-  }
-}
-
 .controls {
   position: absolute;
   top: var(--space-3);
@@ -39,4 +31,13 @@
 .button[aria-pressed="true"] {
   background: var(--accent-mark);
   color: var(--surface);
+}
+
+/* Screen furniture: on paper the page is already in one language and one theme,
+   and a reader cannot press anything. Last in the file on purpose — the rule
+   above has the same specificity and would win otherwise. */
+@media print {
+  .controls {
+    display: none;
+  }
 }

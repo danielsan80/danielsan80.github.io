@@ -73,8 +73,12 @@ ${colourDeclarations("dark")}
 ${colourDeclarations("light")}
 }
 
+/* On paper the light tokens always win, whatever the reader picked on screen.
+   The selector has to match data-theme too: the toggle stamps it, and on equal
+   specificity the later rule is the one that counts. */
 @media print {
-  :root {
+  :root,
+  :root[data-theme] {
 ${colourDeclarations("light", "    ")}
   }
 }
