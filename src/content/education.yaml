@@ -5,8 +5,12 @@
     it: Cesena, FC
     en: Cesena, Italy
   title:
-    it: Laurea magistrale in Scienze dell’Informazione - vecchio ordinamento
-    en: Master's degree in Computer Science (Scienze dell'Informazione, five-year program)
+    it: |-
+      Laurea magistrale in Scienze dell’Informazione
+      - vecchio ordinamento
+    en: |-
+      Master's degree in Computer Science
+      (Scienze dell'Informazione, five-year program)
   period:
     start: "1999-09"
     end: "2006-10"
