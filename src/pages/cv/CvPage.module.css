@@ -1,0 +1,86 @@
+/* One page, two destinations: the screen and A4. Sizes stay in rem so the
+   print stylesheet can shrink everything by moving the root font size. */
+.page {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.name {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.headline {
+  margin: var(--space-2) 0 0;
+  font-weight: 600;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.section {
+  margin: var(--space-5) 0 0;
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--accent-mark);
+  color: var(--accent-text);
+  font-size: 1.1rem;
+}
+
+/* The lane belongs to the entry, so a page break can never leave the timeline
+   on one page and its dates on the next. */
+.entry {
+  break-inside: avoid;
+}
+
+.entryHead {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.role {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.where,
+.dates {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.projects,
+.skills {
+  margin: var(--space-3) 0 0;
+}
+
+.skills div {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: var(--space-3);
+}
+
+.skills dt {
+  font-weight: 600;
+}
+
+.skills dd {
+  margin: 0;
+}

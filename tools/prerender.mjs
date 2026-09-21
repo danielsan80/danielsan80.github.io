@@ -12,6 +12,11 @@ export const PAGES = [
     module: "/src/pages/home/HomePage.tsx",
     component: "HomePage",
   },
+  {
+    html: "cv/index.html",
+    module: "/src/pages/cv/CvPage.tsx",
+    component: "CvPage",
+  },
 ];
 
 const ROOT_ELEMENT = '<div id="root"></div>';
