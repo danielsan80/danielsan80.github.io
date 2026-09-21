@@ -1,9 +1,15 @@
 /* One page, two destinations: the screen and A4. Sizes stay in rem so the
    print stylesheet can shrink everything by moving the root font size. */
+/* The proportions of the printed CV: ohMyCV sets 15px on A4 with 45px side
+   margins, which is a column about 47 characters wide — see doc/ohmycv. Sizing
+   the column in em keeps that ratio whatever the font size ends up being. */
 .page {
-  max-width: 48rem;
+  position: relative;
+  max-width: 47em;
   margin: 0 auto;
   padding: var(--space-6) var(--space-4);
+  font-size: 0.9375rem;
+  line-height: 1.3;
 }
 
 .heading {
@@ -11,16 +17,22 @@
   margin-bottom: var(--space-5);
 }
 
+/* The ratios ohMyCV uses over its 15px body: 2.13em for the name, 1.2em for
+   the headline. */
 .name {
   margin: 0;
-  font-size: 2rem;
+  color: var(--accent-text);
+  font-size: 2.13em;
+  line-height: 1;
 }
 
 .headline {
   margin: var(--space-2) 0 0;
+  font-size: 1.2em;
   font-weight: 600;
 }
 
+/* Smaller than the body so the four of them keep to one line. */
 .contacts {
   display: flex;
   justify-content: center;
@@ -28,10 +40,44 @@
   flex-wrap: wrap;
   margin: var(--space-2) 0 0;
   color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.contacts span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Green and without underline, as in the printed CV: the accent marks what can
+   be followed, the underline would only add noise. */
+.contacts a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.projectLinks a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+/* Green like the address beside them: the icons belong to their link, and grey
+   on a dark surface reads as disabled. */
+.icon {
+  width: 1em;
+  height: 1em;
+  color: var(--accent-text);
 }
 
 .mono {
   font-family: var(--font-mono);
+}
+
+/* Justified like the printed CV, with hyphenation: a long paragraph in a narrow
+   column opens rivers between the words without it. */
+.summary {
+  text-align: justify;
+  hyphens: auto;
 }
 
 .section {
@@ -48,11 +94,65 @@
   break-inside: avoid;
 }
 
+/* Hollow circles as in the printed CV, indented past the entry title: the
+   marker sits inside the padding, so 1.2em would line it up with the role. */
+.entry ul {
+  margin: var(--space-2) 0 0;
+  padding-left: 2.2em;
+  list-style-type: circle;
+}
+
+.entry li {
+  padding-left: 0.15em;
+}
+
+.entry li::marker {
+  color: var(--text-muted);
+}
+
+/* Role left, dates right, place in between. The role column takes the width it
+   needs — forcing the place to the centre of the page instead pushed long roles
+   onto a second line — and the leftover space keeps place and dates apart. */
 .entryHead {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: auto 1fr auto;
   align-items: baseline;
   gap: var(--space-3);
+}
+
+.where {
+  grid-column: 2;
+  text-align: center;
+}
+
+.dates {
+  grid-column: 3;
+  text-align: right;
+}
+
+/* Two columns for studies: the institution and the title on the left, place and
+   dates stacked on the right. Three columns would squeeze names as long as
+   «"P. Gobetti" Technical Institute for Business». */
+.studiesHead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: baseline;
+}
+
+/* The title carries its own line break: where it falls is a content decision,
+   not something the column width should settle. */
+.studiesTitle {
+  white-space: pre-line;
+}
+
+.aside {
+  text-align: right;
+  color: var(--text-muted);
+}
+
+.aside p {
+  margin: 0;
 }
 
 .role {
@@ -66,21 +166,51 @@
   color: var(--text-muted);
 }
 
-.projects,
 .skills {
   margin: var(--space-3) 0 0;
 }
 
-.skills div {
-  display: grid;
-  grid-template-columns: 12rem 1fr;
-  gap: var(--space-3);
+/* Marked with a hash, as the printed CV does, and pulled close to the margin:
+   the default list indent pushes a project a third of the way across. */
+.projects {
+  margin: var(--space-3) 0 0;
+  padding-left: 1.2em;
+  list-style-type: "#";
 }
 
+.projects li {
+  padding-left: 0.4em;
+}
+
+.projects li::marker {
+  color: var(--accent-text);
+}
+
+/* A notch smaller than the body, which is also what makes the three addresses
+   of Mini Race Challenge fit on one line: at body size they want 677px and the
+   column offers 649. They still wrap rather than overflow. */
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  font-size: 0.9em;
+}
+
+/* Category on its own line, keywords underneath: no column to align to, so a
+   short category leaves no gap behind it. */
 .skills dt {
+  margin: var(--space-2) 0 0;
   font-weight: 600;
 }
 
 .skills dd {
   margin: 0;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25em;
+  margin-right: var(--space-3);
+  white-space: nowrap;
 }

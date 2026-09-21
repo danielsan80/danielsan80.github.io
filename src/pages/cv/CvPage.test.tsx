@@ -1,9 +1,15 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import userEvent from "@testing-library/user-event";
+import { afterEach, describe, expect, it } from "vitest";
 import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
+import { featuredProjects } from "../../content/projects";
 import { training } from "../../content/training";
 import { CvPage } from "./CvPage";
+
+// The language is remembered on purpose, so it has to be forgotten between
+// tests or the first one that switches it decides for the rest.
+afterEach(() => localStorage.clear());
 
 describe("CvPage", () => {
   it("keeps the sections of the CV, in the order the CV has them", () => {
@@ -21,6 +27,80 @@ describe("CvPage", () => {
       "Training",
       "Skills",
     ]);
+  });
+
+  it("heads the page with the contacts, the handle linked to its profile", () => {
+    render(<CvPage />);
+    const header = screen.getByRole("banner");
+
+    expect(
+      within(header)
+        .getAllByRole("link")
+        .map((link) => [link.textContent, link.getAttribute("href")]),
+    ).toEqual([
+      ["danilo.sanchi@gmail.com", "mailto:danilo.sanchi@gmail.com"],
+      ["danielsan80", "https://github.com/danielsan80"],
+      [
+        "linkedin.com/in/danilosanchi",
+        "https://www.linkedin.com/in/danilosanchi/",
+      ],
+      ["danilosanchi.net", "https://danilosanchi.net"],
+    ]);
+  });
+
+  it("tells where to find each project, with the links from the content", () => {
+    render(<CvPage />);
+    const projects = screen.getByRole("list", { name: "Projects" });
+
+    expect(
+      within(projects)
+        .getAllByRole("link")
+        .map((link) => link.getAttribute("href")),
+    ).toEqual(
+      featuredProjects.flatMap((project) =>
+        project.links.map((link) => link.url),
+      ),
+    );
+  });
+
+  it("shows the address itself, so it can be read off paper and typed back", () => {
+    render(<CvPage />);
+    const projects = screen.getByRole("list", { name: "Projects" });
+
+    expect(
+      within(projects)
+        .getAllByRole("link")
+        .map((link) => link.textContent),
+    ).toEqual([
+      "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
+      "github.com/danielsan80/fixture-handler",
+      "miniracechallenge.com",
+      "thingiverse.com/thing:5364319",
+      "github.com/danielsan80/minirace-gate",
+      "danilosanchi.net/qriddle",
+    ]);
+  });
+
+  it("switches the whole page to the other language", async () => {
+    render(<CvPage />);
+
+    await userEvent.click(screen.getByRole("button", { name: "Italiano" }));
+
+    expect(
+      screen
+        .getAllByRole("heading", { level: 2 })
+        .map((heading) => heading.textContent),
+    ).toEqual([
+      "Summary",
+      "Projects",
+      "Experience",
+      "Education",
+      "Training",
+      "Skills",
+    ]);
+    expect(
+      screen.getByRole("article", { name: "Resolvi Srl" }).textContent,
+    ).toContain("Consulente e Full Stack Developer");
   });
 
   it("gives every dated entry its own timeline", () => {
