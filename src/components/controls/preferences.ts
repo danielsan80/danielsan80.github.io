@@ -24,28 +24,32 @@ function write(key: string, value: string): void {
 const listeners = new Set<() => void>();
 
 function subscribe(listener: () => void) {
+  const system = matchMedia("(prefers-color-scheme: dark)");
   listeners.add(listener);
-  // Another tab changing the same preference counts as a change here too.
+  // Another tab changing the same preference counts as a change here, and so
+  // does the system switching theme while nothing is stored.
   window.addEventListener("storage", listener);
+  system.addEventListener("change", listener);
   return () => {
     listeners.delete(listener);
     window.removeEventListener("storage", listener);
+    system.removeEventListener("change", listener);
   };
 }
 
 const announce = () => listeners.forEach((listener) => listener());
 
-// The pre-rendered file is written in English with no theme stamped on it, so
-// that is what the server snapshot has to say. The stored choice arrives on the
-// first client read, and React swaps it in after hydration.
+// The pre-rendered file is written in Italian and carries no theme, so that is
+// what the server snapshot has to say. The stored choice arrives on the first
+// client read, and React swaps it in after hydration.
 export function useLang(): [Lang, (lang: Lang) => void] {
   const lang = useSyncExternalStore(
     subscribe,
     () => {
       const stored = read("lang");
-      return stored === "it" || stored === "en" ? stored : "en";
+      return stored === "it" || stored === "en" ? stored : "it";
     },
-    () => "en" as Lang,
+    () => "it" as Lang,
   );
 
   return [
@@ -57,14 +61,21 @@ export function useLang(): [Lang, (lang: Lang) => void] {
   ];
 }
 
-export function useTheme(): [Theme | null, (theme: Theme) => void] {
+// With nothing stored the page follows the system, so the button that shows as
+// chosen is the one actually in effect — not none.
+export function useTheme(): [Theme, (theme: Theme) => void] {
   const theme = useSyncExternalStore(
     subscribe,
     () => {
       const stored = read("theme");
-      return stored === "light" || stored === "dark" ? stored : null;
+      if (stored === "light" || stored === "dark") {
+        return stored;
+      }
+      return matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
     },
-    () => null,
+    () => "light" as Theme,
   );
 
   return [
