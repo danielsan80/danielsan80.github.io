@@ -2,7 +2,7 @@
 name: Danilo Sanchi
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">Senior Software Engineer (Web/PHP/Symfony specialist)</span>
+      <span style="font-size: 1.2em; font-weight: bold;">Senior Software Engineer &amp; Hands-on Consultant · Freelance</span>
   - text: <span class="iconify" data-icon="tabler:phone"></span> (+39) 377 17 14 053
     newLine: true
   - text: <span class="iconify" data-icon="tabler:mail"></span> danilo.sanchi@gmail.com
