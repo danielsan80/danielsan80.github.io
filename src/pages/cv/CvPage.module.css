@@ -84,10 +84,6 @@
   color: var(--accent-text);
 }
 
-.mono {
-  font-family: var(--font-mono);
-}
-
 /* Justified like the printed CV, with hyphenation: a long paragraph in a narrow
    column opens rivers between the words without it. */
 .summary {
