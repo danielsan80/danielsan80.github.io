@@ -51,6 +51,8 @@
   max-width: 34rem;
   font-size: 1.125rem;
   line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .projects {
@@ -131,6 +133,10 @@
 @media (max-width: 30rem) {
   .headlineItem {
     display: block;
+  }
+
+  .summary {
+    text-align: left;
   }
 
   .separator {
