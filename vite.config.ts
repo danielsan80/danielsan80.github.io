@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [react(), yaml()],
   build: {
     rollupOptions: {
-      input: { home: "index.html", cv: "cv/index.html" },
+      input: {
+        home: "index.html",
+        projects: "projects/index.html",
+        cv: "cv/index.html",
+      },
     },
   },
   test: {
