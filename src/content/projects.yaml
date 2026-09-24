@@ -79,8 +79,8 @@
     photo:
       src: /photos/mini-race-challenge.webp
       alt:
-        it: Auto RC in miniatura su una pista, e in primo piano una ribaltata da un barile
-        en: Miniature RC cars on a track, one knocked over by a barrel in the foreground
+        it: Gara tra auto RC in scala 1:58 su un circuito fatto in casa, in stile post-apocalittico
+        en: A race of 1:58 RC cars on a homemade, post-apocalyptic track
 - name: QRiddle
   role: author
   summary:
@@ -156,8 +156,8 @@
     photo:
       src: /photos/qriddle.webp
       alt:
-        it: Una mano annerisce le caselle di un biglietto a mappa del tesoro, e il QR code emerge
-        en: A hand fills in the squares of a treasure map card, and the QR code emerges
+        it: "Un biglietto d'auguri di QRiddle in fase di risoluzione: il QR code emerge"
+        en: "A QRiddle greeting card being solved: the QR code emerges"
 - name: JobBoy
   role: author
   summary:
