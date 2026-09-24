@@ -32,33 +32,58 @@ const FONT_PAIRS = {
 
 const WEIGHTS = [400, 600];
 
-// Real entries from the CV, with the corrections agreed in session: Facile.it
-// closed in Mar 2026, QMates ran Apr-Jul 2026. Overlaps are intentional.
+// Invented companies on the overlaps of the real CV: a long engagement running
+// alongside two others, a short one inside it, two close together at the end.
 const ENGAGEMENTS = [
-  { org: "QMates", role: "Consulente", start: [2026, 4], end: [2026, 7] },
   {
-    org: "Facile.it",
+    org: "Aperture Science",
+    role: "Consulente",
+    start: [2026, 4],
+    end: [2026, 7],
+    bullets: [
+      "Affiancamento al team di ricerca sui processi di rilascio.",
+      "Workshop di refactoring sul codice delle camere di test.",
+    ],
+  },
+  {
+    org: "Hooli",
     role: "Full Stack Developer",
     start: [2025, 8],
     end: [2026, 3],
+    bullets: [
+      "Nuove funzionalità per il CRM interno, in un team Scrum.",
+      "Migrazione graduale verso un modello a domini.",
+    ],
   },
   {
-    org: "Soisy",
+    org: "Globex",
     role: "Full Stack Developer",
     start: [2020, 2],
     end: [2025, 6],
+    bullets: [
+      "Back office di una piattaforma di pagamenti a rate.",
+      "Automazione dei processi e integrazione con servizi esterni.",
+    ],
   },
   {
-    org: "Idrolab",
+    org: "Initech",
     role: "Lead Full Stack Developer",
     start: [2015, 3],
     end: [2025, 2],
+    bullets: [
+      "Guida tecnica di un team di quattro sviluppatori.",
+      "Formazione interna su TDD e design a oggetti.",
+    ],
   },
   {
-    org: "Ehoreca",
+    org: "Acme",
     role: "Solo Full Stack Developer",
     start: [2018, 11],
     end: [2019, 2],
+    bullets: [
+      "Ripristino di una piattaforma ferma da tre anni, a scopo demo.",
+      "Documentazione per chi l'avrebbe ripresa in mano.",
+    ],
   },
 ];
 
@@ -262,8 +287,7 @@ function cvPreview(entries) {
   <h4>${escapeHtml(entry.role)}</h4>
   <p class="meta"><span>${escapeHtml(entry.org)}</span> <code>${entry.startLabel} – ${entry.endLabel}</code></p>
   <ul>
-    <li>Sviluppo di nuove funzionalità e integrazione con servizi interni.</li>
-    <li>Supporto al team nella riorganizzazione del codice in ottica DDD.</li>
+${entry.bullets.map((bullet) => `    <li>${escapeHtml(bullet)}</li>`).join("\n")}
   </ul>
 </article>`;
     })
@@ -399,7 +423,6 @@ button {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  border-radius: 3px;
   cursor: pointer;
 }
 button[aria-pressed="true"] {
@@ -437,7 +460,7 @@ h3 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spac
   content: attr(data-label);
   position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
   background: var(--text); color: var(--surface);
-  padding: 3px 6px; border-radius: 3px;
+  padding: 3px 6px;
   font-family: var(--font-mono); font-size: 0.7rem; white-space: nowrap;
   opacity: 0; transition: opacity 0.15s; pointer-events: none;
 }
@@ -463,19 +486,18 @@ table.tokens th, table.tokens td {
 }
 table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .chip {
-  display: inline-block; width: 1.1rem; height: 1.1rem; border-radius: 3px;
+  display: inline-block; width: 1.1rem; height: 1.1rem;
   border: 1px solid var(--border); vertical-align: -0.25rem; margin-right: 0.4rem;
 }
 .badge {
-  font-family: var(--font-mono); font-size: 0.7rem; padding: 0.1rem 0.35rem;
-  border-radius: 3px; margin-left: 0.4rem; border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 0.7rem; padding: 0.1rem 0.35rem; margin-left: 0.4rem; border: 1px solid var(--border);
 }
 .badge.pass { color: var(--accent-text); border-color: var(--accent-mark); }
 .badge.fail { color: #b3261e; border-color: #b3261e; }
 
 .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 0.75rem; }
 .swatch { margin: 0; }
-.swatch .sample { height: 3.5rem; border-radius: 4px; border: 1px solid var(--border); }
+.swatch .sample { height: 3.5rem; border: 1px solid var(--border); }
 .swatch figcaption { display: flex; flex-direction: column; gap: 0.05rem; padding-top: 0.35rem; font-size: 0.75rem; }
 
 /* Skills — compact marker before each keyword; inline and dense, as in the CV. */
@@ -483,22 +505,22 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .skill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
 /* 3×3 grid — the chosen marker: fills the square cell by cell, bottom-left up. */
 .grid3 { display: grid; grid-template-columns: repeat(3, 3px); grid-auto-rows: 3px; gap: 1px; }
-.grid3 i { background: var(--border); border-radius: 0.5px; }
+.grid3 i { background: var(--border); }
 .grid3 i.on { background: var(--accent-mark); }
 /* Discarded — segmented meter: lit count = level, ascending height. */
 .meter { display: inline-flex; align-items: flex-end; gap: 1px; height: 13px; }
-.meter i { width: 3px; background: var(--border); border-radius: 1px; }
+.meter i { width: 3px; background: var(--border); }
 .meter i:nth-child(1) { height: 46%; }
 .meter i:nth-child(2) { height: 73%; }
 .meter i:nth-child(3) { height: 100%; }
 .meter i.on { background: var(--accent-mark); }
 /* Discarded — continuous vertical fill: length only, no count. */
 .mbar {
-  width: 3px; height: 14px; border-radius: 1px;
+  width: 3px; height: 14px;
   background: linear-gradient(to top, var(--accent-mark) var(--length), var(--border) var(--length));
 }
 /* Legacy (ohmycv): single vertical tick, three colours. */
-.skill.legacy .bar { flex: none; width: 3px; height: 12px; border-radius: 1px; }
+.skill.legacy .bar { flex: none; width: 3px; height: 12px; }
 .skill.legacy.expert .bar { background: #539956; }
 .skill.legacy.advanced .bar { height: 10.5px; background: #a2d446; }
 .skill.legacy.proficient .bar { height: 9px; background: #ffc164; }
@@ -508,7 +530,7 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2rem; }
 
 /* Typography */
-.specimen { border: 1px solid var(--border); border-radius: 4px; padding: 1.25rem; }
+.specimen { border: 1px solid var(--border); padding: 1.25rem; }
 .specimen .name { font-size: 0.75rem; color: var(--text-muted); margin: 0 0 0.75rem; }
 .specimen .display { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.25rem; }
 .specimen p { margin: 0.5rem 0; }
@@ -523,7 +545,7 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 .space-row code { flex: none; }
 .space-row code:first-child { width: 5rem; }
 .space-row code.quiet { width: 3.5rem; }
-.space-bar { height: 1rem; background: var(--accent-quiet); border-radius: 2px; }
+.space-bar { height: 1rem; background: var(--accent-quiet); }
 
 @media print {
   :root { color-scheme: light; }
@@ -554,13 +576,13 @@ table.tokens thead th { color: var(--text-muted); font-weight: 600; font-size: 0
 
 <section>
   <h2>Anteprima CV</h2>
-  <p>Come si comporta l'insieme su contenuto reale: timeline, gerarchia, metadati in mono.</p>
+  <p>Come si comporta l'insieme su un contenuto verosimile, inventato: timeline, gerarchia, metadati in mono.</p>
   ${cvPreview(engagements)}
 </section>
 
 <section>
   <h2>Timeline: corsie parallele</h2>
-  <p>Una corsia per esperienza, tutte sullo stesso asse temporale globale. Le sovrapposizioni si leggono in verticale — Idrolab corre in parallelo a Soisy ed Ehoreca — senza accavallarsi su una riga sola. È lo stesso primitivo che sta sopra ogni voce del CV. Passa il mouse sui punti per le date.</p>
+  <p>Una corsia per esperienza, tutte sullo stesso asse temporale globale. Le sovrapposizioni si leggono in verticale — Initech corre in parallelo a Globex e ad Acme — senza accavallarsi su una riga sola. È lo stesso primitivo che sta sopra ogni voce del CV. Passa il mouse sui punti per le date.</p>
   ${lanes(engagements)}
 </section>
 
