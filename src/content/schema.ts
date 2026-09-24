@@ -11,8 +11,16 @@ export const periodSchema = z.strictObject({
   end: z.string().optional(),
 });
 
+const photoSchema = z.strictObject({
+  src: z.string(),
+  alt: localized(z.string()),
+});
+
 export const identitySchema = z.strictObject({
   name: z.string(),
+  portrait: photoSchema,
+  tagline: z.array(z.string()),
+  about: localized(z.string()),
   headline: translatable(z.string()),
   summary: localized(z.string()),
 });
@@ -75,4 +83,5 @@ export const projectSchema = z.strictObject({
   notes: z.string().optional(),
   channels: z.strictObject({ linkedin: localized(z.string()) }).optional(),
   links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
+  highlight: z.strictObject({ photo: photoSchema }).optional(),
 });

@@ -1,47 +1,62 @@
 .page {
   margin: 0 auto;
   max-width: 42rem;
-  padding: var(--space-9) var(--space-5);
+  padding: var(--space-7) var(--space-5) var(--space-9);
 }
 
 .intro {
+  margin-top: var(--space-6);
   border-bottom: 1px solid var(--border);
-  padding-bottom: var(--space-6);
+  padding-bottom: var(--space-7);
+  text-align: center;
+}
+
+.portrait,
+.photo {
+  display: block;
+  border: 3px solid var(--accent-mark);
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--surface);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.portrait {
+  margin: 0 auto;
+  width: 10rem;
 }
 
 .name {
-  margin: 0;
+  margin: var(--space-5) 0 0;
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
 .tagline {
-  margin: var(--space-4) 0 0;
+  margin: var(--space-3) 0 0;
+  color: var(--accent-text);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+
+  & span {
+    display: block;
+  }
+}
+
+.about {
+  margin: var(--space-5) auto 0;
+  max-width: 34rem;
   font-size: 1.125rem;
   line-height: 1.5;
 }
 
-.status {
-  margin: var(--space-5) 0 0;
-  border-left: 2px solid var(--accent-mark);
-  padding-left: var(--space-3);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-}
-
-.handle {
-  margin: var(--space-3) 0 0;
-  color: var(--text-muted);
-  font-size: 0.9375rem;
-
-  & a {
-    color: var(--accent-text);
-  }
-}
-
 .projects {
   margin-top: var(--space-7);
+  display: grid;
+  gap: var(--space-6);
 }
 
 .sectionTitle {
@@ -53,17 +68,15 @@
   color: var(--text-muted);
 }
 
-.projectList,
-.projectLinks {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.project {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: var(--space-5);
+  align-items: start;
 }
 
-.projectList {
-  margin-top: var(--space-5);
-  display: grid;
-  gap: var(--space-6);
+.photo {
+  width: 100%;
 }
 
 .projectName {
@@ -78,14 +91,24 @@
 }
 
 .projectLinks {
-  margin-top: var(--space-3);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
   font-size: 0.875rem;
 
   & a {
     color: var(--accent-text);
+  }
+}
+
+@media (max-width: 30rem) {
+  .project {
+    grid-template-columns: 5rem 1fr;
+    gap: var(--space-4);
   }
 }
 
@@ -115,6 +138,7 @@
 
 .contact {
   margin: var(--space-5) 0 0;
+  font-family: var(--font-mono);
   font-size: 0.9375rem;
 
   & a {

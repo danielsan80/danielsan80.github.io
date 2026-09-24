@@ -171,6 +171,12 @@
       url: https://www.thingiverse.com/thing:5364319
     - label: Repository
       url: https://github.com/danielsan80/minirace-gate
+  highlight:
+    photo:
+      src: /photos/mini-race-challenge.webp
+      alt:
+        it: Auto RC in miniatura su una pista, e in primo piano una ribaltata da un barile
+        en: Miniature RC cars on a track, one knocked over by a barrel in the foreground
 - name: QRiddle
   role: author
   summary:
@@ -242,3 +248,9 @@
   links:
     - label: danilosanchi.net/qriddle
       url: https://danilosanchi.net/qriddle/
+  highlight:
+    photo:
+      src: /photos/qriddle.webp
+      alt:
+        it: Una mano annerisce le caselle di un biglietto a mappa del tesoro, e il QR code emerge
+        en: A hand fills in the squares of a treasure map card, and the QR code emerges
