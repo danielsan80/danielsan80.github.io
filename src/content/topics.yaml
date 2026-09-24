@@ -1,0 +1,42 @@
+- label: minirace
+  query: topic:minirace
+  description:
+    it: I modelli 3D per Mini Race Challenge, in OpenSCAD.
+    en: The 3D models for Mini Race Challenge, in OpenSCAD.
+- label: 3dprint
+  query: topic:3dprint
+  description:
+    it: Modelli da stampare in 3D, per le gare RC e per casa.
+    en: Models to 3D print, for RC racing and around the house.
+- label: post
+  query: topic:post
+  description:
+    it: Il blog, un repository per post.
+    en: The blog, one repository per post.
+- label: jobboy
+  query: topic:jobboy
+  description:
+    it: "JobBoy e i suoi pacchetti: driver, bundle, documentazione. Archiviati."
+    en: "JobBoy and its packages: drivers, bundle, docs. Archived."
+- label: packagist
+  query: topic:packagist
+  description:
+    it: Le librerie PHP pubblicate su Packagist.
+    en: The PHP libraries published on Packagist.
+- label: learn
+  query: topic:learn
+  description:
+    it: "Studio: workshop, libri, esercizi."
+    en: "Study: workshops, books, exercises."
+- label: old
+  query: topic:old
+  description:
+    it: "L'era Symfony 2 e dintorni: bundle, contributi, esperimenti."
+    en: "The Symfony 2 era and around it: bundles, contributions, experiments."
+- label:
+    it: senza topic
+    en: no topic
+  query: topics:0
+  description:
+    it: I repository ancora da classificare, fork compresi.
+    en: The repositories not yet classified, forks included.

@@ -14,9 +14,11 @@ import {
   profileSchema,
   projectSchema,
   skillGroupSchema,
+  topicSchema,
   trainingSchema,
 } from "./schema";
 import { skills } from "./skills";
+import { topics } from "./topics";
 import { training } from "./training";
 
 export type Violation = {
@@ -77,6 +79,7 @@ export function contentViolations(today: number): Violation[] {
     ["training", z.array(trainingSchema), training],
     ["skills", z.array(skillGroupSchema), skills],
     ["featuredProjects", z.array(projectSchema), featuredProjects],
+    ["topics", z.array(topicSchema), topics],
   ];
 
   const shape = collections.flatMap(([name, schema, data]) =>

@@ -13,6 +13,11 @@ export const PAGES = [
     component: "HomePage",
   },
   {
+    html: "projects/index.html",
+    module: "/src/pages/projects/ProjectsPage.tsx",
+    component: "ProjectsPage",
+  },
+  {
     html: "cv/index.html",
     module: "/src/pages/cv/CvPage.tsx",
     component: "CvPage",

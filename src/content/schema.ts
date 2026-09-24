@@ -85,3 +85,9 @@ export const projectSchema = z.strictObject({
   links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
   highlight: z.strictObject({ photo: photoSchema }).optional(),
 });
+
+export const topicSchema = z.strictObject({
+  label: translatable(z.string()),
+  query: z.string(),
+  description: localized(z.string()),
+});
