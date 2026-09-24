@@ -5,7 +5,7 @@ import { experiences } from "./experiences";
 import { identity } from "./identity";
 import { periodBounds, type Period } from "./time/period";
 import { profiles } from "./profiles";
-import { featuredProjects } from "./projects";
+import { projects } from "./projects";
 import {
   contactSchema,
   educationSchema,
@@ -78,7 +78,7 @@ export function contentViolations(today: number): Violation[] {
     ["education", z.array(educationSchema), education],
     ["training", z.array(trainingSchema), training],
     ["skills", z.array(skillGroupSchema), skills],
-    ["featuredProjects", z.array(projectSchema), featuredProjects],
+    ["projects", z.array(projectSchema), projects],
     ["topics", z.array(topicSchema), topics],
   ];
 
@@ -93,6 +93,6 @@ export function contentViolations(today: number): Violation[] {
     ...dateViolations(experiences, "experiences", today),
     ...dateViolations(education, "education", today),
     ...dateViolations(training, "training", today),
-    ...dateViolations(featuredProjects, "featuredProjects", today),
+    ...dateViolations(projects, "projects", today),
   ];
 }
