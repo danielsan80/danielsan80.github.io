@@ -1,5 +1,6 @@
-// Builds tools/styleguide.html from the palette definitions, so the preview can
-// never drift from the real values. Fonts come from the @fontsource devDeps.
+// Builds styleguide.html from the palette definitions, so the preview can never
+// drift from the real values. Fonts come from the @fontsource devDeps, and Vite
+// bundles them when it builds the page into /styleguide.
 //
 // Run: npm run styleguide
 
@@ -123,7 +124,7 @@ function fontFaces() {
     .flatMap((pair) => [pair.sans, pair.mono])
     .flatMap((font) =>
       WEIGHTS.map((weight) => {
-        const file = `../node_modules/@fontsource/${font.package}/files/${font.package}-latin-${weight}-normal`;
+        const file = `./node_modules/@fontsource/${font.package}/files/${font.package}-latin-${weight}-normal`;
         return `@font-face {
   font-family: "${font.family}";
   font-style: normal;
@@ -347,6 +348,8 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Styleguide — danilosanchi.net</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
 ${fontFaces()}
 
@@ -648,6 +651,7 @@ for (const button of document.querySelectorAll("[data-set-theme], [data-set-font
 
 const outputPath = join(
   dirname(fileURLToPath(import.meta.url)),
+  "..",
   "styleguide.html",
 );
 writeFileSync(outputPath, html);

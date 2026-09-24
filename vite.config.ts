@@ -10,6 +10,7 @@ export default defineConfig({
         home: "index.html",
         projects: "projects.html",
         cv: "cv.html",
+        styleguide: "styleguide.html",
       },
     },
   },
