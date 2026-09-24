@@ -19,7 +19,7 @@ const photoSchema = z.strictObject({
 export const identitySchema = z.strictObject({
   name: z.string(),
   portrait: photoSchema,
-  tagline: z.array(z.string()),
+  tagline: z.array(z.array(z.string())),
   about: localized(z.string()),
   headline: translatable(z.string()),
   summary: localized(z.string()),
