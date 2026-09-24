@@ -79,7 +79,7 @@ export function HomePage() {
           ))}
 
           <p className={styles.moreProjects}>
-            <a href="/projects/">{pick(MORE_PROJECTS, lang)} →</a>
+            <a href="/projects">{pick(MORE_PROJECTS, lang)} →</a>
           </p>
         </section>
       </main>

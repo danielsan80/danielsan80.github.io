@@ -1,13 +1,17 @@
 import { describe, expect, it } from "vitest";
-import cv from "../../cv/index.html?raw";
+import cv from "../../cv.html?raw";
 import home from "../../index.html?raw";
-import projects from "../../projects/index.html?raw";
+import projects from "../../projects.html?raw";
 
 const head = (page: string) =>
   new DOMParser().parseFromString(page, "text/html").head;
 
 const robots = (page: string) =>
   head(page).querySelector('meta[name="robots"]')?.getAttribute("content") ??
+  null;
+
+const canonical = (page: string) =>
+  head(page).querySelector('link[rel="canonical"]')?.getAttribute("href") ??
   null;
 
 const favicon = (page: string) =>
@@ -31,6 +35,18 @@ describe("page documents", () => {
       home: "/favicon.svg",
       projects: "/favicon.svg",
       cv: "/favicon.svg",
+    });
+  });
+
+  it("names every page by an address without a trailing slash, the file it is served from", () => {
+    expect({
+      home: canonical(home),
+      projects: canonical(projects),
+      cv: canonical(cv),
+    }).toEqual({
+      home: "https://danilosanchi.net/",
+      projects: "https://danilosanchi.net/projects",
+      cv: "https://danilosanchi.net/cv",
     });
   });
 });
