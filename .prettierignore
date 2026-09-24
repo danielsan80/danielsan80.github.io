@@ -7,5 +7,5 @@ doc/ohmycv/
 # Generated or vendored.
 dist/
 package-lock.json
-tools/styleguide.html
+styleguide.html
 src/styles/tokens.css
