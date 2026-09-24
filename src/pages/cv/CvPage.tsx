@@ -62,7 +62,9 @@ export function CvPage() {
 
       <header className={styles.heading}>
         <h1 className={styles.name}>{identity.name}</h1>
-        <p className={styles.headline}>{pick(identity.headline, lang)}</p>
+        <p className={styles.headline}>
+          {pick(identity.channels.cv.headline, lang)}
+        </p>
         <p className={styles.contacts}>
           <span>
             <MailIcon />
@@ -87,7 +89,9 @@ export function CvPage() {
         <h2 className={styles.section} id="summary">
           Summary
         </h2>
-        <p className={styles.summary}>{pick(identity.summary, lang)}</p>
+        <p className={styles.summary}>
+          {pick(identity.channels.cv.summary, lang)}
+        </p>
       </section>
 
       <section aria-labelledby="projects">
