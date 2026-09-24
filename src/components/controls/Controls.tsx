@@ -3,8 +3,8 @@ import styles from "./Controls.module.css";
 import { useLang, useTheme, type ThemeChoice } from "./preferences";
 
 const LANGUAGES: [Lang, string][] = [
-  ["en", "English"],
   ["it", "Italiano"],
+  ["en", "English"],
 ];
 
 const THEMES: [ThemeChoice, string][] = [
