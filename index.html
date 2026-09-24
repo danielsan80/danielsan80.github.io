@@ -8,6 +8,16 @@
       name="description"
       content="Danilo Sanchi, software engineer dal 2007 e consulente hands-on. I suoi progetti: Mini Race Challenge, QRiddle e altro."
     />
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        // No storage, no stored theme: the page follows the system.
+      }
+    </script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://danilosanchi.net/" />
 
