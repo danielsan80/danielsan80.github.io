@@ -50,10 +50,10 @@ describe("CvPage", () => {
 
   it("tells where to find each project, with the links from the content", () => {
     render(<CvPage />);
-    const items = screen.getByRole("list", { name: "Projects" });
+    const list = screen.getByRole("list", { name: "Projects" });
 
     expect(
-      within(items)
+      within(list)
         .getAllByRole("link")
         .map((link) => link.getAttribute("href")),
     ).toEqual(
@@ -63,10 +63,10 @@ describe("CvPage", () => {
 
   it("shows the address itself, so it can be read off paper and typed back", () => {
     render(<CvPage />);
-    const items = screen.getByRole("list", { name: "Projects" });
+    const list = screen.getByRole("list", { name: "Projects" });
 
     expect(
-      within(items)
+      within(list)
         .getAllByRole("link")
         .map((link) => link.textContent),
     ).toEqual([
