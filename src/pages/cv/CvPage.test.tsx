@@ -72,12 +72,12 @@ describe("CvPage", () => {
         .getAllByRole("link")
         .map((link) => link.textContent),
     ).toEqual([
-      "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
-      "github.com/danielsan80/fixture-handler",
       "miniracechallenge.com",
       "thingiverse.com/thing:5364319",
       "github.com/danielsan80/minirace-gate",
       "danilosanchi.net/qriddle",
+      "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
+      "github.com/danielsan80/fixture-handler",
     ]);
   });
 
