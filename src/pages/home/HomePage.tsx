@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Controls } from "../../components/controls/Controls";
 import { useLang } from "../../components/controls/preferences";
 import { contact } from "../../content/contact";
@@ -9,7 +9,8 @@ import { highlightedProjects } from "../../content/projects";
 import styles from "./HomePage.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
-const ELSEWHERE = { it: "Altrove", en: "Elsewhere" };
+const MORE_PROJECTS = { it: "Tutti i progetti", en: "All projects" };
+const FIND_ME = { it: "Dove trovarmi", en: "Find me" };
 
 export function HomePage() {
   const [lang] = useLang();
@@ -31,7 +32,14 @@ export function HomePage() {
         <h1 className={styles.name}>{identity.name}</h1>
         <p className={styles.tagline} lang="en">
           {identity.tagline.map((line) => (
-            <span key={line}>{line}</span>
+            <span key={line.join()} className={styles.taglineLine}>
+              {line.map((item, index) => (
+                <Fragment key={item}>
+                  {index > 0 && <span className={styles.separator}> · </span>}
+                  <span className={styles.taglineItem}>{item}</span>
+                </Fragment>
+              ))}
+            </span>
           ))}
         </p>
         <p className={styles.about}>{pick(identity.about, lang)}</p>
@@ -69,11 +77,15 @@ export function HomePage() {
               </div>
             </article>
           ))}
+
+          <p className={styles.moreProjects}>
+            <a href="/projects/">{pick(MORE_PROJECTS, lang)} →</a>
+          </p>
         </section>
       </main>
 
       <footer className={styles.footer}>
-        <h2 className={styles.sectionTitle}>{pick(ELSEWHERE, lang)}</h2>
+        <h2 className={styles.sectionTitle}>{pick(FIND_ME, lang)}</h2>
 
         <ul className={styles.profiles}>
           {profiles.map((profile) => (
@@ -82,11 +94,11 @@ export function HomePage() {
               <span className={styles.mono}>{profile.handle}</span>
             </li>
           ))}
+          <li>
+            <a href={`mailto:${contact.email}`}>Email</a>{" "}
+            <span className={styles.mono}>{contact.email}</span>
+          </li>
         </ul>
-
-        <p className={styles.contact}>
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-        </p>
       </footer>
     </div>
   );
