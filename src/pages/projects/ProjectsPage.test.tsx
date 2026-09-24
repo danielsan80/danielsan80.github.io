@@ -2,7 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
 import { pick } from "../../content/localized";
-import { listedProjects } from "../../content/projects";
+import { featuredProjects } from "../../content/projects";
 import { topics } from "../../content/topics";
 import { ProjectsPage } from "./ProjectsPage";
 
@@ -19,7 +19,7 @@ describe("ProjectsPage", () => {
     ).toBe("/");
   });
 
-  it("shows every project, with the role and the period, the ongoing ones first", () => {
+  it("shows every project, with the role and the period, in the order of the file", () => {
     render(<ProjectsPage />);
 
     const projects = within(
@@ -47,7 +47,9 @@ describe("ProjectsPage", () => {
     ).getAllByRole("link");
 
     expect(links.map((link) => link.getAttribute("href"))).toEqual(
-      listedProjects.flatMap((project) => project.links.map(({ url }) => url)),
+      featuredProjects.flatMap((project) =>
+        project.links.map(({ url }) => url),
+      ),
     );
   });
 
