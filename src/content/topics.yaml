@@ -1,23 +1,23 @@
 - label: minirace
   query: topic:minirace
   description:
-    it: I modelli 3D per Mini Race Challenge, in OpenSCAD.
-    en: The 3D models for Mini Race Challenge, in OpenSCAD.
+    it: I modelli 3D per Mini Race Challenge.
+    en: The 3D models for Mini Race Challenge.
 - label: 3dprint
   query: topic:3dprint
   description:
-    it: Modelli da stampare in 3D, per le gare RC e per casa.
-    en: Models to 3D print, for RC racing and around the house.
+    it: Modelli da stampare in 3D che ho realizzato.
+    en: 3D printable models I designed.
 - label: post
   query: topic:post
   description:
-    it: Il blog, un repository per post.
-    en: The blog, one repository per post.
+    it: "Il mio vecchio tentativo di blog: un repository per ogni post."
+    en: "My old attempt at a blog: a repository for each post."
 - label: jobboy
   query: topic:jobboy
   description:
-    it: "JobBoy e i suoi pacchetti: driver, bundle, documentazione. Archiviati."
-    en: "JobBoy and its packages: drivers, bundle, docs. Archived."
+    it: "I package di JobBoy, un job manager in PHP7: driver, bundle, documentazione. Archiviati."
+    en: "The packages of JobBoy, a job manager for PHP 7: drivers, bundle, docs. Archived."
 - label: packagist
   query: topic:packagist
   description:
