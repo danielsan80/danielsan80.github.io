@@ -7,8 +7,6 @@
   font-size: 0.7rem;
 }
 
-/* Square and quiet, like the rest of the page: a pill would be the only round
-   thing on a sheet made of rules and small squares. */
 .group {
   display: flex;
   border: 1px solid var(--border);

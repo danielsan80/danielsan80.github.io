@@ -47,6 +47,10 @@ altezza variabile, più costo che valore; bastano i token + una line-height. Agg
 gratuito: `1rem / 1.5 = 24px = space-5`, quindi il ritmo dei paragrafi cade già sulla
 griglia. I token `--space-*` sono definiti; applicarli ai componenti verrà col sito.
 
+**Niente angoli stondati; i cerchi sì.** Un rettangolo coi bordi smussati — un
+pulsante a pillola, una card arrotondata — stona sulla pagina; un'immagine circolare
+no. Controlli, griglie e corsie restano ad angoli vivi.
+
 ## Vincolo scoperto: servono due verdi
 
 Il verde acceso `#0fbd59` ha **2.48:1 su bianco** — sotto il 4.5:1 richiesto per il
@@ -203,6 +207,21 @@ versione ufficiale e non ritoccati, e solo per puntare a loro.
 `max-width`, e i token del tema chiaro vincono comunque — il blocco `@media print`
 seleziona anche `:root[data-theme]`, altrimenti chi stampa dal tema scuro si porta lo
 scuro sul foglio.
+
+## La home
+
+**Foto** in un cerchio col bordo verde (`accent-mark`), staccato dalla foto da un
+anello del colore della superficie, spesso quanto il bordo.
+
+I progetti in evidenza si alternano: foto a sinistra, poi a destra. Su mobile la foto
+va sopra, centrata, e il testo resta allineato a sinistra. Il summary è giustificato,
+a sinistra su mobile, dove gli spazi si aprirebbero troppo.
+
+**Favicon**: la griglia 3×3 del marcatore skill, con otto celle piene e quella in alto
+a destra vuota — c'è sempre da imparare. È l'ordine di riempimento del marcatore,
+quindi non è un segno nuovo. Celle da 4px con spazi e margine di 1px, perché ogni
+bordo cada su un pixel intero a 16px. I due verdi sono scritti a mano nell'SVG, che
+non vede i token.
 
 ## Aperto
 
