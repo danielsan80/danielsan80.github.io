@@ -11,7 +11,6 @@ Regole sintetiche: scrivi il minimo necessario per essere compresi.
   - Vale anche sui commenti **già committati, anche non tuoi**: quando passi su codice che ne ha di superflui, segnalali e proponi di toglierli.
 - Feedback onesto: evidenzia problemi e alternative migliori senza giri di parole.
 - Test first: scrivi i test prima dell'implementazione.
-- Note nel codice: quando l'utente dice "ho lasciato una nota", cerca `@note` nel codice. Se la risolvi, rimuovi il commento. Se obietti e non fai nulla, lascialo finché non si decide insieme.
 - Asserzioni: evita assertion roulette. Asserisci sul valore intero, non sulle sue parti.
   - OK: test di creazione che verificano le proprietà dell'oggetto costruito
   - NO: `toHaveLength(n)` seguito da asserzioni sui singoli elementi → usa `toEqual([...])`
@@ -20,7 +19,6 @@ Regole sintetiche: scrivi il minimo necessario per essere compresi.
   - Niente azioni distruttive: `git reset` e `git commit --amend` sono bloccati dai permessi. Per riscrivere la storia costruisci il risultato su un branch parallelo, senza toccare quello originale. I comandi finali — quelli che spostano un branch o sovrascrivono lavoro esistente — li eseguo io dopo aver revisionato.
 - Piccoli passi: implementa una cosa alla volta.
 - Librerie esterne: diffuse, ben supportate, componibili, stilizzabili. No monoliti.
-- Quando ti parlo in inglese e ti scrivo "eng?", dammi un breve feedback sulle frasi che ho scritto, non ancora revisionate da te, correggendo i miei errori.
 - Nomi variabili: evita nomi da una sola lettera, anche in scope locali.
 - "il file" senza specificare quale = CLAUDE.md
 
@@ -36,31 +34,34 @@ Incoerenze note: dominio `danilosanchi.net` ma site name `danielsan80` e author 
 
 ### Obiettivo
 
-Revisione del sito, con personal branding unico per il lavoro e per il mondo nerd/geek/opensource. **Non sono due brand da separare**: il filo conduttore è la stessa persona che costruisce cose con cura dal 2007, in ufficio e in garage. I progetti personali (JobBoy, FixtureHandler, Minirace) sono elemento differenziante anche verso chi assume, non rumore da nascondere.
+Revisione del sito, con personal branding unico per il lavoro e per il mondo nerd/geek/opensource. **Non sono due brand da separare**: il filo conduttore è la stessa persona, un esploratore e un costruttore, in ufficio e in garage. I progetti personali (Mini Race Challenge, QRiddle, JobBoy, FixtureHandler) sono elemento differenziante anche verso chi assume, non rumore da nascondere.
+
+**La home parla della persona e dei suoi progetti**, non del lavoro: il lavoro è una parte della vita, con un rimando, non il tema della pagina.
 
 Sorgente del CV attuale: `doc/ohmycv/`.
 
 ### Architettura dei contenuti
 
-- `/` — presentazione **e** hub insieme: chi sei, progetti in evidenza, ruolo attuale, tutti i link. Non un indice di navigazione.
-- `/cv` — timeline completa, ottimizzata per stampa/PDF, linkabile da sola.
-- `/projects` — hub dei repo catalogati per topic.
-- Contatti: non una pagina, ma footer della home + testata del CV.
+- `/` — la persona: ritratto, nome, headline, summary, i progetti in evidenza, "Dove trovarmi" (profili ed email). Non linka il CV.
+- `/projects` — tutti i progetti, poi i repo GitHub per topic: link alle ricerche GitHub, non elenchi di repo. I topic sono curati in `topics.yaml`; "senza topic" chiude l'elenco e copre i repo non classificati.
+- `/cv` — timeline completa, ottimizzata per stampa/PDF. **Non elencata**: nessun link dal sito e `noindex`, il link lo passa l'utente. Un link a scadenza è un'idea da esplorare più avanti.
+- Pagina lavoro — prevista, non fatta: cosa posso fare per chi legge, raccontato con i casi, richiesta del CV, contatti.
 
-Due unificazioni che evitano duplicazione:
+Unificazioni che evitano duplicazione:
 
-- **Progetti del CV e hub repo sono la stessa collection**, a profondità diverse: un flag `featured` decide chi appare in home e nel CV.
-- **Un'unica collection `profiles`** (GitHub, Packagist, Thingiverse, LinkedIn…) alimenta footer, hub e testata del CV.
+- **Una sola collection `projects`** (`projects.yaml`): tutti i progetti vanno in `/projects` e nel CV; `highlight`, con la foto, sceglie quelli della home. L'ordine è la **posizione nel file**, per importanza, in tutte le liste.
+- **Un'unica collection `profiles`** (GitHub, Packagist, LinkedIn, Thingiverse) alimenta la home, la testata del CV e la ricerca dei topic.
+- **I testi scritti per un posto stanno in `channels`**: `identity` ha `home` e `cv`, ognuno con `headline` e `summary`; progetti ed esperienze hanno `cv` e `linkedin`.
 
 ### Identità e lingua
 
 - Identità principale: **Danilo Sanchi** (nome reale). `danielsan80` resta come handle GitHub storico, ma il sito lo lega esplicitamente alla persona.
-- Sito in **inglese**. La sola pagina CV disponibile **anche in italiano**. Contenuto doppio solo dove serve.
+- Sito **bilingue, italiano di default**: le pagine sono pre-renderizzate in italiano, l'inglese si sceglie dal selettore (IT prima di EN). La headline della home è solo in inglese, pensata così.
 
 ### Scelte tecniche
 
 - **Vite + React**, output statico. Il pre-rendering è un requisito, non un optional: il CV deve essere HTML già renderizzato per crawler, indicizzazione e stampa in PDF. Va risolto esplicitamente.
-- **Pagine HTML separate, niente router** (`SITE-5`). Ogni pagina è un entry di Vite con la sua app React: `/` e `/cv` sono file distinti, non rotte di una SPA. Gli URL esistono davvero — linkabili, stampabili, pre-renderizzabili con uno script `renderToString` invece che con un framework. Lo stato che deve sopravvivere alla navigazione (tema, lingua) sta in `localStorage`, non in memoria. Le due direzioni non costano uguale: da qui si può passare a un router, il contrario è un rifacimento.
+- **Pagine HTML separate, niente router** (`SITE-5`). Ogni pagina è un entry di Vite con la sua app React: `index.html`, `projects.html` e `cv.html` sono **file piatti nella radice**, così gli URL non hanno lo slash finale (`/projects`, non `/projects/`). Gli URL esistono davvero — linkabili, stampabili, pre-renderizzabili con uno script `renderToString` invece che con un framework. Lo stato che deve sopravvivere alla navigazione (tema, lingua) sta in `localStorage`, non in memoria. Il tema ha Auto (segue il sistema, il default), Light e Dark; uno script inline nel `<head>` di ogni pagina applica quello salvato prima del primo paint. Le due direzioni non costano uguale: da qui si può passare a un router, il contrario è un rifacimento.
 - **Contenuti in file versionati** nel repo: yaml/json/md con frontmatter. Nessun CMS, si editano da qui.
 - **Struttura aperta a nuovi tipi di contenuto** (blog, talk, note): aggiungerne uno deve costare un file di dati più un template, non un refactoring. Senza però costruire astrazioni per contenuti che non esistono ancora.
 - **Hosting**: oggi GitHub Pages, da confermare.
@@ -75,7 +76,7 @@ I separatori-timeline del CV sono un **elemento identitario da mantenere**: sono
 
 ### Stile
 
-Da definire: oggi è il tema `orderedlist` di GitHub Pages, un default non una scelta. Vincolo guida: **una sola identità visiva** deve reggere sia il registro professionale sia quello nerd/maker. Se servissero due stili, l'impostazione del sito sarebbe sbagliata.
+Decisioni in `doc/STILE.md`. Vincolo guida: **una sola identità visiva** deve reggere sia il registro professionale sia quello nerd/maker. Se servissero due stili, l'impostazione del sito sarebbe sbagliata.
 
 ## Kanban
 
