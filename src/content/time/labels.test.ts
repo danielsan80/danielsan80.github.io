@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { dateLabel, periodLabel } from "./labels";
 import type { Period } from "./period";
 
-// The expected strings come from the CV as it reads today, in doc/ohmycv.
+// The expected strings come from the CV as it read in ohMyCV.
 const bothLanguages = (period: Period) => [
   periodLabel(period, "it"),
   periodLabel(period, "en"),

@@ -38,7 +38,7 @@ Revisione del sito, con personal branding unico per il lavoro e per il mondo ner
 
 **La home parla della persona e dei suoi progetti**, non del lavoro: il lavoro è una parte della vita, con un rimando, non il tema della pagina.
 
-Sorgente del CV attuale: `doc/ohmycv/`.
+Sorgente del CV: `src/content/`. Il CV fatto prima con ohMyCV sta fuori dal repo, in `~/Documenti/Projects/Lavoro/CV/ohMyCv/`: non si aggiorna più.
 
 ### Architettura dei contenuti
 
