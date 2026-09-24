@@ -62,4 +62,14 @@ describe("Controls", () => {
       stored: localStorage.getItem("theme"),
     }).toEqual({ stamped: undefined, stored: null });
   });
+
+  it("offers Italian first, the language the pages open in", () => {
+    render(<Controls />);
+
+    expect(
+      screen
+        .getAllByRole("button", { name: /english|italiano/i })
+        .map((button) => button.textContent),
+    ).toEqual(["IT", "EN"]);
+  });
 });
