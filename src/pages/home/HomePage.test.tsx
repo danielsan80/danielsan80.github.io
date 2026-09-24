@@ -68,7 +68,7 @@ describe("HomePage", () => {
       ...highlightedProjects.flatMap((project) =>
         project.links.map(({ url }) => url),
       ),
-      "/projects/",
+      "/projects",
     ]);
   });
 

@@ -8,8 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: "index.html",
-        projects: "projects/index.html",
-        cv: "cv/index.html",
+        projects: "projects.html",
+        cv: "cv.html",
       },
     },
   },
