@@ -30,19 +30,21 @@ export function HomePage() {
           alt={pick(identity.portrait.alt, lang)}
         />
         <h1 className={styles.name}>{identity.name}</h1>
-        <p className={styles.tagline} lang="en">
-          {identity.tagline.map((line) => (
-            <span key={line.join()} className={styles.taglineLine}>
+        <p className={styles.headline} lang="en">
+          {identity.channels.home.headline.map((line) => (
+            <span key={line.join()} className={styles.headlineLine}>
               {line.map((item, index) => (
                 <Fragment key={item}>
                   {index > 0 && <span className={styles.separator}> · </span>}
-                  <span className={styles.taglineItem}>{item}</span>
+                  <span className={styles.headlineItem}>{item}</span>
                 </Fragment>
               ))}
             </span>
           ))}
         </p>
-        <p className={styles.about}>{pick(identity.about, lang)}</p>
+        <p className={styles.summary}>
+          {pick(identity.channels.home.summary, lang)}
+        </p>
       </header>
 
       <main>

@@ -19,10 +19,16 @@ const photoSchema = z.strictObject({
 export const identitySchema = z.strictObject({
   name: z.string(),
   portrait: photoSchema,
-  tagline: z.array(z.array(z.string())),
-  about: localized(z.string()),
-  headline: translatable(z.string()),
-  summary: localized(z.string()),
+  channels: z.strictObject({
+    home: z.strictObject({
+      headline: z.array(z.array(z.string())),
+      summary: localized(z.string()),
+    }),
+    cv: z.strictObject({
+      headline: translatable(z.string()),
+      summary: localized(z.string()),
+    }),
+  }),
 });
 
 export const contactSchema = z.strictObject({

@@ -12,7 +12,7 @@ import { HomePage } from "./HomePage";
 afterEach(() => localStorage.clear());
 
 describe("HomePage", () => {
-  it("introduces the person: portrait, real name, tagline and a few lines about them", () => {
+  it("introduces the person: portrait, real name, headline and a few lines about them", () => {
     render(<HomePage />);
 
     const intro = screen.getByRole("banner");
@@ -20,19 +20,20 @@ describe("HomePage", () => {
     expect({
       portrait: within(intro).getByRole("img").getAttribute("src"),
       name: within(intro).getByRole("heading", { level: 1 }).textContent,
-      tagline: Array.from(
+      headline: Array.from(
         within(intro).getByText("Senior software engineer").closest("p")
           ?.children ?? [],
       ).map((line) => line.textContent),
-      about: within(intro).getByText(identity.about.it).tagName,
+      summary: within(intro).getByText(identity.channels.home.summary.it)
+        .tagName,
     }).toEqual({
       portrait: identity.portrait.src,
       name: "Danilo Sanchi",
-      tagline: [
+      headline: [
         "Senior software engineer · Hands-on consultant",
         "Clean code lover · Hearthian at heart",
       ],
-      about: "P",
+      summary: "P",
     });
   });
 
@@ -113,8 +114,8 @@ describe("HomePage", () => {
     await userEvent.click(screen.getByRole("button", { name: "English" }));
 
     expect({
-      about: screen.getByText(identity.about.en).tagName,
+      summary: screen.getByText(identity.channels.home.summary.en).tagName,
       projects: screen.getByRole("region", { name: "Projects" }).tagName,
-    }).toEqual({ about: "P", projects: "SECTION" });
+    }).toEqual({ summary: "P", projects: "SECTION" });
   });
 });

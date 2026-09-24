@@ -34,7 +34,7 @@
   letter-spacing: -0.02em;
 }
 
-.tagline {
+.headline {
   margin: var(--space-3) 0 0;
   color: var(--accent-text);
   font-family: var(--font-mono);
@@ -42,11 +42,11 @@
   line-height: 1.6;
 }
 
-.taglineLine {
+.headlineLine {
   display: block;
 }
 
-.about {
+.summary {
   margin: var(--space-5) auto 0;
   max-width: 34rem;
   font-size: 1.125rem;
@@ -129,7 +129,7 @@
 }
 
 @media (max-width: 30rem) {
-  .taglineItem {
+  .headlineItem {
     display: block;
   }
 
