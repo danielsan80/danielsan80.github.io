@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
 import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
-import { featuredProjects } from "../../content/projects";
+import { projects } from "../../content/projects";
 import { training } from "../../content/training";
 import { CvPage } from "./CvPage";
 
@@ -50,25 +50,23 @@ describe("CvPage", () => {
 
   it("tells where to find each project, with the links from the content", () => {
     render(<CvPage />);
-    const projects = screen.getByRole("list", { name: "Projects" });
+    const items = screen.getByRole("list", { name: "Projects" });
 
     expect(
-      within(projects)
+      within(items)
         .getAllByRole("link")
         .map((link) => link.getAttribute("href")),
     ).toEqual(
-      featuredProjects.flatMap((project) =>
-        project.links.map((link) => link.url),
-      ),
+      projects.flatMap((project) => project.links.map((link) => link.url)),
     );
   });
 
   it("shows the address itself, so it can be read off paper and typed back", () => {
     render(<CvPage />);
-    const projects = screen.getByRole("list", { name: "Projects" });
+    const items = screen.getByRole("list", { name: "Projects" });
 
     expect(
-      within(projects)
+      within(items)
         .getAllByRole("link")
         .map((link) => link.textContent),
     ).toEqual([

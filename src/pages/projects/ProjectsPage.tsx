@@ -3,7 +3,7 @@ import { Controls } from "../../components/controls/Controls";
 import { useLang } from "../../components/controls/preferences";
 import { identity } from "../../content/identity";
 import { pick } from "../../content/localized";
-import { featuredProjects } from "../../content/projects";
+import { projects } from "../../content/projects";
 import { periodLabel } from "../../content/time/labels";
 import { repositorySearch, topics } from "../../content/topics";
 import styles from "./ProjectsPage.module.css";
@@ -37,7 +37,7 @@ export function ProjectsPage() {
 
       <main>
         <section className={styles.projects} aria-labelledby="projects">
-          {featuredProjects.map((project) => (
+          {projects.map((project) => (
             <article
               key={project.name}
               className={styles.project}

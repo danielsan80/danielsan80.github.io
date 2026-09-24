@@ -180,15 +180,15 @@ describe("schemaViolations", () => {
             links: [],
           },
         ],
-        "featuredProjects",
+        "projects",
       ),
     ).toEqual([
       {
-        path: "featuredProjects[0].role",
+        path: "projects[0].role",
         message: 'Invalid option: expected one of "author"|"contributor"',
       },
       {
-        path: "featuredProjects[1].role",
+        path: "projects[1].role",
         message: 'Invalid option: expected one of "author"|"contributor"',
       },
     ]);
@@ -208,11 +208,11 @@ describe("schemaViolations", () => {
             links: [],
           },
         ],
-        "featuredProjects",
+        "projects",
       ),
     ).toEqual([
       {
-        path: "featuredProjects[0].channels.linkedin.en",
+        path: "projects[0].channels.linkedin.en",
         message: "Invalid input: expected string, received undefined",
       },
     ]);
@@ -230,11 +230,11 @@ describe("schemaViolations", () => {
             links: [],
           },
         ],
-        "featuredProjects",
+        "projects",
       ),
     ).toEqual([
       {
-        path: "featuredProjects[0].period",
+        path: "projects[0].period",
         message: "Invalid input: expected object, received undefined",
       },
     ]);

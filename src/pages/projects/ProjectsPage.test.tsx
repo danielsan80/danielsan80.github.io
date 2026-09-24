@@ -2,7 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
 import { pick } from "../../content/localized";
-import { featuredProjects } from "../../content/projects";
+import { projects } from "../../content/projects";
 import { topics } from "../../content/topics";
 import { ProjectsPage } from "./ProjectsPage";
 
@@ -22,14 +22,14 @@ describe("ProjectsPage", () => {
   it("shows every project, with the role and the period, in the order of the file", () => {
     render(<ProjectsPage />);
 
-    const projects = within(
+    const items = within(
       screen.getByRole("region", { name: "Progetti" }),
     ).getAllByRole("article");
 
     expect(
-      projects.map((project) => ({
-        name: within(project).getByRole("heading", { level: 2 }).textContent,
-        meta: within(project).getByTestId("meta").textContent,
+      items.map((item) => ({
+        name: within(item).getByRole("heading", { level: 2 }).textContent,
+        meta: within(item).getByTestId("meta").textContent,
       })),
     ).toEqual([
       { name: "Mini Race Challenge", meta: "collaboratore · Nov 2018 - oggi" },
@@ -47,9 +47,7 @@ describe("ProjectsPage", () => {
     ).getAllByRole("link");
 
     expect(links.map((link) => link.getAttribute("href"))).toEqual(
-      featuredProjects.flatMap((project) =>
-        project.links.map(({ url }) => url),
-      ),
+      projects.flatMap((project) => project.links.map(({ url }) => url)),
     );
   });
 

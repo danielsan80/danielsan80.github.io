@@ -10,7 +10,7 @@ import { experiences } from "../../content/experiences";
 import { identity } from "../../content/identity";
 import { pick } from "../../content/localized";
 import { profiles } from "../../content/profiles";
-import { featuredProjects } from "../../content/projects";
+import { projects } from "../../content/projects";
 import { skills } from "../../content/skills";
 import { periodLabel } from "../../content/time/labels";
 import type { Period } from "../../content/time/period";
@@ -95,7 +95,7 @@ export function CvPage() {
           Projects
         </h2>
         <ul className={styles.projects} aria-labelledby="projects">
-          {featuredProjects.map((project) => (
+          {projects.map((project) => (
             <li key={project.name}>
               <b>{project.name}</b> — {pick(project.summary, lang)}
               <span className={styles.projectLinks}>
