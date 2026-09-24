@@ -28,7 +28,13 @@
   border-left: 1px solid var(--border);
 }
 
-.button[aria-pressed="true"] {
+/* The theme buttons read the choice from the root, where the inline script in
+   each page stamps it before the first paint: aria-pressed only catches up
+   once React has hydrated. */
+.button[aria-pressed="true"]:not([data-theme-choice]),
+:root:not([data-theme]) .button[data-theme-choice="auto"],
+:root[data-theme="light"] .button[data-theme-choice="light"],
+:root[data-theme="dark"] .button[data-theme-choice="dark"] {
   background: var(--accent-mark);
   color: var(--surface);
 }

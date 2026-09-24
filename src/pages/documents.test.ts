@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import cv from "../../cv.html?raw";
 import home from "../../index.html?raw";
 import projects from "../../projects.html?raw";
@@ -16,6 +16,19 @@ const canonical = (page: string) =>
 
 const favicon = (page: string) =>
   head(page).querySelector('link[rel="icon"]')?.getAttribute("href") ?? null;
+
+// What the page runs before it draws: the inline script, the one without a src.
+const themeOnLoad = (page: string, stored: string) => {
+  localStorage.setItem("theme", stored);
+  const script = head(page).querySelector("script:not([src])");
+  new Function(script?.textContent ?? "")();
+  return document.documentElement.dataset.theme;
+};
+
+afterEach(() => {
+  localStorage.clear();
+  delete document.documentElement.dataset.theme;
+});
 
 describe("page documents", () => {
   it("keeps the CV out of search engines, since its link is handed out, and leaves the home findable", () => {
@@ -48,5 +61,13 @@ describe("page documents", () => {
       projects: "https://danilosanchi.net/projects",
       cv: "https://danilosanchi.net/cv",
     });
+  });
+
+  it("applies the stored theme before the page draws, on every page", () => {
+    expect({
+      home: themeOnLoad(home, "dark"),
+      projects: themeOnLoad(projects, "dark"),
+      cv: themeOnLoad(cv, "dark"),
+    }).toEqual({ home: "dark", projects: "dark", cv: "dark" });
   });
 });

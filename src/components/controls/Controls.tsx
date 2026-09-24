@@ -1,13 +1,14 @@
 import type { Lang } from "../../content/localized";
 import styles from "./Controls.module.css";
-import { useLang, useTheme, type Theme } from "./preferences";
+import { useLang, useTheme, type ThemeChoice } from "./preferences";
 
 const LANGUAGES: [Lang, string][] = [
   ["en", "English"],
   ["it", "Italiano"],
 ];
 
-const THEMES: [Theme, string][] = [
+const THEMES: [ThemeChoice, string][] = [
+  ["auto", "Auto"],
   ["light", "Light"],
   ["dark", "Dark"],
 ];
@@ -39,6 +40,7 @@ export function Controls() {
             key={code}
             type="button"
             className={styles.button}
+            data-theme-choice={code}
             aria-pressed={code === theme}
             onClick={() => chooseTheme(code)}
           >

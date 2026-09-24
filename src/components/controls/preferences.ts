@@ -3,6 +3,8 @@ import type { Lang } from "../../content/localized";
 
 export type Theme = "light" | "dark";
 
+export type ThemeChoice = Theme | "auto";
+
 // A browser in private mode, or one told to block site data, throws on the
 // first read: a preference that cannot be stored is not worth a crash.
 function read(key: string): string | null {
@@ -21,19 +23,23 @@ function write(key: string, value: string): void {
   }
 }
 
+function forget(key: string): void {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // Nothing could be stored, so there is nothing to forget.
+  }
+}
+
 const listeners = new Set<() => void>();
 
 function subscribe(listener: () => void) {
-  const system = matchMedia("(prefers-color-scheme: dark)");
   listeners.add(listener);
-  // Another tab changing the same preference counts as a change here, and so
-  // does the system switching theme while nothing is stored.
+  // Another tab changing the same preference counts as a change here.
   window.addEventListener("storage", listener);
-  system.addEventListener("change", listener);
   return () => {
     listeners.delete(listener);
     window.removeEventListener("storage", listener);
-    system.removeEventListener("change", listener);
   };
 }
 
@@ -61,28 +67,28 @@ export function useLang(): [Lang, (lang: Lang) => void] {
   ];
 }
 
-// With nothing stored the page follows the system, so the button that shows as
-// chosen is the one actually in effect — not none.
-export function useTheme(): [Theme, (theme: Theme) => void] {
-  const theme = useSyncExternalStore(
+// With nothing stored the page follows the system, through the media query in
+// tokens.css: Auto is the absence of a choice, not a third theme.
+export function useTheme(): [ThemeChoice, (choice: ThemeChoice) => void] {
+  const choice = useSyncExternalStore(
     subscribe,
     () => {
       const stored = read("theme");
-      if (stored === "light" || stored === "dark") {
-        return stored;
-      }
-      return matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      return stored === "light" || stored === "dark" ? stored : "auto";
     },
-    () => "light" as Theme,
+    () => "auto" as ThemeChoice,
   );
 
   return [
-    theme,
-    (chosen: Theme) => {
-      document.documentElement.dataset.theme = chosen;
-      write("theme", chosen);
+    choice,
+    (chosen: ThemeChoice) => {
+      if (chosen === "auto") {
+        delete document.documentElement.dataset.theme;
+        forget("theme");
+      } else {
+        document.documentElement.dataset.theme = chosen;
+        write("theme", chosen);
+      }
       announce();
     },
   ];
