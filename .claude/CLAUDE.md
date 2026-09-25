@@ -78,6 +78,10 @@ I separatori-timeline del CV sono un **elemento identitario da mantenere**: sono
 
 Decisioni in `doc/STILE.md`. Vincolo guida: **una sola identità visiva** deve reggere sia il registro professionale sia quello nerd/maker. Se servissero due stili, l'impostazione del sito sarebbe sbagliata.
 
+### Tono
+
+Decisioni in `doc/TONO.md`: una sola voce, con la densità che cambia per canale (sito, CV, LinkedIn).
+
 ## Kanban
 
 Board di progetto su Jira: sito `danilosanchi.atlassian.net`, progetto `danilosanchi.net`, key `SITE`, cloudId `b922ac38-2f7a-4785-bf54-caf2eb9045e4`. Usa i tool MCP `mcp__atlassian__*`.
