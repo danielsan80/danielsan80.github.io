@@ -288,6 +288,10 @@
     Oggi, davanti allo stesso problema, la userei come riferimento ma proverei
     strategie nuove. Nel frattempo ho scoperto strumenti che hanno adottato un
     approccio simile: Flow PHP e, in Python, Prefect.
+
+    Il progetto è fatto di diversi repo; il link va solo a `jobboy-doc`, che ne
+    è l'entrypoint: da lì si arriva agli altri repo e si legge come funzionano
+    insieme, come si installa e come si usa. Linkarli tutti non avrebbe senso.
   channels:
     site:
       it: >-
@@ -349,14 +353,82 @@
   period:
     start: "2018-07"
     end: "2025-01"
+  notes: |-
+    Il nome dice fixture, ma fa un po' di più: è un registro in cui si può
+    registrare qualsiasi cosa, oggetto o scalare, assegnandogli un
+    identificativo.
+
+    - Una fixture carica nel registro uno o più oggetti, ciascuno con un nome.
+    - Le dipendenze di una fixture si dichiarano elencando le chiavi di cui ha
+      bisogno.
+    - Un sistema di validazione controlla, al caricamento, che le chiavi usate
+      da una fixture siano fra quelle dichiarate nelle dipendenze. Se non lo
+      sono, il caricamento si ferma con un report che aiuta a capire dove sta
+      il problema di integrità.
+
+    Come la usavo: nei vari TestCase un metodo `createFixtureHandler():
+    FixtureHandler`, chiamato in testa a ogni test. Ogni test aggiungeva le
+    fixture che gli servivano e forzava il load, che altrimenti sarebbe
+    avvenuto in modo lazy al primo utilizzo, ma questo introduceva
+    complicazioni.
+
+    Pensata per i test automatici: serviva soprattutto a disaccoppiare la parte
+    di arrange da quella di act e assert, un modo alternativo e modulare di
+    fare il setup. Ispirata al DIC di Symfony e al DoctrineFixturesBundle, ma
+    indipendente da qualsiasi framework.
+
+    Non più mantenuta perché oggi non mi serve. Se tornasse a servirmi la
+    aggiornerei a PHP 8 e riaprirei il progetto, ma nel frattempo sono nate
+    alternative, per esempio Foundry.
+
+    Il suo unico vantaggio su alternative più complete è che è piccola e facile
+    da comprendere, mentre quelle possono portarsi dietro altre dipendenze.
+    D'altra parte, nei test cambiare libreria è relativamente facile, perché non
+    si rompe la produzione: il lavoro può essere tanto se la base di test è
+    ampia. Il rischio però non è zero, cambia natura: una migrazione può
+    lasciare test verdi che non verificano più quello che verificavano, e non
+    lo si vede finché non passa un bug. Quanto costa migrare dipende da come
+    la si è usata: se ha davvero separato l'arrange da act e assert, il setup
+    sta nelle fixture e non sparso nei test, e migrare vuol dire riscrivere le
+    fixture, non tutti i test.
+
+    È un progetto vecchio, e si vede il gap con l'esperienza che ho oggi. Oggi
+    probabilmente creerei un builder e delle interfacce generiche, così che
+    migrare a un altro sistema voglia dire solo scriverne una nuova
+    implementazione.
+
+    Una volta mi sembrava una buona idea creare uno stato di partenza comune,
+    di default, per diversi TestCase; oggi è palese che è un errore. Non perché
+    i test condividessero lo stato a runtime (ognuno caricava le sue fixture da
+    capo), ma perché li accoppiava: ogni test dipendeva da dati che non
+    mostrava, e cambiare il default poteva rompere test che non c'entravano.
+    Meszaros la chiama General Fixture, e il suo odore Obscure Test. La puzza
+    la sentivamo anche allora: la modularità e la possibilità di scostarsi dal
+    default con parti ad hoc cercavano di mitigare quel senso di sbagliato.
+
+    Oggi si usano dei builder che costruiscono entità valide ma permettono di
+    specificarne alcune proprietà (i Test Data Builder di Nat Pryce): ogni test
+    crea le sue fixture, con la strada semplificata dai builder. L'esigenza di compattare la fase di arrange però
+    resta, quindi un modo per orchestrare il tutto potrebbe ancora servire.
   channels:
     site:
       it: >-
-        Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
-        PHP 7, non più mantenuta.
+        Nei test la parte di arrange tende a gonfiarsi e a mescolarsi con quelle
+        di act e assert. FixtureHandler la porta fuori: è un registro di oggetti
+        e valori, ciascuno sotto una chiave, in cui ogni fixture carica i propri
+        e dichiara quelli di cui ha bisogno; se ne usa uno che non ha
+        dichiarato, il caricamento si ferma e dice dove. Un setup modulare,
+        ispirato al container di Symfony. Piccola e facile da capire; ferma da
+        quando non mi serve più, oggi ci sono alternative più complete, come
+        Foundry.
       en: >-
-        A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7,
-        no longer maintained.
+        In tests, the arrange part tends to swell and get tangled with the act
+        and assert parts. FixtureHandler moves it out: it is a registry of
+        objects and values, each under a key, where every fixture loads its own
+        and declares the ones it needs; if it reads one it did not declare,
+        loading stops and says where. A modular setup, inspired by Symfony's
+        container. Small and easy to understand; dormant since I stopped needing
+        it, as today there are more complete alternatives, like Foundry.
     cv:
       it: >-
         Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
