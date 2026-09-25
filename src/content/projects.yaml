@@ -243,14 +243,68 @@
   period:
     start: "2019-07"
     end: "2025-01"
+  notes: |-
+    Nasce da un cliente, IdroLAB, che non va nominato sul sito. C'era bisogno
+    di importare, esportare e convertire dati, e i programmi che lo facevano
+    erano lunghi e poco testabili. Usavamo Akeneo, che aveva un meccanismo
+    simile ma funzionante solo al suo interno: guardando la sua codebase ho
+    iniziato questa libreria.
+
+    Come funziona:
+
+    - Un job si descrive come una macchina a stati: gli stati che attraversa
+      (`create_working_dir`, `copy_items`, `remove_old_items`, `tear_down`,
+      `push_on_github`…) e le transizioni ammesse.
+    - I `ProcessHandler` implementano le parti di lavoro, in iterazioni che
+      dopo pochi secondi restituiscono il controllo a JobBoy. JobBoy verifica
+      memoria usata e tempo trascorso e decide da sé se terminare il worker,
+      lasciando che cron o supervisord lo riavvii. È la maniera PHP: i memory
+      leak di PHP facevano preferire worker che si autoterminano e ripartono,
+      al massimo ogni 10 minuti, a worker che girano indefinitamente.
+    - Proprio per le iterazioni, i singoli `ProcessHandler` sono facili da
+      testare unitariamente, e così diventa facile coprire l'intero flusso di
+      un job.
+    - I dati del process, cioè l'istanza del job, stanno in un `DataStore`, da
+      cui il `ProcessHandler` li recupera a ogni iterazione. Il `DataStore` è
+      astratto, con due o tre driver; in pratica si usava quello per Redis.
+    - Comandi di console per elencare i process creati, lanciarli specificando
+      i valori dei parametri che accettano e farci qualche altra operazione.
+
+    In sintesi JobBoy aggiunge una modellazione di dominio dei concetti di
+    Process e Job, più un "CRUD" sui process. Non sostituisce le code: Symfony
+    Messenger o RabbitMQ si possono già usare dentro un `ProcessHandler` per
+    svolgere parte del lavoro in modo efficiente. Usare Symfony Messenger dentro
+    JobBoy stesso sarebbe stato bello.
+
+    Libreria e non codice di progetto perché il cliente aveva bisogno di queste
+    trasformazioni in più progetti Symfony: si include con il bundle allegato.
+
+    Per quanto ne so non è stata usata fuori da IdroLAB. Volevo usarla anch'io,
+    ma non ho più avuto un problema di quella complessità, o non l'ho affrontato
+    scrivendo software. Finita la collaborazione con IdroLAB ho smesso di
+    lavorarci: IdroLAB la conosce e può forkarla e continuare a svilupparla, se
+    lo ritiene opportuno.
+
+    Oggi, davanti allo stesso problema, la userei come riferimento ma proverei
+    strategie nuove. Nel frattempo ho scoperto strumenti che hanno adottato un
+    approccio simile: Flow PHP e, in Python, Prefect.
   channels:
     site:
       it: >-
-        Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
-        mantenuto.
+        Importare, esportare e convertire dati voleva dire programmi lunghi e
+        difficili da testare. Prendendo spunto da Akeneo ho scritto JobBoy, una
+        libreria PHP in cui un job è una macchina a stati e il lavoro si spezza
+        in iterazioni di pochi secondi: tra l'una e l'altra JobBoy controlla
+        memoria e tempo e, se serve, chiude il worker e lascia che cron o
+        supervisord lo riavviino. Pezzi piccoli, facili da testare. Non più
+        mantenuta.
       en: >-
-        A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer
-        maintained.
+        Importing, exporting and converting data meant long programs that were
+        hard to test. Taking a cue from Akeneo, I wrote JobBoy, a PHP library
+        where a job is a state machine and the work is split into iterations of
+        a few seconds: in between, JobBoy checks memory and time and, when
+        needed, stops the worker and lets cron or supervisord bring it back up.
+        Small pieces, easy to test. No longer maintained.
     cv:
       it: >-
         Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
