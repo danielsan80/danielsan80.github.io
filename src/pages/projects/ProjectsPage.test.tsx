@@ -39,6 +39,17 @@ describe("ProjectsPage", () => {
     ]);
   });
 
+  it("describes each project with the text written for the site", () => {
+    render(<ProjectsPage />);
+    const region = screen.getByRole("region", { name: "Progetti" });
+
+    expect(
+      projects.map(
+        (project) => within(region).getByText(project.channels.site.it).tagName,
+      ),
+    ).toEqual(projects.map(() => "P"));
+  });
+
   it("links every project to all the places it lives", () => {
     render(<ProjectsPage />);
 

@@ -83,11 +83,14 @@ export const projectRoleSchema = z.enum(["author", "contributor"]);
 
 export const projectSchema = z.strictObject({
   name: z.string(),
-  summary: localized(z.string()),
   period: periodSchema,
   role: projectRoleSchema,
   notes: z.string().optional(),
-  channels: z.strictObject({ linkedin: localized(z.string()) }).optional(),
+  channels: z.strictObject({
+    site: localized(z.string()),
+    cv: localized(z.string()),
+    linkedin: localized(z.string()).optional(),
+  }),
   links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
   highlight: z.strictObject({ photo: photoSchema }).optional(),
 });

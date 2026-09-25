@@ -58,6 +58,17 @@ describe("HomePage", () => {
     ]);
   });
 
+  it("describes each highlighted project with the text written for the site", () => {
+    render(<HomePage />);
+    const region = screen.getByRole("region", { name: "Progetti" });
+
+    expect(
+      highlightedProjects.map(
+        (project) => within(region).getByText(project.channels.site.it).tagName,
+      ),
+    ).toEqual(highlightedProjects.map(() => "P"));
+  });
+
   it("links every highlighted project to all the places it lives, then to all the projects", () => {
     render(<HomePage />);
 

@@ -1,29 +1,28 @@
 - name: Mini Race Challenge
   role: contributor
-  summary:
-    it: >-
-      Cronometraggio per auto RC di piccole dimensioni, nato come hobby e
-      diventato un piccolo business internazionale: il cuore è un contagiri
-      basato su NFC. Contribuisco con la parte 3D, modellata in OpenSCAD:
-      gantry e start lights sono open source su GitHub e Thingiverse.
-    en: >-
-      A timing system for small RC cars, born as a hobby and now a small
-      international business, built around an NFC lap counter. I contribute the
-      3D side, modelled in OpenSCAD: the gantry and the start lights are open
-      source on GitHub and Thingiverse.
   period:
     start: "2018-11"
   notes: |-
-    Il progetto è di mio fratello: nato come un suo hobby, a cui mi ero
+    Il progetto è di mio fratello Paolo: nato come un suo hobby, a cui mi ero
     appassionato, poi diventato un prodotto artigianale e infine un business,
     che ha richiesto l'apertura di una partita IVA. Io lo seguo e do una mano
     quando serve. La data d'inizio è quella della prima foto trovata; il
     progetto è in corso.
 
+    L'esigenza di partenza: fare gare con molte auto RC in miniatura in salotto,
+    nelle associazioni e nei locali. Una soluzione non c'era; dopo vari
+    esperimenti si è provato con l'NFC, e ha funzionato. Il nodo era che l'NFC
+    rileva punto a punto, mentre a noi serviva linea a punto: alla fine abbiamo
+    letteralmente segato un rilevatore puntuale e l'abbiamo esteso con un cavo
+    parallelo, che faceva da antenna lineare sotto il traguardo. Così erano il
+    prototipo e la prima versione artigianale, venduta ai primi appassionati
+    tra privati. Oggi la scheda è rifatta da zero, non contiene più il
+    rilevatore originario e l'antenna è pluggabile.
+
     Oggi MRC è un brand che produce diversi dispositivi, tutti con lo scopo di
     gestire gare tra auto RC di piccole dimensioni. Il dispositivo centrale è un
     lap counter NFC: un tag sotto ogni auto e, sotto la linea di partenza,
-    un'antenna lineare anziché le convenzionali antenne NFC puntuali. Comunica
+    l'antenna lineare anziché le convenzionali antenne NFC puntuali. Comunica
     in Bluetooth LE con la web app, traspilata anche per iOS e Android.
 
     Da gennaio 2026 il progetto è gestito da LimenLab, azienda aperta
@@ -31,15 +30,83 @@
     pionieristici e "di confine".
 
     I prodotti sono venduti in tutto il mondo tramite rivenditori sul
-    territorio; quelli storici: uno a Milano, uno in Messico, due in Germania,
-    uno in Francia e uno in Giappone.
+    territorio; quelli consolidati: uno a Milano, uno in Messico, due in
+    Germania, uno in Francia e uno in Giappone.
+
+    Come viene usato:
+
+    - A Città del Messico il distributore, Victor Babani (Vic's Pulse Timing),
+      organizza tornei da 30-60 persone nel suo locale, con le Turbo Racing in
+      scala 1:76. Un esempio: 24 settembre 2026, Parque Toreo, pista "F04
+      México Pegaso", ispirata al tracciato del mondiale IFMAR 1997.
+    - In Spagna, a settembre 2026, un evento con il club Drift Frutando, sulle
+      piste Carrera Hybrid: il timing system esce dalle sole auto RC.
+    - In Giappone il distributore aveva l'incarico di realizzare circuiti
+      dioramici in un parco a tema a Tokyo; non se n'è saputo più nulla.
+    - Molti clienti costruiscono diorami trasportabili su cui montano il timing
+      system e ci gareggiano con le Turbo Racing.
+    - A Jesi l'associazione Jesi Drift organizza giornate di gioco in una
+      villetta di proprietà, con tornei e gare libere, e tiene una classifica
+      generale dei piloti: più partecipi e più punti fai, più sali. Senza MRC
+      non potrebbero farlo; Paolo, quando può, va a giocare con loro. A ottobre
+      2026 provano a portare il format in un pub, che è quello che facevamo noi
+      all'inizio.
+
 
     Il mio contributo: idee e soluzioni, ma soprattutto i modelli 3D necessari
     ai prodotti, modellati in OpenSCAD e inizialmente stampati in casa con una
-    FDM, oggi tramite servizi esterni. Ho realizzato il gantry e le start
-    lights, pubblicati open source su GitHub e Thingiverse con licenza Creative
-    Commons.
+    FDM, oggi tramite servizi esterni. I prototipi stampati hanno sostenuto la
+    fase di ricerca e il play testing nelle associazioni; alcuni sono diventati
+    prodotti, altri componenti open source da stampare in autonomia.
+
+    - Gantry: open source, su GitHub e Thingiverse con licenza Creative
+      Commons. Al 25/09/2026 su Thingiverse: più di 5500 visualizzazioni, 67
+      like, più di 2058 download. Compare spesso nei video che la gente
+      pubblica delle proprie gare e dei propri diorami.
+    - Start lights: fa parte del prodotto venduto. Il modulo start lights
+      estende il lap counter con un semaforino collegato all'app; il
+      contenitore a forma di semaforo è il mio modello, adattato per la stampa
+      in resina tramite servizio esterno. È anche open source, ma la versione
+      pubblicata potrebbe non essere l'ultima: se quello in dotazione si rompe,
+      lo si può ristampare, insieme alle clip generiche per appenderlo a
+      qualcosa o a quelle che lo agganciano al gantry.
+    - Box dell'unità principale: conteneva la prima versione, oggi non più
+      usato, sostituito da una scatolina in commercio.
+    - Dispositivo per firmare i tag, l'ultimo lavoro: srotola la bobina di tag
+      facendoli passare uno a uno sull'antenna. L'app lo governa, automatizzando
+      un processo che prima era manuale e noioso (ogni bobina contiene 5000
+      tag). In ciascun tag viene scritto un identificativo firmato (forse un
+      token tipo JWT), memorizzato nel db. Il lap counter funziona solo con i
+      tag MRC, per ragioni di business e di responsabilità, garanzia e
+      assistenza.
   channels:
+    site:
+      it: >-
+        Con mio fratello volevamo fare gare indoor con molte auto RC in
+        miniatura, grandi quanto una Hot Wheels, in salotto, nelle associazioni
+        e nei locali. Una soluzione non c'era e l'abbiamo creata noi, con l'NFC:
+        oggi il nostro timing system è usato in tutto il mondo. Il mio
+        contributo sono i modelli 3D: prototipi per la ricerca e il play
+        testing, poi diventati prodotti o componenti open source, come il gantry
+        che ritrovo nei video delle gare altrui.
+      en: >-
+        With my brother, we wanted to race lots of tiny, Hot Wheels-sized RC
+        cars indoors, in living rooms, clubs and bars. Nothing out there could
+        do it, so we built it ourselves, with NFC: today our timing system is
+        used all over the world. My part is the 3D models: prototypes for
+        research and playtesting, which then became products or open source
+        parts, like the gantry I keep spotting in other people's race videos.
+    cv:
+      it: >-
+        Cronometraggio per auto RC di piccole dimensioni, nato come hobby e
+        diventato un piccolo business internazionale: il cuore è un contagiri
+        basato su NFC. Contribuisco con la parte 3D, modellata in OpenSCAD:
+        gantry e start lights sono open source su GitHub e Thingiverse.
+      en: >-
+        A timing system for small RC cars, born as a hobby and now a small
+        international business, built around an NFC lap counter. I contribute
+        the 3D side, modelled in OpenSCAD: the gantry and the start lights are
+        open source on GitHub and Thingiverse.
     linkedin:
       it: >-
         È un progetto nato come hobby, poi diventato un piccolo business
@@ -83,15 +150,6 @@
         en: A race of 1:58 RC cars on a homemade, post-apocalyptic track
 - name: QRiddle
   role: author
-  summary:
-    it: >-
-      Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento di
-      vibe coding, ma testato e revisionato, seguito per intero dalla prima
-      commit alla CI/CD fino alla promozione.
-    en: >-
-      A ReactJS/TypeScript web app built with Claude Code: a vibe coding
-      experiment, tested and reviewed, followed end to end from the first commit
-      through CI/CD to its launch.
   period:
     start: "2025-12"
   notes: |-
@@ -118,6 +176,28 @@
     Da fare, idealmente: altri puzzle, per rendere la sfida più stimolante. Il
     paint by area, come enigma, è piuttosto banale.
   channels:
+    site:
+      it: >-
+        Nasce da un biglietto d'auguri per mia moglie: il QR code che portava al
+        suo regalo andava ricavato annerendo le caselle di quattro puzzle.
+        Quello l'avevo disegnato a mano con Inkscape; QRiddle è la web app che
+        ora lo fa da sola, e il pretesto per imparare React e TypeScript
+        sviluppando con Claude Code, dalla prima commit alla pubblicazione.
+      en: >-
+        It started as a birthday card for my wife: the QR code leading to her
+        present had to be uncovered by shading in the cells of four puzzles. I
+        drew that one by hand in Inkscape; QRiddle is the web app that now
+        builds them on its own, and my excuse to learn React and TypeScript by
+        building with Claude Code, from the first commit all the way to launch.
+    cv:
+      it: >-
+        Una web app ReactJS/TypeScript sviluppata con Claude Code: esperimento
+        di vibe coding, ma testato e revisionato, seguito per intero dalla prima
+        commit alla CI/CD fino alla promozione.
+      en: >-
+        A ReactJS/TypeScript web app built with Claude Code: a vibe coding
+        experiment, tested and reviewed, followed end to end from the first
+        commit through CI/CD to its launch.
     linkedin:
       it: >-
         Il mio primo esperimento di sviluppo con Claude Code.
@@ -160,17 +240,24 @@
         en: "A QRiddle greeting card being solved: the QR code emerges"
 - name: JobBoy
   role: author
-  summary:
-    it: >-
-      Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
-      mantenuto.
-    en: >-
-      A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer
-      maintained.
   period:
     start: "2019-07"
     end: "2025-01"
   channels:
+    site:
+      it: >-
+        Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
+        mantenuto.
+      en: >-
+        A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer
+        maintained.
+    cv:
+      it: >-
+        Un jobs manager per PHP. Open source, MIT, su Packagist. PHP 7, non più
+        mantenuto.
+      en: >-
+        A jobs manager for PHP. Open source, MIT, on Packagist. PHP 7, no longer
+        maintained.
     linkedin:
       it: >-
         Libreria PHP open source (MIT, su Packagist), job manager
@@ -205,17 +292,24 @@
       url: https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md
 - name: FixtureHandler
   role: author
-  summary:
-    it: >-
-      Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
-      PHP 7, non più mantenuta.
-    en: >-
-      A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7, no
-      longer maintained.
   period:
     start: "2018-07"
     end: "2025-01"
   channels:
+    site:
+      it: >-
+        Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
+        PHP 7, non più mantenuta.
+      en: >-
+        A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7,
+        no longer maintained.
+    cv:
+      it: >-
+        Una test utility per le fixture in PHP. Open source, MIT, su Packagist.
+        PHP 7, non più mantenuta.
+      en: >-
+        A test utility for PHP fixtures. Open source, MIT, on Packagist. PHP 7,
+        no longer maintained.
     linkedin:
       it: >-
         Libreria PHP open source (MIT, su Packagist), test utility

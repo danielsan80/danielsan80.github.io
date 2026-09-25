@@ -101,7 +101,7 @@ export function CvPage() {
         <ul className={styles.projects} aria-labelledby="projects">
           {projects.map((project) => (
             <li key={project.name}>
-              <b>{project.name}</b> — {pick(project.summary, lang)}
+              <b>{project.name}</b> — {pick(project.channels.cv, lang)}
               <span className={styles.projectLinks}>
                 {project.links.map((link) => (
                   <a key={link.url} href={link.url}>

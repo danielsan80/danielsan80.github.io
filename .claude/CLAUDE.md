@@ -51,7 +51,7 @@ Unificazioni che evitano duplicazione:
 
 - **Una sola collection `projects`** (`projects.yaml`): tutti i progetti vanno in `/projects` e nel CV; `highlight`, con la foto, sceglie quelli della home. L'ordine è la **posizione nel file**, per importanza, in tutte le liste.
 - **Un'unica collection `profiles`** (GitHub, Packagist, LinkedIn, Thingiverse) alimenta la home, la testata del CV e la ricerca dei topic.
-- **I testi scritti per un posto stanno in `channels`**: `identity` ha `home` e `cv`, ognuno con `headline` e `summary`; progetti ed esperienze hanno `cv` e `linkedin`.
+- **I testi scritti per un posto stanno in `channels`**: `identity` ha `home` e `cv`, ognuno con `headline` e `summary`; progetti ed esperienze hanno `cv` e `linkedin`, i progetti anche `site` (home e `/projects`). Il gruppo si introduce solo quando i canali vogliono testi diversi; un campo piatto diventa `channels` quando succede.
 
 ### Identità e lingua
 
