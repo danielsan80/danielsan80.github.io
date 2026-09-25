@@ -67,7 +67,7 @@ export function HomePage() {
               <div>
                 <h3 className={styles.projectName}>{project.name}</h3>
                 <p className={styles.projectSummary}>
-                  {pick(project.summary, lang)}
+                  {pick(project.channels.site, lang)}
                 </p>
                 <ul className={styles.projectLinks}>
                   {project.links.map((link) => (

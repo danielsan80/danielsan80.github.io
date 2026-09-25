@@ -168,13 +168,19 @@ describe("schemaViolations", () => {
         [
           {
             name: "Mini Race Challenge",
-            summary: { it: "Cronometraggio", en: "Timing" },
+            channels: {
+              site: { it: "Cronometraggio", en: "Timing" },
+              cv: { it: "Cronometraggio", en: "Timing" },
+            },
             period: { start: "2018-11" },
             links: [],
           },
           {
             name: "JobBoy",
-            summary: { it: "Un jobs manager", en: "A jobs manager" },
+            channels: {
+              site: { it: "Un jobs manager", en: "A jobs manager" },
+              cv: { it: "Un jobs manager", en: "A jobs manager" },
+            },
             period: { start: "2019-07" },
             role: "owner",
             links: [],
@@ -201,10 +207,13 @@ describe("schemaViolations", () => {
         [
           {
             name: "JobBoy",
-            summary: { it: "Un jobs manager", en: "A jobs manager" },
             period: { start: "2019-07" },
             role: "author",
-            channels: { linkedin: { it: "Libreria PHP open source" } },
+            channels: {
+              site: { it: "Un jobs manager", en: "A jobs manager" },
+              cv: { it: "Un jobs manager", en: "A jobs manager" },
+              linkedin: { it: "Libreria PHP open source" },
+            },
             links: [],
           },
         ],
@@ -225,7 +234,10 @@ describe("schemaViolations", () => {
         [
           {
             name: "JobBoy",
-            summary: { it: "Un jobs manager", en: "A jobs manager" },
+            channels: {
+              site: { it: "Un jobs manager", en: "A jobs manager" },
+              cv: { it: "Un jobs manager", en: "A jobs manager" },
+            },
             role: "author",
             links: [],
           },

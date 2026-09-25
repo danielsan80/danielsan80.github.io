@@ -48,6 +48,22 @@ describe("CvPage", () => {
     ]);
   });
 
+  it("describes each project with the text written for the CV", () => {
+    render(<CvPage />);
+    const items = within(
+      screen.getByRole("list", { name: "Projects" }),
+    ).getAllByRole("listitem");
+    const openings = projects.map(
+      (project) => `${project.name} — ${project.channels.cv.it}`,
+    );
+
+    expect(
+      items.map((item, index) =>
+        item.textContent?.slice(0, openings[index].length),
+      ),
+    ).toEqual(openings);
+  });
+
   it("tells where to find each project, with the links from the content", () => {
     render(<CvPage />);
     const list = screen.getByRole("list", { name: "Projects" });
