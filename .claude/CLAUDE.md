@@ -60,7 +60,7 @@ Decisioni in `doc/STILE.md`. Vincolo guida: **una sola identità visiva** deve r
 
 ### Tono
 
-Decisioni in `doc/TONO.md`: una sola voce, con la densità che cambia per canale (sito, CV, LinkedIn).
+Decisioni in `doc/TONO.md`: una sola voce, con la densità che cambia per canale (sito, CV, profilo LinkedIn).
 
 ## Kanban
 
