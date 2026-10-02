@@ -42,7 +42,9 @@ Registro professionale: denso, scorrevole in pochi secondi, stampabile.
   fatto per bullet, con l'esito quando c'è.
 - Progetti: una riga da scheda — cos'è, licenza, dove sta, stato.
 
-## LinkedIn — `channels.linkedin`
+## Profilo LinkedIn — `channels.linkedin`
+
+Vale per i testi del profilo — esperienze e progetti — non per i post.
 
 Registro del caso raccontato: prima persona al passato, paragrafi brevi.
 
@@ -50,3 +52,14 @@ Registro del caso raccontato: prima persona al passato, paragrafi brevi.
   (`SITE-18`).
 - Può nominare i clienti, e dire cosa ho imparato.
 - Il testo si incolla così com'è: niente markdown.
+
+## Post LinkedIn — fuori da questo repo
+
+I post non nascono da `src/content/` ma dai documenti di life-hacks, e lì si
+scrivono: piano e decisioni nella campagna LinkedIn.
+
+La differenza dal profilo: il profilo è una scheda che chi mi valuta consulta,
+il post un episodio che arriva nel feed di chiunque. Per questo il registro è
+quello del maker del sito, appena più professionale: una persona che racconta
+cosa ha fatto, non un'azienda che si presenta. I clienti, che il profilo può
+nominare, nei post restano anonimi salvo permesso.
