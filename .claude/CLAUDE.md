@@ -1,26 +1,6 @@
 # Regole progetto
 
-Regole sintetiche: scrivi il minimo necessario per essere compresi.
-
-- Termina i file con newline.
-- Commenti nel codice in inglese, e **il meno possibile**. Il codice è la documentazione: se non si capisce cosa fa o perché, si cambia il codice, non si aggiunge una riga sopra. Un commento che dice l'ovvio costa tempo a leggerlo e a toglierlo, e fa rumore che nasconde i pochi che contano. A parità di dubbio, **uno in meno**: se non capisco chiedo.
-  - Restano i **fatti sul mondo fuori dal file**, quelli che non si ricavano rileggendo meglio: cosa `Date.UTC` fa degli anni 0-99, cosa `resolveJsonModule` controlla e cosa no, come Vite deriva i nomi delle classi dei CSS module.
-  - Il razionale di una scelta va nella card Jira, non nel codice.
-  - Quelli per il revisore vanno marcati `@rev`: servono a capirsi durante la review, non restano nel codice. Quando lo chiedo, o prima di committare se te lo dico, togli tutti i `@rev`.
-  - Tanti commenti sono un sintomo: se un pezzo ne attira, è il design da rivedere.
-  - Vale anche sui commenti **già committati, anche non tuoi**: quando passi su codice che ne ha di superflui, segnalali e proponi di toglierli.
-- Feedback onesto: evidenzia problemi e alternative migliori senza giri di parole.
-- Test first: scrivi i test prima dell'implementazione.
-- Asserzioni: evita assertion roulette. Asserisci sul valore intero, non sulle sue parti.
-  - OK: test di creazione che verificano le proprietà dell'oggetto costruito
-  - NO: `toHaveLength(n)` seguito da asserzioni sui singoli elementi → usa `toEqual([...])`
-  - NO: asserzioni separate su parti di un risultato → mappa e asserisci sull'array intero
-- Git: non committare né pushare di tua iniziativa, solo su mia richiesta esplicita. Quando dico "committa", scegli tu il messaggio e committa subito — non propormi di committare né chiedermi di revisionare prima (la diff la guardo da solo; se il messaggio non mi piace lo riscrivo io). Messaggi in inglese, con prefisso in stile conventional commit (`feat:`, `fix:`, `docs:`, `test:`, `build:`, `chore:`, `refactor:`… — la lista non è chiusa, scegli quello che descrive il commit). Niente trailer `Co-Authored-By`.
-  - Niente azioni distruttive: `git reset` e `git commit --amend` sono bloccati dai permessi. Per riscrivere la storia costruisci il risultato su un branch parallelo, senza toccare quello originale. I comandi finali — quelli che spostano un branch o sovrascrivono lavoro esistente — li eseguo io dopo aver revisionato.
-- Piccoli passi: implementa una cosa alla volta.
-- Librerie esterne: diffuse, ben supportate, componibili, stilizzabili. No monoliti.
-- Nomi variabili: evita nomi da una sola lettera, anche in scope locali.
-- "il file" senza specificare quale = CLAUDE.md
+- `git reset` e `git commit --amend` sono bloccati dai permessi.
 
 ## Dominio
 
