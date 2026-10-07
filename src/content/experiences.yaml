@@ -106,6 +106,10 @@
     In parallelo abbiamo tenuto workshop interni su pratiche di eXtreme
     Programming e tecniche di refactoring, per ridurre gradualmente il debito
     tecnico.
+
+    Lo stack del cliente era Java, Spring e Kafka. Sulle collezioni usavamo le
+    Stream API di Java: `stream()` porta una lista in un'interfaccia fluida di
+    operazioni concatenate, come loophp/collection in PHP.
   channels:
     cv:
       it:
@@ -174,6 +178,10 @@
     esagonale e Domain-Driven Design, mostrando come avrei organizzato il codice
     e contribuendo alla migrazione verso un modello a domini. Ho imparato molto
     anche dai colleghi.
+
+    Per le collezioni usavamo loophp/collection, che il team chiamava "approccio
+    funzionale": collezioni lazy, che elaborano i dati uno alla volta mentre li
+    leggono invece di caricarli tutti in memoria.
   channels:
     cv:
       it:
@@ -226,6 +234,21 @@
   period:
     start: "2020-02"
     end: "2025-06"
+  notes: |-
+    Soisy era una piattaforma BNPL, nata come marketplace di prestiti tra
+    privati. Ho lavorato soprattutto al backoffice, automatizzando processi
+    aziendali eseguiti a mano, migliorandone le performance e integrando servizi
+    esterni; sulla webapp ho modificato il funnel di onboarding e l'area
+    riservata. Dopo l'acquisizione da parte di Compass ho sviluppato soluzioni
+    per la dismissione della piattaforma.
+
+    Il codice PHP lo scrivevamo in stile funzionale, con una libreria di un
+    collega molto orientato al funzionale, marcosh, che portava in PHP i
+    costrutti base di Haskell. Lì ho trovato la risposta a un problema che mi
+    portavo dietro da anni: restituire l'esito eterogeneo di uno use case
+    (successo, fallimento, successo con avvertimenti) con un tipo che dichiara
+    tutte le sue uscite, da valutare caso per caso. Ho usato i costrutti senza
+    avere modo di approfondirne la teoria. Ho visto anche un po' di Rust.
   channels:
     cv:
       it:
