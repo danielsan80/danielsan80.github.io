@@ -54,7 +54,9 @@ Every push to `master` runs `npm run check` and `npm run build` on GitHub
 Actions, and publishes `dist/` to GitHub Pages.
 
 The site lives in the `danielsan80.github.io` repository on purpose: it is my
-GitHub user site, and project sites such as
-[QRiddle](https://danilosanchi.net/qriddle/) are served under its domain.
+GitHub user site, and project sites are served under its domain. Those with a
+domain of their own, such as [QRiddle](https://qriddle.app), are reached
+through it with a redirect: old links to `danilosanchi.net/qriddle/` keep
+working.
 
 The previous site, a Jekyll list of links, is kept in the `v1-jekyll-2024` tag.

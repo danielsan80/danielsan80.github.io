@@ -89,7 +89,7 @@ describe("CvPage", () => {
       "miniracechallenge.com",
       "thingiverse.com/thing:5364319",
       "github.com/danielsan80/minirace-gate",
-      "danilosanchi.net/qriddle",
+      "qriddle.app",
       "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
       "github.com/danielsan80/fixture-handler",
     ]);
