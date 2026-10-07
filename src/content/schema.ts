@@ -91,7 +91,20 @@ export const projectSchema = z.strictObject({
     cv: localized(z.string()),
     linkedin: localized(z.string()).optional(),
   }),
-  links: z.array(z.strictObject({ label: z.string(), url: z.string() })),
+  links: z.array(
+    z.strictObject({
+      label: z.string(),
+      url: z.string(),
+      channels: z
+        .strictObject({
+          linkedin: z.strictObject({
+            title: z.string(),
+            description: z.string(),
+          }),
+        })
+        .optional(),
+    }),
+  ),
   highlight: z.strictObject({ photo: photoSchema }).optional(),
 });
 

@@ -138,10 +138,22 @@
   links:
     - label: miniracechallenge.com
       url: https://miniracechallenge.com/
+      channels:
+        linkedin:
+          title: miniracechallenge.com
+          description: "Il sito del progetto: dove scaricare l'app e dove acquistare i dispositivi."
     - label: Thingiverse
       url: https://www.thingiverse.com/thing:5364319
+      channels:
+        linkedin:
+          title: I modelli 3D su Thingiverse
+          description: "Il gantry e le start lights, pubblicati con licenza Creative Commons: chiunque può stamparli."
     - label: Repository
       url: https://github.com/danielsan80/minirace-gate
+      channels:
+        linkedin:
+          title: Il repository su GitHub
+          description: I sorgenti OpenSCAD dei modelli
   highlight:
     photo:
       src: /photos/mini-race-challenge.webp
@@ -232,6 +244,10 @@
   links:
     - label: qriddle.app
       url: https://qriddle.app
+      channels:
+        linkedin:
+          title: qriddle.app
+          description: "La web app: scrivi il messaggio e stampi il biglietto con il puzzle che lo nasconde."
   highlight:
     photo:
       src: /photos/qriddle.webp
@@ -346,8 +362,18 @@
 
         Supports up to PHP 7.4.
   links:
+    - label: Packagist
+      url: https://packagist.org/packages/dansan/jobboy
+      channels:
+        linkedin:
+          title: Il pacchetto su Packagist
+          description: Installazione, versioni supportate e statistiche di download.
     - label: Documentation
       url: https://github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md
+      channels:
+        linkedin:
+          title: La documentazione di JobBoy
+          description: Come si scompone un lavoro lungo in parti piccole, gestendo memoria, timeout e concorrenza.
 - name: FixtureHandler
   role: author
   period:
@@ -472,5 +498,15 @@
         Supports up to PHP 7.4, but I will move it to PHP 8 as soon as I need
         that version.
   links:
+    - label: Packagist
+      url: https://packagist.org/packages/dansan/fixture-handler
+      channels:
+        linkedin:
+          title: Il pacchetto su Packagist
+          description: Installazione, versioni supportate e statistiche di download.
     - label: Repository
       url: https://github.com/danielsan80/fixture-handler
+      channels:
+        linkedin:
+          title: Il repository su GitHub
+          description: I sorgenti della libreria, installabile con Composer da Packagist.
