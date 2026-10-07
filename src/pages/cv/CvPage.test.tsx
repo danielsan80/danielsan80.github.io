@@ -90,7 +90,9 @@ describe("CvPage", () => {
       "thingiverse.com/thing:5364319",
       "github.com/danielsan80/minirace-gate",
       "qriddle.app",
+      "packagist.org/packages/dansan/jobboy",
       "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
+      "packagist.org/packages/dansan/fixture-handler",
       "github.com/danielsan80/fixture-handler",
     ]);
   });

@@ -227,6 +227,47 @@ describe("schemaViolations", () => {
     ]);
   });
 
+  it("names a link whose LinkedIn media lacks the title or the description", () => {
+    expect(
+      schemaViolations(
+        z.array(projectSchema),
+        [
+          {
+            name: "QRiddle",
+            period: { start: "2025-12" },
+            role: "author",
+            channels: {
+              site: { it: "Una web app", en: "A web app" },
+              cv: { it: "Una web app", en: "A web app" },
+            },
+            links: [
+              {
+                label: "qriddle.app",
+                url: "https://qriddle.app",
+                channels: { linkedin: { title: "QRiddle" } },
+              },
+              {
+                label: "qriddle.app",
+                url: "https://qriddle.app",
+                channels: { linkedin: { description: "La web app" } },
+              },
+            ],
+          },
+        ],
+        "projects",
+      ),
+    ).toEqual([
+      {
+        path: "projects[0].links[0].channels.linkedin.description",
+        message: "Invalid input: expected string, received undefined",
+      },
+      {
+        path: "projects[0].links[1].channels.linkedin.title",
+        message: "Invalid input: expected string, received undefined",
+      },
+    ]);
+  });
+
   it("names a project that does not say when it was worked on", () => {
     expect(
       schemaViolations(
