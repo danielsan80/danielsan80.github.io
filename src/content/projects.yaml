@@ -230,8 +230,8 @@
 
         The experiment worked.
   links:
-    - label: danilosanchi.net/qriddle
-      url: https://danilosanchi.net/qriddle/
+    - label: qriddle.app
+      url: https://qriddle.app
   highlight:
     photo:
       src: /photos/qriddle.webp
