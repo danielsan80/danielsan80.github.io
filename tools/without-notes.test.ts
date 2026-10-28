@@ -1,5 +1,37 @@
+import { createServer } from "vite";
 import { describe, expect, it } from "vitest";
+import type { Experience } from "../src/content/experiences";
 import { withoutNotes } from "./without-notes";
+
+async function companiesWithNotes(mode?: string): Promise<string[]> {
+  const server = await createServer({
+    mode,
+    logLevel: "silent",
+    server: { middlewareMode: true },
+    appType: "custom",
+  });
+
+  try {
+    const { experiences } = await server.ssrLoadModule(
+      "/src/content/experiences.ts",
+    );
+    return (experiences as Experience[])
+      .filter((experience) => experience.notes !== undefined)
+      .map((experience) => experience.company);
+  } finally {
+    await server.close();
+  }
+}
+
+describe("the content Vite loads", () => {
+  it("has no notes by default, as the prerender reads it", async () => {
+    expect(await companiesWithNotes()).toEqual([]);
+  });
+
+  it("keeps the notes in the with-notes mode, for the content check", async () => {
+    expect(await companiesWithNotes("with-notes")).not.toEqual([]);
+  });
+});
 
 describe("withoutNotes", () => {
   it("removes the notes of each entry in a list", () => {

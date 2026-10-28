@@ -3,10 +3,10 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 import { withoutNotes } from "./tools/without-notes";
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
-    yaml(command === "build" ? { transform: withoutNotes } : {}),
+    yaml(mode === "with-notes" ? {} : { transform: withoutNotes }),
   ],
   build: {
     rollupOptions: {
