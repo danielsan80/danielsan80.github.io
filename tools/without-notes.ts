@@ -1,5 +1,5 @@
-// Notes are private: the content check and the tests read them, the built
-// site must not carry them.
+// Notes are private: only the content check reads them, in the with-notes
+// mode; everything else, the built site included, loads the content without.
 
 type YamlValue =
   number | string | boolean | null | { [key: string]: YamlValue } | YamlValue[];
