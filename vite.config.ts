@@ -1,9 +1,13 @@
 import yaml from "@rollup/plugin-yaml";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
+import { withoutNotes } from "./tools/without-notes";
 
-export default defineConfig({
-  plugins: [react(), yaml()],
+export default defineConfig(({ command }) => ({
+  plugins: [
+    react(),
+    yaml(command === "build" ? { transform: withoutNotes } : {}),
+  ],
   build: {
     rollupOptions: {
       input: {
@@ -18,4 +22,4 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./vitest.setup.ts"],
   },
-});
+}));
