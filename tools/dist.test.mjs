@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -13,6 +14,7 @@ describe("the built site", () => {
   let outDir;
 
   beforeAll(async () => {
+    execFileSync("node", ["tools/build-styleguide.mjs"]);
     outDir = mkdtempSync(join(tmpdir(), "dist-"));
     await build({ logLevel: "silent", build: { outDir, emptyOutDir: true } });
   });
