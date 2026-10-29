@@ -34,7 +34,8 @@ published. Without it the site does not build.
 Without access to it, `bin/install --fixtures` fills `.private/` with the
 invented content of `fixtures/`, the same files with a made-up person in
 them, so the site runs all the same. The fixtures are checked against the
-same schemas as the real content. A `.private/` filled this way is not a
+same schemas as the real content, and the tests always run on them: they
+check what the pages do with the content, not what the content says. A `.private/` filled this way is not a
 clone: to clone the private repository later, remove it first.
 
 ## How it is built
