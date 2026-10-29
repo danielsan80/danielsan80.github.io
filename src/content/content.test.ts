@@ -15,12 +15,12 @@ const TODAY = Date.UTC(2026, 7, 26);
 const experiences = z.array(experienceSchema);
 
 const experience = {
-  role: { it: "Sviluppatore", en: "Developer" },
-  company: "Resolvi Srl",
+  role: { it: "Idraulico", en: "Plumber" },
+  company: "Idraulica Rossi & Figli",
   location: "Remote",
   remote: true,
   period: { start: "2025-08" },
-  channels: { cv: { it: ["Scritto codice"], en: ["Wrote code"] } },
+  channels: { cv: { it: ["Riparati tubi"], en: ["Fixed pipes"] } },
 };
 
 describe("schemaViolations", () => {
@@ -169,19 +169,19 @@ describe("schemaViolations", () => {
         z.array(projectSchema),
         [
           {
-            name: "Mini Race Challenge",
+            name: "Sifone Parlante",
             channels: {
-              site: { it: "Cronometraggio", en: "Timing" },
-              cv: { it: "Cronometraggio", en: "Timing" },
+              site: { it: "Un sensore", en: "A sensor" },
+              cv: { it: "Un sensore", en: "A sensor" },
             },
             period: { start: "2018-11" },
             links: [],
           },
           {
-            name: "JobBoy",
+            name: "OpenRaccordi",
             channels: {
-              site: { it: "Un jobs manager", en: "A jobs manager" },
-              cv: { it: "Un jobs manager", en: "A jobs manager" },
+              site: { it: "Raccordi da stampare", en: "Fittings to print" },
+              cv: { it: "Raccordi da stampare", en: "Fittings to print" },
             },
             period: { start: "2019-07" },
             role: "owner",
@@ -208,13 +208,13 @@ describe("schemaViolations", () => {
         z.array(projectSchema),
         [
           {
-            name: "JobBoy",
+            name: "OpenRaccordi",
             period: { start: "2019-07" },
             role: "author",
             channels: {
-              site: { it: "Un jobs manager", en: "A jobs manager" },
-              cv: { it: "Un jobs manager", en: "A jobs manager" },
-              linkedin: { it: "Libreria PHP open source" },
+              site: { it: "Raccordi da stampare", en: "Fittings to print" },
+              cv: { it: "Raccordi da stampare", en: "Fittings to print" },
+              linkedin: { it: "Libreria OpenSCAD open source" },
             },
             links: [],
           },
@@ -235,23 +235,23 @@ describe("schemaViolations", () => {
         z.array(projectSchema),
         [
           {
-            name: "QRiddle",
+            name: "Le Fontanelle di Borgo Sifone",
             period: { start: "2025-12" },
             role: "author",
             channels: {
-              site: { it: "Una web app", en: "A web app" },
-              cv: { it: "Una web app", en: "A web app" },
+              site: { it: "Una mappa", en: "A map" },
+              cv: { it: "Una mappa", en: "A map" },
             },
             links: [
               {
-                label: "qriddle.app",
-                url: "https://qriddle.app",
-                channels: { linkedin: { title: "QRiddle" } },
+                label: "fontanelle.example.com",
+                url: "https://example.com/fontanelle",
+                channels: { linkedin: { title: "Le Fontanelle" } },
               },
               {
-                label: "qriddle.app",
-                url: "https://qriddle.app",
-                channels: { linkedin: { description: "La web app" } },
+                label: "fontanelle.example.com",
+                url: "https://example.com/fontanelle",
+                channels: { linkedin: { description: "La mappa" } },
               },
             ],
           },
@@ -276,10 +276,10 @@ describe("schemaViolations", () => {
         z.array(projectSchema),
         [
           {
-            name: "JobBoy",
+            name: "OpenRaccordi",
             channels: {
-              site: { it: "Un jobs manager", en: "A jobs manager" },
-              cv: { it: "Un jobs manager", en: "A jobs manager" },
+              site: { it: "Raccordi da stampare", en: "Fittings to print" },
+              cv: { it: "Raccordi da stampare", en: "Fittings to print" },
             },
             role: "author",
             links: [],

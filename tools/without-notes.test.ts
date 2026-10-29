@@ -44,8 +44,8 @@ describe("withoutNotes", () => {
   });
 
   it("removes the notes of a mapping at the root", () => {
-    expect(withoutNotes({ name: "Danilo", notes: "Private." })).toEqual({
-      name: "Danilo",
+    expect(withoutNotes({ name: "Mario", notes: "Private." })).toEqual({
+      name: "Mario",
     });
   });
 
@@ -53,16 +53,18 @@ describe("withoutNotes", () => {
     expect(
       withoutNotes([
         {
-          name: "QRiddle",
+          name: "Sifone Parlante",
           period: { start: "2025-01", notes: "Private." },
-          links: [{ url: "https://qriddle.app", notes: "Private." }],
+          links: [
+            { url: "https://example.com/sifone-parlante", notes: "Private." },
+          ],
         },
       ]),
     ).toEqual([
       {
-        name: "QRiddle",
+        name: "Sifone Parlante",
         period: { start: "2025-01" },
-        links: [{ url: "https://qriddle.app" }],
+        links: [{ url: "https://example.com/sifone-parlante" }],
       },
     ]);
   });
