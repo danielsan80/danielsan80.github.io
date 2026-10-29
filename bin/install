@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
+# Fills .private/, then installs the dependencies.
+#
+#   bin/install              clones the private repository into .private/
+#   bin/install --fixtures   copies the invented content of fixtures/ instead,
+#                            for a clone without access to it
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-[ -d .private ] || git clone git@github.com:danielsan80/danielsan80.github.io-private.git .private
+if [ -d .private ]; then
+  [ -d .private/.git ] || [ "${1:-}" = --fixtures ] ||
+    echo "bin/install: .private/ is not a clone, probably the fixtures: remove it to clone the private repository." >&2
+elif [ "${1:-}" = --fixtures ]; then
+  mkdir .private
+  cp -r fixtures/content fixtures/photos .private/
+else
+  git clone git@github.com:danielsan80/danielsan80.github.io-private.git .private
+fi
 npm install

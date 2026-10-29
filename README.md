@@ -31,6 +31,12 @@ says where its words end up.
 repository, ignored by this one: some records carry notes that are never
 published. Without it the site does not build.
 
+Without access to it, `bin/install --fixtures` fills `.private/` with the
+invented content of `fixtures/`, the same files with a made-up person in
+them, so the site runs all the same. The fixtures are checked against the
+same schemas as the real content. A `.private/` filled this way is not a
+clone: to clone the private repository later, remove it first.
+
 ## How it is built
 
 Vite and React, without a router: each page is its own HTML file (`index.html`,
@@ -49,6 +55,7 @@ the values the site uses.
 
 ```bash
 bin/install      # clones .private/ if missing, then npm install
+bin/install --fixtures  # the same, with invented content instead of the clone
 npm run dev      # the site at localhost:5173, styleguide included
 npm run check    # types, lint, format, tests, colour contrast, design tokens
 npm run build    # styleguide, content check, Vite build, pre-rendering in dist/
