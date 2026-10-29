@@ -1,7 +1,7 @@
 import type { z } from "zod";
 import { profiles } from "./profiles";
 import type { topicSchema } from "./schema";
-import data from "./topics.yaml";
+import data from "@private/content/topics.yaml";
 
 export type Topic = z.infer<typeof topicSchema>;
 

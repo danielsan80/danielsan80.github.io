@@ -1,6 +1,6 @@
 import type { z } from "zod";
 import type { trainingSchema } from "./schema";
-import data from "./training.yaml";
+import data from "@private/content/training.yaml";
 
 export type Training = z.infer<typeof trainingSchema>;
 
