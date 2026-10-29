@@ -19,7 +19,9 @@ The site speaks Italian by default and English on request.
 
 Everything the pages say lives in `.private/content/` as YAML, checked against
 the Zod schemas in `src/content/` at build time: a record that does not fit
-its schema, or a date that does not exist, stops the build.
+its schema, or a date that does not exist, stops the build. The photos the
+content points to live in `.private/photos/`, served on `/photos/` through
+the `public/photos` link.
 
 The same content feeds the site, the CV and my LinkedIn profile. Texts written
 for one place sit under `channels` (`home`, `cv`, `linkedin`), so each record

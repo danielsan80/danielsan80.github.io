@@ -15,4 +15,23 @@ describe("the public repository", () => {
 
     expect(files).toEqual([]);
   });
+
+  it("tracks the content photos as a link to .private/photos", () => {
+    const entries = execFileSync(
+      "git",
+      ["ls-files", "--stage", "public/photos"],
+      { encoding: "utf8" },
+    )
+      .split("\n")
+      .filter(Boolean)
+      .map((entry) => {
+        const [mode, blob] = entry.split(/\s+/);
+        const target = execFileSync("git", ["cat-file", "-p", blob], {
+          encoding: "utf8",
+        });
+        return { mode, target };
+      });
+
+    expect(entries).toEqual([{ mode: "120000", target: "../.private/photos" }]);
+  });
 });

@@ -30,4 +30,10 @@ describe("the built site", () => {
 
     expect(scripts).toEqual([]);
   });
+
+  it("has the content photos", () => {
+    expect(readdirSync(join(outDir, "photos")).sort()).toEqual(
+      readdirSync(".private/photos").sort(),
+    );
+  });
 });
