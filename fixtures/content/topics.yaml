@@ -1,13 +1,13 @@
-- label: robots
-  query: topic:robots
+- label: raccordi
+  query: topic:raccordi
   description:
-    it: I robot da scrivania, firmware e modelli 3D.
-    en: The desk robots, firmware and 3D models.
-- label: learn
-  query: topic:learn
+    it: Raccordi e adattatori da stampare in 3D, modellati in OpenSCAD.
+    en: Fittings and adapters to 3D print, modelled in OpenSCAD.
+- label: sensori
+  query: topic:sensori
   description:
-    it: "Studio: workshop, libri, esercizi."
-    en: "Study: workshops, books, exercises."
+    it: Firmware e schede per i sensori del Sifone Parlante.
+    en: Firmware and boards for the Talking Trap sensors.
 - label:
     it: senza topic
     en: no topic

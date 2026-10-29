@@ -1,19 +1,21 @@
-name: Ada Segnaposto
+name: Mario Rossi
 portrait:
   src: /photos/portrait.svg
   alt:
-    it: Un ritratto segnaposto
-    en: A placeholder portrait
+    it: Mario Rossi sotto un lavello, con la torcia fra i denti
+    en: Mario Rossi under a sink, a torch between his teeth
 channels:
   home:
     headline:
-      - [Software engineer, Weekend tinkerer]
-      - [Test first, Coffee second]
+      - [Master plumber, Leak whisperer]
+      - [Copper by day, Code by night]
     summary:
-      it: "Non esisto: sono il contenuto finto di questo repository, quello che lo fa partire a chi non ha accesso al repository privato. Se esistessi, passerei le giornate fra il codice e il banco da lavoro, a costruire cose che servono e qualcuna che non serve."
-      en: "I do not exist: I am the fake content of this repository, the one that runs it for those without access to the private repository. If I existed, I would spend my days between the code and the workbench, building things that are useful and a few that are not."
+      it: "Faccio l'idraulico da vent'anni e non ho ancora trovato un tubo che non mi abbia insegnato qualcosa. Ho imparato il mestiere nella bottega di mio padre, l'ho portato sotto le fontane di mezza Italia e in sala macchine di una nave da crociera. La sera scrivo il software che di giorno mi manca: sensori che avvisano prima che il sifone si intasi, mappe delle fontanelle, raccordi da stampare in 3D."
+      en: "I have been a plumber for twenty years and I have yet to meet a pipe that did not teach me something. I learned the trade in my father's workshop, then took it under the fountains of half of Italy and into the engine room of a cruise ship. In the evening I write the software I miss during the day: sensors that warn before the trap clogs, maps of drinking fountains, fittings to 3D print."
   cv:
-    headline: Software Engineer · Freelance
+    headline:
+      it: Maestro idraulico · Consulente
+      en: Master Plumber · Consultant
     summary:
-      it: Sviluppo applicazioni web dal 2016, come freelance dal 2019. Ogni riga di questo CV è inventata, ma la forma è quella vera.
-      en: I have been building web applications since 2016, as a freelancer since 2019. Every line of this CV is made up, but the shape is the real one.
+      it: Idraulico dal 2006, consulente dal 2026. Impianti civili, reti idriche pubbliche e restauro di fontane storiche. Cerco le perdite prima di rompere i muri, e quando posso misuro invece di indovinare.
+      en: A plumber since 2006, a consultant since 2026. Domestic systems, public water networks and the restoration of historic fountains. I look for leaks before breaking walls, and whenever I can I measure instead of guessing.

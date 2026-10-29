@@ -1,10 +1,20 @@
 - institution:
-    it: Università di Esempio
-    en: University of Example
-  location: Esempio, XX
+    it: Politecnico di Borgo Sifone, corsi serali
+    en: Borgo Sifone Polytechnic, evening courses
+  location: Borgo Sifone
   title:
-    it: Laurea magistrale in Informatica
-    en: Master's degree in Computer Science
+    it: Laurea triennale in Ingegneria idraulica
+    en: Bachelor's degree in Hydraulic Engineering
   period:
-    start: "2009-09"
-    end: "2014-10"
+    start: "2009-10"
+    end: "2014-03"
+- institution:
+    it: Istituto Professionale "Acqua e Vapore"
+    en: '"Acqua e Vapore" Vocational Institute'
+  location: Borgo Sifone
+  title:
+    it: Diploma di Tecnico degli impianti termoidraulici
+    en: Diploma in Plumbing and Heating Systems
+  period:
+    start: "2001-09"
+    end: "2006-07"

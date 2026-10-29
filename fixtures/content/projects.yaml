@@ -1,59 +1,65 @@
-- name: Desk Robot
+- name: Sifone Parlante
   role: author
   period:
-    start: "2022-05"
+    start: "2021-03"
   notes: |-
-    Le notes non si pubblicano mai: servono a chi scrive, per tenere accanto ai
-    testi i fatti da cui vengono. Il check le valida, la build le toglie.
+    L'idea è nata a bordo della MS Acquaviva: quattrocento cabine, e ogni
+    intasamento lo scoprivamo quando l'acqua era già sul pavimento. Il primo
+    prototipo era un sensore di livello incollato con il nastro americano a un
+    sifone di prova in sala macchine. Oggi ne girano una trentina, quasi tutti
+    da clienti che mi avevano chiamato due volte per lo stesso lavandino.
   channels:
     site:
-      it: Un robot da scrivania che saluta quando arriva una mail importante e finge di non vedere le altre.
-      en: A desk robot that waves when an important email arrives and pretends not to see the others.
+      it: Un sensore grande come un tappo che si aggancia al sifone e avvisa sul telefono quando l'acqua comincia a scendere piano, giorni prima che il lavandino si intasi. Firmware, scheda e guscio stampato in 3D sono miei.
+      en: A sensor the size of a cork that clips onto the trap and warns on your phone when the water starts draining slowly, days before the sink clogs. Firmware, board and 3D printed shell are mine.
     cv:
-      it: Robot da scrivania con firmware in C++ e scocca stampata in 3D.
-      en: Desk robot with C++ firmware and a 3D printed shell.
+      it: Sensore per sifoni che prevede gli intasamenti, con firmware, scheda e guscio stampato in 3D.
+      en: A trap sensor that predicts clogs, with firmware, board and 3D printed shell.
+    linkedin:
+      it: Un sensore che si aggancia al sifone e avvisa prima che il lavandino si intasi. Una trentina in uso, quasi tutti da clienti stanchi di chiamarmi due volte.
+      en: A sensor that clips onto the trap and warns before the sink clogs. About thirty in use, mostly by clients tired of calling me twice.
   links:
-    - label: GitHub
-      url: https://example.com/github/ada-segnaposto/desk-robot
+    - label: Repository
+      url: https://example.com/github/mariorossi/sifone-parlante
   highlight:
     photo:
-      src: /photos/desk-robot.svg
+      src: /photos/talking-trap.svg
       alt:
-        it: Una foto segnaposto del robot
-        en: A placeholder photo of the robot
-- name: Pomodoro CLI
+        it: Il Sifone Parlante agganciato sotto un lavandino
+        en: The Talking Trap clipped under a sink
+- name: Le Fontanelle di Borgo Sifone
   role: author
   period:
-    start: "2019-01"
-    end: "2020-06"
+    start: "2017-05"
+    end: "2019-09"
   channels:
     site:
-      it: Un timer pomodoro da terminale, nato per smettere di aprire il browser e cercarne uno.
-      en: A terminal pomodoro timer, born to stop opening the browser to look for one.
+      it: La mappa di tutte le fontanelle d'acqua potabile di Borgo Sifone, con la portata misurata da me con un secchio e un cronometro. Il comune l'ha adottata, e ora le segnala chiuse prima ancora che arrivi la squadra.
+      en: A map of every drinking fountain in Borgo Sifone, with the flow rate I measured myself with a bucket and a stopwatch. The council adopted it, and now flags them as closed before the crew even arrives.
     cv:
-      it: Timer pomodoro da riga di comando, pubblicato come pacchetto npm.
-      en: Command line pomodoro timer, published as an npm package.
+      it: Mappa collaborativa delle fontanelle pubbliche, adottata dal comune.
+      en: A collaborative map of public drinking fountains, adopted by the council.
   links:
-    - label: npm
-      url: https://example.com/npm/pomodoro-cli
+    - label: fontanelle.example.com
+      url: https://example.com/fontanelle
   highlight:
     photo:
-      src: /photos/pomodoro-cli.svg
+      src: /photos/drinking-fountains.svg
       alt:
-        it: Una schermata segnaposto del timer
-        en: A placeholder screenshot of the timer
-- name: Some Framework
+        it: La mappa delle fontanelle, con i punti blu
+        en: The fountain map, with its blue dots
+- name: OpenRaccordi
   role: contributor
   period:
-    start: "2017-04"
-    end: "2018-02"
+    start: "2023-02"
+    end: "2024-06"
   channels:
     site:
-      it: Qualche correzione alla documentazione e un bug sui fusi orari.
-      en: A few fixes to the docs and a time zone bug.
+      it: Una libreria OpenSCAD di raccordi idraulici parametrici. Ho aggiunto i raccordi a compressione e le filettature gas, misurate su quelli veri col calibro.
+      en: An OpenSCAD library of parametric plumbing fittings. I added the compression fittings and the gas threads, measured with a caliper on real ones.
     cv:
-      it: Contributi alla documentazione e correzione di un bug sui fusi orari.
-      en: Documentation contributions and a time zone bug fix.
+      it: Raccordi a compressione e filettature gas per una libreria OpenSCAD open source.
+      en: Compression fittings and gas threads for an open source OpenSCAD library.
   links:
-    - label: GitHub
-      url: https://example.com/github/some-framework
+    - label: Repository
+      url: https://example.com/github/openraccordi

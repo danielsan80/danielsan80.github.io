@@ -1,20 +1,30 @@
 - category:
-    it: Linguaggi di programmazione
-    en: Programming languages
+    it: Materiali
+    en: Materials
   items:
-    - name: TypeScript
-      level: expert
-    - name: PHP
-      level: advanced
-    - name: Python
-      level: proficient
-- category:
-    it: Practices
-    en: Practices
-  items:
-    - name: TDD
+    - name:
+        it: Rame
+        en: Copper
       level: expert
     - name:
-        it: Tecniche di Refactoring
-        en: Refactoring techniques
+        it: Multistrato
+        en: Multilayer pipe
+      level: advanced
+    - name:
+        it: Ghisa
+        en: Cast iron
+      level: proficient
+- category:
+    it: Tecniche
+    en: Techniques
+  items:
+    - name:
+        it: Saldobrasatura
+        en: Brazing
+      level: expert
+    - name:
+        it: Ricerca perdite con termocamera
+        en: Leak detection with a thermal camera
+      level: advanced
+    - name: OpenSCAD
       level: advanced

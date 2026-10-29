@@ -1,15 +1,15 @@
 - title:
-    it: Refactoring di codice legacy
-    en: Refactoring legacy code
+    it: Saldobrasatura del rame per impianti gas
+    en: Copper brazing for gas systems
   period:
-    start: "2023-03-16"
-    end: "2023-03-17"
+    start: "2016-11-18"
+    end: "2016-11-19"
   note:
-    it: Corso di due giorni, inventato come tutto il resto.
-    en: A two-day course, made up like everything else.
-- title: Conferenze di sviluppo software
+    it: Corso di due giorni, con l'esame per il patentino.
+    en: A two-day course, with the licence exam.
+- title: Fiera del Tubo
   period:
-    start: "2016"
+    start: "2010"
   note:
-    it: Ci vado quando posso, a volte come volontaria.
-    en: I attend when I can, sometimes as a volunteer.
+    it: "Ci vado ogni primavera: un anno ho tenuto un talk sulle perdite trovate con la termocamera."
+    en: "I go every spring: one year I gave a talk on leaks found with a thermal camera."

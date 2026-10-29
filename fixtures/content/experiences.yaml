@@ -1,107 +1,114 @@
 - role:
-    it: Consulente
-    en: Consultant
-  company: Vandelay Industries
-  location: Remote
+    it: Consulente idraulico
+    en: Plumbing consultant
+  company: Rossi Consulenze Idrauliche
+  location: Borgo Sifone
   remote: true
   period:
-    start: "2026-05"
+    start: "2026-01"
   channels:
     cv:
       it:
-        - Piattaforma di import-export per un produttore di lattice.
-        - Integrazione con i servizi doganali.
+        - Diagnosi delle perdite a distanza, in videochiamata, prima di mandare qualcuno a rompere i muri.
+        - Capitolati per condomini che rifanno le colonne montanti.
       en:
-        - Import-export platform for a latex manufacturer.
-        - Integration with the customs services.
-- role:
-    it: Consulente
-    en: Consultant
-  company: Aperture Science
-  location: Remote
-  remote: true
-  period:
-    start: "2025-10"
-    end: "2026-02"
-  notes: |-
-    Qui va tutto quello che si ricorda dell'incarico, anche quello che non
-    finirà mai su un CV: le notes restano nel repository privato.
-  channels:
-    cv:
-      it:
-        - Dashboard per seguire in tempo reale le camere di test.
-        - Riscrittura delle notifiche per i soggetti dei test.
-      en:
-        - Dashboard to follow the test chambers in real time.
-        - Rewrote the notifications for the test subjects.
+        - Remote leak diagnosis, on video calls, before sending anyone to break walls.
+        - Specifications for apartment buildings replacing their risers.
     linkedin:
-      it: Ho costruito la dashboard delle camere di test e riscritto le notifiche per i soggetti.
-      en: I built the test chamber dashboard and rewrote the notifications for the subjects.
+      it: Aiuto condomini e imprese a capire dove perde l'acqua prima di aprire i muri, spesso con una videochiamata e una termocamera in mano al cliente.
+      en: I help buildings and contractors find where the water leaks before opening walls, often over a video call with a thermal camera in the client's hand.
 - role:
-    it: Backend Developer
-    en: Backend Developer
-  company: Hooli
-  location: Remote
-  remote: true
-  period:
-    start: "2024-11"
-    end: "2025-07"
-  channels:
-    cv:
-      it:
-        - API di ricerca per l'archivio video interno.
-        - Build ridotta da venti a cinque minuti.
-      en:
-        - Search API for the internal video archive.
-        - Cut the build from twenty minutes to five.
-- role:
-    it: Full Stack Developer
-    en: Full Stack Developer
-  company: Globex
-  location: Remote
-  remote: true
-  period:
-    start: "2019-06"
-    end: "2024-04"
-  channels:
-    cv:
-      it:
-        - Gestionale di magazzino per una catena di negozi.
-        - Sincronizzazione notturna dei listini dei fornitori.
-      en:
-        - Warehouse management for a chain of shops.
-        - Nightly sync of the suppliers' price lists.
-- role:
-    it: Tech Lead
-    en: Tech Lead
-  company: Initech
-  location: Torino
+    it: Restauratore di impianti idraulici
+    en: Hydraulic systems restorer
+  company: Fontane Monumentali Srl
+  location:
+    it: Roma
+    en: Rome
   remote: false
   period:
-    start: "2016-01"
-    end: "2024-09"
+    start: "2022-01"
+    end: "2025-12"
   channels:
     cv:
       it:
-        - Manutenzione del generatore dei report TPS.
-        - Introduzione della code review nel team.
+        - Ripristino dei circuiti di ricircolo di dodici fontane storiche, senza toccare la pietra.
+        - Rilievo delle tubazioni originali in piombo, alcune del Seicento.
       en:
-        - Maintained the TPS report generator.
-        - Brought code review into the team.
+        - Restored the recirculation circuits of twelve historic fountains, without touching the stone.
+        - Surveyed the original lead pipes, some from the seventeenth century.
 - role:
-    it: Frontend Developer
-    en: Frontend Developer
-  company: Acme
-  location: Remote
-  remote: true
+    it: Idraulico di bordo
+    en: Ship's plumber
+  company: MS Acquaviva
+  location:
+    it: Mediterraneo
+    en: Mediterranean
+  remote: false
   period:
-    start: "2021-03"
-    end: "2021-05"
+    start: "2019-05"
+    end: "2021-11"
   channels:
     cv:
       it:
-        - Configuratore online di prodotti su misura.
-        - Integrazione con il corriere per le spedizioni.
+        - Manutenzione degli impianti di quattrocento cabine e della piscina sul ponte.
+        - Riduzione degli interventi d'urgenza con un registro dei guasti per cabina.
       en:
-        - Online configurator for made-to-measure products.
-        - Integration with the courier for shipping.
+        - Maintained the systems of four hundred cabins and the deck pool.
+        - Cut emergency call-outs with a fault log for each cabin.
+- role:
+    it: Idraulico, poi socio
+    en: Plumber, then partner
+  company: Idraulica Rossi & Figli
+  location: Borgo Sifone
+  remote: false
+  period:
+    start: "2006-09"
+    end: "2019-03"
+  notes: |-
+    La bottega l'ha aperta mio nonno nel 1962, con un furgone e una cassetta di
+    chiavi che uso ancora. Sono entrato a diciotto anni a portare i tubi; nel
+    2013 mio padre mi ha fatto socio, il giorno dopo che ho trovato una perdita
+    che lui cercava da una settimana. L'ho lasciata a mio fratello quando sono
+    partito per la nave.
+  channels:
+    cv:
+      it:
+        - Impianti idraulici e termici per case e piccoli negozi.
+        - Introduzione della termocamera nella ricerca perdite, al posto del martello.
+      en:
+        - Plumbing and heating systems for homes and small shops.
+        - Brought the thermal camera into leak detection, instead of the hammer.
+- role:
+    it: Tecnico delle reti idriche, part time
+    en: Water network technician, part time
+  company: Acquedotto Consortile della Val Tubata
+  location: Val Tubata
+  remote: false
+  period:
+    start: "2012-04"
+    end: "2018-10"
+  channels:
+    cv:
+      it:
+        - Turni di reperibilità notturna sulle rotture delle condotte principali.
+        - Censimento delle valvole di sezionamento, molte mai segnate sulle mappe.
+      en:
+        - Night on-call shifts for bursts on the main pipes.
+        - Survey of the isolation valves, many never marked on the maps.
+- role:
+    it: Idraulico stagionale
+    en: Seasonal plumber
+  company: Terme di Bollicine Alte
+  location: Bollicine Alte
+  remote: false
+  period:
+    start: "2015-06"
+    end: "2015-09"
+  channels:
+    cv:
+      it:
+        - Manutenzione delle vasche termali durante l'alta stagione.
+        - Sostituzione delle valvole corrose dallo zolfo.
+      en:
+        - Maintained the thermal pools during the high season.
+        - Replaced the valves corroded by sulphur.
