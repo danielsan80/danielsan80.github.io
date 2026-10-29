@@ -46,7 +46,7 @@ the values the site uses.
 ## Commands
 
 ```bash
-npm install
+bin/install      # clones .private/ if missing, then npm install
 npm run dev      # the site at localhost:5173, styleguide included
 npm run check    # types, lint, format, tests, colour contrast, design tokens
 npm run build    # styleguide, content check, Vite build, pre-rendering in dist/
