@@ -1,9 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it } from "vitest";
-import { contact } from "../../content/contact";
 import { identity } from "../../content/identity";
-import { profiles } from "../../content/profiles";
 import { highlightedProjects } from "../../content/projects";
 import { HomePage } from "./HomePage";
 
@@ -21,17 +19,16 @@ describe("HomePage", () => {
       portrait: within(intro).getByRole("img").getAttribute("src"),
       name: within(intro).getByRole("heading", { level: 1 }).textContent,
       headline: Array.from(
-        within(intro).getByText("Senior software engineer").closest("p")
-          ?.children ?? [],
+        within(intro).getByText("Master plumber").closest("p")?.children ?? [],
       ).map((line) => line.textContent),
       summary: within(intro).getByText(identity.channels.home.summary.it)
         .tagName,
     }).toEqual({
-      portrait: identity.portrait.src,
-      name: "Danilo Sanchi",
+      portrait: "/photos/portrait.svg",
+      name: "Mario Rossi",
       headline: [
-        "Senior software engineer · Hands-on consultant",
-        "Clean code lover · Hearthian at heart",
+        "Master plumber · Leak whisperer",
+        "Copper by day · Code by night",
       ],
       summary: "P",
     });
@@ -50,11 +47,11 @@ describe("HomePage", () => {
         photo: within(project).getByRole("img").getAttribute("src"),
       })),
     ).toEqual([
+      { name: "Sifone Parlante", photo: "/photos/talking-trap.svg" },
       {
-        name: "Mini Race Challenge",
-        photo: "/photos/mini-race-challenge.webp",
+        name: "Le Fontanelle di Borgo Sifone",
+        photo: "/photos/drinking-fountains.svg",
       },
-      { name: "QRiddle", photo: "/photos/qriddle.webp" },
     ]);
   });
 
@@ -77,9 +74,8 @@ describe("HomePage", () => {
     ).getAllByRole("link");
 
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
-      ...highlightedProjects.flatMap((project) =>
-        project.links.map(({ url }) => url),
-      ),
+      "https://example.com/github/mariorossi/sifone-parlante",
+      "https://example.com/fontanelle",
       "/projects",
     ]);
   });
@@ -90,8 +86,9 @@ describe("HomePage", () => {
     const links = within(screen.getByRole("contentinfo")).getAllByRole("link");
 
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
-      ...profiles.map((profile) => profile.url),
-      `mailto:${contact.email}`,
+      "https://example.com/github/mariorossi",
+      "https://www.example.com/linkedin/mario-rossi-idraulico/",
+      "mailto:mario.rossi@example.com",
     ]);
   });
 
@@ -103,8 +100,9 @@ describe("HomePage", () => {
     );
 
     expect(entries.map((entry) => entry.textContent)).toEqual([
-      ...profiles.map((profile) => `${profile.name} ${profile.handle}`),
-      `Email ${contact.email}`,
+      "GitHub mariorossi",
+      "LinkedIn mario-rossi-idraulico",
+      "Email mario.rossi@example.com",
     ]);
   });
 

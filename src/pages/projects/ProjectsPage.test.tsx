@@ -15,7 +15,7 @@ describe("ProjectsPage", () => {
     render(<ProjectsPage />);
 
     expect(
-      screen.getByRole("link", { name: "Danilo Sanchi" }).getAttribute("href"),
+      screen.getByRole("link", { name: "Mario Rossi" }).getAttribute("href"),
     ).toBe("/");
   });
 
@@ -32,10 +32,12 @@ describe("ProjectsPage", () => {
         meta: within(item).getByTestId("meta").textContent,
       })),
     ).toEqual([
-      { name: "Mini Race Challenge", meta: "collaboratore · Nov 2018 - oggi" },
-      { name: "QRiddle", meta: "autore · Dic 2025 - oggi" },
-      { name: "JobBoy", meta: "autore · Lug 2019 - Gen 2025" },
-      { name: "FixtureHandler", meta: "autore · Lug 2018 - Gen 2025" },
+      { name: "Sifone Parlante", meta: "autore · Mar 2021 - oggi" },
+      {
+        name: "Le Fontanelle di Borgo Sifone",
+        meta: "autore · Mag 2017 - Set 2019",
+      },
+      { name: "OpenRaccordi", meta: "collaboratore · Feb 2023 - Giu 2024" },
     ]);
   });
 
@@ -57,9 +59,11 @@ describe("ProjectsPage", () => {
       screen.getByRole("region", { name: "Progetti" }),
     ).getAllByRole("link");
 
-    expect(links.map((link) => link.getAttribute("href"))).toEqual(
-      projects.flatMap((project) => project.links.map(({ url }) => url)),
-    );
+    expect(links.map((link) => link.getAttribute("href"))).toEqual([
+      "https://example.com/github/mariorossi/sifone-parlante",
+      "https://example.com/fontanelle",
+      "https://example.com/github/openraccordi",
+    ]);
   });
 
   it("links every topic to the repositories that carry it", () => {
@@ -72,13 +76,8 @@ describe("ProjectsPage", () => {
     expect(
       links.map((link) => [link.textContent, link.getAttribute("href")]),
     ).toEqual([
-      ["minirace", topicSearch("topic:minirace")],
-      ["3dprint", topicSearch("topic:3dprint")],
-      ["post", topicSearch("topic:post")],
-      ["jobboy", topicSearch("topic:jobboy")],
-      ["packagist", topicSearch("topic:packagist")],
-      ["learn", topicSearch("topic:learn")],
-      ["old", topicSearch("topic:old")],
+      ["raccordi", topicSearch("topic:raccordi")],
+      ["sensori", topicSearch("topic:sensori")],
       ["senza topic", topicSearch("topics:0")],
     ]);
   });
@@ -111,4 +110,4 @@ describe("ProjectsPage", () => {
 });
 
 const topicSearch = (query: string) =>
-  `https://github.com/danielsan80?tab=repositories&q=${encodeURIComponent(query)}`;
+  `https://example.com/github/mariorossi?tab=repositories&q=${encodeURIComponent(query)}`;

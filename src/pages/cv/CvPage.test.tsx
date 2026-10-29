@@ -38,11 +38,11 @@ describe("CvPage", () => {
         .getAllByRole("link")
         .map((link) => [link.textContent, link.getAttribute("href")]),
     ).toEqual([
-      ["danilo.sanchi@gmail.com", "mailto:danilo.sanchi@gmail.com"],
-      ["danielsan80", "https://github.com/danielsan80"],
+      ["mario.rossi@example.com", "mailto:mario.rossi@example.com"],
+      ["mariorossi", "https://example.com/github/mariorossi"],
       [
-        "linkedin.com/in/danilosanchi",
-        "https://www.linkedin.com/in/danilosanchi/",
+        "example.com/linkedin/mario-rossi-idraulico",
+        "https://www.example.com/linkedin/mario-rossi-idraulico/",
       ],
       ["danilosanchi.net", "https://danilosanchi.net"],
     ]);
@@ -72,9 +72,11 @@ describe("CvPage", () => {
       within(list)
         .getAllByRole("link")
         .map((link) => link.getAttribute("href")),
-    ).toEqual(
-      projects.flatMap((project) => project.links.map((link) => link.url)),
-    );
+    ).toEqual([
+      "https://example.com/github/mariorossi/sifone-parlante",
+      "https://example.com/fontanelle",
+      "https://example.com/github/openraccordi",
+    ]);
   });
 
   it("shows the address itself, so it can be read off paper and typed back", () => {
@@ -86,14 +88,9 @@ describe("CvPage", () => {
         .getAllByRole("link")
         .map((link) => link.textContent),
     ).toEqual([
-      "miniracechallenge.com",
-      "thingiverse.com/thing:5364319",
-      "github.com/danielsan80/minirace-gate",
-      "qriddle.app",
-      "packagist.org/packages/dansan/jobboy",
-      "github.com/danielsan80/jobboy-doc/blob/master/doc/jobboy.md",
-      "packagist.org/packages/dansan/fixture-handler",
-      "github.com/danielsan80/fixture-handler",
+      "example.com/github/mariorossi/sifone-parlante",
+      "example.com/fontanelle",
+      "example.com/github/openraccordi",
     ]);
   });
 
@@ -108,11 +105,11 @@ describe("CvPage", () => {
         .map((heading) => heading.textContent)
         .at(-2),
       role: within(
-        screen.getByRole("article", { name: "Resolvi Srl" }),
+        screen.getByRole("article", { name: "Rossi Consulenze Idrauliche" }),
       ).getByRole("heading", { level: 3 }).textContent,
     }).toEqual({
       training: "Training",
-      role: "Consultant & Full Stack Developer",
+      role: "Plumbing consultant",
     });
   });
 
@@ -126,24 +123,29 @@ describe("CvPage", () => {
 
   it("heads an experience with role, company and dates", () => {
     render(<CvPage />);
-    const entry = screen.getByRole("article", { name: "Resolvi Srl" });
+    const entry = screen.getByRole("article", {
+      name: "Rossi Consulenze Idrauliche",
+    });
 
     expect({
       role: within(entry).getByRole("heading", { level: 3 }).textContent,
-      company: within(entry).getByText("Resolvi Srl").textContent,
+      company: within(entry).getByText("Rossi Consulenze Idrauliche")
+        .textContent,
       period: within(entry).getByText(/2026/).textContent,
       timeline: within(entry).getByRole("img").getAttribute("aria-label"),
     }).toEqual({
-      role: "Consulente e Full Stack Developer",
-      company: "Resolvi Srl",
-      period: "Ago 2026 - oggi",
-      timeline: "Ago 2026 - oggi",
+      role: "Consulente idraulico",
+      company: "Rossi Consulenze Idrauliche",
+      period: "Gen 2026 - oggi",
+      timeline: "Gen 2026 - oggi",
     });
   });
 
   it("prints the bullets written for the CV, not the prose written for LinkedIn", () => {
     render(<CvPage />);
-    const entry = screen.getByRole("article", { name: "Resolvi Srl" });
+    const entry = screen.getByRole("article", {
+      name: "Rossi Consulenze Idrauliche",
+    });
 
     expect(
       within(entry)

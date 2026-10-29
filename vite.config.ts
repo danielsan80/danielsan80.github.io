@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   test: {
+    alias: { "@private": "/fixtures" },
     environment: "jsdom",
     setupFiles: ["./vitest.setup.ts"],
   },
