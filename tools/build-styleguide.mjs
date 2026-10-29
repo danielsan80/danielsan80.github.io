@@ -32,57 +32,57 @@ const FONT_PAIRS = {
 
 const WEIGHTS = [400, 600];
 
-// Invented companies on the overlaps of the real CV: a long engagement running
+// Invented companies in the shapes of the real CV: a long engagement running
 // alongside two others, a short one inside it, two close together at the end.
 const ENGAGEMENTS = [
   {
     org: "Aperture Science",
     role: "Consulente",
-    start: [2026, 4],
-    end: [2026, 7],
+    start: [2025, 10],
+    end: [2026, 2],
     bullets: [
-      "Affiancamento al team di ricerca sui processi di rilascio.",
-      "Workshop di refactoring sul codice delle camere di test.",
+      "Dashboard per seguire in tempo reale le camere di test.",
+      "Riscrittura delle notifiche per i soggetti dei test.",
     ],
   },
   {
     org: "Hooli",
-    role: "Full Stack Developer",
-    start: [2025, 8],
-    end: [2026, 3],
+    role: "Backend Developer",
+    start: [2024, 11],
+    end: [2025, 7],
     bullets: [
-      "Nuove funzionalità per il CRM interno, in un team Scrum.",
-      "Migrazione graduale verso un modello a domini.",
+      "API di ricerca per l'archivio video interno.",
+      "Build ridotta da venti a cinque minuti.",
     ],
   },
   {
     org: "Globex",
     role: "Full Stack Developer",
-    start: [2020, 2],
-    end: [2025, 6],
+    start: [2019, 6],
+    end: [2024, 4],
     bullets: [
-      "Back office di una piattaforma di pagamenti a rate.",
-      "Automazione dei processi e integrazione con servizi esterni.",
+      "Gestionale di magazzino per una catena di negozi.",
+      "Sincronizzazione notturna dei listini dei fornitori.",
     ],
   },
   {
     org: "Initech",
-    role: "Lead Full Stack Developer",
-    start: [2015, 3],
-    end: [2025, 2],
+    role: "Tech Lead",
+    start: [2016, 1],
+    end: [2024, 9],
     bullets: [
-      "Guida tecnica di un team di quattro sviluppatori.",
-      "Formazione interna su TDD e design a oggetti.",
+      "Manutenzione del generatore dei report TPS.",
+      "Introduzione della code review nel team.",
     ],
   },
   {
     org: "Acme",
-    role: "Solo Full Stack Developer",
-    start: [2018, 11],
-    end: [2019, 2],
+    role: "Frontend Developer",
+    start: [2021, 3],
+    end: [2021, 5],
     bullets: [
-      "Ripristino di una piattaforma ferma da tre anni, a scopo demo.",
-      "Documentazione per chi l'avrebbe ripresa in mano.",
+      "Configuratore online di prodotti su misura.",
+      "Integrazione con il corriere per le spedizioni.",
     ],
   },
 ];
@@ -627,7 +627,7 @@ ${Object.entries(FONT_PAIRS)
     ([key, pair]) => `    <div class="specimen pair-${key}">
       <p class="name">${pair.label}</p>
       <p class="display">Danilo Sanchi</p>
-      <p class="metadata">Ago 2025 – Mar 2026 · PHP · Symfony · ~11 anni</p>
+      <p class="metadata">Nov 2024 – Lug 2025 · PHP · Symfony · ~11 anni</p>
       <p>Costruisco applicazioni web con cura dal 2007, in ufficio e in garage. I progetti personali non sono rumore: sono lo stesso mestiere applicato per divertimento.</p>
       <p class="metadata">github.com/danielsan80 — JobBoy v2.1.0 — 0fbd59</p>
       <p class="quiet" style="font-size:0.8rem">${pair.note}</p>
@@ -640,7 +640,7 @@ ${Object.entries(FONT_PAIRS)
   ${[
     ["3rem", "Danilo Sanchi"],
     ["1.75rem", "Experience"],
-    ["1.15rem", "Lead Full Stack Developer"],
+    ["1.15rem", "Tech Lead"],
     ["1rem", "Testo corrente del CV, densità alta."],
     ["0.85rem", "Metadato secondario"],
   ]
