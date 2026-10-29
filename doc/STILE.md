@@ -1,8 +1,8 @@
 # Stile e identità visiva
 
 Decisioni sul linguaggio visivo del sito. Card di riferimento: `SITE-16`.
-Il ragionamento esteso che ha portato qui è in
-[conversazioni/2026-07-22-stile.md](conversazioni/2026-07-22-stile.md).
+Il ragionamento esteso che ha portato qui è nel repository privato, in
+`doc/conversazioni/2026-07-22-stile.md`.
 
 ## Direzione
 
