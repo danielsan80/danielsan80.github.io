@@ -80,7 +80,7 @@ export function CvPage() {
           </span>
           <span>
             <SiteIcon />
-            <a href="https://danilosanchi.net">danilosanchi.net</a>
+            <a href={contact.website}>{address(contact.website)}</a>
           </span>
         </p>
       </header>

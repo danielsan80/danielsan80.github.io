@@ -33,6 +33,7 @@ export const identitySchema = z.strictObject({
 
 export const contactSchema = z.strictObject({
   email: z.string(),
+  website: z.string(),
 });
 
 export const profileSchema = z.strictObject({

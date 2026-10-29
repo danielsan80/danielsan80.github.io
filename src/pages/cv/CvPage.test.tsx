@@ -44,7 +44,7 @@ describe("CvPage", () => {
         "example.com/linkedin/mario-rossi-idraulico",
         "https://www.example.com/linkedin/mario-rossi-idraulico/",
       ],
-      ["danilosanchi.net", "https://danilosanchi.net"],
+      ["mariorossi.example.com", "https://mariorossi.example.com/"],
     ]);
   });
 
