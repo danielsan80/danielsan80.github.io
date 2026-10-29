@@ -6,6 +6,8 @@ archiviate in [DONE.md](DONE.md).
 
 Regole d'uso in `.claude/skills/kanban/SKILL.md`, o `/kanban` da Claude Code.
 
+## EPIC
+
 ## IDEAS
 
 ## BACKLOG
@@ -16,7 +18,9 @@ Regole d'uso in `.claude/skills/kanban/SKILL.md`, o `/kanban` da Claude Code.
 
 ### Feature
 
-### Operativo
+### Tech
+
+### Operations
 
 ### Spike
 

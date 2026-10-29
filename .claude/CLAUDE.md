@@ -64,12 +64,6 @@ Decisioni in `.private/doc/TONO.md`: una sola voce, con la densità che cambia p
 
 ## Kanban
 
-Board di progetto su Jira: sito `danilosanchi.atlassian.net`, progetto `danilosanchi.net`, key `SITE`, cloudId `b922ac38-2f7a-4785-bf54-caf2eb9045e4`. Usa i tool MCP `mcp__atlassian__*`.
+Skill `/kanban`, board a file in `.private/kanban/`, nel repo privato. Le chiavi `SITE-n` nelle card e in `DONE.md` vengono dalla board Jira usata fino al 2026-10-29.
 
-La skill `/kanban` (regole in `.claude/skills/kanban/`, board a file in `doc/kanban/`) è temporaneamente disabilitata: si sta provando Jira. Se la prova non convince, si migra tutto sui file.
-
-Attriti noti dell'integrazione MCP, da valutare nella prova:
-
-- **Il rank non è esposto**: si possono creare, leggere, modificare e transizionare le issue, ma non ordinarle nel backlog. L'ordine va trascinato in UI. La sequenza consigliata è annotata come commento su `SITE-1`.
-
-Criterio di ripartizione: qui stanno le decisioni durevoli che servono all'inizio di ogni sessione; su Jira il lavoro da fare e il ragionamento legato al singolo item.
+Criterio di ripartizione: qui stanno le decisioni durevoli che servono all'inizio di ogni sessione; nelle card il lavoro da fare e il ragionamento legato al singolo item.
