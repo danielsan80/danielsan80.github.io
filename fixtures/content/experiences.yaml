@@ -1,0 +1,107 @@
+- role:
+    it: Consulente
+    en: Consultant
+  company: Vandelay Industries
+  location: Remote
+  remote: true
+  period:
+    start: "2026-05"
+  channels:
+    cv:
+      it:
+        - Piattaforma di import-export per un produttore di lattice.
+        - Integrazione con i servizi doganali.
+      en:
+        - Import-export platform for a latex manufacturer.
+        - Integration with the customs services.
+- role:
+    it: Consulente
+    en: Consultant
+  company: Aperture Science
+  location: Remote
+  remote: true
+  period:
+    start: "2025-10"
+    end: "2026-02"
+  notes: |-
+    Qui va tutto quello che si ricorda dell'incarico, anche quello che non
+    finirà mai su un CV: le notes restano nel repository privato.
+  channels:
+    cv:
+      it:
+        - Dashboard per seguire in tempo reale le camere di test.
+        - Riscrittura delle notifiche per i soggetti dei test.
+      en:
+        - Dashboard to follow the test chambers in real time.
+        - Rewrote the notifications for the test subjects.
+    linkedin:
+      it: Ho costruito la dashboard delle camere di test e riscritto le notifiche per i soggetti.
+      en: I built the test chamber dashboard and rewrote the notifications for the subjects.
+- role:
+    it: Backend Developer
+    en: Backend Developer
+  company: Hooli
+  location: Remote
+  remote: true
+  period:
+    start: "2024-11"
+    end: "2025-07"
+  channels:
+    cv:
+      it:
+        - API di ricerca per l'archivio video interno.
+        - Build ridotta da venti a cinque minuti.
+      en:
+        - Search API for the internal video archive.
+        - Cut the build from twenty minutes to five.
+- role:
+    it: Full Stack Developer
+    en: Full Stack Developer
+  company: Globex
+  location: Remote
+  remote: true
+  period:
+    start: "2019-06"
+    end: "2024-04"
+  channels:
+    cv:
+      it:
+        - Gestionale di magazzino per una catena di negozi.
+        - Sincronizzazione notturna dei listini dei fornitori.
+      en:
+        - Warehouse management for a chain of shops.
+        - Nightly sync of the suppliers' price lists.
+- role:
+    it: Tech Lead
+    en: Tech Lead
+  company: Initech
+  location: Torino
+  remote: false
+  period:
+    start: "2016-01"
+    end: "2024-09"
+  channels:
+    cv:
+      it:
+        - Manutenzione del generatore dei report TPS.
+        - Introduzione della code review nel team.
+      en:
+        - Maintained the TPS report generator.
+        - Brought code review into the team.
+- role:
+    it: Frontend Developer
+    en: Frontend Developer
+  company: Acme
+  location: Remote
+  remote: true
+  period:
+    start: "2021-03"
+    end: "2021-05"
+  channels:
+    cv:
+      it:
+        - Configuratore online di prodotti su misura.
+        - Integrazione con il corriere per le spedizioni.
+      en:
+        - Online configurator for made-to-measure products.
+        - Integration with the courier for shipping.

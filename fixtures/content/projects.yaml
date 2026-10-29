@@ -1,0 +1,59 @@
+- name: Desk Robot
+  role: author
+  period:
+    start: "2022-05"
+  notes: |-
+    Le notes non si pubblicano mai: servono a chi scrive, per tenere accanto ai
+    testi i fatti da cui vengono. Il check le valida, la build le toglie.
+  channels:
+    site:
+      it: Un robot da scrivania che saluta quando arriva una mail importante e finge di non vedere le altre.
+      en: A desk robot that waves when an important email arrives and pretends not to see the others.
+    cv:
+      it: Robot da scrivania con firmware in C++ e scocca stampata in 3D.
+      en: Desk robot with C++ firmware and a 3D printed shell.
+  links:
+    - label: GitHub
+      url: https://example.com/github/ada-segnaposto/desk-robot
+  highlight:
+    photo:
+      src: /photos/desk-robot.svg
+      alt:
+        it: Una foto segnaposto del robot
+        en: A placeholder photo of the robot
+- name: Pomodoro CLI
+  role: author
+  period:
+    start: "2019-01"
+    end: "2020-06"
+  channels:
+    site:
+      it: Un timer pomodoro da terminale, nato per smettere di aprire il browser e cercarne uno.
+      en: A terminal pomodoro timer, born to stop opening the browser to look for one.
+    cv:
+      it: Timer pomodoro da riga di comando, pubblicato come pacchetto npm.
+      en: Command line pomodoro timer, published as an npm package.
+  links:
+    - label: npm
+      url: https://example.com/npm/pomodoro-cli
+  highlight:
+    photo:
+      src: /photos/pomodoro-cli.svg
+      alt:
+        it: Una schermata segnaposto del timer
+        en: A placeholder screenshot of the timer
+- name: Some Framework
+  role: contributor
+  period:
+    start: "2017-04"
+    end: "2018-02"
+  channels:
+    site:
+      it: Qualche correzione alla documentazione e un bug sui fusi orari.
+      en: A few fixes to the docs and a time zone bug.
+    cv:
+      it: Contributi alla documentazione e correzione di un bug sui fusi orari.
+      en: Documentation contributions and a time zone bug fix.
+  links:
+    - label: GitHub
+      url: https://example.com/github/some-framework

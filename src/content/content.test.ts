@@ -6,7 +6,9 @@ import {
   dateViolations,
   formatViolation,
   schemaViolations,
+  siteContent,
 } from "./validate";
+import { fixtureContent } from "./fixtures";
 
 const TODAY = Date.UTC(2026, 7, 26);
 
@@ -319,7 +321,22 @@ describe("dateViolations", () => {
 
 describe("contentViolations", () => {
   it("finds nothing to report in the content the site ships", () => {
-    expect(contentViolations(TODAY)).toEqual([]);
+    expect(contentViolations(siteContent, TODAY)).toEqual([]);
+  });
+
+  it("finds nothing to report in the fixtures, which stand in for it in a public clone", () => {
+    expect(contentViolations(fixtureContent, TODAY)).toEqual([]);
+  });
+
+  it("names a collection that has no file", () => {
+    expect(
+      contentViolations({ ...fixtureContent, topics: undefined }, TODAY),
+    ).toEqual([
+      {
+        path: "topics",
+        message: "Invalid input: expected array, received undefined",
+      },
+    ]);
   });
 });
 

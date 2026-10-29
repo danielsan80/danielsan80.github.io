@@ -1,0 +1,19 @@
+name: Ada Segnaposto
+portrait:
+  src: /photos/portrait.svg
+  alt:
+    it: Un ritratto segnaposto
+    en: A placeholder portrait
+channels:
+  home:
+    headline:
+      - [Software engineer, Weekend tinkerer]
+      - [Test first, Coffee second]
+    summary:
+      it: "Non esisto: sono il contenuto finto di questo repository, quello che lo fa partire a chi non ha accesso al repository privato. Se esistessi, passerei le giornate fra il codice e il banco da lavoro, a costruire cose che servono e qualcuna che non serve."
+      en: "I do not exist: I am the fake content of this repository, the one that runs it for those without access to the private repository. If I existed, I would spend my days between the code and the workbench, building things that are useful and a few that are not."
+  cv:
+    headline: Software Engineer · Freelance
+    summary:
+      it: Sviluppo applicazioni web dal 2016, come freelance dal 2019. Ogni riga di questo CV è inventata, ma la forma è quella vera.
+      en: I have been building web applications since 2016, as a freelancer since 2019. Every line of this CV is made up, but the shape is the real one.

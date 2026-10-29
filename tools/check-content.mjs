@@ -4,7 +4,9 @@
 //
 // Vite loads the rules for us: src/content/validate.ts is TypeScript, and it
 // imports YAML through the plugin in vite.config.ts. The with-notes mode is
-// the only one that keeps the private notes, so they are checked too.
+// the only one that keeps the private notes, so they are checked too. The
+// fixtures, which stand in for the content in a public clone, are checked
+// against the same rules, so they cannot fall behind the schemas.
 
 import { createServer } from "vite";
 
@@ -16,10 +18,18 @@ const server = await createServer({
 
 let lines;
 try {
-  const { contentViolations, formatViolation } = await server.ssrLoadModule(
-    "/src/content/validate.ts",
+  const { contentViolations, formatViolation, siteContent } =
+    await server.ssrLoadModule("/src/content/validate.ts");
+  const { fixtureContent } = await server.ssrLoadModule(
+    "/src/content/fixtures.ts",
   );
-  lines = contentViolations(Date.now()).map(formatViolation);
+  const today = Date.now();
+  lines = [
+    ...contentViolations(siteContent, today).map(formatViolation),
+    ...contentViolations(fixtureContent, today).map(
+      (violation) => `fixtures: ${formatViolation(violation)}`,
+    ),
+  ];
 } finally {
   await server.close();
 }
@@ -31,4 +41,4 @@ if (lines.length > 0) {
   process.exit(1);
 }
 
-console.log("Content checked: schema and dates.");
+console.log("Content and fixtures checked: schema and dates.");

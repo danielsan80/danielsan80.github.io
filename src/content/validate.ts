@@ -69,30 +69,48 @@ export function dateViolations(
   });
 }
 
-export function contentViolations(today: number): Violation[] {
-  const collections: [string, z.ZodType, unknown][] = [
-    ["identity", identitySchema, identity],
-    ["contact", contactSchema, contact],
-    ["profiles", z.array(profileSchema), profiles],
-    ["experiences", z.array(experienceSchema), experiences],
-    ["education", z.array(educationSchema), education],
-    ["training", z.array(trainingSchema), training],
-    ["skills", z.array(skillGroupSchema), skills],
-    ["projects", z.array(projectSchema), projects],
-    ["topics", z.array(topicSchema), topics],
-  ];
+const schemas = {
+  identity: identitySchema,
+  contact: contactSchema,
+  profiles: z.array(profileSchema),
+  experiences: z.array(experienceSchema),
+  education: z.array(educationSchema),
+  training: z.array(trainingSchema),
+  skills: z.array(skillGroupSchema),
+  projects: z.array(projectSchema),
+  topics: z.array(topicSchema),
+};
 
-  const shape = collections.flatMap(([name, schema, data]) =>
-    schemaViolations(schema, data, name),
-  );
+export type Content = Record<keyof typeof schemas, unknown>;
+
+const DATED = ["experiences", "education", "training", "projects"] as const;
+
+export const siteContent: Content = {
+  identity,
+  contact,
+  profiles,
+  experiences,
+  education,
+  training,
+  skills,
+  projects,
+  topics,
+};
+
+export function contentViolations(
+  content: Content,
+  today: number,
+): Violation[] {
+  const collections = Object.entries(schemas);
+  const shape = collections.flatMap(([name, schema]) => {
+    const data = content[name as keyof Content];
+    return schemaViolations(schema, data, name);
+  });
   if (shape.length > 0) {
     return shape;
   }
 
-  return [
-    ...dateViolations(experiences, "experiences", today),
-    ...dateViolations(education, "education", today),
-    ...dateViolations(training, "training", today),
-    ...dateViolations(projects, "projects", today),
-  ];
+  return DATED.flatMap((name) =>
+    dateViolations(content[name] as { period: Period }[], name, today),
+  );
 }

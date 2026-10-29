@@ -1,0 +1,17 @@
+- label: robots
+  query: topic:robots
+  description:
+    it: I robot da scrivania, firmware e modelli 3D.
+    en: The desk robots, firmware and 3D models.
+- label: learn
+  query: topic:learn
+  description:
+    it: "Studio: workshop, libri, esercizi."
+    en: "Study: workshops, books, exercises."
+- label:
+    it: senza topic
+    en: no topic
+  query: topics:0
+  description:
+    it: I repository ancora da classificare, fork compresi.
+    en: The repositories not yet classified, forks included.

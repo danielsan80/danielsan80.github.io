@@ -1,0 +1,20 @@
+- category:
+    it: Linguaggi di programmazione
+    en: Programming languages
+  items:
+    - name: TypeScript
+      level: expert
+    - name: PHP
+      level: advanced
+    - name: Python
+      level: proficient
+- category:
+    it: Practices
+    en: Practices
+  items:
+    - name: TDD
+      level: expert
+    - name:
+        it: Tecniche di Refactoring
+        en: Refactoring techniques
+      level: advanced

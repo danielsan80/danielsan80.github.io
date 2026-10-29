@@ -1,0 +1,10 @@
+- institution:
+    it: Università di Esempio
+    en: University of Example
+  location: Esempio, XX
+  title:
+    it: Laurea magistrale in Informatica
+    en: Master's degree in Computer Science
+  period:
+    start: "2009-09"
+    end: "2014-10"
