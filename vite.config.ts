@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
     react(),
     yaml(mode === "with-notes" ? {} : { transform: withoutNotes }),
   ],
+  resolve: {
+    alias: { "@private": "/.private" },
+  },
   build: {
     rollupOptions: {
       input: {

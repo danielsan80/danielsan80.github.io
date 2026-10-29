@@ -17,13 +17,17 @@ The site speaks Italian by default and English on request.
 
 ## Content
 
-Everything the pages say lives in `src/content/` as YAML, checked against Zod
-schemas at build time: a record that does not fit its schema, or a date that
-does not exist, stops the build.
+Everything the pages say lives in `.private/content/` as YAML, checked against
+the Zod schemas in `src/content/` at build time: a record that does not fit
+its schema, or a date that does not exist, stops the build.
 
 The same content feeds the site, the CV and my LinkedIn profile. Texts written
 for one place sit under `channels` (`home`, `cv`, `linkedin`), so each record
 says where its words end up.
+
+`.private/` is a clone of the private `danielsan80.github.io-private`
+repository, ignored by this one: some records carry notes that are never
+published. Without it the site does not build.
 
 ## How it is built
 

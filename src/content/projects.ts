@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import data from "./projects.yaml";
+import data from "@private/content/projects.yaml";
 import type { projectSchema } from "./schema";
 
 export type Project = z.infer<typeof projectSchema>;
