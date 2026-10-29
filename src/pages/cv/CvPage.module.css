@@ -142,8 +142,8 @@
 }
 
 /* Two columns for studies: the institution and the title on the left, place and
-   dates stacked on the right. Three columns would squeeze names as long as
-   «"P. Gobetti" Technical Institute for Business». */
+   dates stacked on the right. Three columns would squeeze the long names of
+   schools, which can run past fifty characters. */
 .studiesHead {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -197,9 +197,9 @@
   color: var(--accent-text);
 }
 
-/* A notch smaller than the body, which is also what makes the three addresses
-   of Mini Race Challenge fit on one line: at body size they want 677px and the
-   column offers 649. They still wrap rather than overflow. */
+/* A notch smaller than the body, which is also what makes three addresses of
+   a project fit on one line: in the real CV, at body size, they want 677px and
+   the column offers 649. They still wrap rather than overflow. */
 .projectLinks {
   display: flex;
   flex-wrap: wrap;

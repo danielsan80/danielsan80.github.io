@@ -51,7 +51,7 @@ Unificazioni che evitano duplicazione:
 I separatori-timeline del CV sono un **elemento identitario da mantenere**: sono ciò che distingue visivamente questo CV.
 
 - Posizioni **calcolate dalle date** a build time. In ohmycv erano percentuali hardcoded (`left: 98.78%`): non vanno replicate.
-- Le **sovrapposizioni temporali sono volute**, non errori: anni da freelance con collaborazioni in parallelo (Idrolab/Soisy si sovrappongono per cinque anni). Il modello dati non deve assumere sequenzialità e la timeline deve mostrarle, non appiattirle.
+- Le **sovrapposizioni temporali sono volute**, non errori: anni da freelance con collaborazioni in parallelo (due si sovrappongono per cinque anni). Il modello dati non deve assumere sequenzialità e la timeline deve mostrarle, non appiattirle.
 - Va gestito il ruolo in corso (`end` assente), la data singola (corso di due giorni) e il range aperto ("Dal 2009").
 
 ### Stile
