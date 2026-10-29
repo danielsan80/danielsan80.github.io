@@ -89,3 +89,8 @@ through it with a redirect: old links to `danilosanchi.net/qriddle/` keep
 working.
 
 The previous site, a Jekyll list of links, is kept in the `v1-jekyll-2024` tag.
+
+## License
+
+Everything in this repository, code, fixtures and documents alike, is under the
+[MIT license](LICENSE). The content in `.private/` is not part of it.
