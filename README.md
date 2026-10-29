@@ -57,6 +57,22 @@ npm run build    # styleguide, content check, Vite build, pre-rendering in dist/
 Every push to `master` runs `npm run check` and `npm run build` on GitHub
 Actions, and publishes `dist/` to GitHub Pages.
 
+The workflow checks out the private repository into `.private/` with a
+read-only deploy key, kept in the `PRIVATE_DEPLOY_KEY` secret. To create it,
+or replace it:
+
+```bash
+key=$(mktemp -d)/private-deploy-key
+ssh-keygen -t ed25519 -N "" -C "danielsan80.github.io CI" -f "$key"
+gh repo deploy-key add "$key.pub" -R danielsan80/danielsan80.github.io-private \
+  --title "danielsan80.github.io CI"
+gh secret set PRIVATE_DEPLOY_KEY -R danielsan80/danielsan80.github.io < "$key"
+rm "$key" "$key.pub"
+```
+
+To replace a key, remove the old one first: `gh repo deploy-key list` and
+`gh repo deploy-key delete` on the private repository.
+
 The site lives in the `danielsan80.github.io` repository on purpose: it is my
 GitHub user site, and project sites are served under its domain. Those with a
 domain of their own, such as [QRiddle](https://qriddle.app), are reached
