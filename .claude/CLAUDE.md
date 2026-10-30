@@ -14,13 +14,11 @@ Incoerenze note: dominio `danilosanchi.net` ma site name `danielsan80` e author 
 
 ### Obiettivo
 
-Revisione del sito, con personal branding unico per il lavoro e per il mondo nerd/geek/opensource. **Non sono due brand da separare**: il filo conduttore è la stessa persona, un esploratore e un costruttore, in ufficio e in garage. I progetti personali (Mini Race Challenge, QRiddle, JobBoy, FixtureHandler) sono elemento differenziante anche verso chi assume, non rumore da nascondere.
-
-**La home parla della persona e dei suoi progetti**, non del lavoro: il lavoro è una parte della vita, con un rimando, non il tema della pagina.
-
-Sorgente del CV: `.private/content/`, clone del repo privato `danielsan80/danielsan80.github.io-private`; schemi e moduli in `src/content/`. Il CV fatto prima con ohMyCV sta fuori dal repo, in `~/Documenti/Projects/Lavoro/CV/ohMyCv/`: non si aggiorna più.
+Nel repo privato: @../.private/doc/OBIETTIVO.md
 
 ### Architettura dei contenuti
+
+Sorgente del CV: `.private/content/`, clone del repo privato `danielsan80/danielsan80.github.io-private`; schemi e moduli in `src/content/`.
 
 - `/` — la persona: ritratto, nome, headline, summary, i progetti in evidenza, "Dove trovarmi" (profili ed email). Non linka il CV.
 - `/projects` — tutti i progetti, poi i repo GitHub per topic: link alle ricerche GitHub, non elenchi di repo. I topic sono curati in `topics.yaml`; "senza topic" chiude l'elenco e copre i repo non classificati.
