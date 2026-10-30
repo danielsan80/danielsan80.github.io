@@ -28,7 +28,7 @@
 }
 
 /* The theme buttons read the choice from the root, where the inline script in
-   each page stamps it before the first paint: aria-pressed only catches up
+   each page applies it before the first paint: aria-pressed only catches up
    once React has hydrated. */
 .button[aria-current="page"],
 :root:not([data-theme]) .button[data-theme-choice="auto"],

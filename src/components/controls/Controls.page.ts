@@ -10,10 +10,8 @@ export class ControlsPage {
     return screen.getByRole("link", { current: "page" }).textContent;
   }
 
-  pressedThemes() {
-    return screen
-      .getAllByRole("button", { pressed: true })
-      .map((button) => button.textContent);
+  currentTheme() {
+    return screen.getByRole("button", { pressed: true }).textContent;
   }
 
   languages() {

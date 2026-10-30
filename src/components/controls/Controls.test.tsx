@@ -11,7 +11,7 @@ afterEach(() => {
 });
 
 const theme = () => ({
-  stamped: document.documentElement.dataset.theme,
+  applied: document.documentElement.dataset.theme,
   stored: localStorage.getItem("theme"),
 });
 
@@ -21,8 +21,8 @@ describe("Controls", () => {
 
     expect({
       lang: controls.currentLanguage(),
-      themes: controls.pressedThemes(),
-    }).toEqual({ lang: "EN", themes: ["Auto"] });
+      theme: controls.currentTheme(),
+    }).toEqual({ lang: "EN", theme: "Auto" });
   });
 
   it("leads to the same page in each language, Italian first, the default", () => {
@@ -42,12 +42,12 @@ describe("Controls", () => {
     expect(localStorage.getItem("lang")).toBe("en");
   });
 
-  it("stamps the chosen theme on the document and remembers it", async () => {
+  it("applies the chosen theme to the document and remembers it", async () => {
     render(<Controls page="home" lang="it" />);
 
     await controls.clickTheme("Dark");
 
-    expect(theme()).toEqual({ stamped: "dark", stored: "dark" });
+    expect(theme()).toEqual({ applied: "dark", stored: "dark" });
   });
 
   it("goes back to the light theme when asked again", async () => {
@@ -56,7 +56,7 @@ describe("Controls", () => {
     await controls.clickTheme("Dark");
     await controls.clickTheme("Light");
 
-    expect(theme()).toEqual({ stamped: "light", stored: "light" });
+    expect(theme()).toEqual({ applied: "light", stored: "light" });
   });
 
   it("gives the page back to the system on Auto, forgetting the choice", async () => {
@@ -65,6 +65,6 @@ describe("Controls", () => {
     await controls.clickTheme("Dark");
     await controls.clickTheme("Auto");
 
-    expect(theme()).toEqual({ stamped: undefined, stored: null });
+    expect(theme()).toEqual({ applied: undefined, stored: null });
   });
 });

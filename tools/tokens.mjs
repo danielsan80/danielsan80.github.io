@@ -63,7 +63,7 @@ ${colourDeclarations("dark", "    ")}
   }
 }
 
-/* The theme toggle stamps data-theme on the root, and it wins over the media
+/* The theme toggle applies the theme as data-theme on the root, and it wins over the media
    query in both directions. */
 :root[data-theme="dark"] {
 ${colourDeclarations("dark")}
@@ -74,7 +74,7 @@ ${colourDeclarations("light")}
 }
 
 /* On paper the light tokens always win, whatever the reader picked on screen.
-   The selector has to match data-theme too: the toggle stamps it, and on equal
+   The selector has to match data-theme too: the toggle sets it, and on equal
    specificity the later rule is the one that counts. */
 @media print {
   :root,
