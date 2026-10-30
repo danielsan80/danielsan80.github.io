@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import faviconSvg from "../../public/favicon.svg?raw";
 import cv from "../../cv.html?raw";
 import cvEn from "../../en/cv.html?raw";
 import homeEn from "../../en/index.html?raw";
@@ -86,6 +87,25 @@ describe("page documents", () => {
       projectsEn: "/favicon.svg",
       cvEn: "/favicon.svg",
     });
+  });
+
+  it("draws the icon as the grid of the skill marker, the top right cell left empty", () => {
+    const cells = Array.from(
+      new DOMParser()
+        .parseFromString(faviconSvg, "image/svg+xml")
+        .querySelectorAll("rect"),
+    ).map((cell) => `${cell.getAttribute("x")},${cell.getAttribute("y")}`);
+
+    expect(cells).toEqual([
+      "1,1",
+      "6,1",
+      "1,6",
+      "6,6",
+      "11,6",
+      "1,11",
+      "6,11",
+      "11,11",
+    ]);
   });
 
   it("names every page by the address it is served from, without a trailing slash past the home", () => {

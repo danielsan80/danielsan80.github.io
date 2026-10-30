@@ -218,8 +218,9 @@ va sopra, centrata, e il testo resta allineato a sinistra. Il summary è giustif
 a sinistra su mobile, dove gli spazi si aprirebbero troppo.
 
 **Favicon**: la griglia 3×3 del marcatore skill, con otto celle piene e quella in alto
-a destra vuota — c'è sempre da imparare. È l'ordine di riempimento del marcatore,
-quindi non è un segno nuovo. Celle da 4px con spazi e margine di 1px, perché ogni
+a destra trasparente — c'è sempre da imparare. È l'ordine di riempimento del
+marcatore, quindi non è un segno nuovo; ma la cella vuota non è grigia come nel
+marcatore, perché a 16px un quadrato grigio sembra un pixel sbagliato. Celle da 4px con spazi e margine di 1px, perché ogni
 bordo cada su un pixel intero a 16px. I due verdi sono scritti a mano nell'SVG, che
 non vede i token.
 
