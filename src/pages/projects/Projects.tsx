@@ -41,7 +41,7 @@ export function Projects({ lang }: { lang: Lang }) {
                 {pick(ROLES[project.role], lang)} ·{" "}
                 {periodLabel(project.period, lang)}
               </p>
-              <p className={styles.summary}>
+              <p className={styles.summary} data-testid="summary">
                 {pick(project.channels.site, lang)}
               </p>
               <ul className={styles.links}>
