@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import cv from "../../cv.html?raw";
 import cvEn from "../../en/cv.html?raw";
 import homeEn from "../../en/index.html?raw";
@@ -36,12 +36,28 @@ const alternates = (page: string) =>
     (link) => [link.getAttribute("hreflang"), link.getAttribute("href")],
   );
 
+const SITE = "https://danilosanchi.net";
+
 // What the page runs before it draws: the inline script, the one without a src.
-const themeOnLoad = (page: string, stored: string) => {
-  localStorage.setItem("theme", stored);
+// It runs on a stand-in for the address, which jsdom cannot navigate.
+const headScript = (
+  page: string,
+  { path, referrer = "" }: { path: string; referrer?: string },
+) => {
   const script = head(page).querySelector("script:not([src])");
-  new Function(script?.textContent ?? "")();
-  return document.documentElement.dataset.theme;
+  const location = {
+    origin: SITE,
+    pathname: path,
+    replace: vi.fn(),
+  };
+  new Function("location", "document", script?.textContent ?? "")(location, {
+    documentElement: document.documentElement,
+    referrer,
+  });
+  return {
+    theme: document.documentElement.dataset.theme,
+    redirect: location.replace.mock.calls.at(0)?.at(0) ?? null,
+  };
 };
 
 afterEach(() => {
@@ -112,7 +128,9 @@ describe("page documents", () => {
   });
 
   it("applies the stored theme before the page draws, on every page", () => {
-    expect(eachPage((page) => themeOnLoad(page, "dark"))).toEqual({
+    localStorage.setItem("theme", "dark");
+
+    expect(eachPage((page) => headScript(page, { path: "/" }).theme)).toEqual({
       home: "dark",
       projects: "dark",
       cv: "dark",
@@ -120,5 +138,44 @@ describe("page documents", () => {
       projectsEn: "dark",
       cvEn: "dark",
     });
+  });
+
+  it("sends whoever chose English, arriving from outside, to the English version before the page draws", () => {
+    localStorage.setItem("lang", "en");
+
+    expect({
+      home: headScript(home, { path: "/" }).redirect,
+      projects: headScript(projects, { path: "/projects" }).redirect,
+      cv: headScript(cv, { path: "/cv" }).redirect,
+    }).toEqual({ home: "/en/", projects: "/en/projects", cv: "/en/cv" });
+  });
+
+  it("leaves the Italian page to whoever arrives from another page of the site, where the language was chosen", () => {
+    localStorage.setItem("lang", "en");
+
+    expect(
+      headScript(projects, {
+        path: "/projects",
+        referrer: `${SITE}/en/projects`,
+      }).redirect,
+    ).toBeNull();
+  });
+
+  it("leaves the Italian page to whoever chose Italian", () => {
+    localStorage.setItem("lang", "it");
+
+    expect(headScript(home, { path: "/" }).redirect).toBeNull();
+  });
+
+  it("leaves the Italian page to whoever never chose", () => {
+    expect(headScript(home, { path: "/" }).redirect).toBeNull();
+  });
+
+  it("keeps whoever opens an English page there, whatever they chose before", () => {
+    localStorage.setItem("lang", "it");
+
+    expect(
+      eachPage((page) => headScript(page, { path: "/en/" }).redirect),
+    ).toMatchObject({ homeEn: null, projectsEn: null, cvEn: null });
   });
 });

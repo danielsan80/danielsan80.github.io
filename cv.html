@@ -15,8 +15,15 @@
         if (theme === "light" || theme === "dark") {
           document.documentElement.dataset.theme = theme;
         }
+        // Arriving from the site, the language was chosen on the way here.
+        if (
+          localStorage.getItem("lang") === "en" &&
+          !document.referrer.startsWith(`${location.origin}/`)
+        ) {
+          location.replace(`/en${location.pathname}`);
+        }
       } catch {
-        // No storage, no stored theme: the page follows the system.
+        // No storage, no stored choice: the system theme, in Italian.
       }
     </script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

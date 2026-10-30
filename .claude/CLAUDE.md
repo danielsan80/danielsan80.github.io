@@ -36,7 +36,7 @@ Unificazioni che evitano duplicazione:
 ### Identità e lingua
 
 - Identità principale: **Danilo Sanchi** (nome reale). `danielsan80` resta come handle GitHub storico, ma il sito lo lega esplicitamente alla persona.
-- Sito **bilingue, italiano di default**: ogni pagina ha un template e un pre-render per lingua, l'italiano alla radice (`/`, `/projects`, `/cv`), l'inglese sotto `/en` (`/en/`, `/en/projects`, `/en/cv`). Il selettore (IT prima di EN) è un link alla stessa pagina nell'altra lingua. La headline della home è solo in inglese, pensata così.
+- Sito **bilingue, italiano di default**: ogni pagina ha un template e un pre-render per lingua, l'italiano alla radice (`/`, `/projects`, `/cv`), l'inglese sotto `/en` (`/en/`, `/en/projects`, `/en/cv`). Il selettore (IT prima di EN) è un link alla stessa pagina nell'altra lingua e salva la scelta; chi l'ha scelto e arriva da fuori sul sito italiano viene mandato all'inglese dallo script inline del `<head>`, prima del primo paint. La headline della home è solo in inglese, pensata così.
 
 ### Scelte tecniche
 
