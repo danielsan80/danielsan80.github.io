@@ -1,20 +1,19 @@
-import { render, screen, within } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
 import { projects } from "../../content/projects";
 import { training } from "../../content/training";
 import { Cv } from "./Cv";
+import { CvPage } from "./Cv.page";
+
+const cvPage = new CvPage();
 
 describe("Cv", () => {
   it("keeps the sections of the CV, in the order the CV has them", () => {
     render(<Cv lang="it" />);
 
-    expect(
-      screen
-        .getAllByRole("heading", { level: 2 })
-        .map((heading) => heading.textContent),
-    ).toEqual([
+    expect(cvPage.sectionTitles()).toEqual([
       "Summary",
       "Projects",
       "Experience",
@@ -26,109 +25,76 @@ describe("Cv", () => {
 
   it("heads the page with the contacts, the handle linked to its profile", () => {
     render(<Cv lang="it" />);
-    const header = screen.getByRole("banner");
 
-    expect(
-      within(header)
-        .getAllByRole("link")
-        .map((link) => [link.textContent, link.getAttribute("href")]),
-    ).toEqual([
-      ["mario.rossi@example.com", "mailto:mario.rossi@example.com"],
-      ["mariorossi", "https://example.com/github/mariorossi"],
-      [
-        "example.com/linkedin/mario-rossi-idraulico",
-        "https://www.example.com/linkedin/mario-rossi-idraulico/",
-      ],
-      ["mariorossi.example.com", "https://mariorossi.example.com/"],
+    expect(cvPage.contacts()).toEqual([
+      {
+        text: "mario.rossi@example.com",
+        href: "mailto:mario.rossi@example.com",
+      },
+      { text: "mariorossi", href: "https://example.com/github/mariorossi" },
+      {
+        text: "example.com/linkedin/mario-rossi-idraulico",
+        href: "https://www.example.com/linkedin/mario-rossi-idraulico/",
+      },
+      {
+        text: "mariorossi.example.com",
+        href: "https://mariorossi.example.com/",
+      },
     ]);
   });
 
   it("describes each project with the text written for the CV", () => {
     render(<Cv lang="it" />);
-    const items = within(
-      screen.getByRole("list", { name: "Projects" }),
-    ).getAllByRole("listitem");
     const openings = projects.map(
       (project) => `${project.name} — ${project.channels.cv.it}`,
     );
 
     expect(
-      items.map((item, index) =>
-        item.textContent?.slice(0, openings[index].length),
-      ),
+      cvPage.projects
+        .entries()
+        .map((entry, index) => entry?.slice(0, openings[index].length)),
     ).toEqual(openings);
   });
 
-  it("tells where to find each project, with the links from the content", () => {
+  it("tells where to find each project with the links from the content, showing the address itself, so it can be read off paper and typed back", () => {
     render(<Cv lang="it" />);
-    const list = screen.getByRole("list", { name: "Projects" });
 
-    expect(
-      within(list)
-        .getAllByRole("link")
-        .map((link) => link.getAttribute("href")),
-    ).toEqual([
-      "https://example.com/github/mariorossi/sifone-parlante",
-      "https://example.com/fontanelle",
-      "https://example.com/github/openraccordi",
+    expect(cvPage.projects.links()).toEqual([
+      {
+        text: "example.com/github/mariorossi/sifone-parlante",
+        href: "https://example.com/github/mariorossi/sifone-parlante",
+      },
+      {
+        text: "example.com/fontanelle",
+        href: "https://example.com/fontanelle",
+      },
+      {
+        text: "example.com/github/openraccordi",
+        href: "https://example.com/github/openraccordi",
+      },
     ]);
-  });
-
-  it("shows the address itself, so it can be read off paper and typed back", () => {
-    render(<Cv lang="it" />);
-    const list = screen.getByRole("list", { name: "Projects" });
-
-    expect(
-      within(list)
-        .getAllByRole("link")
-        .map((link) => link.textContent),
-    ).toEqual([
-      "example.com/github/mariorossi/sifone-parlante",
-      "example.com/fontanelle",
-      "example.com/github/openraccordi",
-    ]);
-  });
-
-  it("speaks English at its English address", () => {
-    render(<Cv lang="en" />);
-
-    expect({
-      training: screen
-        .getAllByRole("heading", { level: 2 })
-        .map((heading) => heading.textContent)
-        .at(-2),
-      role: within(
-        screen.getByRole("article", { name: "Rossi Consulenze Idrauliche" }),
-      ).getByRole("heading", { level: 3 }).textContent,
-    }).toEqual({
-      training: "Training",
-      role: "Plumbing consultant",
-    });
   });
 
   it("gives every dated entry its own timeline", () => {
     render(<Cv lang="it" />);
 
-    expect(screen.getAllByRole("img").length).toBe(
+    expect(cvPage.timelineCount()).toBe(
       experiences.length + education.length + training.length,
     );
   });
 
   it("heads an experience with role, company and dates", () => {
     render(<Cv lang="it" />);
-    const entry = screen.getByRole("article", {
-      name: "Rossi Consulenze Idrauliche",
-    });
+    const experience = cvPage.experience("Rossi Consulenze Idrauliche");
 
     expect({
-      role: within(entry).getByRole("heading", { level: 3 }).textContent,
-      company: within(entry).getByText("Rossi Consulenze Idrauliche")
-        .textContent,
-      period: within(entry).getByText(/2026/).textContent,
-      timeline: within(entry).getByRole("img").getAttribute("aria-label"),
+      role: experience.role(),
+      where: experience.where(),
+      period: experience.period(),
+      timeline: experience.timeline(),
     }).toEqual({
       role: "Consulente idraulico",
-      company: "Rossi Consulenze Idrauliche",
+      where: "Rossi Consulenze Idrauliche, Borgo Sifone · remote",
       period: "Gen 2026 - oggi",
       timeline: "Gen 2026 - oggi",
     });
@@ -136,14 +102,31 @@ describe("Cv", () => {
 
   it("prints the bullets written for the CV, not the prose written for LinkedIn", () => {
     render(<Cv lang="it" />);
-    const entry = screen.getByRole("article", {
-      name: "Rossi Consulenze Idrauliche",
-    });
 
-    expect(
-      within(entry)
-        .getAllByRole("listitem")
-        .map((item) => item.textContent),
-    ).toEqual(experiences[0].channels.cv.it);
+    expect(cvPage.experience("Rossi Consulenze Idrauliche").bullets()).toEqual(
+      experiences[0].channels.cv.it,
+    );
+  });
+
+  it("speaks English at its English address", () => {
+    render(<Cv lang="en" />);
+    const experience = cvPage.experience("Rossi Consulenze Idrauliche");
+
+    expect({
+      sections: cvPage.sectionTitles(),
+      role: experience.role(),
+      bullets: experience.bullets(),
+    }).toEqual({
+      sections: [
+        "Summary",
+        "Projects",
+        "Experience",
+        "Education",
+        "Training",
+        "Skills",
+      ],
+      role: "Plumbing consultant",
+      bullets: experiences[0].channels.cv.en,
+    });
   });
 });

@@ -119,7 +119,7 @@ export function Cv({ lang }: { lang: Lang }) {
             {lane(experience.period)}
             <div className={styles.entryHead}>
               <h3 className={styles.role}>{pick(experience.role, lang)}</h3>
-              <p className={styles.where}>
+              <p className={styles.where} data-testid="where">
                 <span>{experience.company}</span>,{" "}
                 {pick(experience.location, lang)}
                 {experience.remote ? (
@@ -129,7 +129,7 @@ export function Cv({ lang }: { lang: Lang }) {
                   </>
                 ) : null}
               </p>
-              <p className={styles.dates}>
+              <p className={styles.dates} data-testid="period">
                 {periodLabel(experience.period, lang)}
               </p>
             </div>
