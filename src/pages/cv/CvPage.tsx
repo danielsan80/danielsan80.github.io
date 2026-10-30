@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { Controls } from "../../components/controls/Controls";
-import { useLang } from "../../components/controls/preferences";
 import { Marker } from "../../components/skills/Marker";
 import { Lane } from "../../components/timeline/Lane";
 import { domainOf } from "../../components/timeline/placement";
@@ -8,7 +6,7 @@ import { contact } from "../../content/contact";
 import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
 import { identity } from "../../content/identity";
-import { pick } from "../../content/localized";
+import { pick, type Lang } from "../../content/localized";
 import { profiles } from "../../content/profiles";
 import { projects } from "../../content/projects";
 import { skills } from "../../content/skills";
@@ -45,20 +43,14 @@ const address = (url: string) =>
 // pre-rendered markup has to match what the browser draws when it hydrates.
 const DOMAIN = domainOf(dated, Date.now());
 
-export function CvPage() {
-  const [lang] = useLang();
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
+export function CvPage({ lang }: { lang: Lang }) {
   const lane = (period: Period) => (
     <Lane period={period} domain={DOMAIN} lang={lang} />
   );
 
   return (
     <main className={styles.page}>
-      <Controls />
+      <Controls page="cv" lang={lang} />
 
       <header className={styles.heading}>
         <h1 className={styles.name}>{identity.name}</h1>

@@ -1,26 +1,29 @@
 import { render, screen, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { pick } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { topics } from "../../content/topics";
 import { ProjectsPage } from "./ProjectsPage";
 
-// The language is remembered on purpose, so it has to be forgotten between
-// tests or the first one that switches it decides for the rest.
-afterEach(() => localStorage.clear());
-
 describe("ProjectsPage", () => {
   it("leads back to the home, by the name of the person", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
 
     expect(
       screen.getByRole("link", { name: "Mario Rossi" }).getAttribute("href"),
     ).toBe("/");
   });
 
+  it("keeps to English, leading back to the English home", () => {
+    render(<ProjectsPage lang="en" />);
+
+    expect(
+      screen.getByRole("link", { name: "Mario Rossi" }).getAttribute("href"),
+    ).toBe("/en/");
+  });
+
   it("shows every project, with the role and the period, in the order of the file", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
 
     const items = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -42,7 +45,7 @@ describe("ProjectsPage", () => {
   });
 
   it("describes each project with the text written for the site", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
     const region = screen.getByRole("region", { name: "Progetti" });
 
     expect(
@@ -53,7 +56,7 @@ describe("ProjectsPage", () => {
   });
 
   it("links every project to all the places it lives", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -67,7 +70,7 @@ describe("ProjectsPage", () => {
   });
 
   it("links every topic to the repositories that carry it", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Su GitHub" }),
@@ -82,10 +85,8 @@ describe("ProjectsPage", () => {
     ]);
   });
 
-  it("switches the whole page to English", async () => {
-    render(<ProjectsPage />);
-
-    await userEvent.click(screen.getByRole("button", { name: "English" }));
+  it("speaks English at its English address", () => {
+    render(<ProjectsPage lang="en" />);
 
     expect({
       heading: screen.getByRole("heading", { level: 1 }).textContent,
@@ -95,7 +96,7 @@ describe("ProjectsPage", () => {
   });
 
   it("describes each topic in a line", () => {
-    render(<ProjectsPage />);
+    render(<ProjectsPage lang="it" />);
 
     expect(
       within(screen.getByRole("region", { name: "Su GitHub" }))

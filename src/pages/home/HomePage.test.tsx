@@ -1,17 +1,12 @@
 import { render, screen, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { identity } from "../../content/identity";
 import { highlightedProjects } from "../../content/projects";
 import { HomePage } from "./HomePage";
 
-// The language is remembered on purpose, so it has to be forgotten between
-// tests or the first one that switches it decides for the rest.
-afterEach(() => localStorage.clear());
-
 describe("HomePage", () => {
   it("introduces the person: portrait, real name, headline and a few lines about them", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     const intro = screen.getByRole("banner");
 
@@ -35,7 +30,7 @@ describe("HomePage", () => {
   });
 
   it("shows only the highlighted projects, each with its photo", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     const projects = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -56,7 +51,7 @@ describe("HomePage", () => {
   });
 
   it("describes each highlighted project with the text written for the site", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
     const region = screen.getByRole("region", { name: "Progetti" });
 
     expect(
@@ -67,7 +62,7 @@ describe("HomePage", () => {
   });
 
   it("links every highlighted project to all the places it lives, then to all the projects", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -80,8 +75,16 @@ describe("HomePage", () => {
     ]);
   });
 
+  it("keeps to English, linking all the projects in English", () => {
+    render(<HomePage lang="en" />);
+
+    expect(
+      screen.getByRole("link", { name: "All projects →" }).getAttribute("href"),
+    ).toBe("/en/projects");
+  });
+
   it("gathers every profile and the way to write, in the footer", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     const links = within(screen.getByRole("contentinfo")).getAllByRole("link");
 
@@ -93,7 +96,7 @@ describe("HomePage", () => {
   });
 
   it("shows the handle next to each profile, so the same person is recognisable, and the address last among them", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     const entries = within(screen.getByRole("contentinfo")).getAllByRole(
       "listitem",
@@ -107,7 +110,7 @@ describe("HomePage", () => {
   });
 
   it("keeps the CV off the page: its link is handed out, not published", () => {
-    render(<HomePage />);
+    render(<HomePage lang="it" />);
 
     expect(
       screen
@@ -117,10 +120,8 @@ describe("HomePage", () => {
     ).toEqual([]);
   });
 
-  it("switches the whole page to English", async () => {
-    render(<HomePage />);
-
-    await userEvent.click(screen.getByRole("button", { name: "English" }));
+  it("speaks English at its English address", () => {
+    render(<HomePage lang="en" />);
 
     expect({
       summary: screen.getByText(identity.channels.home.summary.en).tagName,

@@ -5,6 +5,7 @@ const FIXTURE = {
   html: "fixture.html",
   module: "/tools/fixtures/FixturePage.tsx",
   component: "FixturePage",
+  lang: "en",
 };
 
 describe("injectMarkup", () => {
@@ -27,13 +28,16 @@ describe("injectMarkup", () => {
 });
 
 describe("renderPages", () => {
-  it("renders a page module to markup, TSX and CSS module classes included", async () => {
+  it("renders a page module to markup in the language of the page, TSX and CSS module classes included", async () => {
     const rendered = await renderPages([FIXTURE]);
 
     expect(
       rendered.map(({ html, markup }) => [html, scrubHashes(markup)]),
     ).toEqual([
-      ["fixture.html", '<p class="_box_HASH">Rendered without a browser.</p>'],
+      [
+        "fixture.html",
+        '<p class="_box_HASH" lang="en">Rendered without a browser.</p>',
+      ],
     ]);
   });
 

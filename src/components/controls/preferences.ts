@@ -45,30 +45,15 @@ function subscribe(listener: () => void) {
 
 const announce = () => listeners.forEach((listener) => listener());
 
-// The pre-rendered file is written in Italian and carries no theme, so that is
-// what the server snapshot has to say. The stored choice arrives on the first
-// client read, and React swaps it in after hydration.
-export function useLang(): [Lang, (lang: Lang) => void] {
-  const lang = useSyncExternalStore(
-    subscribe,
-    () => {
-      const stored = read("lang");
-      return stored === "it" || stored === "en" ? stored : "it";
-    },
-    () => "it" as Lang,
-  );
-
-  return [
-    lang,
-    (chosen: Lang) => {
-      write("lang", chosen);
-      announce();
-    },
-  ];
+// The address decides the language of a page. What is stored is the choice
+// for the pages opened later at their Italian address.
+export function rememberLang(lang: Lang): void {
+  write("lang", lang);
 }
 
 // With nothing stored the page follows the system, through the media query in
-// tokens.css: Auto is the absence of a choice, not a third theme.
+// tokens.css: Auto is the absence of a choice, not a third theme. The
+// pre-rendered file carries no theme, so the server snapshot says Auto.
 export function useTheme(): [ThemeChoice, (choice: ThemeChoice) => void] {
   const choice = useSyncExternalStore(
     subscribe,

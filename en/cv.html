@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danilo Sanchi — CV</title>
+    <meta
+      name="description"
+      content="The CV of Danilo Sanchi, software engineer: roles, projects, education and skills, on one printable page."
+    />
+    <meta name="robots" content="noindex" />
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        // No storage, no stored theme: the page follows the system.
+      }
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://danilosanchi.net/en/cv" />
+    <link rel="alternate" hreflang="it" href="https://danilosanchi.net/cv" />
+    <link rel="alternate" hreflang="en" href="https://danilosanchi.net/en/cv" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://danilosanchi.net/cv"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/pages/cv/main.tsx"></script>
+  </body>
+</html>

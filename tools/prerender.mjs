@@ -6,7 +6,7 @@ import { createElement } from "react";
 import { renderToString } from "react-dom/server";
 import { createServer } from "vite";
 
-export const PAGES = [
+const ITALIAN_PAGES = [
   {
     html: "index.html",
     module: "/src/pages/home/HomePage.tsx",
@@ -23,6 +23,15 @@ export const PAGES = [
     component: "CvPage",
   },
 ];
+
+// Every page has a template per language: the English ones sit under en/.
+export const PAGES = ["it", "en"].flatMap((lang) =>
+  ITALIAN_PAGES.map((page) => ({
+    ...page,
+    html: lang === "it" ? page.html : `${lang}/${page.html}`,
+    lang,
+  })),
+);
 
 const ROOT_ELEMENT = '<div id="root"></div>';
 
@@ -55,7 +64,7 @@ export async function renderPages(pages) {
 
       rendered.push({
         html: page.html,
-        markup: renderToString(createElement(Page)),
+        markup: renderToString(createElement(Page, { lang: page.lang })),
       });
     }
 

@@ -19,6 +19,7 @@
   color: var(--text-muted);
   font: inherit;
   line-height: 1.6;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -29,7 +30,7 @@
 /* The theme buttons read the choice from the root, where the inline script in
    each page stamps it before the first paint: aria-pressed only catches up
    once React has hydrated. */
-.button[aria-pressed="true"]:not([data-theme-choice]),
+.button[aria-current="page"],
 :root:not([data-theme]) .button[data-theme-choice="auto"],
 :root[data-theme="light"] .button[data-theme-choice="light"],
 :root[data-theme="dark"] .button[data-theme-choice="dark"] {

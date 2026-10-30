@@ -1,27 +1,21 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { Controls } from "../../components/controls/Controls";
-import { useLang } from "../../components/controls/preferences";
 import { contact } from "../../content/contact";
 import { identity } from "../../content/identity";
-import { pick } from "../../content/localized";
+import { pick, type Lang } from "../../content/localized";
 import { profiles } from "../../content/profiles";
 import { highlightedProjects } from "../../content/projects";
+import { pagePath } from "../../site/paths";
 import styles from "./HomePage.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
 const MORE_PROJECTS = { it: "Tutti i progetti", en: "All projects" };
 const FIND_ME = { it: "Dove trovarmi", en: "Find me" };
 
-export function HomePage() {
-  const [lang] = useLang();
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
+export function HomePage({ lang }: { lang: Lang }) {
   return (
     <div className={styles.page}>
-      <Controls />
+      <Controls page="home" lang={lang} />
 
       <header className={styles.intro}>
         <img
@@ -81,7 +75,9 @@ export function HomePage() {
           ))}
 
           <p className={styles.moreProjects}>
-            <a href="/projects">{pick(MORE_PROJECTS, lang)} →</a>
+            <a href={pagePath("projects", lang)}>
+              {pick(MORE_PROJECTS, lang)} →
+            </a>
           </p>
         </section>
       </main>

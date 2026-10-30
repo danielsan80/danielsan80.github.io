@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danilo Sanchi</title>
+    <meta
+      name="description"
+      content="Danilo Sanchi, software engineer since 2007 and hands-on consultant. Projects: Mini Race Challenge, QRiddle and more."
+    />
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        // No storage, no stored theme: the page follows the system.
+      }
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://danilosanchi.net/en/" />
+    <link rel="alternate" hreflang="it" href="https://danilosanchi.net/" />
+    <link rel="alternate" hreflang="en" href="https://danilosanchi.net/en/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://danilosanchi.net/"
+    />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://danilosanchi.net/en/" />
+    <meta property="og:site_name" content="Danilo Sanchi" />
+    <meta property="og:title" content="Danilo Sanchi" />
+    <meta
+      property="og:description"
+      content="Software engineer since 2007 and hands-on consultant. Projects: Mini Race Challenge, QRiddle and more."
+    />
+    <meta
+      property="og:image"
+      content="https://danilosanchi.net/photos/portrait.webp"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="profile:first_name" content="Danilo" />
+    <meta property="profile:last_name" content="Sanchi" />
+    <meta property="profile:username" content="danielsan80" />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/pages/home/main.tsx"></script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 import type { Lang } from "../../content/localized";
+import { pagePath, type Page } from "../../site/paths";
 import styles from "./Controls.module.css";
-import { useLang, useTheme, type ThemeChoice } from "./preferences";
+import { rememberLang, useTheme, type ThemeChoice } from "./preferences";
 
 const LANGUAGES: [Lang, string][] = [
   ["it", "Italiano"],
@@ -13,24 +14,24 @@ const THEMES: [ThemeChoice, string][] = [
   ["dark", "Dark"],
 ];
 
-export function Controls() {
-  const [lang, chooseLang] = useLang();
+export function Controls({ page, lang }: { page: Page; lang: Lang }) {
   const [theme, chooseTheme] = useTheme();
 
   return (
     <div className={styles.controls}>
       <div className={styles.group}>
         {LANGUAGES.map(([code, name]) => (
-          <button
+          <a
             key={code}
-            type="button"
             className={styles.button}
+            href={pagePath(page, code)}
+            hrefLang={code}
             aria-label={name}
-            aria-pressed={code === lang}
-            onClick={() => chooseLang(code)}
+            aria-current={code === lang ? "page" : undefined}
+            onClick={() => rememberLang(code)}
           >
             {code.toUpperCase()}
-          </button>
+          </a>
         ))}
       </div>
 

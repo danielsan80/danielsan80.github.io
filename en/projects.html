@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danilo Sanchi — Projects</title>
+    <meta
+      name="description"
+      content="The projects of Danilo Sanchi and the GitHub repositories, grouped by topic."
+    />
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        // No storage, no stored theme: the page follows the system.
+      }
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://danilosanchi.net/en/projects" />
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://danilosanchi.net/projects"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://danilosanchi.net/en/projects"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://danilosanchi.net/projects"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/pages/projects/main.tsx"></script>
+  </body>
+</html>

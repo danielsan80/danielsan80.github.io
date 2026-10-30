@@ -13,7 +13,9 @@ My personal site: who I am, the projects I am working on, and where to find me.
   indexed: I hand the link out myself.
 - `/styleguide` — the visual language of the site, for reference.
 
-The site speaks Italian by default and English on request.
+The site speaks Italian at these addresses and English under `/en`
+(`/en/`, `/en/projects`, `/en/cv`): the language switch links one to the
+other.
 
 ## Content
 
@@ -41,9 +43,10 @@ clone: to clone the private repository later, remove it first.
 ## How it is built
 
 Vite and React, without a router: each page is its own HTML file (`index.html`,
-`projects.html`, `cv.html`) with its own React app. At build time every page is
+`projects.html`, `cv.html`, and their English versions in `en/`) with its own
+React app. At build time every page is
 rendered to HTML with `renderToString`, so it reads without JavaScript and
-prints as it is; React then hydrates it for the language and theme controls.
+prints as it is; React then hydrates it for the controls.
 
 The visual choices, and the reasons behind them, are in
 [`doc/STILE.md`](doc/STILE.md). The

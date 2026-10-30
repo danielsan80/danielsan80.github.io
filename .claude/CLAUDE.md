@@ -36,12 +36,12 @@ Unificazioni che evitano duplicazione:
 ### Identità e lingua
 
 - Identità principale: **Danilo Sanchi** (nome reale). `danielsan80` resta come handle GitHub storico, ma il sito lo lega esplicitamente alla persona.
-- Sito **bilingue, italiano di default**: le pagine sono pre-renderizzate in italiano, l'inglese si sceglie dal selettore (IT prima di EN). La headline della home è solo in inglese, pensata così.
+- Sito **bilingue, italiano di default**: ogni pagina ha un template e un pre-render per lingua, l'italiano alla radice (`/`, `/projects`, `/cv`), l'inglese sotto `/en` (`/en/`, `/en/projects`, `/en/cv`). Il selettore (IT prima di EN) è un link alla stessa pagina nell'altra lingua. La headline della home è solo in inglese, pensata così.
 
 ### Scelte tecniche
 
 - **Vite + React**, output statico. Il pre-rendering è un requisito, non un optional: il CV deve essere HTML già renderizzato per crawler, indicizzazione e stampa in PDF. Va risolto esplicitamente.
-- **Pagine HTML separate, niente router** (`SITE-5`). Ogni pagina è un entry di Vite con la sua app React: `index.html`, `projects.html` e `cv.html` sono **file piatti nella radice**, così gli URL non hanno lo slash finale (`/projects`, non `/projects/`). Gli URL esistono davvero — linkabili, stampabili, pre-renderizzabili con uno script `renderToString` invece che con un framework. Lo stato che deve sopravvivere alla navigazione (tema, lingua) sta in `localStorage`, non in memoria. Il tema ha Auto (segue il sistema, il default), Light e Dark; uno script inline nel `<head>` di ogni pagina applica quello salvato prima del primo paint. Le due direzioni non costano uguale: da qui si può passare a un router, il contrario è un rifacimento.
+- **Pagine HTML separate, niente router** (`SITE-5`). Ogni pagina è un entry di Vite con la sua app React: `index.html`, `projects.html` e `cv.html` sono **file piatti nella radice** (le versioni inglesi in `en/`), così gli URL non hanno lo slash finale (`/projects`, non `/projects/`). Gli URL esistono davvero — linkabili, stampabili, pre-renderizzabili con uno script `renderToString` invece che con un framework. Lo stato che deve sopravvivere alla navigazione (tema, lingua) sta in `localStorage`, non in memoria. Il tema ha Auto (segue il sistema, il default), Light e Dark; uno script inline nel `<head>` di ogni pagina applica quello salvato prima del primo paint. Le due direzioni non costano uguale: da qui si può passare a un router, il contrario è un rifacimento.
 - **Contenuti in file versionati** nel repo: yaml/json/md con frontmatter. Nessun CMS, si editano da qui.
 - **Struttura aperta a nuovi tipi di contenuto** (blog, talk, note): aggiungerne uno deve costare un file di dati più un template, non un refactoring. Senza però costruire astrazioni per contenuti che non esistono ancora.
 - **Hosting**: oggi GitHub Pages, da confermare.

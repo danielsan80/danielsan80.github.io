@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import { Controls } from "../../components/controls/Controls";
-import { useLang } from "../../components/controls/preferences";
 import { identity } from "../../content/identity";
-import { pick } from "../../content/localized";
+import { pick, type Lang } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { periodLabel } from "../../content/time/labels";
 import { repositorySearch, topics } from "../../content/topics";
+import { pagePath } from "../../site/paths";
 import styles from "./ProjectsPage.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
@@ -15,19 +14,13 @@ const ROLES = {
   contributor: { it: "collaboratore", en: "contributor" },
 };
 
-export function ProjectsPage() {
-  const [lang] = useLang();
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
+export function ProjectsPage({ lang }: { lang: Lang }) {
   return (
     <div className={styles.page}>
-      <Controls />
+      <Controls page="projects" lang={lang} />
 
       <header className={styles.heading}>
-        <a className={styles.home} href="/">
+        <a className={styles.home} href={pagePath("home", lang)}>
           {identity.name}
         </a>
         <h1 className={styles.title} id="projects">
