@@ -1,43 +1,43 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { Controls } from "./Controls";
+import { ControlsPage } from "./Controls.page";
+
+const controls = new ControlsPage();
 
 afterEach(() => {
   localStorage.clear();
   delete document.documentElement.dataset.theme;
 });
 
-const languages = () =>
-  screen.getAllByRole("link", { name: /^(English|Italiano)$/ });
+const theme = () => ({
+  stamped: document.documentElement.dataset.theme,
+  stored: localStorage.getItem("theme"),
+});
 
 describe("Controls", () => {
   it("marks what is in use — the language of the page, and the theme of the system", () => {
     render(<Controls page="home" lang="en" />);
 
     expect({
-      lang: screen.getByRole("link", { current: "page" }).textContent,
-      theme: screen
-        .getAllByRole("button", { pressed: true })
-        .map((button) => button.textContent),
-    }).toEqual({ lang: "EN", theme: ["Auto"] });
+      lang: controls.currentLanguage(),
+      themes: controls.pressedThemes(),
+    }).toEqual({ lang: "EN", themes: ["Auto"] });
   });
 
   it("leads to the same page in each language, Italian first, the default", () => {
     render(<Controls page="projects" lang="it" />);
 
-    expect(
-      languages().map((link) => [link.textContent, link.getAttribute("href")]),
-    ).toEqual([
-      ["IT", "/projects"],
-      ["EN", "/en/projects"],
+    expect(controls.languages()).toEqual([
+      { code: "IT", href: "/projects" },
+      { code: "EN", href: "/en/projects" },
     ]);
   });
 
   it("remembers the language chosen, for the pages opened later", async () => {
     render(<Controls page="home" lang="it" />);
 
-    await userEvent.click(screen.getByRole("link", { name: "English" }));
+    await controls.clickLanguage("English");
 
     expect(localStorage.getItem("lang")).toBe("en");
   });
@@ -45,35 +45,26 @@ describe("Controls", () => {
   it("stamps the chosen theme on the document and remembers it", async () => {
     render(<Controls page="home" lang="it" />);
 
-    await userEvent.click(screen.getByRole("button", { name: /dark/i }));
+    await controls.clickTheme("Dark");
 
-    expect({
-      stamped: document.documentElement.dataset.theme,
-      stored: localStorage.getItem("theme"),
-    }).toEqual({ stamped: "dark", stored: "dark" });
+    expect(theme()).toEqual({ stamped: "dark", stored: "dark" });
   });
 
   it("goes back to the light theme when asked again", async () => {
     render(<Controls page="home" lang="it" />);
 
-    await userEvent.click(screen.getByRole("button", { name: /dark/i }));
-    await userEvent.click(screen.getByRole("button", { name: /light/i }));
+    await controls.clickTheme("Dark");
+    await controls.clickTheme("Light");
 
-    expect({
-      stamped: document.documentElement.dataset.theme,
-      stored: localStorage.getItem("theme"),
-    }).toEqual({ stamped: "light", stored: "light" });
+    expect(theme()).toEqual({ stamped: "light", stored: "light" });
   });
 
   it("gives the page back to the system on Auto, forgetting the choice", async () => {
     render(<Controls page="home" lang="it" />);
 
-    await userEvent.click(screen.getByRole("button", { name: /dark/i }));
-    await userEvent.click(screen.getByRole("button", { name: /auto/i }));
+    await controls.clickTheme("Dark");
+    await controls.clickTheme("Auto");
 
-    expect({
-      stamped: document.documentElement.dataset.theme,
-      stored: localStorage.getItem("theme"),
-    }).toEqual({ stamped: undefined, stored: null });
+    expect(theme()).toEqual({ stamped: undefined, stored: null });
   });
 });
