@@ -26,7 +26,11 @@ export function Home({ lang }: { lang: Lang }) {
         <h1 className={styles.name}>{identity.name}</h1>
         <p className={styles.headline} lang="en">
           {identity.channels.home.headline.map((line) => (
-            <span key={line.join()} className={styles.headlineLine}>
+            <span
+              key={line.join()}
+              className={styles.headlineLine}
+              data-testid="headline-line"
+            >
               {line.map((item, index) => (
                 <Fragment key={item}>
                   {index > 0 && <span className={styles.separator}> · </span>}
@@ -36,7 +40,7 @@ export function Home({ lang }: { lang: Lang }) {
             </span>
           ))}
         </p>
-        <p className={styles.summary}>
+        <p className={styles.summary} data-testid="summary">
           {pick(identity.channels.home.summary, lang)}
         </p>
       </header>
