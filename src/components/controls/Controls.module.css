@@ -27,9 +27,22 @@
   border-left: 1px solid var(--border);
 }
 
-/* The theme buttons read the choice from the root, where the inline script in
-   each page applies it before the first paint: aria-pressed only catches up
-   once React has hydrated. */
+/* The native radio gives the arrow keys and the group semantics; the label
+   is what shows. */
+.radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button:has(.radio:focus-visible) {
+  outline: 2px solid var(--accent-mark);
+  outline-offset: 1px;
+}
+
+/* The theme choices read the choice from the root, where the inline script in
+   each page applies it before the first paint: the checked radio only catches
+   up once React has hydrated. */
 .button[aria-current="page"],
 :root:not([data-theme]) .button[data-theme-choice="auto"],
 :root[data-theme="light"] .button[data-theme-choice="light"],

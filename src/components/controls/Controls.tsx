@@ -35,18 +35,19 @@ export function Controls({ page, lang }: { page: Page; lang: Lang }) {
         ))}
       </div>
 
-      <div className={styles.group}>
+      <div className={styles.group} role="radiogroup" aria-label="Theme">
         {THEMES.map(([code, name]) => (
-          <button
-            key={code}
-            type="button"
-            className={styles.button}
-            data-theme-choice={code}
-            aria-pressed={code === theme}
-            onClick={() => chooseTheme(code)}
-          >
+          <label key={code} className={styles.button} data-theme-choice={code}>
+            <input
+              className={styles.radio}
+              type="radio"
+              name="theme"
+              value={code}
+              checked={code === theme}
+              onChange={() => chooseTheme(code)}
+            />
             {name}
-          </button>
+          </label>
         ))}
       </div>
     </div>

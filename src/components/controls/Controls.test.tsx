@@ -22,7 +22,7 @@ describe("Controls", () => {
     expect({
       lang: controls.currentLanguage(),
       theme: controls.currentTheme(),
-    }).toEqual({ lang: "EN", theme: "Auto" });
+    }).toEqual({ lang: "EN", theme: "auto" });
   });
 
   it("leads to the same page in each language, Italian first, the default", () => {
@@ -40,6 +40,31 @@ describe("Controls", () => {
     await controls.clickLanguage("English");
 
     expect(localStorage.getItem("lang")).toBe("en");
+  });
+
+  // jsdom moves among radios with the arrows even without a shared name; a
+  // browser does not, and lets more than one be checked.
+  it("offers the themes as one choice among three, Auto first", () => {
+    render(<Controls page="home" lang="it" />);
+
+    expect(controls.themes()).toEqual([
+      { value: "auto", group: "theme" },
+      { value: "light", group: "theme" },
+      { value: "dark", group: "theme" },
+    ]);
+  });
+
+  it("moves to the next theme with the arrow keys, applying it", async () => {
+    render(<Controls page="home" lang="it" />);
+
+    await controls.clickTheme("Auto");
+    await controls.pressArrowRight();
+
+    expect({ current: controls.currentTheme(), ...theme() }).toEqual({
+      current: "light",
+      applied: "light",
+      stored: "light",
+    });
   });
 
   it("applies the chosen theme to the document and remembers it", async () => {

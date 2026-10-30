@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 type LanguageName = "Italiano" | "English";
@@ -11,7 +11,16 @@ export class ControlsPage {
   }
 
   currentTheme() {
-    return screen.getByRole("button", { pressed: true }).textContent;
+    return screen.getByRole("radio", { checked: true }).getAttribute("value");
+  }
+
+  themes() {
+    return within(screen.getByRole("radiogroup", { name: "Theme" }))
+      .getAllByRole("radio")
+      .map((radio) => ({
+        value: radio.getAttribute("value"),
+        group: radio.getAttribute("name"),
+      }));
   }
 
   languages() {
@@ -28,6 +37,10 @@ export class ControlsPage {
   }
 
   async clickTheme(name: ThemeName) {
-    await userEvent.click(screen.getByRole("button", { name }));
+    await userEvent.click(screen.getByRole("radio", { name }));
+  }
+
+  async pressArrowRight() {
+    await userEvent.keyboard("{ArrowRight}");
   }
 }
