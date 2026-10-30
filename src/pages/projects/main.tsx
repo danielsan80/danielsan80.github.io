@@ -1,4 +1,4 @@
 import { mount } from "../mount";
-import { ProjectsPage } from "./ProjectsPage";
+import { Projects } from "./Projects";
 
-mount(ProjectsPage);
+mount(Projects);

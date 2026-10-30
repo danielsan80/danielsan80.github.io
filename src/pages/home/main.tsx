@@ -1,4 +1,4 @@
 import { mount } from "../mount";
-import { HomePage } from "./HomePage";
+import { Home } from "./Home";
 
-mount(HomePage);
+mount(Home);

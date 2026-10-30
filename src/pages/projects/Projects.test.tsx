@@ -3,11 +3,11 @@ import { describe, expect, it } from "vitest";
 import { pick } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { topics } from "../../content/topics";
-import { ProjectsPage } from "./ProjectsPage";
+import { Projects } from "./Projects";
 
-describe("ProjectsPage", () => {
+describe("Projects", () => {
   it("leads back to the home, by the name of the person", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
 
     expect(
       screen.getByRole("link", { name: "Mario Rossi" }).getAttribute("href"),
@@ -15,7 +15,7 @@ describe("ProjectsPage", () => {
   });
 
   it("keeps to English, leading back to the English home", () => {
-    render(<ProjectsPage lang="en" />);
+    render(<Projects lang="en" />);
 
     expect(
       screen.getByRole("link", { name: "Mario Rossi" }).getAttribute("href"),
@@ -23,7 +23,7 @@ describe("ProjectsPage", () => {
   });
 
   it("shows every project, with the role and the period, in the order of the file", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
 
     const items = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -45,7 +45,7 @@ describe("ProjectsPage", () => {
   });
 
   it("describes each project with the text written for the site", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
     const region = screen.getByRole("region", { name: "Progetti" });
 
     expect(
@@ -56,7 +56,7 @@ describe("ProjectsPage", () => {
   });
 
   it("links every project to all the places it lives", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -70,7 +70,7 @@ describe("ProjectsPage", () => {
   });
 
   it("links every topic to the repositories that carry it", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Su GitHub" }),
@@ -86,7 +86,7 @@ describe("ProjectsPage", () => {
   });
 
   it("speaks English at its English address", () => {
-    render(<ProjectsPage lang="en" />);
+    render(<Projects lang="en" />);
 
     expect({
       heading: screen.getByRole("heading", { level: 1 }).textContent,
@@ -96,7 +96,7 @@ describe("ProjectsPage", () => {
   });
 
   it("describes each topic in a line", () => {
-    render(<ProjectsPage lang="it" />);
+    render(<Projects lang="it" />);
 
     expect(
       within(screen.getByRole("region", { name: "Su GitHub" }))

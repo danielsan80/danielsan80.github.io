@@ -1,4 +1,4 @@
-import styles from "./CvPage.module.css";
+import styles from "./Cv.module.css";
 
 type IconProps = {
   path: string;

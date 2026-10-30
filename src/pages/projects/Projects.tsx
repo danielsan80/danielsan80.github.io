@@ -5,7 +5,7 @@ import { projects } from "../../content/projects";
 import { periodLabel } from "../../content/time/labels";
 import { repositorySearch, topics } from "../../content/topics";
 import { pagePath } from "../../site/paths";
-import styles from "./ProjectsPage.module.css";
+import styles from "./Projects.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
 const ON_GITHUB = { it: "Su GitHub", en: "On GitHub" };
@@ -14,7 +14,7 @@ const ROLES = {
   contributor: { it: "collaboratore", en: "contributor" },
 };
 
-export function ProjectsPage({ lang }: { lang: Lang }) {
+export function Projects({ lang }: { lang: Lang }) {
   return (
     <div className={styles.page}>
       <Controls page="projects" lang={lang} />

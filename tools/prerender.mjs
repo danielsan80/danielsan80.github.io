@@ -9,18 +9,18 @@ import { createServer } from "vite";
 const ITALIAN_PAGES = [
   {
     html: "index.html",
-    module: "/src/pages/home/HomePage.tsx",
-    component: "HomePage",
+    module: "/src/pages/home/Home.tsx",
+    component: "Home",
   },
   {
     html: "projects.html",
-    module: "/src/pages/projects/ProjectsPage.tsx",
-    component: "ProjectsPage",
+    module: "/src/pages/projects/Projects.tsx",
+    component: "Projects",
   },
   {
     html: "cv.html",
-    module: "/src/pages/cv/CvPage.tsx",
-    component: "CvPage",
+    module: "/src/pages/cv/Cv.tsx",
+    component: "Cv",
   },
 ];
 

@@ -4,11 +4,11 @@ import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
 import { projects } from "../../content/projects";
 import { training } from "../../content/training";
-import { CvPage } from "./CvPage";
+import { Cv } from "./Cv";
 
-describe("CvPage", () => {
+describe("Cv", () => {
   it("keeps the sections of the CV, in the order the CV has them", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
 
     expect(
       screen
@@ -25,7 +25,7 @@ describe("CvPage", () => {
   });
 
   it("heads the page with the contacts, the handle linked to its profile", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const header = screen.getByRole("banner");
 
     expect(
@@ -44,7 +44,7 @@ describe("CvPage", () => {
   });
 
   it("describes each project with the text written for the CV", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const items = within(
       screen.getByRole("list", { name: "Projects" }),
     ).getAllByRole("listitem");
@@ -60,7 +60,7 @@ describe("CvPage", () => {
   });
 
   it("tells where to find each project, with the links from the content", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const list = screen.getByRole("list", { name: "Projects" });
 
     expect(
@@ -75,7 +75,7 @@ describe("CvPage", () => {
   });
 
   it("shows the address itself, so it can be read off paper and typed back", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const list = screen.getByRole("list", { name: "Projects" });
 
     expect(
@@ -90,7 +90,7 @@ describe("CvPage", () => {
   });
 
   it("speaks English at its English address", () => {
-    render(<CvPage lang="en" />);
+    render(<Cv lang="en" />);
 
     expect({
       training: screen
@@ -107,7 +107,7 @@ describe("CvPage", () => {
   });
 
   it("gives every dated entry its own timeline", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
 
     expect(screen.getAllByRole("img").length).toBe(
       experiences.length + education.length + training.length,
@@ -115,7 +115,7 @@ describe("CvPage", () => {
   });
 
   it("heads an experience with role, company and dates", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const entry = screen.getByRole("article", {
       name: "Rossi Consulenze Idrauliche",
     });
@@ -135,7 +135,7 @@ describe("CvPage", () => {
   });
 
   it("prints the bullets written for the CV, not the prose written for LinkedIn", () => {
-    render(<CvPage lang="it" />);
+    render(<Cv lang="it" />);
     const entry = screen.getByRole("article", {
       name: "Rossi Consulenze Idrauliche",
     });

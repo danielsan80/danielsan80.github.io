@@ -6,13 +6,13 @@ import { pick, type Lang } from "../../content/localized";
 import { profiles } from "../../content/profiles";
 import { highlightedProjects } from "../../content/projects";
 import { pagePath } from "../../site/paths";
-import styles from "./HomePage.module.css";
+import styles from "./Home.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
 const MORE_PROJECTS = { it: "Tutti i progetti", en: "All projects" };
 const FIND_ME = { it: "Dove trovarmi", en: "Find me" };
 
-export function HomePage({ lang }: { lang: Lang }) {
+export function Home({ lang }: { lang: Lang }) {
   return (
     <div className={styles.page}>
       <Controls page="home" lang={lang} />

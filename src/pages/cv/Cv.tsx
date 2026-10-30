@@ -13,7 +13,7 @@ import { skills } from "../../content/skills";
 import { periodLabel } from "../../content/time/labels";
 import type { Period } from "../../content/time/period";
 import { training } from "../../content/training";
-import styles from "./CvPage.module.css";
+import styles from "./Cv.module.css";
 import { GitHubIcon, LinkedInIcon, MailIcon, SiteIcon } from "./icons";
 
 const dated = [...experiences, ...education, ...training].map(
@@ -43,7 +43,7 @@ const address = (url: string) =>
 // pre-rendered markup has to match what the browser draws when it hydrates.
 const DOMAIN = domainOf(dated, Date.now());
 
-export function CvPage({ lang }: { lang: Lang }) {
+export function Cv({ lang }: { lang: Lang }) {
   const lane = (period: Period) => (
     <Lane period={period} domain={DOMAIN} lang={lang} />
   );

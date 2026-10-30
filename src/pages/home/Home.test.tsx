@@ -2,11 +2,11 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { identity } from "../../content/identity";
 import { highlightedProjects } from "../../content/projects";
-import { HomePage } from "./HomePage";
+import { Home } from "./Home";
 
-describe("HomePage", () => {
+describe("Home", () => {
   it("introduces the person: portrait, real name, headline and a few lines about them", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     const intro = screen.getByRole("banner");
 
@@ -30,7 +30,7 @@ describe("HomePage", () => {
   });
 
   it("shows only the highlighted projects, each with its photo", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     const projects = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -51,7 +51,7 @@ describe("HomePage", () => {
   });
 
   it("describes each highlighted project with the text written for the site", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
     const region = screen.getByRole("region", { name: "Progetti" });
 
     expect(
@@ -62,7 +62,7 @@ describe("HomePage", () => {
   });
 
   it("links every highlighted project to all the places it lives, then to all the projects", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     const links = within(
       screen.getByRole("region", { name: "Progetti" }),
@@ -76,7 +76,7 @@ describe("HomePage", () => {
   });
 
   it("keeps to English, linking all the projects in English", () => {
-    render(<HomePage lang="en" />);
+    render(<Home lang="en" />);
 
     expect(
       screen.getByRole("link", { name: "All projects →" }).getAttribute("href"),
@@ -84,7 +84,7 @@ describe("HomePage", () => {
   });
 
   it("gathers every profile and the way to write, in the footer", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     const links = within(screen.getByRole("contentinfo")).getAllByRole("link");
 
@@ -96,7 +96,7 @@ describe("HomePage", () => {
   });
 
   it("shows the handle next to each profile, so the same person is recognisable, and the address last among them", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     const entries = within(screen.getByRole("contentinfo")).getAllByRole(
       "listitem",
@@ -110,7 +110,7 @@ describe("HomePage", () => {
   });
 
   it("keeps the CV off the page: its link is handed out, not published", () => {
-    render(<HomePage lang="it" />);
+    render(<Home lang="it" />);
 
     expect(
       screen
@@ -121,7 +121,7 @@ describe("HomePage", () => {
   });
 
   it("speaks English at its English address", () => {
-    render(<HomePage lang="en" />);
+    render(<Home lang="en" />);
 
     expect({
       summary: screen.getByText(identity.channels.home.summary.en).tagName,

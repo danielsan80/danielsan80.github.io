@@ -1,4 +1,4 @@
 import { mount } from "../mount";
-import { CvPage } from "./CvPage";
+import { Cv } from "./Cv";
 
-mount(CvPage);
+mount(Cv);
