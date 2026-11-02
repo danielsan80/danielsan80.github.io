@@ -1,4 +1,5 @@
 import type { SkillLevel } from "../../content/skills";
+import { PixelGrid } from "../pixel-grid/PixelGrid";
 import styles from "./Marker.module.css";
 
 // How full the square reads: past half at the lowest level, because on a CV the
@@ -12,36 +13,14 @@ const CELLS: Record<SkillLevel, number> = {
 // Bottom row first, left to right within each row.
 const ORDER = [6, 7, 8, 3, 4, 5, 0, 1, 2];
 
-const SIDE = 2.5;
-const STEP = 3.25;
-
 type MarkerProps = {
   level: SkillLevel;
 };
 
 export function Marker({ level }: MarkerProps) {
-  const on = new Set(ORDER.slice(0, CELLS[level]));
-
   return (
     <>
-      <svg
-        className={styles.marker}
-        viewBox="0 0 9 9"
-        aria-hidden="true"
-        focusable="false"
-      >
-        {ORDER.map((cell) => (
-          <rect
-            key={cell}
-            className={on.has(cell) ? styles.on : styles.off}
-            data-lit={on.has(cell)}
-            x={(cell % 3) * STEP}
-            y={Math.floor(cell / 3) * STEP}
-            width={SIDE}
-            height={SIDE}
-          />
-        ))}
-      </svg>
+      <PixelGrid lit={ORDER.slice(0, CELLS[level])} size="0.75em" />
       <span className={styles.level}>{level}</span>
     </>
   );

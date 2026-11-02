@@ -1,17 +1,3 @@
-.marker {
-  width: 0.75em;
-  height: 0.75em;
-  vertical-align: -0.05em;
-}
-
-.on {
-  fill: var(--accent-mark);
-}
-
-.off {
-  fill: var(--border);
-}
-
 /* The level is drawn, never written (doc/STILE.md): this is for screen readers,
    which have no square to look at. */
 .level {

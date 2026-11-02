@@ -1,0 +1,12 @@
+.grid {
+  flex: none;
+  vertical-align: -0.05em;
+}
+
+.on {
+  fill: var(--accent-mark);
+}
+
+.off {
+  fill: var(--border);
+}

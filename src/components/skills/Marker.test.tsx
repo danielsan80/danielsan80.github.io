@@ -1,31 +1,35 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import type { SkillLevel } from "../../content/skills";
+import { grid, PixelGridPage } from "../pixel-grid/PixelGrid.page";
 import { Marker } from "./Marker";
 
-const lit = (container: HTMLElement) =>
-  Array.from(container.querySelectorAll("rect"))
-    .filter((cell) => cell.getAttribute("data-lit") === "true")
-    .map((cell) => `${cell.getAttribute("x")},${cell.getAttribute("y")}`);
+const drawing = (level: SkillLevel) =>
+  new PixelGridPage(render(<Marker level={level} />).container).drawing();
 
 describe("Marker", () => {
-  it("lights five, seven or nine of the nine cells, by level", () => {
-    const counts = (["proficient", "advanced", "expert"] as const).map(
-      (level) => lit(render(<Marker level={level} />).container).length,
-    );
-
-    expect(counts).toEqual([5, 7, 9]);
+  it("fills past half at the lowest level, from the bottom left", () => {
+    expect(drawing("proficient")).toEqual(grid`
+      ◻◻◻
+      ◾◾◻
+      ◾◾◾
+    `);
   });
 
-  it("fills from the bottom left, a row at a time", () => {
-    const { container } = render(<Marker level="proficient" />);
+  it("fills on, a row at a time, at the level above", () => {
+    expect(drawing("advanced")).toEqual(grid`
+      ◾◻◻
+      ◾◾◾
+      ◾◾◾
+    `);
+  });
 
-    expect(lit(container)).toEqual([
-      "0,6.5",
-      "3.25,6.5",
-      "6.5,6.5",
-      "0,3.25",
-      "3.25,3.25",
-    ]);
+  it("fills the whole square at the highest level", () => {
+    expect(drawing("expert")).toEqual(grid`
+      ◾◾◾
+      ◾◾◾
+      ◾◾◾
+    `);
   });
 
   it("says the level for whoever cannot see the square", () => {
