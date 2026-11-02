@@ -1,3 +1,4 @@
+import { PixelGridPage } from "../../components/pixel-grid/PixelGrid.page";
 import { screen, within } from "@testing-library/react";
 
 class ProjectsSection {
@@ -40,6 +41,12 @@ class TopicsSection {
 }
 
 export class ProjectsPage {
+  titleMarkerDrawing() {
+    return new PixelGridPage(
+      screen.getByRole("heading", { level: 1 }),
+    ).drawing();
+  }
+
   title() {
     return screen.getByRole("heading", { level: 1 }).textContent;
   }

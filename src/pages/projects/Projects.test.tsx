@@ -3,12 +3,23 @@ import { describe, expect, it } from "vitest";
 import { pick } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { topics } from "../../content/topics";
+import { grid } from "../../components/pixel-grid/PixelGrid.page";
 import { Projects } from "./Projects";
 import { ProjectsPage } from "./Projects.page";
 
 const projectsPage = new ProjectsPage();
 
 describe("Projects", () => {
+  it("marks the title with the number of the page, as a die", () => {
+    render(<Projects lang="it" />);
+
+    expect(projectsPage.titleMarkerDrawing()).toEqual(grid`
+      ◻◻◾
+      ◻◻◻
+      ◾◻◻
+    `);
+  });
+
   it("shows every project, with the role and the period, in the order of the file", () => {
     render(<Projects lang="it" />);
 

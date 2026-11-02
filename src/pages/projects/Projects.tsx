@@ -1,8 +1,10 @@
+import { Die } from "../../components/pixel-grid/Die";
 import { TopBar } from "../../components/top-bar/TopBar";
 import { pick, type Lang } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { periodLabel } from "../../content/time/labels";
 import { repositorySearch, topics } from "../../content/topics";
+import { pageNumber } from "../../site/paths";
 import styles from "./Projects.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
@@ -23,6 +25,7 @@ export function Projects({ lang }: ProjectsProps) {
       <div className={styles.page}>
         <header className={styles.heading}>
           <h1 className={styles.title} id="projects">
+            <Die value={pageNumber("projects")} size="0.6em" />
             {pick(PROJECTS, lang)}
           </h1>
         </header>

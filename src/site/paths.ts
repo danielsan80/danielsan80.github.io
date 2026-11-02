@@ -1,13 +1,20 @@
 import type { Lang } from "../content/localized";
 
-export type Page = "home" | "projects" | "cv";
+const PAGE_MAP = {
+  home: { path: "/", number: 1 },
+  projects: { path: "/projects", number: 2 },
+  cv: { path: "/cv", number: undefined },
+} as const;
 
-const PATHS: Record<Page, string> = {
-  home: "/",
-  projects: "/projects",
-  cv: "/cv",
-};
+export type Page = keyof typeof PAGE_MAP;
 
 export function pagePath(page: Page, lang: Lang): string {
-  return lang === "it" ? PATHS[page] : `/${lang}${PATHS[page]}`;
+  const path = PAGE_MAP[page].path;
+  return lang === "it" ? path : `/${lang}${path}`;
+}
+
+export function pageNumber<P extends Page>(
+  page: P,
+): (typeof PAGE_MAP)[P]["number"] {
+  return PAGE_MAP[page].number;
 }
