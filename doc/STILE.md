@@ -203,7 +203,7 @@ chiave sotto, ciascuna preceduta dalla griglia 3×3.
 scaricate, le seconde in stampa spariscono. Marchi altrui (GitHub, LinkedIn) solo nella
 versione ufficiale e non ritoccati, e solo per puntare a loro.
 
-**In stampa** spariscono i selettori di lingua e tema, la pagina perde padding e
+**In stampa** sparisce la barra in cima, la pagina perde padding e
 `max-width`, e i token del tema chiaro vincono comunque — il blocco `@media print`
 seleziona anche `:root[data-theme]`, altrimenti chi stampa dal tema scuro si porta lo
 scuro sul foglio.
@@ -223,6 +223,20 @@ marcatore, quindi non è un segno nuovo; ma la cella vuota non è grigia come ne
 marcatore, perché a 16px un quadrato grigio sembra un pixel sbagliato. Celle da 4px con spazi e margine di 1px, perché ogni
 bordo cada su un pixel intero a 16px. I due verdi sono scritti a mano nell'SVG, che
 non vede i token.
+
+## La barra
+
+Su ogni pagina, sottile e fissa in cima, con un filetto sotto; in stampa sparisce.
+
+- **Logo** a sinistra: il disegno della favicon, alto quanto i selettori, perché la barra
+  non penda da un lato. Qui la cella spenta è grigia, come nel marcatore: alla misura
+  della barra si legge come cella, non come pixel sbagliato.
+- **Percorso** accanto, in mono, come il prompt di una shell: `~`, `~/projects`,
+  `~/cv`. Dice dove si è, non l'URL: è uguale nelle due lingue.
+- **Selettori** di lingua e tema a destra.
+
+La griglia 3×3 è un componente solo (`PixelGrid`), con la dimensione e le celle accese:
+marcatore e logo ne sono due usi, e gli usi nuovi passano da lì.
 
 ## Aperto
 

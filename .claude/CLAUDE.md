@@ -25,6 +25,8 @@ Sorgente del CV: `.private/content/`, clone del repo privato `danielsan80/daniel
 - `/cv` — timeline completa, ottimizzata per stampa/PDF. **Non elencata**: nessun link dal sito e `noindex`, il link lo passa l'utente. Un link a scadenza è un'idea da esplorare più avanti.
 - Pagina lavoro — prevista, non fatta: cosa posso fare per chi legge, raccontato con i casi, richiesta del CV, contatti.
 
+Navigazione: una barra in cima a ogni pagina, `/cv` compresa, con il logo e il percorso stile shell (`~/projects`); il logo e il `~` portano alla home. Il menu, una seconda barra con le voci numerate, elenca solo le pagine che esistono, quindi arriva con la pagina lavoro; il CV non ci sta.
+
 Unificazioni che evitano duplicazione:
 
 - **Una sola collection `projects`** (`projects.yaml`): tutti i progetti vanno in `/projects` e nel CV; `highlight`, con la foto, sceglie quelli della home. L'ordine è la **posizione nel file**, per importanza, in tutte le liste.
