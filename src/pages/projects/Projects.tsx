@@ -12,7 +12,11 @@ const ROLES = {
   contributor: { it: "collaboratore", en: "contributor" },
 };
 
-export function Projects({ lang }: { lang: Lang }) {
+type ProjectsProps = {
+  lang: Lang;
+};
+
+export function Projects({ lang }: ProjectsProps) {
   return (
     <>
       <TopBar page="projects" lang={lang} />

@@ -43,7 +43,11 @@ const address = (url: string) =>
 // pre-rendered markup has to match what the browser draws when it hydrates.
 const DOMAIN = domainOf(dated, Date.now());
 
-export function Cv({ lang }: { lang: Lang }) {
+type CvProps = {
+  lang: Lang;
+};
+
+export function Cv({ lang }: CvProps) {
   const lane = (period: Period) => (
     <Lane period={period} domain={DOMAIN} lang={lang} />
   );

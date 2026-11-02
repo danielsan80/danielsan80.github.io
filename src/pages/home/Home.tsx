@@ -12,7 +12,11 @@ const PROJECTS = { it: "Progetti", en: "Projects" };
 const MORE_PROJECTS = { it: "Tutti i progetti", en: "All projects" };
 const FIND_ME = { it: "Dove trovarmi", en: "Find me" };
 
-export function Home({ lang }: { lang: Lang }) {
+type HomeProps = {
+  lang: Lang;
+};
+
+export function Home({ lang }: HomeProps) {
   return (
     <>
       <TopBar page="home" lang={lang} />

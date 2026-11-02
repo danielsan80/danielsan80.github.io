@@ -15,7 +15,12 @@ const THEMES: [ThemeChoice, string][] = [
   ["dark", "Dark"],
 ];
 
-export function Controls({ page, lang }: { page: Page; lang: Lang }) {
+type ControlsProps = {
+  page: Page;
+  lang: Lang;
+};
+
+export function Controls({ page, lang }: ControlsProps) {
   const [theme, chooseTheme] = useTheme();
 
   return (
