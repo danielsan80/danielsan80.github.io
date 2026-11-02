@@ -1,6 +1,7 @@
 import type { Lang } from "../../content/localized";
 import { pagePath, type Page } from "../../site/paths";
 import styles from "./Controls.module.css";
+import { CONTROL_HEIGHT } from "./height";
 import { rememberLang, useTheme, type ThemeChoice } from "./preferences";
 
 const LANGUAGES: [Lang, string][] = [
@@ -19,7 +20,7 @@ export function Controls({ page, lang }: { page: Page; lang: Lang }) {
 
   return (
     <div className={styles.controls}>
-      <div className={styles.group}>
+      <div className={styles.group} style={{ height: CONTROL_HEIGHT }}>
         {LANGUAGES.map(([code, name]) => (
           <a
             key={code}
@@ -35,7 +36,12 @@ export function Controls({ page, lang }: { page: Page; lang: Lang }) {
         ))}
       </div>
 
-      <div className={styles.group} role="radiogroup" aria-label="Theme">
+      <div
+        className={styles.group}
+        style={{ height: CONTROL_HEIGHT }}
+        role="radiogroup"
+        aria-label="Theme"
+      >
         {THEMES.map(([code, name]) => (
           <label key={code} className={styles.button} data-theme-choice={code}>
             <input

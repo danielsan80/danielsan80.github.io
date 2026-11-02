@@ -9,18 +9,6 @@ import { ProjectsPage } from "./Projects.page";
 const projectsPage = new ProjectsPage();
 
 describe("Projects", () => {
-  it("leads back to the home, by the name of the person", () => {
-    render(<Projects lang="it" />);
-
-    expect(projectsPage.linkHref("Mario Rossi")).toBe("/");
-  });
-
-  it("keeps to English, leading back to the English home", () => {
-    render(<Projects lang="en" />);
-
-    expect(projectsPage.linkHref("Mario Rossi")).toBe("/en/");
-  });
-
   it("shows every project, with the role and the period, in the order of the file", () => {
     render(<Projects lang="it" />);
 

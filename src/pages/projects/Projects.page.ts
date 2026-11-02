@@ -44,10 +44,6 @@ export class ProjectsPage {
     return screen.getByRole("heading", { level: 1 }).textContent;
   }
 
-  linkHref(name: string) {
-    return screen.getByRole("link", { name }).getAttribute("href");
-  }
-
   projectsSection(name: string) {
     return new ProjectsSection(screen.getByRole("region", { name }));
   }

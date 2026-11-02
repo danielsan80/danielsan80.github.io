@@ -1,0 +1,20 @@
+.path {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.path a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.path a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--text-muted);
+}

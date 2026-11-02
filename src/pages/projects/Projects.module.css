@@ -11,12 +11,6 @@
   text-align: center;
 }
 
-.home {
-  color: var(--accent-text);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-}
-
 .title {
   margin: var(--space-3) 0 0;
   font-size: 2.5rem;

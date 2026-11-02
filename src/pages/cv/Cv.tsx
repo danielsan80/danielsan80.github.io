@@ -50,7 +50,9 @@ export function Cv({ lang }: { lang: Lang }) {
 
   return (
     <main className={styles.page}>
-      <Controls page="cv" lang={lang} />
+      <div className={styles.controls}>
+        <Controls page="cv" lang={lang} />
+      </div>
 
       <header className={styles.heading}>
         <h1 className={styles.name}>{identity.name}</h1>
