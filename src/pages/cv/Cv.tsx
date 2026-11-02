@@ -1,5 +1,5 @@
-import { Controls } from "../../components/controls/Controls";
 import { Marker } from "../../components/skills/Marker";
+import { TopBar } from "../../components/top-bar/TopBar";
 import { Lane } from "../../components/timeline/Lane";
 import { domainOf } from "../../components/timeline/placement";
 import { contact } from "../../content/contact";
@@ -53,174 +53,173 @@ export function Cv({ lang }: CvProps) {
   );
 
   return (
-    <main className={styles.page}>
-      <div className={styles.controls}>
-        <Controls page="cv" lang={lang} />
-      </div>
+    <>
+      <TopBar page="cv" lang={lang} />
+      <main className={styles.page}>
+        <header className={styles.heading}>
+          <h1 className={styles.name}>{identity.name}</h1>
+          <p className={styles.headline}>
+            {pick(identity.channels.cv.headline, lang)}
+          </p>
+          <p className={styles.contacts}>
+            <span>
+              <MailIcon />
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </span>
+            <span>
+              <GitHubIcon />
+              <a href={github.url}>{github.handle}</a>
+            </span>
+            <span>
+              <LinkedInIcon />
+              <a href={linkedin.url}>{address(linkedin.url)}</a>
+            </span>
+            <span>
+              <SiteIcon />
+              <a href={contact.website}>{address(contact.website)}</a>
+            </span>
+          </p>
+        </header>
 
-      <header className={styles.heading}>
-        <h1 className={styles.name}>{identity.name}</h1>
-        <p className={styles.headline}>
-          {pick(identity.channels.cv.headline, lang)}
-        </p>
-        <p className={styles.contacts}>
-          <span>
-            <MailIcon />
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          </span>
-          <span>
-            <GitHubIcon />
-            <a href={github.url}>{github.handle}</a>
-          </span>
-          <span>
-            <LinkedInIcon />
-            <a href={linkedin.url}>{address(linkedin.url)}</a>
-          </span>
-          <span>
-            <SiteIcon />
-            <a href={contact.website}>{address(contact.website)}</a>
-          </span>
-        </p>
-      </header>
+        <section aria-labelledby="summary">
+          <h2 className={styles.section} id="summary">
+            Summary
+          </h2>
+          <p className={styles.summary}>
+            {pick(identity.channels.cv.summary, lang)}
+          </p>
+        </section>
 
-      <section aria-labelledby="summary">
-        <h2 className={styles.section} id="summary">
-          Summary
-        </h2>
-        <p className={styles.summary}>
-          {pick(identity.channels.cv.summary, lang)}
-        </p>
-      </section>
+        <section aria-labelledby="projects">
+          <h2 className={styles.section} id="projects">
+            Projects
+          </h2>
+          <ul className={styles.projects} aria-labelledby="projects">
+            {projects.map((project) => (
+              <li key={project.name}>
+                <b>{project.name}</b> — {pick(project.channels.cv, lang)}
+                <span className={styles.projectLinks}>
+                  {project.links.map((link) => (
+                    <a key={link.url} href={link.url}>
+                      {address(link.url)}
+                    </a>
+                  ))}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section aria-labelledby="projects">
-        <h2 className={styles.section} id="projects">
-          Projects
-        </h2>
-        <ul className={styles.projects} aria-labelledby="projects">
-          {projects.map((project) => (
-            <li key={project.name}>
-              <b>{project.name}</b> — {pick(project.channels.cv, lang)}
-              <span className={styles.projectLinks}>
-                {project.links.map((link) => (
-                  <a key={link.url} href={link.url}>
-                    {address(link.url)}
-                  </a>
-                ))}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="experience">
-        <h2 className={styles.section} id="experience">
-          Experience
-        </h2>
-        {experiences.map((experience) => (
-          <article
-            className={styles.entry}
-            key={`${experience.company}-${experience.period.start}`}
-            aria-label={experience.company}
-          >
-            {lane(experience.period)}
-            <div className={styles.entryHead}>
-              <h3 className={styles.role}>{pick(experience.role, lang)}</h3>
-              <p className={styles.where} data-testid="where">
-                <span>{experience.company}</span>,{" "}
-                {pick(experience.location, lang)}
-                {experience.remote ? (
-                  <>
-                    {" · "}
-                    <i>remote</i>
-                  </>
-                ) : null}
-              </p>
-              <p className={styles.dates} data-testid="period">
-                {periodLabel(experience.period, lang)}
-              </p>
-            </div>
-            <ul>
-              {pick(experience.channels.cv, lang).map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
-
-      <section aria-labelledby="education">
-        <h2 className={styles.section} id="education">
-          Education
-        </h2>
-        {education.map((studies) => {
-          const institution = pick(studies.institution, lang);
-
-          return (
+        <section aria-labelledby="experience">
+          <h2 className={styles.section} id="experience">
+            Experience
+          </h2>
+          {experiences.map((experience) => (
             <article
               className={styles.entry}
-              key={institution}
-              aria-label={institution}
+              key={`${experience.company}-${experience.period.start}`}
+              aria-label={experience.company}
             >
-              {lane(studies.period)}
-              <div className={styles.studiesHead}>
-                <div>
-                  <h3 className={styles.role}>{institution}</h3>
-                  <p className={styles.studiesTitle}>
-                    {pick(studies.title, lang)}
-                  </p>
-                </div>
-                <div className={styles.aside}>
-                  <p>{pick(studies.location, lang)}</p>
-                  <p>{periodLabel(studies.period, lang)}</p>
-                </div>
-              </div>
-            </article>
-          );
-        })}
-      </section>
-
-      <section aria-labelledby="training">
-        <h2 className={styles.section} id="training">
-          {pick(TRAINING, lang)}
-        </h2>
-        {training.map((course) => {
-          const title = pick(course.title, lang);
-
-          return (
-            <article className={styles.entry} key={title} aria-label={title}>
-              {lane(course.period)}
+              {lane(experience.period)}
               <div className={styles.entryHead}>
-                <h3 className={styles.role}>{title}</h3>
-                <p className={styles.dates}>
-                  {periodLabel(course.period, lang)}
+                <h3 className={styles.role}>{pick(experience.role, lang)}</h3>
+                <p className={styles.where} data-testid="where">
+                  <span>{experience.company}</span>,{" "}
+                  {pick(experience.location, lang)}
+                  {experience.remote ? (
+                    <>
+                      {" · "}
+                      <i>remote</i>
+                    </>
+                  ) : null}
+                </p>
+                <p className={styles.dates} data-testid="period">
+                  {periodLabel(experience.period, lang)}
                 </p>
               </div>
-              <p>{pick(course.note, lang)}</p>
-            </article>
-          );
-        })}
-      </section>
-
-      <section aria-labelledby="skills">
-        <h2 className={styles.section} id="skills">
-          Skills
-        </h2>
-        <dl className={styles.skills}>
-          {skills.map((group) => (
-            <div key={pick(group.category, lang)}>
-              <dt>{pick(group.category, lang)}</dt>
-              <dd>
-                {group.items.map((skill) => (
-                  <span className={styles.skill} key={pick(skill.name, lang)}>
-                    <Marker level={skill.level} />
-                    {pick(skill.name, lang)}
-                  </span>
+              <ul>
+                {pick(experience.channels.cv, lang).map((line) => (
+                  <li key={line}>{line}</li>
                 ))}
-              </dd>
-            </div>
+              </ul>
+            </article>
           ))}
-        </dl>
-      </section>
-    </main>
+        </section>
+
+        <section aria-labelledby="education">
+          <h2 className={styles.section} id="education">
+            Education
+          </h2>
+          {education.map((studies) => {
+            const institution = pick(studies.institution, lang);
+
+            return (
+              <article
+                className={styles.entry}
+                key={institution}
+                aria-label={institution}
+              >
+                {lane(studies.period)}
+                <div className={styles.studiesHead}>
+                  <div>
+                    <h3 className={styles.role}>{institution}</h3>
+                    <p className={styles.studiesTitle}>
+                      {pick(studies.title, lang)}
+                    </p>
+                  </div>
+                  <div className={styles.aside}>
+                    <p>{pick(studies.location, lang)}</p>
+                    <p>{periodLabel(studies.period, lang)}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+
+        <section aria-labelledby="training">
+          <h2 className={styles.section} id="training">
+            {pick(TRAINING, lang)}
+          </h2>
+          {training.map((course) => {
+            const title = pick(course.title, lang);
+
+            return (
+              <article className={styles.entry} key={title} aria-label={title}>
+                {lane(course.period)}
+                <div className={styles.entryHead}>
+                  <h3 className={styles.role}>{title}</h3>
+                  <p className={styles.dates}>
+                    {periodLabel(course.period, lang)}
+                  </p>
+                </div>
+                <p>{pick(course.note, lang)}</p>
+              </article>
+            );
+          })}
+        </section>
+
+        <section aria-labelledby="skills">
+          <h2 className={styles.section} id="skills">
+            Skills
+          </h2>
+          <dl className={styles.skills}>
+            {skills.map((group) => (
+              <div key={pick(group.category, lang)}>
+                <dt>{pick(group.category, lang)}</dt>
+                <dd>
+                  {group.items.map((skill) => (
+                    <span className={styles.skill} key={pick(skill.name, lang)}>
+                      <Marker level={skill.level} />
+                      {pick(skill.name, lang)}
+                    </span>
+                  ))}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </main>
+    </>
   );
 }

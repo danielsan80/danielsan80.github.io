@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { education } from "../../content/education";
 import { experiences } from "../../content/experiences";
 import { projects } from "../../content/projects";
+import { TopBarPage } from "../../components/top-bar/TopBar.page";
 import { training } from "../../content/training";
 import { Cv } from "./Cv";
 import { CvPage } from "./Cv.page";
@@ -10,6 +11,12 @@ import { CvPage } from "./Cv.page";
 const cvPage = new CvPage();
 
 describe("Cv", () => {
+  it("tells the reader, in the path, they are on the CV", () => {
+    render(<Cv lang="it" />);
+
+    expect(new TopBarPage().pathText()).toBe("~/cv");
+  });
+
   it("keeps the sections of the CV, in the order the CV has them", () => {
     render(<Cv lang="it" />);
 

@@ -19,18 +19,11 @@
    margins, which is a column about 47 characters wide. Sizing the column in em
    keeps that ratio whatever the font size ends up being. */
 .page {
-  position: relative;
   max-width: 47em;
   margin: 0 auto;
   padding: var(--space-6) var(--space-4);
   font-size: 0.9375rem;
   line-height: 1.3;
-}
-
-.controls {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
 }
 
 .heading {
