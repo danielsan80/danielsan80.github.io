@@ -1,3 +1,4 @@
+import { Footer } from "../../components/footer/Footer";
 import { Die } from "../../components/pixel-grid/Die";
 import { TopBar } from "../../components/top-bar/TopBar";
 import { pick, type Lang } from "../../content/localized";
@@ -75,6 +76,7 @@ export function Projects({ lang }: ProjectsProps) {
           </section>
         </main>
       </div>
+      <Footer lang={lang} />
     </>
   );
 }

@@ -49,26 +49,8 @@ class ProjectsSection {
   }
 }
 
-class Footer {
-  private get footer() {
-    return screen.getByRole("contentinfo");
-  }
-
-  links() {
-    return hrefs(within(this.footer).getAllByRole("link"));
-  }
-
-  entries() {
-    return within(this.footer)
-      .getAllByRole("listitem")
-      .map((entry) => entry.textContent);
-  }
-}
-
 export class HomePage {
   readonly intro = new Intro();
-
-  readonly footer = new Footer();
 
   projectsSection(name: string) {
     return new ProjectsSection(screen.getByRole("region", { name }));

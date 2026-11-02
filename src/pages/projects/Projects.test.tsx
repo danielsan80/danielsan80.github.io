@@ -4,12 +4,19 @@ import { pick } from "../../content/localized";
 import { projects } from "../../content/projects";
 import { topics } from "../../content/topics";
 import { grid } from "../../components/pixel-grid/PixelGrid.page";
+import { FooterPage } from "../../components/footer/Footer.page";
 import { Projects } from "./Projects";
 import { ProjectsPage } from "./Projects.page";
 
 const projectsPage = new ProjectsPage();
 
 describe("Projects", () => {
+  it("ends with where to find me", () => {
+    render(<Projects lang="it" />);
+
+    expect(new FooterPage().title()).toBe("Dove trovarmi");
+  });
+
   it("marks the title with the number of the page, as a die", () => {
     render(<Projects lang="it" />);
 

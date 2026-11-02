@@ -1,16 +1,14 @@
 import { Fragment } from "react";
+import { Footer } from "../../components/footer/Footer";
 import { TopBar } from "../../components/top-bar/TopBar";
-import { contact } from "../../content/contact";
 import { identity } from "../../content/identity";
 import { pick, type Lang } from "../../content/localized";
-import { profiles } from "../../content/profiles";
 import { highlightedProjects } from "../../content/projects";
 import { pagePath } from "../../site/paths";
 import styles from "./Home.module.css";
 
 const PROJECTS = { it: "Progetti", en: "Projects" };
 const MORE_PROJECTS = { it: "Tutti i progetti", en: "All projects" };
-const FIND_ME = { it: "Dove trovarmi", en: "Find me" };
 
 type HomeProps = {
   lang: Lang;
@@ -89,24 +87,8 @@ export function Home({ lang }: HomeProps) {
             </p>
           </section>
         </main>
-
-        <footer className={styles.footer}>
-          <h2 className={styles.sectionTitle}>{pick(FIND_ME, lang)}</h2>
-
-          <ul className={styles.profiles}>
-            {profiles.map((profile) => (
-              <li key={profile.url}>
-                <a href={profile.url}>{profile.name}</a>{" "}
-                <span className={styles.mono}>{profile.handle}</span>
-              </li>
-            ))}
-            <li>
-              <a href={`mailto:${contact.email}`}>Email</a>{" "}
-              <span className={styles.mono}>{contact.email}</span>
-            </li>
-          </ul>
-        </footer>
       </div>
+      <Footer lang={lang} />
     </>
   );
 }

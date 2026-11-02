@@ -2,12 +2,19 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { identity } from "../../content/identity";
 import { highlightedProjects } from "../../content/projects";
+import { FooterPage } from "../../components/footer/Footer.page";
 import { Home } from "./Home";
 import { HomePage } from "./Home.page";
 
 const homePage = new HomePage();
 
 describe("Home", () => {
+  it("ends with where to find me", () => {
+    render(<Home lang="it" />);
+
+    expect(new FooterPage().title()).toBe("Dove trovarmi");
+  });
+
   it("introduces the person: portrait, real name, headline and a few lines about them", () => {
     render(<Home lang="it" />);
 
@@ -71,26 +78,6 @@ describe("Home", () => {
     expect(
       homePage.projectsSection("Projects").linkHref("All projects →"),
     ).toBe("/en/projects");
-  });
-
-  it("gathers every profile and the way to write, in the footer", () => {
-    render(<Home lang="it" />);
-
-    expect(homePage.footer.links()).toEqual([
-      "https://example.com/github/mariorossi",
-      "https://www.example.com/linkedin/mario-rossi-idraulico/",
-      "mailto:mario.rossi@example.com",
-    ]);
-  });
-
-  it("shows the handle next to each profile, so the same person is recognisable, and the address last among them", () => {
-    render(<Home lang="it" />);
-
-    expect(homePage.footer.entries()).toEqual([
-      "GitHub mariorossi",
-      "LinkedIn mario-rossi-idraulico",
-      "Email mario.rossi@example.com",
-    ]);
   });
 
   it("keeps the CV off the page: its link is handed out, not published", () => {
