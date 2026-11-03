@@ -76,16 +76,12 @@
 
 .project {
   display: grid;
-  grid-template-columns: 9rem 1fr;
+  grid-template-columns: 1fr 9rem;
   gap: var(--space-5);
   align-items: center;
 
-  &:nth-of-type(even) {
-    grid-template-columns: 1fr 9rem;
-
-    & .photo {
-      order: 1;
-    }
+  & .photo {
+    order: 1;
   }
 }
 
@@ -143,8 +139,7 @@
     display: none;
   }
 
-  .project,
-  .project:nth-of-type(even) {
+  .project {
     grid-template-columns: 1fr;
 
     & .photo {
