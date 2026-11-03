@@ -213,7 +213,7 @@ scuro sul foglio.
 **Foto** in un cerchio col bordo verde (`accent-mark`), staccato dalla foto da un
 anello del colore della superficie, spesso quanto il bordo.
 
-I progetti in evidenza si alternano: foto a sinistra, poi a destra. Su mobile la foto
+I progetti in evidenza hanno la foto sempre a destra. Su mobile la foto
 va sopra, centrata, e il testo resta allineato a sinistra. Il summary è giustificato,
 a sinistra su mobile, dove gli spazi si aprirebbero troppo.
 
